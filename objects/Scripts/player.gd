@@ -65,7 +65,5 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
 
-
-
 func _on_GUI_dialogue_end():
 	can_control = true
