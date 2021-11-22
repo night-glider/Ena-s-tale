@@ -10,7 +10,7 @@
 transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 23 )
 
 [node name="StaticBody3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 75, -3, 2, 36 )
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 75, -4, 2, 36 )
 
 [node name="StaticBody4" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 75, 5, 2, 36 )
@@ -26,6 +26,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95986, 2.05136, 61.8269 )
 
 [node name="decoration" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08381, -24.6221 )
+messages = [ "Here lies [color=yellow][wave amp=50 freq=2]Kosta Vesta[/wave][/color]...", "[color=aqua]sad[/color] enough..." ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.258819, -0.683013, 0.683013, 0, 0.707107, 0.707107, -0.965926, 0.183013, -0.183013, 0, 15.0838, -24.6221 )
