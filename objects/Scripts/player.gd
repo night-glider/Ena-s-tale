@@ -2,12 +2,18 @@ extends KinematicBody
 
 export var speed := 5.0
 export var gravity := 0.5
-export var mouse_sensitivity := 0.1
+export var mouse_sensitivity := 0.3
 export var jump_force := 10.0
+export var camera_wave_amplitude = 0.1
+export var camera_wave_frequency = 0.1
 
 var velocity := Vector3.ZERO
 var mouse_delta := Vector2.ZERO
-var can_control = true
+var can_control:bool = true
+var camera_n:float = 0
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	var forward = -transform.basis.z
@@ -34,6 +40,13 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_force
 			$AudioStreamPlayer.play()
+	
+	if velocity.x != 0 or velocity.z != 0:
+		$Camera.v_offset = sin(camera_n)*camera_wave_amplitude
+		camera_n+=camera_wave_frequency
+	else:
+		$Camera.v_offset = lerp($Camera.v_offset, 0, 0.1)
+		camera_n = 0#asin($Camera.v_offset)
 	
 	move_and_slide(velocity, Vector3.UP)
 
