@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://objects/Scripts/player_GUI.gd" type="Script" id=2]
+[ext_resource path="res://sounds/jump.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 0.5
+
+[sub_resource type="SphereShape" id=2]
+radius = 3.0
 
 [node name="player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -15,3 +20,42 @@ shape = SubResource( 1 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 current = true
+
+[node name="interaction_zone" type="Area" parent="."]
+visible = false
+
+[node name="CollisionShape" type="CollisionShape" parent="interaction_zone"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 2 )
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogue" type="Panel" parent="GUI"]
+visible = false
+anchor_left = 0.1
+anchor_top = 0.8
+anchor_right = 0.9
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/dialogue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+bbcode_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="dialogue_end" from="GUI" to="." method="_on_GUI_dialogue_end"]

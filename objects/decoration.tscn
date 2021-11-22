@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/grave.png" type="Texture" id=1]
+[ext_resource path="res://objects/Scripts/decoration.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.5
+height = 1.0
+
+[node name="decoration" type="AnimatedSprite3D"]
+billboard = 2
+alpha_cut = 1
+frames = SubResource( 1 )
+script = ExtResource( 2 )
+messages = [ "Here lies [color=yellow]Kosta Vesta[/color]...", "[color=blue]sad[/color] enough..." ]
+
+[node name="StaticBody" type="StaticBody" parent="." groups=["interactable"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 2 )
