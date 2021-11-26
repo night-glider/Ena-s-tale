@@ -20,7 +20,7 @@ billboard = 2
 alpha_cut = 1
 frames = SubResource( 1 )
 script = ExtResource( 2 )
-messages = [ "Here lies [color=yellow]Kosta Vesta[/color]...", "[color=blue]sad[/color] enough..." ]
+messages = [ "DIALOGUE_GRAVE1", "DIALOGUE_GRAVE2" ]
 
 [node name="StaticBody" type="StaticBody" parent="." groups=["interactable"]]
 

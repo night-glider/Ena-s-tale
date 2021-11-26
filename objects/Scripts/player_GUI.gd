@@ -14,6 +14,10 @@ var dialogue_active:bool = false
 var visible_chars:float = 0
 var intro_active = true
 
+func _ready():
+	for i in intro_messages.size():
+		intro_messages[i] = tr(intro_messages[i])
+
 func dialogue_start(messages:Array):
 	dialogue_active = true
 	current_messages = messages.duplicate()
@@ -70,7 +74,3 @@ func intro_process():
 			$intro.modulate.a = percent*2
 		else:
 			$intro.modulate.a = 1 - (percent - 0.5)*2
-		
-		
-		
-	

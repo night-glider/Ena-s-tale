@@ -8,11 +8,36 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RichTextLabel",
+"class": "RichTextLabelLocaled",
+"language": "GDScript",
+"path": "res://custom_classes/RichTextLabelLocaled.gd"
+}, {
+"base": "Node",
+"class": "global",
+"language": "GDScript",
+"path": "res://autoload/globals.gd"
+} ]
+_global_script_class_icons={
+"RichTextLabelLocaled": "",
+"global": ""
+}
+
 [application]
 
 config/name="Enas tale"
-run/main_scene="res://locations/main.tscn"
+run/main_scene="res://locations/startup.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://autoload/globals.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=480
 
 [input]
 
@@ -56,6 +81,11 @@ jump={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[locale]
+
+locale_filter=[ 0, [ "en" ] ]
+translations=PoolStringArray( "res://languages/general_text.en.translation" )
 
 [physics]
 
