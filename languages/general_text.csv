@@ -1,4 +1,6 @@
 keys,en
+YES,yes
+NO,no
 CRASH_TITLE,[center]Whoops your pc crashed lol
 DIALOGUE_GRAVE1,Here lies [color=yellow][wave amp=50 freq=2]Kosta Vesta[/wave][/color]...
 DIALOGUE_GRAVE2,[color=aqua]sad[/color] enough...
@@ -28,6 +30,23 @@ INTRO_LOG3,"@0.01@Starting HDD1 check...@0.5@
 %%10240KB%@1@
 %DONE%"
 INTRO_LOG4,@0.01@Press M to boot from USB12@0.1@.............
-INTRO_LOG5,[color=red]@0.01@WARNING! MEMORY AND CPU EXCEED OPERATING SYSTEM REQU
+INTRO_LOG5,[color=red]@0.01@WARNING! MEMORY AND CPU EXCEED OPERATING SYSTEM REQU                 
 INTRO_LOG6,@0.2@[b]Operating system settings changed.[/b]
 INTRO_LOG7,@0.1@Starting Michaelsoft Binbows...@1@   
+DESKTOP_MY_COMP,My Computer
+DESKTOP_FOLDER,My work
+DESKTOP_BIN,Recycle Bin
+DESKTOP_ALERT,Alert!
+DESKTOP_ERROR,You have no permission for this action
+DESKTOP_PROGRAMS,programs
+DESKTOP_DOCUMENTS,documents
+DESKTOP_SETTINGS,settings
+DESKTOP_FIND,find
+DESKTOP_HELP,help
+DESKTOP_RUN,run
+DESKTOP_SHUT,shut down...
+DESKTOP_QUIT,are you sure you want to finish your session?
+DESKTOP_ENA,ENA.exe
+MAIN_MENU_SELECT,Please select a file:
+MAIN_MENU_END,The end
+MAIN_MENU_EMPTY,[EMPTY]

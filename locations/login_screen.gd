@@ -4,6 +4,7 @@ export(Array, String) var nicknames
 export(Array, String, MULTILINE) var messages
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	for i in messages.size():
 		messages[i] = tr(messages[i])
 
@@ -17,4 +18,4 @@ func _on_Button_pressed():
 		Globals.crash( messages[id])
 		return
 	
-	get_tree().change_scene("res://locations/main.tscn")
+	get_tree().change_scene("res://locations/desktop.tscn")

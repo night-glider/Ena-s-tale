@@ -64,6 +64,9 @@ custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 text = "hello"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
 caret_blink = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,6 +82,9 @@ custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 secret = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
 caret_blink = true
 
 [node name="Button" type="Button" parent="login"]

@@ -6,6 +6,7 @@ var id = 0
 var char_progress = 0
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	for i in logs.size():
 		logs[i] = tr(logs[i])
 

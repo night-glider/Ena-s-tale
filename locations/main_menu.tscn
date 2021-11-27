@@ -1,0 +1,200 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://locations/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.392157, 0.203922, 0.431373, 1 )
+anti_aliasing = false
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="save1" type="Panel" parent="."]
+margin_left = 75.0
+margin_top = 106.0
+margin_right = 555.0
+margin_bottom = 176.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save1"]
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 104.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "OS.NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="end" type="Label" parent="save1"]
+margin_left = 64.0
+margin_top = 46.0
+margin_right = 104.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "MAIN_MENU_END"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="save1"]
+margin_left = 330.0
+margin_top = 16.0
+margin_right = 370.0
+margin_bottom = 30.0
+text = "--:--"
+
+[node name="heart_pos" type="Control" parent="save1"]
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save2" type="Panel" parent="."]
+margin_left = 75.0
+margin_top = 195.0
+margin_right = 555.0
+margin_bottom = 265.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save2"]
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 104.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "MAIN_MENU_EMPTY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="end" type="Label" parent="save2"]
+margin_left = 64.0
+margin_top = 46.0
+margin_right = 104.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "----"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="save2"]
+margin_left = 330.0
+margin_top = 16.0
+margin_right = 370.0
+margin_bottom = 30.0
+text = "--:--"
+
+[node name="heart_pos" type="Control" parent="save2"]
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save3" type="Panel" parent="."]
+margin_left = 75.0
+margin_top = 283.0
+margin_right = 555.0
+margin_bottom = 353.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="save3"]
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 104.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "MAIN_MENU_EMPTY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="end" type="Label" parent="save3"]
+margin_left = 64.0
+margin_top = 46.0
+margin_right = 104.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "----"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="save3"]
+margin_left = 330.0
+margin_top = 16.0
+margin_right = 370.0
+margin_bottom = 30.0
+text = "--:--"
+
+[node name="heart_pos" type="Control" parent="save3"]
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="select" type="Label" parent="."]
+margin_left = 75.0
+margin_top = 63.0
+margin_right = 115.0
+margin_bottom = 77.0
+text = "MAIN_MENU_SELECT"
+
+[node name="lang" type="Label" parent="."]
+margin_left = 270.0
+margin_top = 373.0
+margin_right = 326.0
+margin_bottom = 387.0
+text = "ENGLISH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart_pos" type="Control" parent="lang"]
+anchor_left = -0.2
+anchor_top = 0.5
+anchor_right = -0.2
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
