@@ -1,6 +1,5 @@
 extends Control
 
-
 func _process(delta):
 	$task_panel/time.text = str(OS.get_datetime()["hour"]) + ":" + str(OS.get_datetime()["minute"]) + ":" + str(OS.get_datetime()["second"])
 	

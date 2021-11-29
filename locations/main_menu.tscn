@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://locations/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -12,6 +12,49 @@ border_width_bottom = 1
 border_color = Color( 0.392157, 0.203922, 0.431373, 1 )
 anti_aliasing = false
 
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,12 +63,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="save1" type="Panel" parent="."]
+[node name="menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save1" type="Panel" parent="menu"]
 margin_left = 75.0
 margin_top = 106.0
 margin_right = 555.0
@@ -35,7 +85,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save1"]
+[node name="Label" type="Label" parent="menu/save1"]
 margin_left = 64.0
 margin_top = 16.0
 margin_right = 104.0
@@ -46,7 +96,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="end" type="Label" parent="save1"]
+[node name="end" type="Label" parent="menu/save1"]
 margin_left = 64.0
 margin_top = 46.0
 margin_right = 104.0
@@ -57,14 +107,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="time" type="Label" parent="save1"]
+[node name="time" type="Label" parent="menu/save1"]
 margin_left = 330.0
 margin_top = 16.0
 margin_right = 370.0
 margin_bottom = 30.0
 text = "--:--"
 
-[node name="heart_pos" type="Control" parent="save1"]
+[node name="heart_pos" type="Control" parent="menu/save1"]
 anchor_left = 0.1
 anchor_top = 0.5
 anchor_right = 0.1
@@ -73,7 +123,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="save2" type="Panel" parent="."]
+[node name="save2" type="Panel" parent="menu"]
 margin_left = 75.0
 margin_top = 195.0
 margin_right = 555.0
@@ -83,7 +133,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save2"]
+[node name="Label" type="Label" parent="menu/save2"]
 margin_left = 64.0
 margin_top = 16.0
 margin_right = 104.0
@@ -94,7 +144,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="end" type="Label" parent="save2"]
+[node name="end" type="Label" parent="menu/save2"]
 margin_left = 64.0
 margin_top = 46.0
 margin_right = 104.0
@@ -105,14 +155,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="time" type="Label" parent="save2"]
+[node name="time" type="Label" parent="menu/save2"]
 margin_left = 330.0
 margin_top = 16.0
 margin_right = 370.0
 margin_bottom = 30.0
 text = "--:--"
 
-[node name="heart_pos" type="Control" parent="save2"]
+[node name="heart_pos" type="Control" parent="menu/save2"]
 anchor_left = 0.1
 anchor_top = 0.5
 anchor_right = 0.1
@@ -121,7 +171,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="save3" type="Panel" parent="."]
+[node name="save3" type="Panel" parent="menu"]
 margin_left = 75.0
 margin_top = 283.0
 margin_right = 555.0
@@ -131,7 +181,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="save3"]
+[node name="Label" type="Label" parent="menu/save3"]
 margin_left = 64.0
 margin_top = 16.0
 margin_right = 104.0
@@ -142,7 +192,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="end" type="Label" parent="save3"]
+[node name="end" type="Label" parent="menu/save3"]
 margin_left = 64.0
 margin_top = 46.0
 margin_right = 104.0
@@ -153,14 +203,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="time" type="Label" parent="save3"]
+[node name="time" type="Label" parent="menu/save3"]
 margin_left = 330.0
 margin_top = 16.0
 margin_right = 370.0
 margin_bottom = 30.0
 text = "--:--"
 
-[node name="heart_pos" type="Control" parent="save3"]
+[node name="heart_pos" type="Control" parent="menu/save3"]
 anchor_left = 0.1
 anchor_top = 0.5
 anchor_right = 0.1
@@ -169,14 +219,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="select" type="Label" parent="."]
+[node name="select" type="Label" parent="menu"]
 margin_left = 75.0
 margin_top = 63.0
-margin_right = 115.0
+margin_right = 205.0
 margin_bottom = 77.0
 text = "MAIN_MENU_SELECT"
 
-[node name="lang" type="Label" parent="."]
+[node name="lang" type="Label" parent="menu"]
 margin_left = 270.0
 margin_top = 373.0
 margin_right = 326.0
@@ -186,7 +236,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="heart_pos" type="Control" parent="lang"]
+[node name="heart_pos" type="Control" parent="menu/lang"]
 anchor_left = -0.2
 anchor_top = 0.5
 anchor_right = -0.2
@@ -195,6 +245,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="heart" type="Sprite" parent="."]
+[node name="heart" type="Sprite" parent="menu"]
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/fade_in = SubResource( 3 )

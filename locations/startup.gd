@@ -23,7 +23,7 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	if(id == logs.size()):
-		get_tree().change_scene( "res://locations/login_screen.tscn" )
+		get_tree().change_scene( "res://locations/splash_screen.tscn" )
 		return
 	if(char_progress == logs[id].length()):
 		$label.bbcode_text = ""
