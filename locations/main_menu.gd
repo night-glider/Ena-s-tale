@@ -9,6 +9,8 @@ func _ready():
 	heart_poitions.append($menu/save2/heart_pos)
 	heart_poitions.append($menu/save3/heart_pos)
 	heart_poitions.append($menu/lang/heart_pos)
+	
+	$AnimationPlayer.play("fade_in")
 
 func _process(delta):
 	

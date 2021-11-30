@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://fonts/binbows_font.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/my_computer_icon.png" type="Texture" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://sprites/start_panel.png" type="Texture" id=9]
 [ext_resource path="res://sprites/error_panel.png" type="Texture" id=10]
 [ext_resource path="res://icon.png" type="Texture" id=11]
-[ext_resource path="res://sounds/binbows_start.ogg" type="AudioStream" id=12]
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 8 )
@@ -499,10 +498,6 @@ anchor_bottom = 0.8
 margin_left = -40.0
 margin_bottom = 13.0
 text = "NO"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
-autoplay = true
 
 [connection signal="pressed" from="my_comp/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="recycle_bin/Button" to="." method="_on_Button_pressed"]
