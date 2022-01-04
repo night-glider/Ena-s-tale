@@ -1,43 +1,14 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://fonts/binbows_font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://themes/binbows.tres" type="Theme" id=1]
 [ext_resource path="res://sprites/my_computer_icon.png" type="Texture" id=2]
 [ext_resource path="res://sprites/recycle_bin_icon.png" type="Texture" id=3]
 [ext_resource path="res://sprites/folder_icon.png" type="Texture" id=4]
 [ext_resource path="res://sprites/task_panel.png" type="Texture" id=5]
 [ext_resource path="res://locations/desktop.gd" type="Script" id=6]
-[ext_resource path="res://sprites/binbows_button0.png" type="Texture" id=7]
-[ext_resource path="res://sprites/binbows_button1.png" type="Texture" id=8]
 [ext_resource path="res://sprites/start_panel.png" type="Texture" id=9]
 [ext_resource path="res://sprites/error_panel.png" type="Texture" id=10]
 [ext_resource path="res://icon.png" type="Texture" id=11]
-
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 75, 23 )
-
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 75, 23 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 75, 23 )
-
-[sub_resource type="DynamicFont" id=22]
-size = 12
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 22 )
-Button/colors/font_color = Color( 0, 0, 0, 1 )
-Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
-Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
-Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-Button/styles/hover = SubResource( 9 )
-Button/styles/normal = SubResource( 8 )
-Button/styles/pressed = SubResource( 10 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -76,7 +47,7 @@ region_rect = Rect2( 0, 0, 150, 80 )
 [node name="desktop" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 2 )
+theme = ExtResource( 1 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
