@@ -1,37 +1,126 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/test_wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/decoration.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/pause.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" type="Script" id=5]
 
 [node name="world" type="Spatial"]
 
 [node name="StaticBody" parent="." instance=ExtResource( 1 )]
-transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 23 )
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, -42, 0, 24 )
+
+[node name="StaticBody6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 81, 0, 6, 33 )
+
+[node name="StaticBody29" parent="." instance=ExtResource( 1 )]
+transform = Transform( 13, 0, 0, 0, 1, 0, 0, 0, 41, -44, 6, 12 )
+
+[node name="StaticBody11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -8, 6, -5 )
+
+[node name="StaticBody7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 0, 3, 73 )
+
+[node name="StaticBody8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 0, 3, -7 )
+
+[node name="StaticBody24" parent="." instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -44, 3, -7 )
+
+[node name="StaticBody25" parent="." instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -45, 3, 32 )
+
+[node name="StaticBody9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -8, 3, -7 )
+
+[node name="StaticBody10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -8, 3, -2 )
+
+[node name="StaticBody19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -36, 6, -5 )
+
+[node name="StaticBody27" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
+
+[node name="StaticBody20" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -7 )
+
+[node name="StaticBody28" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 26 )
+
+[node name="StaticBody21" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -2 )
+
+[node name="StaticBody26" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 32 )
 
 [node name="StaticBody3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 75, -4, 2, 36 )
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 75, -5, 3, 35 )
 
-[node name="StaticBody4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 75, 5, 2, 36 )
+[node name="StaticBody22" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -39, 3, 15 )
+
+[node name="StaticBody23" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -50, 3, 10 )
 
 [node name="StaticBody5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 10, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2, 73 )
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -11, 6, 3 )
 
-[node name="StaticBody2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 6, 0, 0, 0, 1, 0, 3, -26 )
+[node name="StaticBody13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -11, 9, -5 )
 
-[node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95986, 2.05136, 61.8269 )
+[node name="StaticBody12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -11, 6, -12 )
 
-[node name="decoration" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08381, -24.6221 )
+[node name="StaticBody16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, 3 )
+
+[node name="StaticBody30" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 37 )
+
+[node name="StaticBody17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -33, 9, -5 )
+
+[node name="StaticBody32" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -56, 9, 30 )
+
+[node name="StaticBody18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, -12 )
+
+[node name="StaticBody31" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 22 )
+
+[node name="StaticBody14" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, -17 )
+
+[node name="StaticBody34" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 42 )
+
+[node name="StaticBody15" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, 8 )
+
+[node name="StaticBody33" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 17 )
+
+[node name="StaticBody4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 81, 5, 3, 33 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.258819, -0.683013, 0.683013, 0, 0.707107, 0.707107, -0.965926, 0.183013, -0.183013, 0, 15.0838, -24.6221 )
+transform = Transform( -0.965926, -0.183013, 0.183013, 0, 0.707107, 0.707107, -0.258819, 0.683013, -0.683013, 0, 16.0838, -24.6221 )
 light_energy = 0.25
 shadow_enabled = true
 
+[node name="GodRays" type="Spatial" parent="DirectionalLight"]
+visible = false
+script = ExtResource( 5 )
+
 [node name="pause" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 67 )
+
+[node name="decoration" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -4 )
