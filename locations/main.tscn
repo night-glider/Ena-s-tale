@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/test_wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -6,25 +6,35 @@
 [ext_resource path="res://objects/pause.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" type="Script" id=5]
 
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 3.0
+bottom_radius = 3.5
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+
 [node name="world" type="Spatial"]
 
 [node name="StaticBody" parent="." instance=ExtResource( 1 )]
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, -42, 0, 24 )
 
+[node name="StaticBody2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 23, 0, 0, 0, 1, 0, 0, 0, 25, -66, 12, 29 )
+
 [node name="StaticBody6" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 81, 0, 6, 33 )
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 81, 2, 6, 33 )
 
 [node name="StaticBody29" parent="." instance=ExtResource( 1 )]
 transform = Transform( 13, 0, 0, 0, 1, 0, 0, 0, 41, -44, 6, 12 )
 
 [node name="StaticBody11" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -8, 6, -5 )
+transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 7, -7, 6, -5 )
 
 [node name="StaticBody7" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 0, 3, 73 )
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 2, 3, 73 )
 
 [node name="StaticBody8" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 0, 3, -7 )
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 2, 3, -7 )
 
 [node name="StaticBody24" parent="." instance=ExtResource( 1 )]
 transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -44, 3, -7 )
@@ -33,10 +43,10 @@ transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -44, 3, -7 )
 transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -45, 3, 32 )
 
 [node name="StaticBody9" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -8, 3, -7 )
+transform = Transform( 7, 0, 0, 0, 5, 0, 0, 0, 1, -7, 3, -7 )
 
 [node name="StaticBody10" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -8, 3, -2 )
+transform = Transform( 7, 0, 0, 0, 5, 0, 0, 0, 1, -7, 3, -2 )
 
 [node name="StaticBody19" parent="." instance=ExtResource( 1 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -36, 6, -5 )
@@ -48,7 +58,7 @@ transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -7 )
 
 [node name="StaticBody28" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 26 )
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 27 )
 
 [node name="StaticBody21" parent="." instance=ExtResource( 1 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -2 )
@@ -57,7 +67,7 @@ transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -2 )
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 32 )
 
 [node name="StaticBody3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 75, -5, 3, 35 )
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 75, -3, 3, 35 )
 
 [node name="StaticBody22" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -39, 3, 15 )
@@ -89,23 +99,35 @@ transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -56, 9, 30 )
 [node name="StaticBody18" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, -12 )
 
+[node name="StaticBody35" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 9, 0, 0, 0, 25, -33, 16, -5 )
+
+[node name="StaticBody36" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.378923, 23.1357, 0, -0.925428, -9.47308, 0, 0, 0, 25, -21.5754, 15.3094, -5 )
+
 [node name="StaticBody31" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 22 )
 
 [node name="StaticBody14" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, -17 )
 
+[node name="StaticBody38" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, -17 )
+
 [node name="StaticBody34" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 42 )
 
 [node name="StaticBody15" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, 8 )
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, 7 )
+
+[node name="StaticBody37" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, 7 )
 
 [node name="StaticBody33" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 17 )
 
 [node name="StaticBody4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 81, 5, 3, 33 )
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 81, 7, 3, 33 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.965926, -0.183013, 0.183013, 0, 0.707107, 0.707107, -0.258819, 0.683013, -0.683013, 0, 16.0838, -24.6221 )
@@ -113,7 +135,6 @@ light_energy = 0.25
 shadow_enabled = true
 
 [node name="GodRays" type="Spatial" parent="DirectionalLight"]
-visible = false
 script = ExtResource( 5 )
 
 [node name="pause" parent="." instance=ExtResource( 4 )]
@@ -123,4 +144,18 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 67 )
 
 [node name="decoration" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.05152, -4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -33, 14, -5 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 8, 0 )
+visible = false
+omni_range = 32.49
+
+[node name="GodRays" type="Spatial" parent="OmniLight"]
+visible = false
+script = ExtResource( 5 )
