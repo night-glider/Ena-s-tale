@@ -52,8 +52,7 @@ func _process(delta):
 					items_stage()
 		
 		stages.ITEMS_DIALOGUE:
-			if Input.is_action_just_pressed("interact"):
-				bottom_buttons_stage()
+			pass
 		
 		stages.ITEMS:
 			if Input.is_action_pressed("cancel"):
@@ -64,3 +63,8 @@ func _item_pressed(button):
 	button.disabled = true
 	items_dialogue_stage(button.dialogue)
 	
+
+
+func _on_dialogue_dialogue_ended():
+	if active_stage == stages.ITEMS_DIALOGUE:
+		bottom_buttons_stage()

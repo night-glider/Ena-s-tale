@@ -9,7 +9,7 @@
 [ext_resource path="res://objects/battle/label_option.tscn" type="PackedScene" id=7]
 [ext_resource path="res://locations/battle/gui.gd" type="Script" id=8]
 [ext_resource path="res://locations/battle/dialogue_box.gd" type="Script" id=9]
-[ext_resource path="res://custom_classes/RichTextLabelLocaled.gd" type="Script" id=10]
+[ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 4 )
@@ -224,16 +224,15 @@ __meta__ = {
 }
 
 [node name="dialogue" type="RichTextLabel" parent="gui/dialogue_box/ReferenceRect"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-bbcode_enabled = true
-text = "test_dialogue"
+scroll_following = true
 script = ExtResource( 10 )
+messages = [ "INTRO_LOG1", "INTRO_LOG2", "INTRO_LOG3", "INTRO_LOG4", "INTRO_LOG5", "INTRO_LOG6" ]
 
 [node name="Tween" type="Tween" parent="gui/dialogue_box"]
 
@@ -242,3 +241,5 @@ script = ExtResource( 10 )
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/qwerty" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/joltest" to="gui" method="_item_pressed"]
+[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui" method="_on_dialogue_dialogue_ended"]
+[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]

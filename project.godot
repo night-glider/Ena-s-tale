@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RichTextLabel",
+"class": "DialogueLabel",
+"language": "GDScript",
+"path": "res://custom_classes/DialogueLabel.gd"
+}, {
+"base": "RichTextLabel",
 "class": "RichTextLabelLocaled",
 "language": "GDScript",
 "path": "res://custom_classes/RichTextLabelLocaled.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://autoload/globals.gd"
 } ]
 _global_script_class_icons={
+"DialogueLabel": "",
 "RichTextLabelLocaled": "",
 "global": ""
 }
