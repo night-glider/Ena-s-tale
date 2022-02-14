@@ -1,0 +1,244 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
+[ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
+[ext_resource path="res://sprites/battle/gui/talk.png" type="Texture" id=3]
+[ext_resource path="res://fonts/default_pixels.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://objects/battle/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/battle/label_option.tscn" type="PackedScene" id=7]
+[ext_resource path="res://locations/battle/gui.gd" type="Script" id=8]
+[ext_resource path="res://locations/battle/dialogue_box.gd" type="Script" id=9]
+[ext_resource path="res://custom_classes/RichTextLabelLocaled.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=16]
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=17]
+default_font = SubResource( 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 80, 32 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 80, 32 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 96, 80, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 64, 80, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 96, 80, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 80, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=12]
+colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+width = 1
+
+[sub_resource type="Gradient" id=14]
+colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
+width = 128
+
+[node name="battle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gui" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="strike" type="AnimatedSprite" parent="gui"]
+position = Vector2( 220, 440 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="general_choice" type="Node2D" parent="gui/strike"]
+
+[node name="talk" type="AnimatedSprite" parent="gui"]
+position = Vector2( 320, 440 )
+frames = SubResource( 9 )
+animation = "idle"
+
+[node name="pack" type="AnimatedSprite" parent="gui"]
+position = Vector2( 420, 440 )
+frames = SubResource( 6 )
+animation = "idle"
+
+[node name="inventory" type="Node2D" parent="gui/pack"]
+
+[node name="turron" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+visible = false
+margin_left = -355.0
+margin_top = -200.0
+margin_right = -285.0
+margin_bottom = -178.0
+text = "Turron"
+
+[node name="qwerty" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+visible = false
+margin_left = -355.0
+margin_top = -166.0
+margin_right = -269.0
+margin_bottom = -144.0
+text = "QWERTY"
+
+[node name="joltest" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+visible = false
+margin_left = -355.0
+margin_top = -129.0
+margin_right = -275.0
+margin_bottom = -107.0
+text = "JolTest"
+
+[node name="bottom_panel" type="Control" parent="gui"]
+margin_top = 380.0
+margin_right = 640.0
+margin_bottom = 410.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ena_status" type="RichTextLabel" parent="gui/bottom_panel"]
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_right = 189.0
+text = "ena:happy"
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="gui/bottom_panel"]
+margin_left = 200.0
+margin_right = 232.0
+margin_bottom = 32.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 7
+
+[node name="lf" type="Label" parent="gui/bottom_panel"]
+margin_left = 281.0
+margin_right = 321.0
+margin_bottom = 22.0
+text = "LF:"
+
+[node name="TextureProgress" type="TextureProgress" parent="gui/bottom_panel"]
+margin_left = 320.0
+margin_right = 520.0
+margin_bottom = 20.0
+value = 75.0
+texture_under = SubResource( 13 )
+texture_progress = SubResource( 15 )
+nine_patch_stretch = true
+
+[node name="Label" type="Label" parent="gui/bottom_panel"]
+margin_left = 525.0
+margin_right = 595.0
+margin_bottom = 22.0
+text = "75/100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogue_box" type="Control" parent="gui"]
+margin_left = 230.0
+margin_top = 267.0
+margin_right = 442.0
+margin_bottom = 347.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="gui/dialogue_box"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+border_color = Color( 1, 1, 1, 1 )
+border_width = 5.0
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogue" type="RichTextLabel" parent="gui/dialogue_box/ReferenceRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+bbcode_enabled = true
+text = "test_dialogue"
+script = ExtResource( 10 )
+
+[node name="Tween" type="Tween" parent="gui/dialogue_box"]
+
+[node name="player" parent="gui" instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/qwerty" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/joltest" to="gui" method="_item_pressed"]
