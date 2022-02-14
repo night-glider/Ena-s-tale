@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Attack_pattern",
+"language": "GDScript",
+"path": "res://custom_classes/attack_pattern.gd"
+}, {
 "base": "RichTextLabel",
 "class": "DialogueLabel",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://autoload/globals.gd"
 } ]
 _global_script_class_icons={
+"Attack_pattern": "",
 "DialogueLabel": "",
 "RichTextLabelLocaled": "",
 "global": ""

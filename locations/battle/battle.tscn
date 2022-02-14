@@ -170,8 +170,11 @@ margin_left = 80.0
 margin_right = 189.0
 text = "ena:happy"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="gui/bottom_panel"]
+[node name="ena_face" type="TextureRect" parent="gui/bottom_panel"]
 margin_left = 200.0
 margin_right = 232.0
 margin_bottom = 32.0
@@ -185,7 +188,7 @@ margin_right = 321.0
 margin_bottom = 22.0
 text = "LF:"
 
-[node name="TextureProgress" type="TextureProgress" parent="gui/bottom_panel"]
+[node name="hp_bar" type="TextureProgress" parent="gui/bottom_panel"]
 margin_left = 320.0
 margin_right = 520.0
 margin_bottom = 20.0
@@ -193,8 +196,11 @@ value = 75.0
 texture_under = SubResource( 13 )
 texture_progress = SubResource( 15 )
 nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="gui/bottom_panel"]
+[node name="hp" type="Label" parent="gui/bottom_panel"]
 margin_left = 525.0
 margin_right = 595.0
 margin_bottom = 22.0
