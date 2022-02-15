@@ -1,0 +1,184 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objects/battle/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=2]
+[ext_resource path="res://locations/battle/dialogue_box.gd" type="Script" id=3]
+[ext_resource path="res://locations/testing/attacks_test.gd" type="Script" id=4]
+
+[node name="attacks_test" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="copy_settings" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -97.0
+margin_bottom = 20.0
+grow_horizontal = 0
+text = "copy settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gui" type="Node2D" parent="."]
+
+[node name="dialogue_box" type="Control" parent="gui"]
+margin_left = 230.0
+margin_top = 267.0
+margin_right = 442.0
+margin_bottom = 347.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="gui/dialogue_box"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+border_color = Color( 1, 1, 1, 1 )
+border_width = 5.0
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogue" type="RichTextLabel" parent="gui/dialogue_box/ReferenceRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+scroll_following = true
+script = ExtResource( 2 )
+messages = [ "INTRO_LOG1", "INTRO_LOG2", "INTRO_LOG3", "INTRO_LOG4", "INTRO_LOG5", "INTRO_LOG6" ]
+
+[node name="Tween" type="Tween" parent="gui/dialogue_box"]
+
+[node name="player" parent="gui" instance=ExtResource( 1 )]
+position = Vector2( 327, 308 )
+
+[node name="general" type="GridContainer" parent="."]
+margin_left = 3.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="general"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "attack_id"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="id" type="SpinBox" parent="general"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="general"]
+margin_left = 182.0
+margin_right = 234.0
+margin_bottom = 24.0
+disabled = true
+text = "spawn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="general"]
+margin_top = 31.0
+margin_right = 100.0
+margin_bottom = 45.0
+text = "box_position"
+
+[node name="pos_x" type="TextEdit" parent="general"]
+margin_left = 104.0
+margin_top = 28.0
+margin_right = 178.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 20 )
+virtual_keyboard_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos_y" type="TextEdit" parent="general"]
+margin_left = 182.0
+margin_top = 28.0
+margin_right = 234.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 20 )
+virtual_keyboard_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="general"]
+margin_top = 55.0
+margin_right = 100.0
+margin_bottom = 69.0
+text = "box_size"
+
+[node name="size_x" type="TextEdit" parent="general"]
+margin_left = 104.0
+margin_top = 52.0
+margin_right = 178.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 20 )
+virtual_keyboard_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="size_y" type="TextEdit" parent="general"]
+margin_left = 182.0
+margin_top = 52.0
+margin_right = 234.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 20 )
+virtual_keyboard_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="attack_gui" type="ScrollContainer" parent="."]
+anchor_right = 0.4
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = 75.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="grid" type="GridContainer" parent="attack_gui"]
+custom_constants/vseparation = 5
+columns = 2
+
+[connection signal="pressed" from="copy_settings" to="." method="_on_copy_settings_pressed"]
+[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui" method="_on_dialogue_dialogue_ended"]
+[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
+[connection signal="value_changed" from="general/id" to="." method="_on_SpinBox_value_changed"]
+[connection signal="pressed" from="general/Button" to="." method="_on_Button_pressed"]

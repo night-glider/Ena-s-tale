@@ -35,7 +35,7 @@ func items_dialogue_stage(text:String):
 
 func attack_stage():
 	active_stage = stages.ATTACK
-	var attack = preload("res://objects/battle/attack1/attack1.tscn").instance()
+	var attack = preload("res://objects/battle/attacks/attack1/attack1.tscn").instance()
 	$dialogue_box.change_size(attack.box_position, attack.box_size)
 	$player.position = Vector2(320,320)
 	add_child(attack)

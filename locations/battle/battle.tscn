@@ -80,18 +80,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=12]
+[sub_resource type="Gradient" id=18]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
 [sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
+gradient = SubResource( 18 )
 width = 1
 
-[sub_resource type="Gradient" id=14]
+[sub_resource type="Gradient" id=19]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
 [sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 14 )
+gradient = SubResource( 19 )
 width = 128
 
 [node name="battle" type="Control"]
