@@ -1,6 +1,6 @@
 extends Sprite
 
-var hp = 100
+var hp := 100
 var invincible = false
 
 func _process(delta):
@@ -30,7 +30,6 @@ func take_hit(damage:int):
 	invincible = true
 	$AnimationPlayer.play("invincible")
 	$invincibility.start()
-
 
 func _on_invincibility_timeout():
 	$AnimationPlayer.stop()

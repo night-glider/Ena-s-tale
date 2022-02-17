@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://locations/battle/gui.gd" type="Script" id=8]
 [ext_resource path="res://locations/battle/dialogue_box.gd" type="Script" id=9]
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=10]
+[ext_resource path="res://sprites/battle/test_enemy.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 4 )
@@ -125,36 +126,64 @@ position = Vector2( 320, 440 )
 frames = SubResource( 9 )
 animation = "idle"
 
+[node name="options" type="Node2D" parent="gui/talk"]
+visible = false
+
+[node name="check" parent="gui/talk/options" instance=ExtResource( 7 )]
+margin_left = -264.0
+margin_top = -179.0
+margin_right = -194.0
+margin_bottom = -157.0
+text = "TALK_CHECK"
+dialogue = "TALK_CHECK_DIALOGUE"
+
+[node name="reason" parent="gui/talk/options" instance=ExtResource( 7 )]
+margin_left = -121.0
+margin_top = -179.0
+margin_right = 27.0
+margin_bottom = -157.0
+text = "TALK_REASON"
+dialogue = "TALK_REASON_DIALOGUE"
+
+[node name="insult" parent="gui/talk/options" instance=ExtResource( 7 )]
+margin_left = 34.0
+margin_top = -179.0
+margin_right = 182.0
+margin_bottom = -157.0
+text = "TALK_INSULT"
+dialogue = "TALK_INSULT_DIALOGUE"
+
 [node name="pack" type="AnimatedSprite" parent="gui"]
 position = Vector2( 420, 440 )
 frames = SubResource( 6 )
 animation = "idle"
 
 [node name="inventory" type="Node2D" parent="gui/pack"]
+visible = false
 
 [node name="turron" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-visible = false
 margin_left = -355.0
 margin_top = -200.0
 margin_right = -285.0
 margin_bottom = -178.0
-text = "Turron"
+text = "ITEMS_TURRON"
+dialogue = "ITEMS_TURRON_DIALOGUE"
 
 [node name="qwerty" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-visible = false
 margin_left = -355.0
 margin_top = -166.0
 margin_right = -269.0
 margin_bottom = -144.0
-text = "QWERTY"
+text = "ITEMS_QWERTY"
+dialogue = "ITEMS_QWERTY_DIALOGUE"
 
 [node name="joltest" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-visible = false
 margin_left = -355.0
 margin_top = -129.0
 margin_right = -275.0
 margin_bottom = -107.0
-text = "JolTest"
+text = "ITEMS_JOLTEST"
+dialogue = "ITEMS_JOLTEST_DIALOGUE"
 
 [node name="bottom_panel" type="Control" parent="gui"]
 margin_top = 380.0
@@ -244,6 +273,13 @@ messages = [ "INTRO_LOG1", "INTRO_LOG2", "INTRO_LOG3", "INTRO_LOG4", "INTRO_LOG5
 
 [node name="player" parent="gui" instance=ExtResource( 6 )]
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 316, 108 )
+texture = ExtResource( 11 )
+
+[connection signal="pressed" from="gui/talk/options/check" to="gui" method="_on_check_pressed"]
+[connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_check_pressed"]
+[connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/qwerty" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/joltest" to="gui" method="_item_pressed"]

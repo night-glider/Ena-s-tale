@@ -6,6 +6,7 @@ func start_dialogue(text):
 	active = true
 	$ReferenceRect/dialogue.visible = true
 	#$ReferenceRect/dialogue.change_text(text)
+	$ReferenceRect/dialogue.change_messages( [text] )
 	$ReferenceRect/dialogue.start_dialogue()
 
 

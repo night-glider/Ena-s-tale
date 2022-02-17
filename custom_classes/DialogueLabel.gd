@@ -32,8 +32,10 @@ func _ready():
 
 
 func change_messages(new_array:Array):
+	messages = new_array.duplicate()
 	if messages.empty():
 		assert(false, "DialogueLabel's messages are empty!")
+	
 	
 	for i in messages.size():
 		if messages[i] == tr(messages[i]):

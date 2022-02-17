@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Enas tale"
-run/main_scene="res://locations/testing/attacks_test.tscn"
+run/main_scene="res://locations/battle/battle.tscn"
 config/icon="res://icon.png"
 
 [autoload]

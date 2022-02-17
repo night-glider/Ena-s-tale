@@ -22,7 +22,7 @@ func _ready():
 	$Area2D.position = rect_size/2
 
 func press():
-	if not disabled and visible:
+	if not disabled and is_visible_in_tree():
 		emit_signal("pressed", self)
 
 func _on_Area2D_area_entered(area):
