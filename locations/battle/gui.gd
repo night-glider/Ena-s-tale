@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var active_button:int = 0
 onready var buttons = [$strike, $talk, $pack]
 enum stages {
@@ -14,10 +13,19 @@ enum stages {
 	ENEMY_DIALOGUE_PASS,
 	PLAYER_ATTACK,
 	STRIKE_GENERAL,
-	STRIKE_LIMB
+	STRIKE_LIMB,
+	STRIKE_STANCE
 	}
 var active_stage = stages.BOTTOM_BUTTONS
 var last_action = ""
+
+func strike_stance_stage():
+	active_stage = stages.STRIKE_STANCE
+	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
+	$player.position = Vector2(320,320)
+	$strike/general_choice.visible = false
+	$strike/stance_choice.visible = true
+
 
 func strike_general_stage():
 	active_stage = stages.STRIKE_GENERAL
@@ -119,9 +127,6 @@ func _process(delta):
 				if buttons[active_button] == $talk:
 					talk_stage()
 		
-		stages.ITEMS_DIALOGUE:
-			pass
-		
 		stages.ITEMS:
 			if Input.is_action_pressed("cancel"):
 				bottom_buttons_stage()
@@ -130,11 +135,20 @@ func _process(delta):
 			if Input.is_action_just_pressed("cancel"):
 				bottom_buttons_stage()
 		
-		stages.TALK_DIALOGUE:
-			pass
+		stages.STRIKE_GENERAL:
+			if Input.is_action_just_pressed("cancel"):
+				bottom_buttons_stage()
 		
-		stages.ENEMY_DIALOGUE:
-			pass
+		stages.STRIKE_LIMB:
+			if Input.is_action_just_pressed("cancel"):
+				strike_general_stage()
+		
+		stages.STRIKE_STANCE:
+			if Input.is_action_just_pressed("cancel"):
+				strike_general_stage()
+	
+	$player.position.x = clamp($player.position.x, $dialogue_box.rect_position.x + 11, $dialogue_box.rect_position.x + $dialogue_box.rect_size.x - 11)
+	$player.position.y = clamp($player.position.y, $dialogue_box.rect_position.y + 11, $dialogue_box.rect_position.y + $dialogue_box.rect_size.y - 11)
 	
 	$bottom_panel/hp_bar.value = $player.hp
 	$bottom_panel/hp.text = "{0}/100".format([$player.hp])
@@ -189,22 +203,39 @@ func _on_enemy_dialogue_ended():
 		bottom_buttons_stage()
 
 func _on_player_attack_ended(damage):
-	OS.alert("attack_ended with damage " + str(damage))
+	#OS.alert("attack_ended with damage " + str(damage))
 	$enemy.take_hit(damage)
 	ask_enemy_for_next_stage()
-
 
 func _on_attack_pressed(id):
 	strike_limb_stage()
 
-
 func _on_head_pressed(id):
-	player_attack_stage(4000)
-
+	player_attack_stage($player.damage*2)
 
 func _on_torso_pressed(id):
-	player_attack_stage(2000)
-
+	player_attack_stage($player.damage)
 
 func _on_legs_pressed(id):
-	player_attack_stage(1000)
+	player_attack_stage($player.damage/2)
+
+func _on_normal_pressed(id):
+	last_action = "stance"
+	$player.change_stance($player.stances.NORMAL)
+	$strike/stance_choice.visible = false
+	ask_enemy_for_next_stage()
+
+func _on_infernal_pressed(id):
+	last_action = "stance"
+	$player.change_stance($player.stances.INFERNAL)
+	$strike/stance_choice.visible = false
+	ask_enemy_for_next_stage()
+
+func _on_glacial_pressed(id):
+	last_action = "stance"
+	$player.change_stance($player.stances.GLACIAL)
+	$strike/stance_choice.visible = false
+	ask_enemy_for_next_stage()
+
+func _on_stances_pressed(id):
+	strike_stance_stage()

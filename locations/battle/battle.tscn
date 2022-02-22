@@ -195,6 +195,30 @@ margin_right = 187.0
 margin_bottom = -103.0
 text = "ATTACK_LEGS"
 
+[node name="stance_choice" type="Node2D" parent="gui/strike"]
+visible = false
+
+[node name="normal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
+margin_left = 41.0
+margin_top = -197.0
+margin_right = 225.0
+margin_bottom = -175.0
+text = "STANCE_NORMAL"
+
+[node name="infernal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
+margin_left = 40.0
+margin_top = -158.0
+margin_right = 232.0
+margin_bottom = -136.0
+text = "STANCE_INFERNAL"
+
+[node name="glacial" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
+margin_left = 41.0
+margin_top = -124.0
+margin_right = 221.0
+margin_bottom = -102.0
+text = "STANCE_GLACIAL"
+
 [node name="talk" type="AnimatedSprite" parent="gui"]
 position = Vector2( 320, 440 )
 frames = SubResource( 9 )
@@ -414,9 +438,13 @@ __meta__ = {
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
 
 [connection signal="pressed" from="gui/strike/general_choice/attack" to="gui" method="_on_attack_pressed"]
+[connection signal="pressed" from="gui/strike/general_choice/stances" to="gui" method="_on_stances_pressed"]
 [connection signal="pressed" from="gui/strike/attack_choice/head" to="gui" method="_on_head_pressed"]
 [connection signal="pressed" from="gui/strike/attack_choice/torso" to="gui" method="_on_torso_pressed"]
 [connection signal="pressed" from="gui/strike/attack_choice/legs" to="gui" method="_on_legs_pressed"]
+[connection signal="pressed" from="gui/strike/stance_choice/normal" to="gui" method="_on_normal_pressed"]
+[connection signal="pressed" from="gui/strike/stance_choice/infernal" to="gui" method="_on_infernal_pressed"]
+[connection signal="pressed" from="gui/strike/stance_choice/glacial" to="gui" method="_on_glacial_pressed"]
 [connection signal="pressed" from="gui/talk/options/check" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_check_pressed"]
