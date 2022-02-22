@@ -7,6 +7,8 @@ resource_local_to_scene = true
 extents = Vector2( 12.5, 7 )
 
 [node name="Label" type="Label"]
+margin_right = 25.0
+margin_bottom = 14.0
 text = "test"
 script = ExtResource( 1 )
 __meta__ = {

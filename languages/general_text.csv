@@ -67,3 +67,15 @@ TALK_INSULT_DIALOGUE,insult dial
 PAUSE_CONTINUE,Continue
 PAUSE_OPTIONS,Options
 PAUSE_QUIT,Quit
+ENEMY_TURRON_REACT,"TURRON????? 
+[center]TURRON! TURRON!"
+ENEMY_QWERTY_REACT,*insert keyboard joke here*
+ENEMY_JOLTEST_REACT,test dialogue
+ENEMY_CHECK_REACT,"so you CHECKed me, huh?"
+ENEMY_REASON_REACT,dont even try to [color=red]reason[/color] me
+ENEMY_INSULT_REACT,you dirty rat!
+ATTACK_ATTACK,attack
+ATTACK_STANCES,stances
+ATTACK_HEAD,head
+ATTACK_LEGS,legs
+ATTACK_TORSO,torso
