@@ -26,11 +26,12 @@ func strike_stance_stage():
 	$strike/general_choice.visible = false
 	$strike/stance_choice.visible = true
 
-
 func strike_general_stage():
 	active_stage = stages.STRIKE_GENERAL
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(320,320)
+	$strike/general_choice.visible = false
+	$strike/stance_choice.visible = false
 	$strike/general_choice.visible = true
 
 func strike_limb_stage():
