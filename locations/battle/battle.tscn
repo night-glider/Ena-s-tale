@@ -283,6 +283,10 @@ margin_bottom = -107.0
 text = "ITEMS_JOLTEST"
 dialogue = "ITEMS_JOLTEST_DIALOGUE"
 
+[node name="bottom_ena" type="Sprite" parent="gui"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
 [node name="bottom_panel" type="Control" parent="gui"]
 margin_top = 380.0
 margin_right = 640.0
@@ -337,10 +341,10 @@ __meta__ = {
 }
 
 [node name="dialogue_box" type="Control" parent="gui"]
-margin_left = 230.0
-margin_top = 267.0
-margin_right = 442.0
-margin_bottom = 347.0
+margin_left = 35.0
+margin_top = 221.0
+margin_right = 606.0
+margin_bottom = 357.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -376,6 +380,7 @@ visible = false
 [node name="Tween" type="Tween" parent="gui/dialogue_box"]
 
 [node name="player" parent="gui" instance=ExtResource( 6 )]
+visible = false
 
 [node name="enemy" type="Sprite" parent="gui"]
 position = Vector2( 316, 108 )

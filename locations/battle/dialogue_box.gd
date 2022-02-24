@@ -5,10 +5,16 @@ var active = false
 func start_dialogue(text):
 	active = true
 	$ReferenceRect/dialogue.visible = true
-	#$ReferenceRect/dialogue.change_text(text)
 	$ReferenceRect/dialogue.change_messages( [text] )
 	$ReferenceRect/dialogue.start_dialogue()
 
+func start_inactive_dialogue(text):
+	$ReferenceRect/dialogue.visible = true
+	$ReferenceRect/dialogue.change_messages( [text] )
+	$ReferenceRect/dialogue.start_dialogue()
+
+func hide_dialogue():
+	$ReferenceRect/dialogue.visible = false
 
 func change_size(new_pos:Vector2, new_size:Vector2):
 	$Tween.interpolate_property(self, "rect_position", rect_position, new_pos, 1)

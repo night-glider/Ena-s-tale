@@ -18,6 +18,7 @@ enum stages {
 	}
 var active_stage = stages.BOTTOM_BUTTONS
 var last_action = ""
+var default_dialogue = "HELLO_WORLD"
 
 func strike_stance_stage():
 	active_stage = stages.STRIKE_STANCE
@@ -30,9 +31,14 @@ func strike_general_stage():
 	active_stage = stages.STRIKE_GENERAL
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(320,320)
-	$strike/general_choice.visible = false
+	$strike/attack_choice.visible = false
 	$strike/stance_choice.visible = false
 	$strike/general_choice.visible = true
+	
+	$player.visible = true
+	$bottom_ena.visible = false
+	
+	$dialogue_box.hide_dialogue()
 
 func strike_limb_stage():
 	active_stage = stages.STRIKE_LIMB
@@ -45,6 +51,8 @@ func player_attack_stage(damage:int):
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(0,0)
 	last_action = "attack"
+	
+	$player.visible = false
 	
 	$strike/attack_choice.visible = false
 	$dialogue_box/ReferenceRect/attack.visible = true
@@ -65,12 +73,19 @@ func talk_stage():
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(320,320)
 	
+	$player.visible = true
+	$bottom_ena.visible = false
+	
 	$talk/options.visible = true
+	
+	$dialogue_box.hide_dialogue()
 
 func talk_dialogue_stage(text:String):
 	active_stage = stages.TALK_DIALOGUE
 	$dialogue_box.start_dialogue(text)
 	$player.position = Vector2(0,0)
+	
+	$player.visible = false
 	
 	$talk/options.visible = false
 
@@ -79,21 +94,37 @@ func items_stage():
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(320,320)
 	
+	
+	$bottom_ena.visible = false
+	
 	$pack/inventory.visible = true
+	
+	$player.visible = true
+	
+	$dialogue_box.hide_dialogue()
 
 func bottom_buttons_stage():
 	active_stage = stages.BOTTOM_BUTTONS
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(0,0)
 	
+	$player.can_regen = false
+	$player.visible = false
+	$bottom_ena.visible = true
+	
+	$strike/general_choice.visible = false
 	$dialogue_box/ReferenceRect/dialogue.visible = false
 	$pack/inventory.visible = false
 	$talk/options.visible = false
+	
+	$dialogue_box.start_inactive_dialogue(default_dialogue)
 
 func items_dialogue_stage(text:String):
 	active_stage = stages.ITEMS_DIALOGUE
 	$dialogue_box.start_dialogue(text)
 	$player.position = Vector2(0,0)
+	
+	$player.visible = false
 	
 	$pack/inventory.visible = false
 
@@ -104,6 +135,9 @@ func attack_stage():
 	$dialogue_box.change_size(attack.box_position, attack.box_size)
 	$player.position = Vector2(320,320)
 	add_child(attack)
+	
+	$player.can_regen = true
+	$player.visible = true
 
 func _process(delta):
 	match active_stage:
@@ -127,6 +161,9 @@ func _process(delta):
 					strike_general_stage()
 				if buttons[active_button] == $talk:
 					talk_stage()
+			
+			$bottom_ena.position.x = buttons[active_button].position.x - 50
+			$bottom_ena.position.y = buttons[active_button].position.y
 		
 		stages.ITEMS:
 			if Input.is_action_pressed("cancel"):
@@ -159,7 +196,7 @@ func _item_pressed(button):
 	button.disabled = true
 	items_dialogue_stage(button.dialogue)
 	
-	$player.heal(25)
+	$player.heal(25, 25)
 	
 	last_action = button.name
 
