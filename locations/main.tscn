@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://objects/test_wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -8,186 +8,414 @@
 [ext_resource path="res://objects/test_floor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/test_ceiling.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/torch.tscn" type="PackedScene" id=8]
+[ext_resource path="res://locations/main.gd" type="Script" id=9]
+[ext_resource path="res://test_vitrage.png" type="Texture" id=10]
+[ext_resource path="res://meist standing.png" type="Texture" id=11]
+[ext_resource path="res://locations/cutscene.gd" type="Script" id=12]
+[ext_resource path="res://meist walking.png" type="Texture" id=13]
 
-[sub_resource type="CylinderMesh" id=1]
-top_radius = 3.0
-bottom_radius = 3.5
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 13, 2, 15 )
 
-[sub_resource type="SpatialMaterial" id=2]
-flags_unshaded = true
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=7]
+resource_name = "meist_goes_to_garden"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("meist:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -45, 2, 28 ), Vector3( -63, 2, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("meist:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ), Vector3( 0, -270, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("meist:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "walking", "idle" ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "meist_walking_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("meist:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -20, 2, -4 ), Vector3( -43, 2, -4 ), Vector3( -45, 2, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("meist:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 90, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 180, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("meist:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "walking", "idle" ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "walk_with_meist"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("meist:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 14, 20 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -45, 2, 1 ), Vector3( -45, 2, 28 ), Vector3( -63, 2, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("meist:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 14, 15.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -180, 0 ), Vector3( 0, -180, 0 ), Vector3( 0, -270, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../player:translation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -43, 1.752, -1.5 ), Vector3( -43, 1.752, 23.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("meist:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 14, 20 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "walking", "idle", "idle" ]
+}
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1, 1, 2 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 5, 1, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1, 1, 2 )
 
 [node name="world" type="Spatial"]
-
-[node name="StaticBody7" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 2, 3, 73 )
-
-[node name="StaticBody8" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 2, 3, -7 )
-
-[node name="StaticBody24" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -44, 3, -7 )
-
-[node name="StaticBody25" parent="." instance=ExtResource( 1 )]
-transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -45, 3, 32 )
-
-[node name="StaticBody9" parent="." instance=ExtResource( 1 )]
-transform = Transform( 7, 0, 0, 0, 5, 0, 0, 0, 1, -7, 3, -7 )
-
-[node name="StaticBody10" parent="." instance=ExtResource( 1 )]
-transform = Transform( 7, 0, 0, 0, 5, 0, 0, 0, 1, -7, 3, -2 )
-
-[node name="StaticBody20" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -7 )
-
-[node name="StaticBody28" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 27 )
-
-[node name="StaticBody21" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -2 )
-
-[node name="StaticBody26" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 32 )
-
-[node name="StaticBody3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 75, -3, 3, 35 )
-
-[node name="StaticBody22" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -39, 3, 15 )
-
-[node name="StaticBody23" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -50, 3, 10 )
-
-[node name="StaticBody5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -11, 6, 3 )
-
-[node name="StaticBody13" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -11, 9, -5 )
-
-[node name="StaticBody12" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -11, 6, -12 )
-
-[node name="StaticBody16" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, 3 )
-
-[node name="StaticBody30" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 37 )
-
-[node name="StaticBody17" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -33, 9, -5 )
-
-[node name="StaticBody32" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -56, 9, 30 )
-
-[node name="StaticBody18" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, -12 )
-
-[node name="StaticBody35" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 9, 0, 0, 0, 25, -33, 16, -5 )
-
-[node name="StaticBody31" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 22 )
-
-[node name="StaticBody14" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, -17 )
-
-[node name="StaticBody38" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, -17 )
-
-[node name="StaticBody34" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 42 )
-
-[node name="StaticBody15" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, 7 )
-
-[node name="StaticBody37" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, 7 )
-
-[node name="StaticBody33" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 17 )
-
-[node name="StaticBody4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 81, 7, 3, 33 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.965926, -0.183013, 0.183013, 0, 0.707107, 0.707107, -0.258819, 0.683013, -0.683013, 0, 16.0838, -24.6221 )
-light_energy = 0.25
-shadow_enabled = true
-
-[node name="GodRays" type="Spatial" parent="DirectionalLight"]
-script = ExtResource( 5 )
+script = ExtResource( 9 )
 
 [node name="pause" parent="." instance=ExtResource( 4 )]
 visible = false
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 67 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, 68.5 )
 
 [node name="decoration" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.05152, -4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -33, 14, -5 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.05152, -4 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 13, -5 )
-omni_range = 30.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 18, -4 )
+light_color = Color( 1, 0.513726, 0, 1 )
+shadow_enabled = true
 
 [node name="GodRays" type="Spatial" parent="OmniLight"]
 visible = false
 script = ExtResource( 5 )
+exposure = 1.0
 
-[node name="StaticBody39" parent="." instance=ExtResource( 6 )]
+[node name="god_ray_trigger" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="god_ray_trigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9644, 1.64806, -0.495352 )
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33, 14.2734, -5 )
+pixel_size = 0.016
+shaded = true
+alpha_cut = 2
+texture = ExtResource( 10 )
+
+[node name="location" type="Spatial" parent="."]
+
+[node name="StaticBody7" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 2, 3, 73 )
+
+[node name="StaticBody8" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, 2, 3, -7 )
+
+[node name="StaticBody24" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -44, 3, -7 )
+
+[node name="StaticBody25" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 11, 0, 0, 0, 5, 0, 0, 0, 1, -45, 3, 32 )
+
+[node name="StaticBody9" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 7, 0, 0, 0, 5, 0, 0, 0, 1, -7, 3, -7 )
+
+[node name="StaticBody10" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 7, 0, 0, 0, 5, 0, 0, 0, 1, -7, 3, -2 )
+
+[node name="StaticBody20" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -7 )
+
+[node name="StaticBody28" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 27 )
+
+[node name="StaticBody21" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -36, 3, -2 )
+
+[node name="StaticBody26" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 1, -53, 3, 32 )
+
+[node name="StaticBody3" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 75, -3, 3, 35 )
+
+[node name="StaticBody22" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -39, 3, 15 )
+
+[node name="StaticBody23" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 35, -50, 3, 10 )
+
+[node name="StaticBody5" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -11, 6, 3 )
+
+[node name="StaticBody13" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -11, 9, -5 )
+
+[node name="StaticBody12" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -11, 6, -12 )
+
+[node name="StaticBody16" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, 3 )
+
+[node name="StaticBody30" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 37 )
+
+[node name="StaticBody17" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -33, 9, -5 )
+
+[node name="StaticBody32" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 7, 0, 0, 0, 5, -56, 9, 30 )
+
+[node name="StaticBody18" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -33, 6, -12 )
+
+[node name="StaticBody35" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 9, 0, 0, 0, 10, -33, 16, 2 )
+
+[node name="StaticBody36" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 9, 0, 0, 0, 10, -33, 16, -12 )
+
+[node name="StaticBody40" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 5, -33, 18, -5 )
+
+[node name="StaticBody31" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 11, 0, 0, 0, 11, -56, 6, 22 )
+
+[node name="StaticBody14" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, -17 )
+
+[node name="StaticBody38" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, -17 )
+
+[node name="StaticBody34" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 42 )
+
+[node name="StaticBody15" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, 7 )
+
+[node name="StaticBody37" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, 7 )
+
+[node name="StaticBody33" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 17 )
+
+[node name="StaticBody4" parent="location" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 81, 7, 3, 33 )
+
+[node name="StaticBody39" parent="location" instance=ExtResource( 6 )]
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, -42, 0, 24 )
 
-[node name="ceiling" parent="." instance=ExtResource( 7 )]
+[node name="ceiling" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 81, 2, 6, 33 )
 
-[node name="ceiling2" parent="." instance=ExtResource( 7 )]
+[node name="ceiling2" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 7, -7, 6, -5 )
 
-[node name="ceiling3" parent="." instance=ExtResource( 7 )]
+[node name="ceiling3" parent="location" instance=ExtResource( 7 )]
 transform = Transform( -0.378923, 23.1357, 0, -0.925428, -9.47308, 0, 0, 0, 25, -21.5754, 15.3094, -5 )
 
-[node name="ceiling4" parent="." instance=ExtResource( 7 )]
+[node name="ceiling4" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -36, 6, -5 )
 
-[node name="ceiling5" parent="." instance=ExtResource( 7 )]
+[node name="ceiling5" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 13, 0, 0, 0, 1, 0, 0, 0, 41, -44, 6, 12 )
 
-[node name="ceiling6" parent="." instance=ExtResource( 7 )]
+[node name="ceiling6" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 
-[node name="ceiling7" parent="." instance=ExtResource( 7 )]
+[node name="ceiling7" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 23, 0, 0, 0, 1, 0, 0, 0, 25, -66, 12, 29 )
 
-[node name="OmniLight2" parent="." instance=ExtResource( 8 )]
+[node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.95728
+omni_range = 6.91633
 n_spd = 0.1
 min_energy = 6.9
 
-[node name="OmniLight3" parent="." instance=ExtResource( 8 )]
+[node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.90994
+omni_range = 6.9945
 n_spd = 0.1
 min_energy = 6.9
 
-[node name="OmniLight4" parent="." instance=ExtResource( 8 )]
+[node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.99179
+omni_range = 6.94494
 n_spd = 0.1
 min_energy = 6.9
 
-[node name="OmniLight5" parent="." instance=ExtResource( 8 )]
+[node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.90619
+omni_range = 6.90218
 n_spd = 0.1
 min_energy = 6.9
 
-[node name="OmniLight6" parent="." instance=ExtResource( 8 )]
+[node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.92172
+omni_range = 6.9185
 n_spd = 0.1
 min_energy = 6.9
+
+[node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
+transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
+omni_range = 6.95876
+n_spd = 0.1
+min_energy = 6.9
+
+[node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
+transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
+omni_range = 6.91086
+n_spd = 0.1
+min_energy = 6.9
+
+[node name="cutscene" type="Spatial" parent="."]
+script = ExtResource( 12 )
+first_dialogue = [ "HELLO", "WORLD" ]
+second_dialogue = [ "bla bla", "bla bla", "bla", "bruh", "bye bye" ]
+third_dialogue = [ "I hate programming cutscenes", "prepare to die!" ]
+
+[node name="meist" type="AnimatedSprite3D" parent="cutscene"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2, -4 )
+pixel_size = 0.02
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]
+anims/meist_goes_to_garden = SubResource( 7 )
+anims/meist_walking_away = SubResource( 3 )
+anims/walk_with_meist = SubResource( 5 )
+
+[node name="start_trigger" type="Area" parent="cutscene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="cutscene/start_trigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.647172, 0.0784857, 0.481869 )
+shape = SubResource( 6 )
+
+[node name="walk_trigger" type="Area" parent="cutscene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 2, -5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="cutscene/walk_trigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64717, 0.0784857, 4.18431 )
+shape = SubResource( 4 )
+
+[node name="battle_trigger" type="Area" parent="cutscene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57, 2, 30 )
+
+[node name="CollisionShape" type="CollisionShape" parent="cutscene/battle_trigger"]
+shape = SubResource( 8 )
+
+[node name="Tween" type="Tween" parent="cutscene"]
+
+[node name="Timer" type="Timer" parent="cutscene"]
+one_shot = true
+
+[connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
+[connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]
+[connection signal="body_entered" from="cutscene/start_trigger" to="cutscene" method="_on_start_trigger_body_entered"]
+[connection signal="body_entered" from="cutscene/walk_trigger" to="cutscene" method="_on_walk_trigger_body_entered"]
+[connection signal="body_entered" from="cutscene/battle_trigger" to="cutscene" method="_on_battle_trigger_body_entered"]
+[connection signal="timeout" from="cutscene/Timer" to="cutscene" method="_on_Timer_timeout"]
