@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://fonts/binbows_font.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://locations/battle/enemy.gd" type="Script" id=13]
 [ext_resource path="res://locations/battle/attack.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/quit_game.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 4 )
@@ -441,6 +442,8 @@ __meta__ = {
 }
 
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
+
+[node name="quit_button" parent="." instance=ExtResource( 15 )]
 
 [connection signal="pressed" from="gui/strike/general_choice/attack" to="gui" method="_on_attack_pressed"]
 [connection signal="pressed" from="gui/strike/general_choice/stances" to="gui" method="_on_stances_pressed"]
