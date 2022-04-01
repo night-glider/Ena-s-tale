@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://objects/test_wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -10,23 +10,113 @@
 [ext_resource path="res://objects/torch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://locations/main.gd" type="Script" id=9]
 [ext_resource path="res://test_vitrage.png" type="Texture" id=10]
-[ext_resource path="res://meist standing.png" type="Texture" id=11]
+[ext_resource path="res://sprites/meist_overworld_standing.png" type="Texture" id=11]
 [ext_resource path="res://locations/cutscene.gd" type="Script" id=12]
-[ext_resource path="res://meist walking.png" type="Texture" id=13]
+[ext_resource path="res://sprites/meist_overworld_standing_back.png" type="Texture" id=13]
 [ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=14]
 [ext_resource path="res://OST/Maid with the Flaxen Hair.mp3" type="AudioStream" id=15]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 13, 2, 15 )
 
+[sub_resource type="AtlasTexture" id=9]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 550, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 1100, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 0, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 550, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 1100, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 0, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 550, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 16
+atlas = ExtResource( 11 )
+region = Rect2( 1100, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 550, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 1100, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 0, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 550, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 1100, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 0, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 550, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 1100, 1100, 550, 550 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "walking",
 "speed": 5.0
@@ -333,57 +423,59 @@ transform = Transform( 23, 0, 0, 0, 1, 0, 0, 0, 25, -66, 12, 29 )
 
 [node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.98385
+omni_range = 6.99971
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.99974
+omni_range = 6.98695
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.97363
+omni_range = 6.95603
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.91084
+omni_range = 6.92736
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.94548
+omni_range = 6.90432
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
-omni_range = 6.944
+omni_range = 6.91811
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
-omni_range = 6.96155
+omni_range = 6.98758
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="cutscene" type="Spatial" parent="."]
 script = ExtResource( 12 )
-first_dialogue = [ "HELLO", "WORLD" ]
+first_dialogue = [ "...", "So you finally arrived, Ena." ]
 second_dialogue = [ "bla bla", "bla bla", "bla", "bruh", "bye bye" ]
 third_dialogue = [ "I hate programming cutscenes", "prepare to die!" ]
 
 [node name="meist" type="AnimatedSprite3D" parent="cutscene"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2, -4 )
-pixel_size = 0.02
+offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
+frame = 2
+playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]
 anims/meist_goes_to_garden = SubResource( 7 )
