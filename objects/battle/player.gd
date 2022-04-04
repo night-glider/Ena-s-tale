@@ -7,16 +7,25 @@ var can_regen = false
 var invincible = false
 var damage = 2000
 var spd = 120
+var gravity = 120
+var jump_force = 120
+var can_jump = false
+var max_jump_frames = 60
+var jump_frames = max_jump_frames
 
 
 enum stances {NORMAL = 0, GLACIAL = 1, INFERNAL = 2}
 var stance = stances.NORMAL
 
+enum modes {NORMAL = 0, BLUE = 1}
+var mode = modes.NORMAL
+
+
+
 func _process(delta):
 	pass
-	
 
-func _physics_process(delta):
+func normal_mode()->Vector2:
 	var input:Vector2 = Vector2.ZERO
 	
 	if visible:
@@ -29,9 +38,46 @@ func _physics_process(delta):
 		if Input.is_action_pressed("walk_forward"):
 			input.y-=1
 	
-	input = input.normalized()
+	return input.normalized() * spd
+
+func blue_mode()->Vector2:
+	$Label.text = str(jump_frames)
 	
-	move_and_slide(input * spd, Vector2.UP)
+	var input:Vector2 = Vector2.ZERO
+	var jump:Vector2 = Vector2.ZERO
+	
+	if is_on_floor():
+		can_jump = true
+		jump_frames = max_jump_frames
+	else:
+		if can_jump and Input.is_action_pressed("walk_forward") and jump_frames > 0:
+			can_jump = true
+		else:
+			can_jump = false
+	
+	if Input.is_action_pressed("walk_left"):
+		input.x-=1
+	if Input.is_action_pressed("walk_right"):
+		input.x+=1
+	if Input.is_action_pressed("walk_backward"):
+		pass
+	
+	
+	if can_jump and Input.is_action_pressed("walk_forward"):
+		jump.y = - (gravity + jump_force)
+		jump_frames -= 1
+	
+	return input.normalized() * spd + Vector2.DOWN * gravity + jump 
+
+func _physics_process(delta):
+	var actual_velocity = Vector2.ZERO
+	
+	if mode == modes.NORMAL:
+		actual_velocity = normal_mode()
+	if mode == modes.BLUE:
+		actual_velocity = blue_mode()
+	
+	move_and_slide(actual_velocity, Vector2.UP)
 	
 	if visible and Input.is_action_just_pressed("interact"):
 		for element in $hitbox.get_overlapping_areas():
@@ -94,3 +140,12 @@ func change_stance(new_stance:int):
 			damage = 1500
 		stances.INFERNAL:
 			damage = 2500
+
+func change_mode(new_mode:int):
+	mode = new_mode
+	
+	match mode:
+		modes.NORMAL:
+			$Sprite.modulate = Color.white
+		modes.BLUE:
+			$Sprite.modulate = Color.blue

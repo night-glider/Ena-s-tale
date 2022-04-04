@@ -66,6 +66,14 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "60"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_entered" from="hitbox" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="invincibility" to="." method="_on_invincibility_timeout"]
 [connection signal="timeout" from="heal_time" to="." method="_on_heal_time_timeout"]

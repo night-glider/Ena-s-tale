@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://objects/test_wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -13,11 +13,18 @@
 [ext_resource path="res://sprites/meist_overworld_standing.png" type="Texture" id=11]
 [ext_resource path="res://locations/cutscene.gd" type="Script" id=12]
 [ext_resource path="res://sprites/meist_overworld_standing_back.png" type="Texture" id=13]
-[ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=14]
+[ext_resource path="res://OST/Kalimba.mp3" type="AudioStream" id=14]
 [ext_resource path="res://OST/Maid with the Flaxen Hair.mp3" type="AudioStream" id=15]
+[ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=16]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 13, 2, 15 )
+
+[sub_resource type="CubeMesh" id=27]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=28]
+albedo_color = Color( 0.662745, 1, 0, 1 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 16
@@ -159,7 +166,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ "walking", "idle" ]
+"values": [ "walking", "walking" ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -199,7 +206,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ "walking", "idle" ]
+"values": [ "walking", "walking" ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -251,7 +258,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 14, 20 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ "walking", "idle", "idle" ]
+"values": [ "walking", "walking", "walking" ]
 }
 
 [sub_resource type="BoxShape" id=6]
@@ -263,6 +270,22 @@ extents = Vector3( 5, 1, 1 )
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 1, 1, 2 )
 
+[sub_resource type="ProceduralSky" id=29]
+sky_top_color = Color( 0.996078, 0.682353, 0.490196, 1 )
+sky_horizon_color = Color( 0.980392, 0.894118, 0.839216, 1 )
+sun_latitude = 5.0
+sun_longitude = -90.0
+sun_energy = 3.0
+
+[sub_resource type="Environment" id=30]
+background_mode = 2
+background_sky = SubResource( 29 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.2
+fog_enabled = true
+fog_color = Color( 0, 0, 0, 1 )
+fog_depth_end = 50.0
+
 [node name="world" type="Spatial"]
 script = ExtResource( 9 )
 
@@ -270,7 +293,7 @@ script = ExtResource( 9 )
 visible = false
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, 68.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, 67.5 )
 
 [node name="decoration" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.05152, -4 )
@@ -383,7 +406,10 @@ transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 
 transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, -17 )
 
 [node name="StaticBody34" parent="location" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 42 )
+transform = Transform( -4.37114e-08, 0, 21, 0, 1, 0, -1, 0, -9.17939e-07, -67, 1, 42 )
+
+[node name="StaticBody41" parent="location" instance=ExtResource( 1 )]
+transform = Transform( -1.09278e-06, 0, 1, 0, 1, 0, -25, 0, -4.37114e-08, -77, 1, 29 )
 
 [node name="StaticBody15" parent="location" instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 6, 7 )
@@ -392,13 +418,13 @@ transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 
 transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -22, 17, 7 )
 
 [node name="StaticBody33" parent="location" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 21, 0, 11, 0, -1, 0, -9.17939e-07, -67, 6, 17 )
+transform = Transform( -4.37114e-08, 0, 21, 0, 1, 0, -1, 0, -9.17939e-07, -67, 1, 17 )
 
 [node name="StaticBody4" parent="location" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 81, 7, 3, 33 )
 
 [node name="StaticBody39" parent="location" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, -42, 0, 24 )
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, -7, 0, 24 )
 
 [node name="ceiling" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 81, 2, 6, 33 )
@@ -418,50 +444,52 @@ transform = Transform( 13, 0, 0, 0, 1, 0, 0, 0, 41, -44, 6, 12 )
 [node name="ceiling6" parent="location" instance=ExtResource( 7 )]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 
-[node name="ceiling7" parent="location" instance=ExtResource( 7 )]
-transform = Transform( 23, 0, 0, 0, 1, 0, 0, 0, 25, -66, 12, 29 )
-
 [node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.99971
+omni_range = 6.9387
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.98695
+omni_range = 6.97385
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.95603
+omni_range = 6.92694
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.92736
+omni_range = 6.95358
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.90432
+omni_range = 6.90633
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
-omni_range = 6.91811
+omni_range = 6.90562
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
-omni_range = 6.98758
+omni_range = 6.99669
 n_spd = 0.1
 min_energy = 6.9
+
+[node name="MeshInstance" type="MeshInstance" parent="location"]
+transform = Transform( 24, 0, 0, 0, 1, 0, 0, 0, 27, -69, 0, 29 )
+mesh = SubResource( 27 )
+material/0 = SubResource( 28 )
 
 [node name="cutscene" type="Spatial" parent="."]
 script = ExtResource( 12 )
@@ -507,10 +535,22 @@ shape = SubResource( 8 )
 [node name="Timer" type="Timer" parent="cutscene"]
 one_shot = true
 
-[node name="AudioStreamPlayerInterpolated" type="AudioStreamPlayer" parent="."]
+[node name="birb sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 6, -4 )
+stream = ExtResource( 14 )
+attenuation_model = 3
+autoplay = true
+max_distance = 15.0
+out_of_range_mode = 1
+attenuation_filter_db = 0.0
+
+[node name="general_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 autoplay = true
-script = ExtResource( 14 )
+script = ExtResource( 16 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 30 )
 
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
 [connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]

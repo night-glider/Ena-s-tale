@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/battle/attacks/attack2/attack2.gd" type="Script" id=1]
+[ext_resource path="res://objects/battle/attacks/attack2/wall.tscn" type="PackedScene" id=2]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="self_destruct" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="dragon_spawn" type="Timer" parent="."]
+
+[node name="wall" parent="." instance=ExtResource( 2 )]
+
+[node name="wall2" parent="." instance=ExtResource( 2 )]
+
+[connection signal="timeout" from="self_destruct" to="." method="_on_self_destruct_timeout"]
+[connection signal="timeout" from="dragon_spawn" to="." method="_on_dragon_spawn_timeout"]

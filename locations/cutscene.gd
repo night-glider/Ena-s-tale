@@ -60,7 +60,6 @@ func _on_Timer_timeout():
 		get_node("../player/GUI").connect("dialogue_end", self, "stage2_dialogue_ended")
 		stage = 2
 
-
 func _on_battle_trigger_body_entered(body):
 	if body.name == "player":
 		body.can_control = false
@@ -71,7 +70,13 @@ func _on_battle_trigger_body_entered(body):
 		
 		get_node("../player/GUI").dialogue_start(third_dialogue)
 		get_node("../player/GUI").connect("dialogue_end", self, "battle_start")
+		get_node("../player/GUI").connect("dialogue_next", self, "turn_meist")
 		stage = 4
 
+func turn_meist(dialogue:String):
+	if dialogue == "prepare to die!":
+		$meist.animation = "idle"
+
 func battle_start():
-	get_tree().change_scene("res://locations/battle/battle.tscn")
+	get_tree().change_scene("res://locations/testing/attacks_test.tscn")
+

@@ -1,6 +1,7 @@
 extends Control
 
 signal dialogue_end
+signal dialogue_next(dialogue)
 
 export var text_speed:float = 0.5
 export var max_distance = 60
@@ -37,6 +38,7 @@ func dialogue_next():
 	$dialogue/RichTextLabel.bbcode_text = current_messages.pop_front()
 	$dialogue/RichTextLabel.percent_visible = 0
 	visible_chars = 0
+	emit_signal("dialogue_next", $dialogue/RichTextLabel.bbcode_text)
 
 func _process(delta):
 	if intro_active:

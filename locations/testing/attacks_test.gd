@@ -4,6 +4,7 @@ var attack:Node
 
 func _ready():
 	$gui/dialogue_box.change_size(Vector2(320-13,240-13), Vector2(25,25))
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(delta):
 	$gui/player.position.x = clamp($gui/player.position.x, $gui/dialogue_box.rect_position.x + 11, $gui/dialogue_box.rect_position.x + $gui/dialogue_box.rect_size.x - 11)
@@ -69,7 +70,7 @@ func _on_Button_pressed():
 				continue
 	
 	$gui/dialogue_box.change_size(attack.box_position, attack.box_size)
-	add_child(attack)
+	$gui.add_child(attack)
 	attack.connect("attack_ended", self, "attack_ended")
 	$attack_gui.visible = false
 	$general/Button.text = "STOP"
