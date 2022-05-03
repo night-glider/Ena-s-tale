@@ -22,64 +22,64 @@ font_data = ExtResource( 4 )
 [sub_resource type="Theme" id=17]
 default_font = SubResource( 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 32, 80, 32 )
+region = Rect2( 0, 44, 140, 44 )
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 80, 32 )
+region = Rect2( 0, 0, 140, 44 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 22 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 96, 80, 32 )
+region = Rect2( 0, 44, 140, 44 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 64, 80, 32 )
+region = Rect2( 0, 0, 140, 44 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 24 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 25 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 96, 80, 32 )
+region = Rect2( 0, 44, 140, 44 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 80, 32 )
+region = Rect2( 0, 0, 140, 44 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 26 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 27 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
@@ -151,7 +151,7 @@ __meta__ = {
 script = ExtResource( 8 )
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
-position = Vector2( 220, 440 )
+position = Vector2( 170, 440 )
 frames = SubResource( 2 )
 animation = "idle"
 
@@ -253,7 +253,7 @@ text = "TALK_INSULT"
 dialogue = "TALK_INSULT_DIALOGUE"
 
 [node name="pack" type="AnimatedSprite" parent="gui"]
-position = Vector2( 420, 440 )
+position = Vector2( 470, 440 )
 frames = SubResource( 6 )
 animation = "idle"
 
