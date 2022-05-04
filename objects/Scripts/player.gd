@@ -71,7 +71,7 @@ func _process(delta):
 		for element in $interaction_zone.get_overlapping_bodies():
 			if element.is_in_group("interactable"):
 				can_control = false
-				$GUI.dialogue_start(element.get_parent().messages)
+				$gui.dialogue_start(element.get_parent().messages)
 				return
 
 func _input(event):

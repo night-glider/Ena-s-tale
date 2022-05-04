@@ -6,7 +6,7 @@ var n = -9999
 var active = true
 
 func _ready():
-	$menu/save1/Label.text = "[" + OS.get_environment("USERNAME") + "]"
+	$menu/save1/Label.text = "[" + "TODO later" + "]"
 	heart_poitions.append($menu/save1/heart_pos)
 	heart_poitions.append($menu/save2/heart_pos)
 	heart_poitions.append($menu/save3/heart_pos)

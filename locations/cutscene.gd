@@ -10,6 +10,10 @@ var stage2_dialogue_played = false
 func _ready():
 	for i in first_dialogue.size():
 		first_dialogue[i] = tr(first_dialogue[i])
+	for i in second_dialogue.size():
+		second_dialogue[i] = tr(second_dialogue[i])
+	for i in third_dialogue.size():
+		third_dialogue[i] = tr(third_dialogue[i])
 
 func _on_start_trigger_body_entered(body):
 	if body.name == "player" and stage == 0:
@@ -19,8 +23,8 @@ func _on_start_trigger_body_entered(body):
 		$Tween.interpolate_property(get_node("../player/Camera"), "rotation_degrees", get_node("../player/Camera").rotation_degrees, Vector3(0,0,0), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 		$Tween.start()
 		
-		get_node("../player/GUI").dialogue_start(first_dialogue)
-		get_node("../player/GUI").connect("dialogue_end", self, "stage1_end")
+		get_node("../player/gui").dialogue_start(first_dialogue)
+		get_node("../player/gui").connect("dialogue_end", self, "stage1_end")
 		stage = 1
 
 func _on_walk_trigger_body_entered(body):
@@ -31,7 +35,7 @@ func _on_walk_trigger_body_entered(body):
 		$Tween.start()
 
 func stage1_end():
-	get_node("../player/GUI").disconnect("dialogue_end", self, "stage1_end")
+	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
 	$AnimationPlayer.play("meist_walking_away")
 
 func stage3_start():
@@ -45,7 +49,7 @@ func stage2_dialogue_ended():
 	else:
 		stage3_start()
 	stage2_dialogue_played = true
-	get_node("../player/GUI").disconnect("dialogue_end", self, "stage2_dialogue_ended")
+	get_node("../player/gui").disconnect("dialogue_end", self, "stage2_dialogue_ended")
 
 func stage2_animation_ended(test_val):
 	$AnimationPlayer.disconnect("animation_finished", self, "stage2_animation_ended")
@@ -56,8 +60,8 @@ func _on_Timer_timeout():
 	if stage == 1:
 		$AnimationPlayer.play("walk_with_meist")
 		$AnimationPlayer.connect("animation_finished", self, "stage2_animation_ended")
-		get_node("../player/GUI").dialogue_start(second_dialogue)
-		get_node("../player/GUI").connect("dialogue_end", self, "stage2_dialogue_ended")
+		get_node("../player/gui").dialogue_start(second_dialogue)
+		get_node("../player/gui").connect("dialogue_end", self, "stage2_dialogue_ended")
 		stage = 2
 
 func _on_battle_trigger_body_entered(body):
@@ -68,9 +72,9 @@ func _on_battle_trigger_body_entered(body):
 		$Tween.interpolate_property(get_node("../player/Camera"), "rotation_degrees", get_node("../player/Camera").rotation_degrees, Vector3(0,0,0), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 		$Tween.start()
 		
-		get_node("../player/GUI").dialogue_start(third_dialogue)
-		get_node("../player/GUI").connect("dialogue_end", self, "battle_start")
-		get_node("../player/GUI").connect("dialogue_next", self, "turn_meist")
+		get_node("../player/gui").dialogue_start(third_dialogue)
+		get_node("../player/gui").connect("dialogue_end", self, "battle_start")
+		get_node("../player/gui").connect("dialogue_next", self, "turn_meist")
 		stage = 4
 
 func turn_meist(dialogue:String):

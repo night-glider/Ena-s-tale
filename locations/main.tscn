@@ -446,43 +446,43 @@ transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 
 [node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.95962
+omni_range = 6.90334
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.99313
+omni_range = 6.99194
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.90439
+omni_range = 6.93896
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.90071
+omni_range = 6.99254
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.95585
+omni_range = 6.95406
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
-omni_range = 6.90376
+omni_range = 6.99398
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
-omni_range = 6.99265
+omni_range = 6.97895
 n_spd = 0.1
 min_energy = 6.9
 
@@ -493,16 +493,16 @@ material/0 = SubResource( 28 )
 
 [node name="cutscene" type="Spatial" parent="."]
 script = ExtResource( 12 )
-first_dialogue = [ "...", "So you finally arrived, Ena." ]
-second_dialogue = [ "bla bla", "bla bla", "bla", "bruh", "bye bye" ]
-third_dialogue = [ "I hate programming cutscenes", "prepare to die!" ]
+first_dialogue = [ "THRONE_DIAL1", "THRONE_DIAL2", "THRONE_DIAL3", "THRONE_DIAL4", "THRONE_DIAL5", "THRONE_DIAL6", "THRONE_DIAL7", "THRONE_DIAL8", "THRONE_DIAL9", "THRONE_DIAL10", "THRONE_DIAL11", "THRONE_DIAL12", "THRONE_DIAL13", "THRONE_DIAL14", "THRONE_DIAL15", "THRONE_DIAL16", "THRONE_DIAL17", "THRONE_DIAL18", "THRONE_DIAL19", "THRONE_DIAL20", "THRONE_DIAL21" ]
+second_dialogue = [ "HALLWAY_DIAL1", "HALLWAY_DIAL2", "HALLWAY_DIAL3", "HALLWAY_DIAL4", "HALLWAY_DIAL5", "HALLWAY_DIAL6", "HALLWAY_DIAL7", "HALLWAY_DIAL8", "HALLWAY_DIAL9", "HALLWAY_DIAL10", "HALLWAY_DIAL11", "HALLWAY_DIAL12", "HALLWAY_DIAL13" ]
+third_dialogue = [ "GARDEN_DIAL1", "GARDEN_DIAL2", "GARDEN_DIAL3", "GARDEN_DIAL4", "GARDEN_DIAL5", "GARDEN_DIAL6", "GARDEN_DIAL7", "GARDEN_DIAL8", "GARDEN_DIAL9", "GARDEN_DIAL10", "GARDEN_DIAL11", "GARDEN_DIAL12", "GARDEN_DIAL13" ]
 
 [node name="meist" type="AnimatedSprite3D" parent="cutscene"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2, -4 )
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]
