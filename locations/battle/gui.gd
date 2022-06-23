@@ -196,7 +196,7 @@ func _item_pressed(button):
 	button.disabled = true
 	items_dialogue_stage(button.dialogue)
 	
-	$player.heal(25, 25)
+	$player.heal(30, 70)
 	
 	last_action = button.name
 

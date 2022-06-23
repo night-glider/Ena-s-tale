@@ -60,7 +60,6 @@ anims/RESET = SubResource( 2 )
 anims/invincible = SubResource( 3 )
 
 [node name="heal_time" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

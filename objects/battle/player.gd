@@ -100,6 +100,9 @@ func take_hit(damage:int):
 		stances.NORMAL:
 			hp-=damage
 	
+	if hp <= 0:
+		Globals.game_over(position)
+	
 	hp = clamp(hp, 0, 100)
 	invincible = true
 	$AnimationPlayer.play("invincible")
@@ -121,12 +124,12 @@ func _on_heal_time_timeout():
 	if can_regen:
 		if heal_buffer > 0:
 			if heal_last_amount <= 0:
-				hp+=1
-				heal_last_amount = 1
-				heal_buffer-=1
+				hp+=25
+				heal_last_amount = 25
+				heal_buffer-=25
 			else:
-				hp+=clamp(heal_last_amount*2, 0, heal_buffer)
-				heal_last_amount*=2
+				hp+=clamp(heal_last_amount-5, 0, heal_buffer)
+				heal_last_amount-5
 				heal_buffer-=heal_last_amount
 			hp = clamp(hp, 0,100)
 

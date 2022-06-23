@@ -289,9 +289,6 @@ fog_depth_end = 50.0
 [node name="world" type="Spatial"]
 script = ExtResource( 9 )
 
-[node name="pause" parent="." instance=ExtResource( 4 )]
-visible = false
-
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, 67.5 )
 
@@ -446,43 +443,43 @@ transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 
 [node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.90334
+omni_range = 6.99889
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.99194
+omni_range = 6.99022
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.93896
+omni_range = 6.95089
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.99254
+omni_range = 6.92289
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.95406
+omni_range = 6.90665
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
-omni_range = 6.99398
+omni_range = 6.91431
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
-omni_range = 6.97895
+omni_range = 6.99077
 n_spd = 0.1
 min_energy = 6.9
 
@@ -502,7 +499,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2,
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]
@@ -551,6 +548,10 @@ script = ExtResource( 16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
+
+[node name="pause" parent="." instance=ExtResource( 4 )]
+visible = false
+mouse_filter = 1
 
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
 [connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]
