@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://objects/test_wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,16 @@
 [ext_resource path="res://OST/Kalimba.mp3" type="AudioStream" id=14]
 [ext_resource path="res://OST/Maid with the Flaxen Hair.mp3" type="AudioStream" id=15]
 [ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=16]
+[ext_resource path="res://locations/moony.gd" type="Script" id=17]
+[ext_resource path="res://moony.png" type="Texture" id=18]
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 13, 2, 15 )
@@ -25,51 +35,6 @@ size = Vector3( 1, 1, 1 )
 
 [sub_resource type="SpatialMaterial" id=28]
 albedo_color = Color( 0.662745, 1, 0, 1 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 550, 0, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 1100, 0, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 0, 550, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 550, 550, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 1100, 550, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 0, 1100, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 550, 1100, 550, 550 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 16
-atlas = ExtResource( 13 )
-region = Rect2( 1100, 1100, 550, 550 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 16
@@ -116,17 +81,62 @@ flags = 16
 atlas = ExtResource( 11 )
 region = Rect2( 1100, 1100, 550, 550 )
 
+[sub_resource type="AtlasTexture" id=18]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 550, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 1100, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 0, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 550, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 1100, 550, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 0, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 550, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 16
+atlas = ExtResource( 13 )
+region = Rect2( 1100, 1100, 550, 550 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=7]
@@ -290,6 +300,16 @@ script = ExtResource( 9 )
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, 67.5 )
 
+[node name="moony" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 71.2424 )
+script = ExtResource( 17 )
+
+[node name="decoration" parent="moony" instance=ExtResource( 3 )]
+shaded = true
+double_sided = false
+alpha_cut = 2
+frames = SubResource( 31 )
+
 [node name="decoration" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.05152, -4 )
 
@@ -441,43 +461,43 @@ transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 
 [node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.93397
+omni_range = 6.9688
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.93474
+omni_range = 6.9948
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.92872
+omni_range = 6.95668
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.99373
+omni_range = 6.92422
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.92949
+omni_range = 6.92831
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
-omni_range = 6.99958
+omni_range = 6.92698
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
-omni_range = 6.96844
+omni_range = 6.97788
 n_spd = 0.1
 min_energy = 6.9
 
@@ -497,7 +517,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2,
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 5
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]
