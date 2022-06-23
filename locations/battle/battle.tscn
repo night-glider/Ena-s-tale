@@ -268,21 +268,45 @@ margin_bottom = -178.0
 text = "ITEMS_TURRON"
 dialogue = "ITEMS_TURRON_DIALOGUE"
 
-[node name="qwerty" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+[node name="solquiche" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -166.0
-margin_right = -189.0
+margin_right = -161.0
 margin_bottom = -144.0
-text = "ITEMS_QWERTY"
+text = "ITEMS_SOLQUICHE"
 dialogue = "ITEMS_QWERTY_DIALOGUE"
 
-[node name="joltest" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+[node name="banana" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -129.0
-margin_right = -181.0
+margin_right = -191.0
 margin_bottom = -107.0
-text = "ITEMS_JOLTEST"
-dialogue = "ITEMS_JOLTEST_DIALOGUE"
+text = "ITEMS_BANANA"
+dialogue = "ITEMS_QWERTY_DIALOGUE"
+
+[node name="banana2" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+margin_left = -97.0
+margin_top = -200.0
+margin_right = 67.0
+margin_bottom = -178.0
+text = "ITEMS_BANANA"
+dialogue = "ITEMS_QWERTY_DIALOGUE"
+
+[node name="banana3" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+margin_left = -97.0
+margin_top = -166.0
+margin_right = 67.0
+margin_bottom = -144.0
+text = "ITEMS_BANANA"
+dialogue = "ITEMS_QWERTY_DIALOGUE"
+
+[node name="banana4" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+margin_left = -97.0
+margin_top = -129.0
+margin_right = 67.0
+margin_bottom = -107.0
+text = "ITEMS_BANANA"
+dialogue = "ITEMS_QWERTY_DIALOGUE"
 
 [node name="bottom_ena" type="Sprite" parent="gui"]
 scale = Vector2( 0.25, 0.25 )
@@ -457,8 +481,11 @@ __meta__ = {
 [connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
-[connection signal="pressed" from="gui/pack/inventory/qwerty" to="gui" method="_item_pressed"]
-[connection signal="pressed" from="gui/pack/inventory/joltest" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/solquiche" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/banana" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/banana2" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/banana3" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/banana4" to="gui" method="_item_pressed"]
 [connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui" method="_on_dialogue_dialogue_ended"]
 [connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
 [connection signal="attack_ended" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_player_attack_ended"]

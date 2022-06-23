@@ -27,8 +27,6 @@ func _process(delta):
 		if Input.is_action_just_pressed("interact"):
 			if $ReferenceRect/dialogue.finished:
 				$ReferenceRect/dialogue.next_message()
-			else:
-				$ReferenceRect/dialogue.skip_message()
 		
 		if Input.is_action_pressed("cancel"):
 			$ReferenceRect/dialogue.skip_message()

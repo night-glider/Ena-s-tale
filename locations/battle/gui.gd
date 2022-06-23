@@ -192,11 +192,14 @@ func _process(delta):
 	$bottom_panel/hp.text = "{0}/100".format([$player.hp])
 
 func _item_pressed(button):
+	match button.text:
+		"ITEMS_TURRON": $player.heal(30, [25,20,15,10])
+		"ITEMS_SOLQUICHE": $player.heal(10, [20, 15, 5])
+		"ITEMS_BANANA": $player.heal(5, [10,5,3,2])
+	
 	button.text = "-----"
 	button.disabled = true
 	items_dialogue_stage(button.dialogue)
-	
-	$player.heal(30, 70)
 	
 	last_action = button.name
 

@@ -1,8 +1,7 @@
 extends KinematicBody2D
 
 var hp := 100
-var heal_buffer = 0
-var heal_last_amount = 0
+var heal_stack = []
 var can_regen = false
 var invincible = false
 var damage = 2000
@@ -22,6 +21,7 @@ var mode = modes.NORMAL
 
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	pass
 
@@ -69,6 +69,7 @@ func blue_mode()->Vector2:
 	
 	return input.normalized() * spd + Vector2.DOWN * gravity + jump 
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	var actual_velocity = Vector2.ZERO
 	
@@ -77,6 +78,7 @@ func _physics_process(delta):
 	if mode == modes.BLUE:
 		actual_velocity = blue_mode()
 	
+# warning-ignore:return_value_discarded
 	move_and_slide(actual_velocity, Vector2.UP)
 	
 	if visible and Input.is_action_just_pressed("interact"):
@@ -91,14 +93,14 @@ func _on_Area2D_area_entered(area):
 			take_hit(10)
 			area.touch_player()
 
-func take_hit(damage:int):
+func take_hit(dmg:int):
 	match stance:
 		stances.GLACIAL:
-			hp-=damage*0.5
+			hp-=dmg*0.5
 		stances.INFERNAL:
-			hp-=damage*1.5
+			hp-=dmg*1.5
 		stances.NORMAL:
-			hp-=damage
+			hp-=dmg
 	
 	if hp <= 0:
 		Globals.game_over(position)
@@ -112,25 +114,18 @@ func _on_invincibility_timeout():
 	$AnimationPlayer.stop()
 	invincible = false
 
-func heal(instant_heal:int, regen_heal:int):
+func heal(instant_heal:int, stack:Array):
 	hp+=instant_heal
 	hp = clamp(hp, 0, 100)
 	
-	heal_last_amount = 0
-	heal_buffer += regen_heal
+	heal_stack.append_array(stack)
+	
 	can_regen = false
 
 func _on_heal_time_timeout():
 	if can_regen:
-		if heal_buffer > 0:
-			if heal_last_amount <= 0:
-				hp+=25
-				heal_last_amount = 25
-				heal_buffer-=25
-			else:
-				hp+=clamp(heal_last_amount-5, 0, heal_buffer)
-				heal_last_amount-5
-				heal_buffer-=heal_last_amount
+		if not heal_stack.empty():
+			hp += heal_stack.pop_front()
 			hp = clamp(hp, 0,100)
 
 func change_stance(new_stance:int):
