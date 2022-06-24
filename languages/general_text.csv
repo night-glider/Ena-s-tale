@@ -1,7 +1,11 @@
 keys,en
 YES,yes
 NO,no
+ENGLISH,ENGLISH
+SPANISH,SPANISH
+QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
+TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
 DIALOGUE_GRAVE1,Here lies [color=yellow][wave amp=50 freq=2]Kosta Vesta[/wave][/color]...
 DIALOGUE_GRAVE2,[color=aqua]sad[/color] enough...
 INTRO_MESSAGE1,hello world
@@ -53,7 +57,11 @@ MAIN_MENU_EMPTY,[EMPTY]
 HELLO_WORLD,!hello world!
 ITEMS_TURRON,Turron!
 ITEMS_QWERTY,QWERTY
+ITEMS_BANANA,TODO
+ITEMS_SOLQUICHE,TODO
 ITEMS_JOLTEST,joltest
+ITEMS_BANANA_DIALOGUE,TODO
+ITEMS_SOLQUICHE_DIALOGUE,TODO
 ITEMS_TURRON_DIALOGUE,TURRON! Your wounds begin to close.
 ITEMS_QWERTY_DIALOGUE,You ate the QuicklyWarmingEarthlyRottingTastelessYogurt. It’s a miracle you even gained health from that.
 ITEMS_JOLTEST_DIALOGUE,A placeholder item until I can think of more healing items
@@ -97,7 +105,7 @@ THRONE_DIAL12,I have been trying to figure out how to stop the [color=purple]rif
 THRONE_DIAL13,"And so now, my plan can move forward."
 THRONE_DIAL14,A plan that can truly guarantee the end of our quests.
 THRONE_DIAL15,[color=grey]Great! Just one question.
-THRONE_DIAL 16,[color=grey] WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
+THRONE_DIAL16,[color=grey] WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
 THRONE_DIAL17,"I felt like I was the most capable to stop this threat, as I have the most knowledge of it."
 THRONE_DIAL18,"[color=yellow]Meist, chums are supposed to stick together, that's what makes us a good team."
 THRONE_DIAL19,[color=grey]Yeah. Tell us where you’re going next time so we don’t have to search for you all over ya dweeb

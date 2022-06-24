@@ -43,7 +43,7 @@ func _on_SpinBox_value_changed(value):
 
 
 func _on_Button_pressed():
-	if $general/Button.text == "STOP":
+	if $general/Button.text == "stop":
 		$general/Button.text = "spawn"
 		attack.queue_free()
 		$attack_gui.visible = true
@@ -73,7 +73,7 @@ func _on_Button_pressed():
 	$gui.add_child(attack)
 	attack.connect("attack_ended", self, "attack_ended")
 	$attack_gui.visible = false
-	$general/Button.text = "STOP"
+	$general/Button.text = "stop"
 
 func attack_ended():
 	$general/Button.text = "spawn"

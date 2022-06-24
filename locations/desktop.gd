@@ -3,7 +3,7 @@ extends Control
 func _process(delta):
 	$task_panel/time.text = str(OS.get_datetime()["hour"]) + ":" + str(OS.get_datetime()["minute"]) + ":" + str(OS.get_datetime()["second"])
 	
-	if Input.is_action_just_pressed("LMB"):
+	if Input.is_action_just_pressed("lmb"):
 		$start.visible = false
 
 
