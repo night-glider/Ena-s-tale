@@ -21,6 +21,7 @@ func _input(event):
 			
 			new_debug_menu.get_node("VBoxContainer/heal").connect("pressed", self, "_on_heal_pressed")
 			new_debug_menu.get_node("VBoxContainer/attack_debugger").connect("pressed", self, "_on_attack_debugger_pressed")
+			new_debug_menu.get_node("VBoxContainer/clear_save").connect("pressed", self, "_on_clear_save_pressed")
 			
 			print("new debug menu instance created")
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -34,3 +35,6 @@ func _on_attack_debugger_pressed():
 func _on_heal_pressed():
 	if get_tree().current_scene.name == "battle":
 		get_tree().current_scene.get_node("gui/player").hp = 100
+
+func _on_clear_save_pressed():
+	SaveData.clear_data()

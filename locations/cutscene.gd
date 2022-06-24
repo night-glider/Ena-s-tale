@@ -82,5 +82,6 @@ func turn_meist(dialogue:String):
 		$meist.animation = "idle"
 
 func battle_start():
-	get_tree().change_scene("res://locations/testing/attacks_test.tscn")
+	SaveData.save_data("disable_intro", true)
+	get_tree().change_scene("res://locations/battle/battle.tscn")
 

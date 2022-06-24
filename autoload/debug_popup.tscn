@@ -1,6 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0, 0, 1 )
 
 [node name="WindowDialog" type="WindowDialog"]
+visible = true
 margin_right = 200.0
 margin_bottom = 100.0
 mouse_filter = 1
@@ -25,3 +29,10 @@ margin_top = 24.0
 margin_right = 106.0
 margin_bottom = 44.0
 text = "attack debuger"
+
+[node name="clear_save" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 106.0
+margin_bottom = 62.0
+custom_styles/normal = SubResource( 1 )
+text = "clear save"
