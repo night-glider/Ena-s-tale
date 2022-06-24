@@ -461,43 +461,43 @@ transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 7, -53, 6, 29 )
 
 [node name="OmniLight2" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 57.941 )
-omni_range = 6.97769
+omni_range = 6.98083
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight3" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 42.941 )
-omni_range = 6.93715
+omni_range = 6.99991
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight4" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 29.941 )
-omni_range = 6.99682
+omni_range = 6.91865
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight5" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 15.941 )
-omni_range = 6.97912
+omni_range = 6.90227
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight6" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -2.20437, 3.58527, 3.941 )
-omni_range = 6.9109
+omni_range = 6.93269
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight10" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 15.941 )
-omni_range = 6.96947
+omni_range = 6.90016
 n_spd = 0.1
 min_energy = 6.9
 
 [node name="OmniLight11" parent="location" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.2044, 3.58527, 3.941 )
-omni_range = 6.93806
+omni_range = 6.99985
 n_spd = 0.1
 min_energy = 6.9
 

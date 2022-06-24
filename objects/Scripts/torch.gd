@@ -1,4 +1,3 @@
-tool
 extends OmniLight
 
 var n = rand_range(0, 2 * PI)
