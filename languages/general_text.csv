@@ -85,50 +85,51 @@ STANCE_GLACIAL,glacial
 THRONE_DIAL1,"…Even after all of this time, the throne still remains."
 THRONE_DIAL2,...
 THRONE_DIAL3,…Maybe I don’t have to d-
-THRONE_DIAL4,Oh.
-THRONE_DIAL5,So you finally arrived.
-THRONE_DIAL6,"Uh, dude. We’ve been looking all over for you!"
-THRONE_DIAL7,Verily! Why did you leave us?
+THRONE_DIAL4,Oh. So you finally arrived.
+THRONE_DIAL5,It certainly took you two a while to get here.
+THRONE_DIAL6,"[color=grey]Uh, dude. We’ve been looking for you!"
+THRONE_DIAL7,[color=yellow]Verily! Why did you leave us?
 THRONE_DIAL8,"…This is what we’ve all been searching for, isn't it?"
 THRONE_DIAL9,The very thing threatening all of [color=red]existence
 THRONE_DIAL10,...
 THRONE_DIAL11,"Ever since I left you two, I’ve been busy"
-THRONE_DIAL12,I have been trying to pinpoint its exact location
-THRONE_DIAL13,"And so now, the plan can move forward."
-THRONE_DIAL14,A plan that can truly guarantee the end of our quest.
-THRONE_DIAL15,Great! Just one question: WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
-THRONE_DIAL16,"I needed to be alone for this venture, as I knew this world the most."
-THRONE_DIAL17,"Listen Meist, we are a team. Chums are supposed to stick together."
-THRONE_DIAL18,Yeah. Tell us where you’re going next time so we don’t have to search for you all over ya dweeb.
-THRONE_DIAL19,Fair enough.
-THRONE_DIAL20,...
-THRONE_DIAL21,Then let us complete this long journey.
+THRONE_DIAL12,I have been trying to figure out how to stop the [color=purple]rift myself.
+THRONE_DIAL13,"And so now, my plan can move forward."
+THRONE_DIAL14,A plan that can truly guarantee the end of our quests.
+THRONE_DIAL15,[color=grey]Great! Just one question.
+THRONE_DIAL 16,[color=grey] WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
+THRONE_DIAL17,"I felt like I was the most capable to stop this threat, as I have the most knowledge of it."
+THRONE_DIAL18,"[color=yellow]Meist, chums are supposed to stick together, that's what makes us a good team."
+THRONE_DIAL19,[color=grey]Yeah. Tell us where you’re going next time so we don’t have to search for you all over ya dweeb
+THRONE_DIAL20,Fair enough.
+THRONE_DIAL21,...
+THRONE_DIAL22,Then let us complete this long journey.
 HALLWAY_DIAL1,"I haven’t told you much about my world, haven’t I Ena?"
 HALLWAY_DIAL2,"It was a complete paradise. There was next to no suffering, crime, or death."
 HALLWAY_DIAL3,But it wasn’t perfect
-HALLWAY_DIAL4,"As our people lived very long lives, we were beginning to run out of room."
+HALLWAY_DIAL4,"As our people lived very long lives, we were beginning to run out of space."
 HALLWAY_DIAL5,And so I was tasked by the royal family to solve this issue.
 HALLWAY_DIAL6,"But unfortunately as you can see, it was all in vain."
-HALLWAY_DIAL7,"However, now I can actually fix all of this."
-HALLWAY_DIAL8,"Wait, so how did it get like this?"
+HALLWAY_DIAL7,"But, now I can finally fix all of this."
+HALLWAY_DIAL8,"[color=yellow]Wait, so how did it get like this?"
 HALLWAY_DIAL9,...
-HALLWAY_DIAL10,"But you can fix this and also save everything as well, right?"
+HALLWAY_DIAL10,"[color=grey]But you can fix this, right?"
 HALLWAY_DIAL11,"Of course, but it won’t be an easy task."
-HALLWAY_DIAL12,"Uh, what do you mean by that?"
+HALLWAY_DIAL12,"[color=grey]Uh, what do you mean by that?"
 HALLWAY_DIAL13,...
 GARDEN_DIAL1,...What is this?
-GARDEN_DIAL2,What seems to be the issue?
+GARDEN_DIAL2,[color=yellow]What seems to be the issue?
 GARDEN_DIAL3,...
 GARDEN_DIAL4,...
 GARDEN_DIAL5,I think it's time to tell you my plan
 GARDEN_DIAL6,"Throughout your journey, you have gained so much power."
-GARDEN_DIAL7,"The power you wield now, is most certainly enough to destroy the glitched rift"
+GARDEN_DIAL7,"The power you wield, is most certainly enough to destroy the glitched rift"
 GARDEN_DIAL8,"However, I cannot allow this to happen."
-GARDEN_DIAL9,"If you destroy it now, I will never have another chance to save it."
+GARDEN_DIAL9,"If you destroy it now, I will never have another chance to save this world."
 GARDEN_DIAL10,That is why…
 GARDEN_DIAL11,...
 GARDEN_DIAL12,...
-GARDEN_DIAL13,…I need your ESSENCE.
+GARDEN_DIAL13,…I need to take your ESSENCE.
 BATTLE_TRANSITION1,Light protrudes throughout the garden
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end
