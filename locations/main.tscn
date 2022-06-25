@@ -298,10 +298,10 @@ fog_depth_end = 50.0
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, 67.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.752, -0.12117 )
 
 [node name="moony" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 71.2424 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 69.9665 )
 script = ExtResource( 17 )
 
 [node name="decoration" parent="moony" instance=ExtResource( 3 )]
@@ -517,7 +517,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2,
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]

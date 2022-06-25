@@ -17,6 +17,12 @@ func _ready():
 
 func _on_start_trigger_body_entered(body):
 	if body.name == "player" and stage == 0:
+		get_node("../moony").follow_player = false
+		var moony = get_node("../moony")
+		var player = get_node("../player")
+		var moony_destination = Vector3(player.translation.x-3.5, moony.translation.y, player.translation.z + 3)
+		$Tween.interpolate_property(moony, "translation", moony.translation, moony_destination, 2 )
+		
 		body.can_control = false
 		
 		$Tween.interpolate_property(get_node("../player"), "rotation_degrees", get_node("../player").rotation_degrees, Vector3(0,90,0), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
@@ -37,6 +43,7 @@ func _on_walk_trigger_body_entered(body):
 func stage1_end():
 	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
 	$AnimationPlayer.play("meist_walking_away")
+	get_node("../moony").follow_player = true
 
 func stage3_start():
 	stage = 3
