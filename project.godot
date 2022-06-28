@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "Attack_pattern",
-"language": "GDScript",
-"path": "res://custom_classes/attack_pattern.gd"
-}, {
 "base": "AudioStreamPlayer",
 "class": "AudioStreamPlayerInterpolated",
 "language": "GDScript",
@@ -23,6 +18,11 @@ _global_script_classes=[ {
 "class": "DialogueLabel",
 "language": "GDScript",
 "path": "res://custom_classes/DialogueLabel.gd"
+}, {
+"base": "Node",
+"class": "Periodic",
+"language": "GDScript",
+"path": "res://custom_classes/Periodic.gd"
 }, {
 "base": "RichTextLabel",
 "class": "RichTextLabelLocaled",
@@ -35,9 +35,9 @@ _global_script_classes=[ {
 "path": "res://autoload/globals.gd"
 } ]
 _global_script_class_icons={
-"Attack_pattern": "",
 "AudioStreamPlayerInterpolated": "",
 "DialogueLabel": "",
+"Periodic": "",
 "RichTextLabelLocaled": "",
 "global": ""
 }
