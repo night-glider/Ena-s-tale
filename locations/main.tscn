@@ -517,7 +517,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2,
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]

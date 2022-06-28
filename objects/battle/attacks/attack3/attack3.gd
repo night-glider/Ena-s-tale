@@ -8,15 +8,17 @@ export var box_position := Vector2(35+100,221)
 export var box_size := Vector2(500-100, 136)
 
 export var export_attack_duration:float = 10
-export var export_attack_interval:float = 5
+export var export_attack_interval:float = 2
 export var export_attack_width:int = 50
 export var export_attack_start_delay:float = 1
 export var export_bullet_spawn_x:float = 320
 export var export_bullet_spawn_y:float = 100
+export var export_bullet_speed:float = 1
 export var export_bursts_count:int = 2
 export var export_particle_count:float = 10
 export var export_burst_time:float = 1
 export var export_alert_time:float = 1
+
 
 
 
@@ -29,7 +31,7 @@ func _ready():
 func spawn_bullets(vel:Vector2):
 	var new_bullet = bullet.instance()
 	add_child(new_bullet)
-	new_bullet.position = Vector2(export_bullet_spawn_x + rand_range(-export_attack_width/5,export_attack_width/5), export_bullet_spawn_y)
+	new_bullet.position = Vector2(export_bullet_spawn_x + rand_range(-export_attack_width/5,export_attack_width/5), export_bullet_spawn_y) * export_bullet_speed
 	new_bullet.init(vel, box_position.y + box_size.y)
 
 func attack():
