@@ -21,8 +21,17 @@ func add_method(object:Object, method_name:String, args:Array, timing:float, del
 		add_child(destruction_timer)
 		destruction_timer.connect("timeout", self, "_destroy_method", [new_timer, destruction_timer])
 		destruction_timer.start(destruction_time)
-	
+
+func add_method_oneshot(object:Object, method_name:String, args:Array, delay:float):
+	var new_timer:Timer = Timer.new()
+	add_child(new_timer)
+	new_timer.connect("timeout", object, method_name, args)
+	new_timer.connect("timeout", self, "_destroy_oneshot", [new_timer])
+	new_timer.start(delay)
 
 func _destroy_method(timer:Timer, destruction_timer:Timer):
 	timer.queue_free()
 	destruction_timer.queue_free()
+
+func _destroy_oneshot(timer:Timer):
+	timer.queue_free()
