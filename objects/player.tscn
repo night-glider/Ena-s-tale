@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://objects/Scripts/player_GUI.gd" type="Script" id=2]
 [ext_resource path="res://sounds/jump.ogg" type="AudioStream" id=3]
+[ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 0.5
@@ -50,20 +51,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="gui/dialogue"]
+[node name="DialogueLabel" type="RichTextLabel" parent="gui/dialogue"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
-mouse_filter = 1
-bbcode_enabled = true
-bbcode_text = "waeawdawdawdawdaw"
-text = "waeawdawdawdawdaw"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 4 )
 
 [node name="intro" type="RichTextLabel" parent="gui"]
 anchor_left = 0.5
@@ -82,3 +77,4 @@ __meta__ = {
 stream = ExtResource( 3 )
 
 [connection signal="dialogue_end" from="gui" to="." method="_on_GUI_dialogue_end"]
+[connection signal="dialogue_ended" from="gui/dialogue/DialogueLabel" to="gui" method="_on_DialogueLabel_dialogue_ended"]

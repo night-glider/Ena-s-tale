@@ -8,12 +8,7 @@ var stage = 0
 var stage2_dialogue_played = false
 
 func _ready():
-	for i in first_dialogue.size():
-		first_dialogue[i] = tr(first_dialogue[i])
-	for i in second_dialogue.size():
-		second_dialogue[i] = tr(second_dialogue[i])
-	for i in third_dialogue.size():
-		third_dialogue[i] = tr(third_dialogue[i])
+	pass
 
 func _on_start_trigger_body_entered(body):
 	if body.name == "player" and stage == 0:

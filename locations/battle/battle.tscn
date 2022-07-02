@@ -155,15 +155,15 @@ visible = false
 [node name="attack" parent="gui/strike/general_choice" instance=ExtResource( 7 )]
 margin_left = 72.0
 margin_top = -160.0
-margin_right = 252.0
-margin_bottom = -138.0
+margin_right = 176.0
+margin_bottom = -143.0
 text = "ATTACK_ATTACK"
 
 [node name="stances" parent="gui/strike/general_choice" instance=ExtResource( 7 )]
 margin_left = 71.0
 margin_top = -123.0
-margin_right = 263.0
-margin_bottom = -101.0
+margin_right = 183.0
+margin_bottom = -106.0
 text = "ATTACK_STANCES"
 
 [node name="attack_choice" type="Node2D" parent="gui/strike"]
@@ -172,22 +172,22 @@ visible = false
 [node name="head" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
 margin_left = 40.0
 margin_top = -195.0
-margin_right = 190.0
-margin_bottom = -173.0
+margin_right = 128.0
+margin_bottom = -178.0
 text = "ATTACK_HEAD"
 
 [node name="torso" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
 margin_left = 39.0
 margin_top = -158.0
-margin_right = 205.0
-margin_bottom = -136.0
+margin_right = 135.0
+margin_bottom = -141.0
 text = "ATTACK_TORSO"
 
 [node name="legs" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
 margin_left = 39.0
 margin_top = -125.0
-margin_right = 187.0
-margin_bottom = -103.0
+margin_right = 127.0
+margin_bottom = -108.0
 text = "ATTACK_LEGS"
 
 [node name="stance_choice" type="Node2D" parent="gui/strike"]
@@ -196,22 +196,22 @@ visible = false
 [node name="normal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 41.0
 margin_top = -197.0
-margin_right = 225.0
-margin_bottom = -175.0
+margin_right = 145.0
+margin_bottom = -180.0
 text = "STANCE_NORMAL"
 
 [node name="infernal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 40.0
 margin_top = -158.0
-margin_right = 232.0
-margin_bottom = -136.0
+margin_right = 160.0
+margin_bottom = -141.0
 text = "STANCE_INFERNAL"
 
 [node name="glacial" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 41.0
 margin_top = -124.0
-margin_right = 221.0
-margin_bottom = -102.0
+margin_right = 153.0
+margin_bottom = -107.0
 text = "STANCE_GLACIAL"
 
 [node name="talk" type="AnimatedSprite" parent="gui"]
@@ -225,24 +225,24 @@ visible = false
 [node name="check" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = -264.0
 margin_top = -179.0
-margin_right = -130.0
-margin_bottom = -157.0
+margin_right = -184.0
+margin_bottom = -162.0
 text = "TALK_CHECK"
 dialogue = "TALK_CHECK_DIALOGUE"
 
 [node name="reason" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = -121.0
 margin_top = -179.0
-margin_right = 27.0
-margin_bottom = -157.0
+margin_right = -33.0
+margin_bottom = -162.0
 text = "TALK_REASON"
 dialogue = "TALK_REASON_DIALOGUE"
 
 [node name="insult" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = 34.0
 margin_top = -179.0
-margin_right = 174.0
-margin_bottom = -157.0
+margin_right = 122.0
+margin_bottom = -162.0
 text = "TALK_INSULT"
 dialogue = "TALK_INSULT_DIALOGUE"
 
@@ -257,48 +257,48 @@ visible = false
 [node name="turron" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -200.0
-margin_right = -191.0
-margin_bottom = -178.0
+margin_right = -259.0
+margin_bottom = -183.0
 text = "ITEMS_TURRON"
 dialogue = "ITEMS_TURRON_DIALOGUE"
 
 [node name="solquiche" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -166.0
-margin_right = -161.0
-margin_bottom = -144.0
+margin_right = -235.0
+margin_bottom = -149.0
 text = "ITEMS_SOLQUICHE"
 dialogue = "ITEMS_SOLQUICHE_DIALOGUE"
 
 [node name="banana" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -129.0
-margin_right = -191.0
-margin_bottom = -107.0
+margin_right = -259.0
+margin_bottom = -112.0
 text = "ITEMS_BANANA"
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana2" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
 margin_top = -200.0
-margin_right = 67.0
-margin_bottom = -178.0
+margin_right = -1.0
+margin_bottom = -183.0
 text = "ITEMS_BANANA"
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana3" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
 margin_top = -166.0
-margin_right = 67.0
-margin_bottom = -144.0
+margin_right = -1.0
+margin_bottom = -149.0
 text = "ITEMS_BANANA"
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana4" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
 margin_top = -129.0
-margin_right = 67.0
-margin_bottom = -107.0
+margin_right = -1.0
+margin_bottom = -112.0
 text = "ITEMS_BANANA"
 dialogue = "ITEMS_BANANA_DIALOGUE"
 

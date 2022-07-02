@@ -21,38 +21,20 @@ func _ready():
 
 func dialogue_start(messages:Array):
 	dialogue_active = true
-	current_messages = messages.duplicate()
-	$dialogue/RichTextLabel.bbcode_text = current_messages.pop_front()
-	$dialogue/RichTextLabel.percent_visible = 0
 	$dialogue.visible = true
-	visible_chars = 0
-
-func dialogue_next():
-	if current_messages.size() == 0:
-		$dialogue.visible = false
-		dialogue_active = false
-		visible_chars = 0
-		emit_signal("dialogue_end")
-		return
-	
-	$dialogue/RichTextLabel.bbcode_text = current_messages.pop_front()
-	$dialogue/RichTextLabel.percent_visible = 0
-	visible_chars = 0
-	emit_signal("dialogue_next", $dialogue/RichTextLabel.bbcode_text)
+	$dialogue/DialogueLabel.change_messages(messages)
+	$dialogue/DialogueLabel.start_dialogue()
 
 func _process(delta):
 	if intro_active:
 		intro_process()
 	
 	if dialogue_active:
-		if Input.is_action_just_pressed("interact") and $dialogue/RichTextLabel.visible_characters > 2:
-			if $dialogue/RichTextLabel.percent_visible < 1:
-				visible_chars = 900
-			else:
-				dialogue_next()
-		
-		visible_chars+=text_speed
-		$dialogue/RichTextLabel.visible_characters = visible_chars
+		if Input.is_action_just_pressed("interact"):
+			if $dialogue/DialogueLabel.finished:
+				$dialogue/DialogueLabel.next_message()
+		if Input.is_action_just_pressed("cancel"):
+			$dialogue/DialogueLabel.skip_message()
 
 func intro_process():
 	var distance = get_parent().global_transform.origin.distance_to(intro_end_point)
@@ -76,3 +58,7 @@ func intro_process():
 			$intro.modulate.a = percent*2
 		else:
 			$intro.modulate.a = 1 - (percent - 0.5)*2
+
+func _on_DialogueLabel_dialogue_ended():
+	$dialogue.visible = false
+	emit_signal("dialogue_end")

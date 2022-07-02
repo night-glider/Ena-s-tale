@@ -12,12 +12,20 @@ var timer:Timer = Timer.new()
 var message_id:int = 0
 var char_progress = 0
 
+
+#audio thingies
+var audio_player = AudioStreamPlayer.new()
+const meist_soundbyte = preload("res://sounds/meist_dialogue.ogg")
+const moony_soundbyte = preload("res://sounds/moony_dialogue.ogg")
+
 func _init():
 	bbcode_enabled = true
 	scroll_active = false
+	
 
 func _ready():
 	add_child(timer)
+	add_child(audio_player)
 	timer.wait_time = 0.1
 	timer.connect("timeout", self, "next_symbol")
 	
@@ -105,6 +113,31 @@ func next_symbol():
 		char_progress+=1
 		return
 	
-	bbcode_text+=messages[message_id][char_progress]
+	if(messages[message_id][char_progress] == "|"):
+		char_progress+=1
+		var new_str = ""
+		while(messages[message_id][char_progress] != "|"):
+			new_str+=messages[message_id][char_progress]
+			char_progress+=1
+		
+		if new_str == "meist":
+			audio_player.stream = meist_soundbyte
+		elif new_str == "moony":
+			audio_player.stream = moony_soundbyte
+		elif new_str == "":
+			audio_player.stream = null
+		
+		char_progress+=1
+		return
+	
+	var new_char = messages[message_id][char_progress]
+	bbcode_text+=new_char
+	audio_player.play()
+	
+	if new_char == ",":
+		var timer_old_time = timer.wait_time
+		timer.start(0.5)
+		timer.wait_time = timer_old_time
+	
 	char_progress+=1
 	return

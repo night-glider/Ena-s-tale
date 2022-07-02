@@ -90,14 +90,14 @@ ATTACK_TORSO,torso
 STANCE_NORMAL,normal
 STANCE_INFERNAL,infernal
 STANCE_GLACIAL,glacial
-THRONE_DIAL1,"…Even after all of this time, the throne still remains."
+THRONE_DIAL1,"|meist|…Even after all of this time, the throne still remains."
 THRONE_DIAL2,...
 THRONE_DIAL3,…Maybe I don’t have to d-
 THRONE_DIAL4,Oh. So you finally arrived.
 THRONE_DIAL5,It certainly took you two a while to get here.
-THRONE_DIAL6,"[color=grey]Uh, dude. We’ve been looking for you!"
-THRONE_DIAL7,[color=yellow]Verily! Why did you leave us?
-THRONE_DIAL8,"…This is what we’ve all been searching for, isn't it?"
+THRONE_DIAL6,"|moony|[color=grey]Uh, dude. We’ve been looking for you!"
+THRONE_DIAL7,||[color=yellow]Verily! Why did you leave us?
+THRONE_DIAL8,"|meist|…This is what we’ve all been searching for, isn't it?"
 THRONE_DIAL9,The very thing threatening all of [color=red]existence
 THRONE_DIAL10,...
 THRONE_DIAL11,"Ever since I left you two, I’ve been busy"
