@@ -4,10 +4,12 @@ var stage:float = 0
 var spawn_point:Vector2
 var end_point:Vector2
 var n:float = 0
+var y_spd:float = 2
 
-func init(spawn:Vector2, end:Vector2):
+func init(spawn:Vector2, end:Vector2, spd:float):
 	spawn_point = spawn
 	end_point = end
+	y_spd = spd
 
 func touch_player():
 	queue_free()
@@ -23,7 +25,7 @@ func _process(delta):
 		if n > 1:
 			stage = 2
 	if stage == 2:
-		position.y += 2
+		position.y += y_spd
 
 func _on_Timer_timeout():
 	stage = 1
