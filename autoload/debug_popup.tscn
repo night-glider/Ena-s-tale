@@ -19,20 +19,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="heal" type="Button" parent="VBoxContainer"]
-margin_right = 106.0
+[node name="invincible" type="Button" parent="VBoxContainer"]
+margin_right = 129.0
 margin_bottom = 20.0
-text = "heal up"
+text = "toggle invincibility"
 
 [node name="attack_debugger" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
-margin_right = 106.0
+margin_right = 129.0
 margin_bottom = 44.0
 text = "attack debuger"
 
 [node name="clear_save" type="Button" parent="VBoxContainer"]
 margin_top = 48.0
-margin_right = 106.0
+margin_right = 129.0
 margin_bottom = 62.0
 custom_styles/normal = SubResource( 1 )
 text = "clear save"

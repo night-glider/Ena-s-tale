@@ -2,7 +2,7 @@ extends Node2D
 
 var last_buttons = []
 var cheat_activation = ["6","9","0","0","0","2","1"]
-var dialog = preload("res://autoload/debug_popup.tscn")
+const dialog = preload("res://autoload/debug_popup.tscn")
 
 func _ready():
 	last_buttons = cheat_activation.duplicate()
@@ -19,7 +19,7 @@ func _input(event):
 			get_tree().current_scene.add_child(new_debug_menu)
 			new_debug_menu.call_deferred("popup")
 			
-			new_debug_menu.get_node("VBoxContainer/heal").connect("pressed", self, "_on_heal_pressed")
+			new_debug_menu.get_node("VBoxContainer/invincible").connect("pressed", self, "_on_invincible_pressed")
 			new_debug_menu.get_node("VBoxContainer/attack_debugger").connect("pressed", self, "_on_attack_debugger_pressed")
 			new_debug_menu.get_node("VBoxContainer/clear_save").connect("pressed", self, "_on_clear_save_pressed")
 			
@@ -32,9 +32,10 @@ func _on_attack_debugger_pressed():
 	get_tree().change_scene("res://locations/testing/attacks_test.tscn")
 
 
-func _on_heal_pressed():
+func _on_invincible_pressed():
 	if get_tree().current_scene.name == "battle":
-		get_tree().current_scene.get_node("gui/player").hp = 100
+		var player = get_tree().current_scene.get_node("gui/player")
+		player.invincible = not player.invincible
 
 func _on_clear_save_pressed():
 	SaveData.clear_data()
