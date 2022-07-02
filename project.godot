@@ -69,6 +69,11 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "res://addons/SIsilicon.vfx.godrays/plugin.cfg", "res://addons/translation_checker/plugin.cfg" )
 
+[gui]
+
+theme/custom="res://themes/default.tres"
+theme/custom_font="res://themes/default_font.tres"
+
 [input]
 
 walk_left={
