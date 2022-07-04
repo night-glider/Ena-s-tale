@@ -85,5 +85,5 @@ func turn_meist(dialogue:String):
 
 func battle_start():
 	SaveData.save_data("disable_intro", true)
-	get_tree().change_scene("res://locations/battle/battle.tscn")
+	get_tree().change_scene("res://locations/battle_transition.tscn")
 

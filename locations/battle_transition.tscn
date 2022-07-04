@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=1]
+[ext_resource path="res://locations/battle_transition.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "start"
+length = 53.0
+step = 1.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 5, 12, 20, 30, 36, 43, 48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_dialogue"
+}, {
+"args": [  ],
+"method": "next_message"
+}, {
+"args": [  ],
+"method": "next_message"
+}, {
+"args": [  ],
+"method": "next_message"
+}, {
+"args": [  ],
+"method": "next_message"
+}, {
+"args": [  ],
+"method": "next_message"
+}, {
+"args": [  ],
+"method": "next_message"
+}, {
+"args": [  ],
+"method": "next_message"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 52, 53 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="battle_transition" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueLabel" type="RichTextLabel" parent="."]
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 0.9
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+messages = [ "BATTLE_TRANSITION1", "BATTLE_TRANSITION2", "BATTLE_TRANSITION3", "BATTLE_TRANSITION4", "BATTLE_TRANSITION5", "BATTLE_TRANSITION6", "BATTLE_TRANSITION7", "BATTLE_TRANSITION8" ]
+
+[node name="fade" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/start = SubResource( 1 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
