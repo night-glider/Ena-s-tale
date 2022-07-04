@@ -4,7 +4,6 @@ extends EditorPlugin
 func _enter_tree():
 	add_tool_menu_item("Translation Check", self, "check_translation")
 
-
 func _exit_tree():
 	remove_tool_menu_item("Translation Check")
 
@@ -17,7 +16,7 @@ func check_translation(args):
 	regex.compile("\"[A-Z_][A-Z0-9_]{1,100}\"")
 	var files_list:Array = get_all_files("res://")
 	for element in files_list:
-		print(element)
+		#print(element)
 		var file = File.new()
 		file.open(element, File.READ)
 		var content = file.get_as_text()
@@ -46,6 +45,8 @@ func check_translation(args):
 		if not element in all_keys_in_scenes:
 			error_message += ("KEY " + element + " EXISTS BUT IS NOT USED" ) + "\n"
 	
+	error_message += check_name_tag()
+	
 	print(error_message)
 	OS.alert(error_message)
 
@@ -67,3 +68,24 @@ func get_all_files(path: String):
 	else:
 		print("An error occurred when trying to access %s." % path)
 	return result
+
+func check_name_tag():
+	var errors = ""
+	var allowed_names = ["", "meist", "moony"]
+	
+	var regex = RegEx.new()
+	regex.compile("\\|(.{0,})\\|")
+	
+	var file:File = File.new()
+	file.open("res://languages/general_text.csv", File.READ)
+	file.get_csv_line()
+	while file.get_position() < file.get_len():
+		var lines = file.get_csv_line()
+		for line in lines:
+			var results = regex.search_all( line )
+			for element in results:
+				var name = element.strings[1]
+				if not ( name in allowed_names ):
+					errors += "incorrect name '" + name + "' in line '" + line + "'"
+	
+	return errors
