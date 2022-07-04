@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/battle/attacks/attack8/attack8.gd" type="Script" id=1]
+[ext_resource path="res://custom_classes/Periodic.gd" type="Script" id=2]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="self_destruct" type="Timer" parent="."]
+
+[node name="Periodic" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[connection signal="timeout" from="self_destruct" to="." method="_on_self_destruct_timeout"]

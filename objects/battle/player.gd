@@ -11,6 +11,7 @@ var jump_force = 120
 var can_jump = false
 var max_jump_frames = 60
 var jump_frames = max_jump_frames
+var previous_position = Vector2.ZERO
 
 
 enum stances {NORMAL = 0, GLACIAL = 1, INFERNAL = 2}
@@ -21,7 +22,6 @@ var mode = modes.NORMAL
 
 
 
-# warning-ignore:unused_argument
 func _process(delta):
 	pass
 
@@ -69,7 +69,6 @@ func blue_mode()->Vector2:
 	
 	return input.normalized() * spd + Vector2.DOWN * gravity + jump 
 
-# warning-ignore:unused_argument
 func _physics_process(delta):
 	var actual_velocity = Vector2.ZERO
 	
@@ -78,7 +77,8 @@ func _physics_process(delta):
 	if mode == modes.BLUE:
 		actual_velocity = blue_mode()
 	
-# warning-ignore:return_value_discarded
+	
+	previous_position = position
 	move_and_slide(actual_velocity, Vector2.UP)
 	
 	if visible and Input.is_action_just_pressed("interact"):
@@ -92,6 +92,19 @@ func _on_Area2D_area_entered(area):
 		if area.is_in_group("enemy_bullet"):
 			take_hit(10)
 			area.touch_player()
+			return
+		
+		if area.is_in_group("enemy_bullet_red"):
+			if previous_position != position:
+				take_hit(10)
+				area.touch_player()
+				return
+		
+		if area.is_in_group("enemy_bullet_yellow"):
+			if previous_position == position:
+				take_hit(10)
+				area.touch_player()
+				return
 
 func take_hit(dmg:int):
 	match stance:
