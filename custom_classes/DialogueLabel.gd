@@ -75,6 +75,8 @@ func next_message():
 		emit_signal("dialogue_ended")
 
 func skip_message():
+	if message_id >= len(messages):
+		return
 	timer.stop()
 	while char_progress < messages[message_id].length():
 		next_symbol()
