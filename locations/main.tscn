@@ -206,18 +206,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, -100 ), Vector2( 0, 0 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("meist:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "idle" ]
-}
 
 [sub_resource type="Animation" id=7]
 resource_name = "meist_goes_to_garden"
@@ -598,7 +586,6 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2,
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 8
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
