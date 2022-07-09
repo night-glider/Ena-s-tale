@@ -47,10 +47,12 @@ func stage1_end():
 	$Tween.interpolate_property(get_node("../player"), "translation", get_node("../player").translation, get_node("../player").translation + Vector3(-1,0,0), 0.5)
 
 func stage11_end():
-	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
+	#get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
 	$AnimationPlayer.play("meist_walking_away")
 	get_node("../moony").follow_player = true
 	get_node("../player").can_control = true
+	
+	get_node("../player/gui").disconnect("dialogue_end", self, "stage11_end")
 
 func stage3_start():
 	stage = 3
