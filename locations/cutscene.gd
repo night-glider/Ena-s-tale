@@ -1,11 +1,14 @@
 extends Spatial
 
 export(Array, String) var first_dialogue
+export(Array, String) var first_dialogue_2
 export(Array, String) var second_dialogue
 export(Array, String) var third_dialogue
 
 var stage = 0
 var stage2_dialogue_played = false
+
+
 
 func _ready():
 	pass
@@ -36,9 +39,18 @@ func _on_walk_trigger_body_entered(body):
 		$Tween.start()
 
 func stage1_end():
+	get_node("../player").can_control = false
+	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
+	$AnimationPlayer.play("exclamation")
+	$AnimationPlayer.connect("animation_finished", self, "exclamation_ended")
+	
+	$Tween.interpolate_property(get_node("../player"), "translation", get_node("../player").translation, get_node("../player").translation + Vector3(-1,0,0), 0.5)
+
+func stage11_end():
 	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
 	$AnimationPlayer.play("meist_walking_away")
 	get_node("../moony").follow_player = true
+	get_node("../player").can_control = true
 
 func stage3_start():
 	stage = 3
@@ -87,3 +99,8 @@ func battle_start():
 	SaveData.save_data("disable_intro", true)
 	get_tree().change_scene("res://locations/battle_transition.tscn")
 
+func exclamation_ended(anim_name:String):
+	if anim_name == "exclamation":
+		get_node("../player").can_control = false
+		get_node("../player/gui").dialogue_start(first_dialogue_2)
+		get_node("../player/gui").connect("dialogue_end", self, "stage11_end")
