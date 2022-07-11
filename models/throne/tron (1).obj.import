@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tron (1).obj-da85edc6b260f625bb54aba32d103ed6.mesh"
+
+[deps]
+
+files=[ "res://.import/tron (1).obj-da85edc6b260f625bb54aba32d103ed6.mesh" ]
+
+source_file="res://models/throne/tron (1).obj"
+dest_files=[ "res://.import/tron (1).obj-da85edc6b260f625bb54aba32d103ed6.mesh", "res://.import/tron (1).obj-da85edc6b260f625bb54aba32d103ed6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.025, 0.025, 0.025 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
