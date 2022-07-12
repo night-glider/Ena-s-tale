@@ -3,6 +3,9 @@ extends Spatial
 var follow_player = true
 onready var player = get_node("../player")
 
+func _ready():
+	$AnimationPlayer.play("bob")
+
 func _process(delta):
 	if follow_player:
 		if transform.origin.distance_to( player.transform.origin ) > 5:

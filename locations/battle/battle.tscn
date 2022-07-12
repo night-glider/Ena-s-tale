@@ -220,15 +220,6 @@ frames = SubResource( 9 )
 animation = "idle"
 
 [node name="options" type="Node2D" parent="gui/talk"]
-visible = false
-
-[node name="check" parent="gui/talk/options" instance=ExtResource( 7 )]
-margin_left = -264.0
-margin_top = -179.0
-margin_right = -184.0
-margin_bottom = -162.0
-text = "TALK_CHECK"
-dialogue = "TALK_CHECK_DIALOGUE"
 
 [node name="reason" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = -121.0
@@ -471,7 +462,6 @@ __meta__ = {
 [connection signal="pressed" from="gui/strike/stance_choice/normal" to="gui" method="_on_normal_pressed"]
 [connection signal="pressed" from="gui/strike/stance_choice/infernal" to="gui" method="_on_infernal_pressed"]
 [connection signal="pressed" from="gui/strike/stance_choice/glacial" to="gui" method="_on_glacial_pressed"]
-[connection signal="pressed" from="gui/talk/options/check" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_check_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]

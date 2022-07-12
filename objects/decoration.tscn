@@ -20,7 +20,7 @@ billboard = 2
 alpha_cut = 1
 frames = SubResource( 1 )
 script = ExtResource( 2 )
-messages = [ "DIALOGUE_GRAVE1", "DIALOGUE_GRAVE2" ]
+messages = [ "DIALOGUE_THRONE1", "DIALOGUE_THRONE2" ]
 
 [node name="StaticBody" type="StaticBody" parent="." groups=["interactable"]]
 

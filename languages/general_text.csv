@@ -6,13 +6,14 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
-DIALOGUE_GRAVE1,Here lies [color=yellow][wave amp=50 freq=2]Kosta Vesta[/wave][/color]...
-DIALOGUE_GRAVE2,[color=aqua]sad[/color] enough...
-INTRO_MESSAGE1,hello world
-INTRO_MESSAGE2,"nice weather, huh?"
-INTRO_MESSAGE3,very pleased to meet you
-INTRO_MESSAGE4,how are you?
-INTRO_MESSAGE5,Okay now it's time to leave...
+DIALOGUE_THRONE1,This throne seems like its in pretty bad shape.
+DIALOGUE_THRONE2,"I wonder, was it his throne?"
+INTRO_MESSAGE1,"After a long journey throughout many dimensions and with the assistance of some allies, Ena and Moony have finally arrived at the ruined castle, where the [color=purple]glitched rift [color=white]resides."
+INTRO_MESSAGE2,"It is a dimensional tear that is not only capable of destroying the dimension it is in, but also the surrounding ones. This one in particular is so dangerous that it threatens to destroy all of creation. 
+"
+INTRO_MESSAGE3,"Despite their inexperience and fear of the unknown, Ena and Moony with some help along the way, were able to defeat the challenges thrown at them and made their way here."
+INTRO_MESSAGE4,"However, unbeknownst to the duo, one of their former party members has already beaten them to this cursed place. What could this mysterious man want with the rift as well? 
+"
 NIGHT_GLIDER_MESSAGE,Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr4543
 INTRO_LOG1,"@1@%Starting hardware check%@0.01@
 Detecting HDD1@1@...@0.01@[color=green]SUCCESS[/color]
@@ -55,19 +56,16 @@ MAIN_MENU_SELECT,Please select a file:
 MAIN_MENU_END,The end
 MAIN_MENU_EMPTY,[EMPTY]
 HELLO_WORLD,!hello world!
-ITEMS_TURRON,Turron!
+ITEMS_TURRON,Turron
 ITEMS_QWERTY,QWERTY
-ITEMS_BANANA,TODO
-ITEMS_SOLQUICHE,TODO
+ITEMS_BANANA,Banana
+ITEMS_SOLQUICHE,Solar Quiche
 ITEMS_JOLTEST,joltest
 ITEMS_BANANA_DIALOGUE,TODO
 ITEMS_SOLQUICHE_DIALOGUE,TODO
 ITEMS_TURRON_DIALOGUE,TURRON! Your wounds begin to close.
 ITEMS_QWERTY_DIALOGUE,You ate the QuicklyWarmingEarthlyRottingTastelessYogurt. It’s a miracle you even gained health from that.
 ITEMS_JOLTEST_DIALOGUE,A placeholder item until I can think of more healing items
-TALK_CHECK,CHECK
-TALK_CHECK_DIALOGUE,"MEIST
-Health: 30,000 Attack: 30 Defense: 20"
 TALK_REASON,reason
 TALK_INSULT,insult
 TALK_REASON_DIALOGUE,reason dial
@@ -75,13 +73,12 @@ TALK_INSULT_DIALOGUE,insult dial
 PAUSE_CONTINUE,Continue
 PAUSE_OPTIONS,Options
 PAUSE_QUIT,Quit
-ENEMY_TURRON_REACT,"TURRON????? 
-[center]TURRON! TURRON!"
+ENEMY_TURRON_REACT,...
 ENEMY_QWERTY_REACT,*insert keyboard joke here*
 ENEMY_JOLTEST_REACT,test dialogue
-ENEMY_CHECK_REACT,"so you CHECKed me, huh?"
-ENEMY_REASON_REACT,dont even try to [color=red]reason[/color] me
-ENEMY_INSULT_REACT,you dirty rat!
+ENEMY_CHECK_REACT,...
+ENEMY_REASON_REACT,..!
+ENEMY_INSULT_REACT,..!
 ATTACK_ATTACK,attack
 ATTACK_STANCES,stances
 ATTACK_HEAD,head
