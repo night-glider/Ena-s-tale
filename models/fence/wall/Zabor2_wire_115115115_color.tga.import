@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/tron_wire_115115115_color.tga-b7af8ddde582e8c4d6695889392a0261.s3tc.stex"
-path.etc2="res://.import/tron_wire_115115115_color.tga-b7af8ddde582e8c4d6695889392a0261.etc2.stex"
+path.s3tc="res://.import/Zabor2_wire_115115115_color.tga-e930cb0b3c5a975b416abbb71ea8556e.s3tc.stex"
+path.etc2="res://.import/Zabor2_wire_115115115_color.tga-e930cb0b3c5a975b416abbb71ea8556e.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/throne/tron_wire_115115115_color.tga"
-dest_files=[ "res://.import/tron_wire_115115115_color.tga-b7af8ddde582e8c4d6695889392a0261.s3tc.stex", "res://.import/tron_wire_115115115_color.tga-b7af8ddde582e8c4d6695889392a0261.etc2.stex" ]
+source_file="res://models/fence/wall/Zabor2_wire_115115115_color.tga"
+dest_files=[ "res://.import/Zabor2_wire_115115115_color.tga-e930cb0b3c5a975b416abbb71ea8556e.s3tc.stex", "res://.import/Zabor2_wire_115115115_color.tga-e930cb0b3c5a975b416abbb71ea8556e.etc2.stex" ]
 
 [params]
 

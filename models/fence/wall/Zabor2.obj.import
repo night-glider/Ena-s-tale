@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Zabor2.obj-8798169c0847d6fae179a9882b2d0493.mesh"
+
+[deps]
+
+files=[ "res://.import/Zabor2.obj-8798169c0847d6fae179a9882b2d0493.mesh" ]
+
+source_file="res://models/fence/wall/Zabor2.obj"
+dest_files=[ "res://.import/Zabor2.obj-8798169c0847d6fae179a9882b2d0493.mesh", "res://.import/Zabor2.obj-8798169c0847d6fae179a9882b2d0493.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
