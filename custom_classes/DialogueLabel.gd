@@ -83,6 +83,9 @@ func skip_message():
 	finished = true
 
 func next_symbol():
+	if message_id >= messages.size():
+		return
+	
 	if char_progress == messages[message_id].length():
 		timer.stop()
 		finished = true

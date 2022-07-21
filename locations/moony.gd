@@ -5,6 +5,11 @@ onready var player = get_node("../player")
 
 func _ready():
 	$AnimationPlayer.play("bob")
+	$decoration/StaticBody.set_collision_layer_bit(0,false)
+	$decoration/StaticBody.set_collision_mask_bit(0,false)
+	
+	$decoration/StaticBody.set_collision_layer_bit(1,true)
+	$decoration/StaticBody.set_collision_mask_bit(1,true)
 
 func _process(delta):
 	if follow_player:
