@@ -82,3 +82,4 @@ stream = ExtResource( 3 )
 
 [connection signal="dialogue_end" from="gui" to="." method="_on_GUI_dialogue_end"]
 [connection signal="dialogue_ended" from="gui/dialogue/DialogueLabel" to="gui" method="_on_DialogueLabel_dialogue_ended"]
+[connection signal="dialogue_next" from="gui/dialogue/DialogueLabel" to="gui" method="_on_DialogueLabel_dialogue_next"]

@@ -93,8 +93,9 @@ func _on_battle_trigger_body_entered(body):
 		get_node("../player/gui").connect("dialogue_next", self, "turn_meist")
 		stage = 4
 
-func turn_meist(dialogue:String):
-	if dialogue == "prepare to die!":
+func turn_meist(dialogue):
+	#print(dialogue)
+	if dialogue == 2:
 		$meist.animation = "idle"
 
 func battle_start():

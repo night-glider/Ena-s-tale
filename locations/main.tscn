@@ -661,7 +661,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 69.9665 )
 script = ExtResource( 17 )
 
 [node name="decoration" parent="moony" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0216195, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0610417, 0 )
 shaded = true
 double_sided = false
 alpha_cut = 2
@@ -1155,7 +1155,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 3
+frame = 4
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]

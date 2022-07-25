@@ -62,3 +62,7 @@ func intro_process():
 func _on_DialogueLabel_dialogue_ended():
 	$dialogue.visible = false
 	emit_signal("dialogue_end")
+
+
+func _on_DialogueLabel_dialogue_next():
+	emit_signal("dialogue_next", $dialogue/DialogueLabel.message_id)
