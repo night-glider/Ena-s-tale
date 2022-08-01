@@ -6,6 +6,10 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
+PRE_THRONE_MOONY_DIALOUGE1,|moony|We're finally here. Man this place is decrepit.
+PRE_THRONE_MOONY_DIALOUGE2,Lets just hope we finally found [color=red]him.
+POST THRONE_MOONY_DIALOUGE1,"|moony|So glad this will finally be over, but something doesnt feel right."
+POST THRONE_MOONY_DIALOUGE2,"Even though he's our friend, we can't let our guard down. Be careful. "
 DIALOGUE_THRONE1,This throne seems like its in pretty bad shape.
 DIALOGUE_THRONE2,"I wonder, was it his throne?"
 INTRO_MESSAGE1,"After a long journey throughout many dimensions and with the assistance of some allies, Ena and Moony have finally arrived at the ruined castle, where the [color=purple]glitched rift [color=white]resides."
@@ -92,39 +96,39 @@ THRONE_DIAL2,...
 THRONE_DIAL3,…Maybe I don’t have to d-
 THRONE_DIAL4,Oh. So you finally arrived.
 THRONE_DIAL5,It certainly took you two a while to get here.
-THRONE_DIAL6,"|moony|[color=grey]Uh, dude. We’ve been looking for you!"
-THRONE_DIAL7,||[color=yellow]Verily! Why did you leave us?
+THRONE_DIAL6,"|moony|[color=grey]Uh, dude. We’ve been looking all over for you!"
+THRONE_DIAL7,|ena|[color=yellow]Verily! Why did you leave us?
 THRONE_DIAL8,"|meist|…This is what we’ve all been searching for, isn't it?"
-THRONE_DIAL9,The very thing threatening all of [color=red]existence
+THRONE_DIAL9,The very thing threatening all of [color=red]existence.
 THRONE_DIAL10,...
-THRONE_DIAL11,"Ever since I left you two, I’ve been busy"
-THRONE_DIAL12,I have been trying to figure out how to stop the [color=purple]rift [color=white]myself.
+THRONE_DIAL11,"Ever since I left you two, I’ve been busy."
+THRONE_DIAL12,I've been trying to figure out how to stop the [color=purple]rift [color=white]myself.
 THRONE_DIAL13,"And so now, my plan can move forward."
 THRONE_DIAL14,A plan that can truly guarantee the end of our quests.
 THRONE_DIAL15,|moony|[color=grey]Great! Just one question.
 THRONE_DIAL16,[color=grey] WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
 THRONE_DIAL17,"|meist|I felt like I was the most capable to stop this threat, as I have the most knowledge of it."
-THRONE_DIAL18,"[color=yellow]Meist, chums are supposed to stick together, that's what makes us a good team."
-THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time so we don’t have to search for you all over ya dweeb
+THRONE_DIAL18,"|ena|[color=yellow]Meist, chums are supposed to stick together, that's what makes us a good team."
+THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time so we don’t have to search for you all over ya dweeb.
 THRONE_DIAL20,|meist|Fair enough.
 THRONE_DIAL21,...
 THRONE_DIAL22,Then let us complete this long journey.
 HALLWAY_DIAL1,"I haven’t told you much about my world, haven’t I Ena?"
 HALLWAY_DIAL2,"It was a complete paradise. There was next to no suffering, crime, or death."
-HALLWAY_DIAL3,But it wasn’t perfect
+HALLWAY_DIAL3,But it wasn’t perfect.
 HALLWAY_DIAL4,"As our people lived very long lives, we were beginning to run out of space."
 HALLWAY_DIAL5,And so I was tasked by the royal family to solve this issue.
 HALLWAY_DIAL6,"But unfortunately as you can see, it was all in vain."
-HALLWAY_DIAL7,"But, now I can finally fix all of this."
-HALLWAY_DIAL8,"[color=yellow]Wait, so how did it get like this?"
-HALLWAY_DIAL9,...
-HALLWAY_DIAL10,"[color=grey]But you can fix this, right?"
-HALLWAY_DIAL11,"Of course, but it won’t be an easy task."
-HALLWAY_DIAL12,"[color=grey]Uh, what do you mean by that?"
-HALLWAY_DIAL13,...
+HALLWAY_DIAL7,"Now  however, I can finally fix all of this."
+HALLWAY_DIAL8,"|ena|[color=yellow]Wait, so how did it get like this?"
+HALLWAY_DIAL9,|meist|...
+HALLWAY_DIAL10,"|moony|[color=grey]But you can fix this, and stop the rift. Right?"
+HALLWAY_DIAL11,"|meist|Of course, but it won’t be an easy task."
+HALLWAY_DIAL12,"|moony|[color=grey]Uh, what do you mean by that?"
+HALLWAY_DIAL13,|meist|...
 GARDEN_DIAL1,...What is this?
-GARDEN_DIAL2,[color=yellow]What seems to be the issue?
-GARDEN_DIAL3,...
+GARDEN_DIAL2,|ena|[color=yellow]What seems to be the issue?
+GARDEN_DIAL3,|meist|...
 GARDEN_DIAL4,...
 GARDEN_DIAL5,I think it's time to tell you my plan
 GARDEN_DIAL6,"Throughout your journey, you have gained so much power."
@@ -139,7 +143,7 @@ BATTLE_TRANSITION1,Light protrudes throughout the garden
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end
 BATTLE_TRANSITION4,You are beginning to be filled with dread.
-BATTLE_TRANSITION5,"Ena, Moony, this was a very pleasant adventure."
+BATTLE_TRANSITION5,"|meist|Ena, Moony, this was a very pleasant adventure."
 BATTLE_TRANSITION6,But I must do what I can to save my people.
 BATTLE_TRANSITION7,...
 BATTLE_TRANSITION8,...I'm sorry.
