@@ -18,7 +18,7 @@ func _on_start_trigger_body_entered(body):
 		get_node("../moony").follow_player = false
 		var moony = get_node("../moony")
 		var player = get_node("../player")
-		var moony_destination = Vector3(player.translation.x-3.5, moony.translation.y, player.translation.z + 3)
+		var moony_destination = Vector3(player.translation.x-4, moony.translation.y, player.translation.z + 3)
 		$Tween.interpolate_property(moony, "translation", moony.translation, moony_destination, 2 )
 		
 		body.can_control = false

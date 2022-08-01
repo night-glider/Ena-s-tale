@@ -10,7 +10,7 @@
 [ext_resource path="res://locations/battle/gui.gd" type="Script" id=8]
 [ext_resource path="res://locations/battle/dialogue_box.gd" type="Script" id=9]
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=10]
-[ext_resource path="res://sprites/battle/test_enemy.png" type="Texture" id=11]
+[ext_resource path="res://sprites/battle/meist.png" type="Texture" id=11]
 [ext_resource path="res://fonts/binbows_font.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://locations/battle/enemy.gd" type="Script" id=13]
 [ext_resource path="res://locations/battle/attack.tscn" type="PackedScene" id=14]
@@ -389,11 +389,9 @@ visible = false
 
 [node name="Tween" type="Tween" parent="gui/dialogue_box"]
 
-[node name="player" parent="gui" instance=ExtResource( 6 )]
-visible = false
-
 [node name="enemy" type="Sprite" parent="gui"]
-position = Vector2( 316, 108 )
+position = Vector2( 316, 105 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 11 )
 script = ExtResource( 13 )
 
@@ -451,6 +449,9 @@ __meta__ = {
 }
 
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
+
+[node name="player" parent="gui" instance=ExtResource( 6 )]
+visible = false
 
 [node name="quit_button" parent="." instance=ExtResource( 15 )]
 

@@ -71,7 +71,7 @@ func get_all_files(path: String):
 
 func check_name_tag():
 	var errors = ""
-	var allowed_names = ["", "meist", "moony"]
+	var allowed_names = ["", "meist", "moony", "ena"]
 	
 	var regex = RegEx.new()
 	regex.compile("\\|(.{0,})\\|")
