@@ -253,6 +253,9 @@ margin_bottom = 32.0
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="lf" type="Label" parent="gui/bottom_panel"]
 margin_left = 281.0
@@ -264,7 +267,7 @@ text = "LF:"
 margin_left = 320.0
 margin_right = 520.0
 margin_bottom = 20.0
-value = 75.0
+value = 100.0
 texture_under = SubResource( 31 )
 texture_progress = SubResource( 32 )
 nine_patch_stretch = true
@@ -276,7 +279,7 @@ __meta__ = {
 margin_left = 525.0
 margin_right = 595.0
 margin_bottom = 22.0
-text = "75/100"
+text = "100/100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
