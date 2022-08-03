@@ -1,5 +1,6 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=145 format=2]
 
+[ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/decoration.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/pause.tscn" type="PackedScene" id=4]
@@ -455,6 +456,11 @@ flags = 16
 atlas = ExtResource( 13 )
 region = Rect2( 1100, 1100, 550, 550 )
 
+[sub_resource type="AtlasTexture" id=204]
+flags = 16
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 550, 550 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
@@ -465,6 +471,11 @@ animations = [ {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "walking",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 204 ) ],
+"loop": true,
+"name": "idle_right",
 "speed": 5.0
 } ]
 
@@ -576,6 +587,21 @@ tracks/2/keys = {
 "values": [ "walking" ]
 }
 
+[sub_resource type="Animation" id=203]
+resource_name = "turn_around"
+tracks/0/type = "value"
+tracks/0/path = NodePath("meist:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "idle_right", "idle" ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "walk_with_meist"
 length = 14.0
@@ -654,7 +680,7 @@ fog_depth_end = 50.0
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60516, 1.98359, 14.2656 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.672804, 1.752, 6.36806 )
 
 [node name="moony" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 69.9665 )
@@ -1155,7 +1181,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 8
+frame = 6
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -1169,6 +1195,7 @@ texture = ExtResource( 19 )
 anims/exclamation = SubResource( 33 )
 anims/meist_goes_to_garden = SubResource( 7 )
 anims/meist_walking_away = SubResource( 3 )
+anims/turn_around = SubResource( 203 )
 anims/walk_with_meist = SubResource( 5 )
 
 [node name="start_trigger" type="Area" parent="cutscene"]

@@ -98,7 +98,7 @@ func _on_battle_trigger_body_entered(body):
 func turn_meist(dialogue):
 	#print(dialogue)
 	if dialogue == 12:
-		$meist.animation = "idle"
+		$AnimationPlayer.play("turn_around")
 
 func stop_small_shock(dialogue):
 	if dialogue == 10:
