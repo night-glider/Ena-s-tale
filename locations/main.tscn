@@ -764,7 +764,7 @@ fog_depth_end = 50.0
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83086, 1.752, 5.36315 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83086, 1.94113, 5.36315 )
 
 [node name="moony" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 69.9665 )

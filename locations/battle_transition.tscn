@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=1]
 [ext_resource path="res://locations/battle_transition.gd" type="Script" id=2]
+[ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=4]
+[ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=5]
+[ext_resource path="res://sprites/battle/gui/talk.png" type="Texture" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://sprites/battle/meist.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -69,6 +74,97 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 30 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "switch_dialogue_box"
+} ]
+}
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 44, 140, 44 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 140, 44 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 44, 140, 44 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 140, 44 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 44, 140, 44 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 140, 44 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 27 ) ],
+"loop": true,
+"name": "active",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=18]
+colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
+
+[sub_resource type="GradientTexture" id=31]
+gradient = SubResource( 18 )
+width = 1
+
+[sub_resource type="Gradient" id=19]
+colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
+
+[sub_resource type="GradientTexture" id=32]
+gradient = SubResource( 19 )
+width = 128
 
 [node name="battle_transition" type="Control"]
 anchor_right = 1.0
@@ -87,9 +183,9 @@ __meta__ = {
 }
 
 [node name="DialogueLabel" type="RichTextLabel" parent="."]
-anchor_top = 0.7
+anchor_top = 0.6
 anchor_right = 1.0
-anchor_bottom = 0.9
+anchor_bottom = 0.7
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource( 1 )
@@ -98,10 +194,11 @@ __meta__ = {
 }
 messages = [ "BATTLE_TRANSITION1", "BATTLE_TRANSITION2", "BATTLE_TRANSITION3", "BATTLE_TRANSITION4", "BATTLE_TRANSITION5", "BATTLE_TRANSITION6", "BATTLE_TRANSITION7", "BATTLE_TRANSITION8" ]
 
-[node name="fade" type="ColorRect" parent="."]
+[node name="Panel" type="Panel" parent="DialogueLabel"]
+visible = false
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,5 +206,92 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/start = SubResource( 1 )
+
+[node name="gui" type="Node2D" parent="."]
+
+[node name="strike" type="AnimatedSprite" parent="gui"]
+position = Vector2( 170, 440 )
+frames = SubResource( 28 )
+animation = "idle"
+
+[node name="talk" type="AnimatedSprite" parent="gui"]
+position = Vector2( 320, 440 )
+frames = SubResource( 29 )
+animation = "idle"
+
+[node name="pack" type="AnimatedSprite" parent="gui"]
+position = Vector2( 470, 440 )
+frames = SubResource( 30 )
+animation = "idle"
+
+[node name="bottom_ena" type="Sprite" parent="gui"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 7 )
+
+[node name="bottom_panel" type="Control" parent="gui"]
+margin_top = 380.0
+margin_right = 640.0
+margin_bottom = 410.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ena_status" type="RichTextLabel" parent="gui/bottom_panel"]
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_right = 189.0
+text = "ena:happy"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ena_face" type="TextureRect" parent="gui/bottom_panel"]
+margin_left = 200.0
+margin_right = 232.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 7
+
+[node name="lf" type="Label" parent="gui/bottom_panel"]
+margin_left = 281.0
+margin_right = 321.0
+margin_bottom = 22.0
+text = "LF:"
+
+[node name="hp_bar" type="TextureProgress" parent="gui/bottom_panel"]
+margin_left = 320.0
+margin_right = 520.0
+margin_bottom = 20.0
+value = 75.0
+texture_under = SubResource( 31 )
+texture_progress = SubResource( 32 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="Label" parent="gui/bottom_panel"]
+margin_left = 525.0
+margin_right = 595.0
+margin_bottom = 22.0
+text = "75/100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy" type="Sprite" parent="gui"]
+position = Vector2( 316, 105 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+
+[node name="fade" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

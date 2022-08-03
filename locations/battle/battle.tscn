@@ -79,18 +79,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Gradient" id=28]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
 [sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 18 )
+gradient = SubResource( 28 )
 width = 1
 
-[sub_resource type="Gradient" id=19]
+[sub_resource type="Gradient" id=29]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
 [sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 19 )
+gradient = SubResource( 29 )
 width = 128
 
 [sub_resource type="DynamicFont" id=20]
@@ -220,6 +220,7 @@ frames = SubResource( 9 )
 animation = "idle"
 
 [node name="options" type="Node2D" parent="gui/talk"]
+visible = false
 
 [node name="reason" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = -121.0
