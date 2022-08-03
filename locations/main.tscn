@@ -777,6 +777,7 @@ double_sided = false
 alpha_cut = 2
 frames = SubResource( 31 )
 playing = true
+messages = [ "PRE_THRONE_MOONY_DIALOUGE1", "PRE_THRONE_MOONY_DIALOUGE2" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moony"]
 reset_on_save = false
@@ -1266,7 +1267,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 4
+frame = 5
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]

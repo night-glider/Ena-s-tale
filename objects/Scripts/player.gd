@@ -69,6 +69,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("interact") and can_control:
 		for element in $interaction_zone.get_overlapping_bodies():
+			if element.get_parent().get_parent().name == "moony":
+				element.get_parent().get_parent().start_talking()
 			if element.is_in_group("interactable"):
 				can_control = false
 				$gui.dialogue_start(element.get_parent().messages)

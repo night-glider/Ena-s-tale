@@ -16,6 +16,7 @@ func _ready():
 func _on_start_trigger_body_entered(body):
 	if body.name == "player" and stage == 0:
 		get_node("../moony").follow_player = false
+		get_node("../moony/decoration").messages = ["POST_THRONE_MOONY_DIALOUGE1","POST_THRONE_MOONY_DIALOUGE2"]
 		var moony = get_node("../moony")
 		var player = get_node("../player")
 		var moony_destination = Vector3(player.translation.x-5, moony.translation.y, player.translation.z + 3)

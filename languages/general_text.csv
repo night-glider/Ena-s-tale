@@ -8,9 +8,9 @@ CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
 PRE_THRONE_MOONY_DIALOUGE1,|moony|We're finally here. Man this place is decrepit.
 PRE_THRONE_MOONY_DIALOUGE2,Lets just hope we finally found [color=red]him.
-POST THRONE_MOONY_DIALOUGE1,"|moony|So glad this will finally be over, but something doesnt feel right."
-POST THRONE_MOONY_DIALOUGE2,"Even though he's our friend, we can't let our guard down. Be careful. "
-DIALOGUE_THRONE1,This throne seems like its in pretty bad shape.
+POST_THRONE_MOONY_DIALOUGE1,"|moony|So glad this will finally be over, but something doesnt feel right."
+POST_THRONE_MOONY_DIALOUGE2,"Even though he's our friend, we can't let our guard down. Be careful. "
+DIALOGUE_THRONE1,||This throne seems like its in pretty bad shape.
 DIALOGUE_THRONE2,"I wonder, was it his throne?"
 INTRO_MESSAGE1,"After a long journey throughout many dimensions and with the assistance of some allies, Ena and Moony have finally arrived at the ruined castle, where the [color=purple]glitched rift [color=white]resides."
 INTRO_MESSAGE2,"It is a dimensional tear that is not only capable of destroying the dimension it is in, but also the surrounding ones. This one in particular is so dangerous that it threatens to destroy all of creation. 
