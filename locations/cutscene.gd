@@ -97,11 +97,11 @@ func _on_battle_trigger_body_entered(body):
 
 func turn_meist(dialogue):
 	#print(dialogue)
-	if dialogue == 2:
+	if dialogue == 12:
 		$meist.animation = "idle"
 
 func stop_small_shock(dialogue):
-	if dialogue == 11:
+	if dialogue == 10:
 		get_node("../general_music").stop()
 
 func battle_start():
