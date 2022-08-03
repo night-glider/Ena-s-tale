@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=2]
+[gd_scene load_steps=160 format=2]
 
 [ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://OST/Small_Shock.ogg" type="AudioStream" id=15]
 [ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=16]
 [ext_resource path="res://locations/moony.gd" type="Script" id=17]
-[ext_resource path="res://moony.png" type="Texture" id=18]
+[ext_resource path="res://moony_default.png" type="Texture" id=18]
 [ext_resource path="res://sprites/exclamation.png" type="Texture" id=19]
 [ext_resource path="res://models/throne/tron (1).obj" type="ArrayMesh" id=20]
 [ext_resource path="res://models/fence/wall/Zabor2.obj" type="ArrayMesh" id=21]
@@ -29,12 +29,48 @@
 [ext_resource path="res://trenchbroom_data/textures/floor.png" type="Texture" id=27]
 [ext_resource path="res://trenchbroom_data/textures/grass.png" type="Texture" id=28]
 [ext_resource path="res://sprites/meist_overworld_walking_forward.png" type="Texture" id=29]
+[ext_resource path="res://moony_angry.png" type="Texture" id=30]
+
+[sub_resource type="AtlasTexture" id=211]
+flags = 19
+atlas = ExtResource( 18 )
+region = Rect2( 385, 0, 385, 298 )
+
+[sub_resource type="AtlasTexture" id=212]
+flags = 19
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 385, 298 )
+
+[sub_resource type="AtlasTexture" id=213]
+flags = 19
+atlas = ExtResource( 18 )
+region = Rect2( 385, 0, 385, 298 )
+
+[sub_resource type="AtlasTexture" id=214]
+flags = 19
+atlas = ExtResource( 30 )
+region = Rect2( 0, 0, 385, 284 )
+
+[sub_resource type="AtlasTexture" id=215]
+flags = 19
+atlas = ExtResource( 30 )
+region = Rect2( 385, 0, 385, 284 )
 
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ SubResource( 211 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 212 ), SubResource( 213 ) ],
+"loop": true,
+"name": "talk_default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 214 ), SubResource( 215 ) ],
+"loop": true,
+"name": "talk_angry",
 "speed": 5.0
 } ]
 
@@ -735,11 +771,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 69.9665 )
 script = ExtResource( 17 )
 
 [node name="decoration" parent="moony" instance=ExtResource( 3 )]
-transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.0610417, 0 )
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.05625, 0 )
 shaded = true
 double_sided = false
 alpha_cut = 2
 frames = SubResource( 31 )
+playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="moony"]
 reset_on_save = false
@@ -1229,7 +1266,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 6
+frame = 4
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ena_dialogue.ogg-c6d0b9d5a58a8f533b886da993339c72.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

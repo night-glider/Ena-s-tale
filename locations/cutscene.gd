@@ -29,6 +29,7 @@ func _on_start_trigger_body_entered(body):
 		
 		get_node("../player/gui").dialogue_start(first_dialogue)
 		get_node("../player/gui").connect("dialogue_end", self, "stage1_end")
+		
 		stage = 1
 
 func _on_walk_trigger_body_entered(body):
@@ -43,6 +44,7 @@ func stage1_end():
 	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
 	$AnimationPlayer.play("exclamation")
 	$AnimationPlayer.connect("animation_finished", self, "exclamation_ended")
+	get_node("../player/gui").connect("dialogue_next", self, "mooney_talk")
 	
 	$Tween.interpolate_property(get_node("../player"), "translation", get_node("../player").translation, get_node("../player").translation + Vector3(-1,0,0), 0.5)
 
@@ -53,6 +55,7 @@ func stage11_end():
 	get_node("../player").can_control = true
 	
 	get_node("../player/gui").disconnect("dialogue_end", self, "stage11_end")
+	get_node("../player/gui").disconnect("dialogue_next", self, "mooney_talk")
 
 func stage3_start():
 	stage = 3
@@ -114,3 +117,13 @@ func exclamation_ended(anim_name:String):
 		get_node("../player/gui").dialogue_start(first_dialogue_2)
 		get_node("../player/gui").connect("dialogue_end", self, "stage11_end")
 		get_node("../general_music").play()
+
+func mooney_talk(dialogue):
+	get_node("../moony/decoration").animation = "default"
+	if dialogue == 2 or dialogue == 11 or dialogue == 15:
+		get_node("../moony/decoration").animation = "talk_default"
+	if dialogue == 12:
+		get_node("../moony/decoration").animation = "talk_angry"
+	
+	
+	
