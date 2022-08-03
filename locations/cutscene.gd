@@ -18,7 +18,7 @@ func _on_start_trigger_body_entered(body):
 		get_node("../moony").follow_player = false
 		var moony = get_node("../moony")
 		var player = get_node("../player")
-		var moony_destination = Vector3(player.translation.x-4, moony.translation.y, player.translation.z + 3)
+		var moony_destination = Vector3(player.translation.x-5, moony.translation.y, player.translation.z + 3)
 		$Tween.interpolate_property(moony, "translation", moony.translation, moony_destination, 2 )
 		
 		body.can_control = false
@@ -91,12 +91,18 @@ func _on_battle_trigger_body_entered(body):
 		get_node("../player/gui").dialogue_start(third_dialogue)
 		get_node("../player/gui").connect("dialogue_end", self, "battle_start")
 		get_node("../player/gui").connect("dialogue_next", self, "turn_meist")
+		get_node("../player/gui").connect("dialogue_next", self, "stop_small_shock")
+		
 		stage = 4
 
 func turn_meist(dialogue):
 	#print(dialogue)
 	if dialogue == 2:
 		$meist.animation = "idle"
+
+func stop_small_shock(dialogue):
+	if dialogue == 11:
+		get_node("../general_music").stop()
 
 func battle_start():
 	SaveData.save_data("disable_intro", true)
@@ -107,3 +113,4 @@ func exclamation_ended(anim_name:String):
 		get_node("../player").can_control = false
 		get_node("../player/gui").dialogue_start(first_dialogue_2)
 		get_node("../player/gui").connect("dialogue_end", self, "stage11_end")
+		get_node("../general_music").play()
