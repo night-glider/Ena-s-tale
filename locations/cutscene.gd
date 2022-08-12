@@ -4,6 +4,7 @@ export(Array, String) var first_dialogue
 export(Array, String) var first_dialogue_2
 export(Array, String) var second_dialogue
 export(Array, String) var third_dialogue
+export(Array, String) var third_dialogue_2
 
 var stage = 0
 var stage2_dialogue_played = false
@@ -57,6 +58,7 @@ func stage11_end():
 	
 	get_node("../player/gui").disconnect("dialogue_end", self, "stage11_end")
 	get_node("../player/gui").disconnect("dialogue_next", self, "mooney_talk")
+	get_node("../moony").reset_animation()
 
 func stage3_start():
 	stage = 3
@@ -93,16 +95,16 @@ func _on_battle_trigger_body_entered(body):
 		$Tween.start()
 		
 		get_node("../player/gui").dialogue_start(third_dialogue)
-		get_node("../player/gui").connect("dialogue_end", self, "battle_start")
-		get_node("../player/gui").connect("dialogue_next", self, "turn_meist")
+		get_node("../player/gui").connect("dialogue_end", self, "turn_meist")
 		get_node("../player/gui").connect("dialogue_next", self, "stop_small_shock")
 		
 		stage = 4
 
-func turn_meist(dialogue):
-	#print(dialogue)
-	if dialogue == 12:
-		$AnimationPlayer.play("turn_around")
+func turn_meist():
+	get_node("../player").can_control = false
+	$AnimationPlayer.play("turn_around")
+	$AnimationPlayer.connect("animation_finished", self, "final_dialogue")
+	get_node("../player/gui").disconnect("dialogue_end", self, "turn_meist")
 
 func stop_small_shock(dialogue):
 	if dialogue == 10:
@@ -120,11 +122,13 @@ func exclamation_ended(anim_name:String):
 		get_node("../general_music").play()
 
 func mooney_talk(dialogue):
+	get_node("../moony").talking = true
 	get_node("../moony/decoration").animation = "default"
 	if dialogue == 2 or dialogue == 11 or dialogue == 15:
 		get_node("../moony/decoration").animation = "talk_default"
 	if dialogue == 12:
 		get_node("../moony/decoration").animation = "talk_angry"
-	
-	
-	
+
+func final_dialogue(anim_name):
+	get_node("../player/gui").dialogue_start(third_dialogue_2)
+	get_node("../player/gui").connect("dialogue_end", self, "battle_start")
