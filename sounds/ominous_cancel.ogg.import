@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ominous_cancel.ogg-b7a6fef8fa22717bc220c4bd8becce3b.oggstr"
+
+[deps]
+
+source_file="res://sounds/ominous_cancel.ogg"
+dest_files=[ "res://.import/ominous_cancel.ogg-b7a6fef8fa22717bc220c4bd8becce3b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

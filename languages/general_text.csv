@@ -6,16 +6,16 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
-PRE_THRONE_MOONY_DIALOUGE1,|moony|We're finally here. Man this place is decrepit.
-PRE_THRONE_MOONY_DIALOUGE2,Lets just hope we finally found [color=red]him.
-POST_THRONE_MOONY_DIALOUGE1,"|moony|So glad this will finally be over, but something doesnt feel right."
-POST_THRONE_MOONY_DIALOUGE2,"Even though he's our friend, we can't let our guard down. Be careful. "
+PRE_THRONE_MOONY_DIALOUGE1,@2@|moony|[color=grey] We're finally here. Man this place is decrepit.
+PRE_THRONE_MOONY_DIALOUGE2,[color=grey] Lets just hope we finally found [color=red]him.
+POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey] So glad this will finally be over, but something doesnt feel right."
+POST_THRONE_MOONY_DIALOUGE2,"[color=grey] Even though he's our friend, we can't let our guard down. Be careful. "
 DIALOGUE_THRONE1,||This throne seems like its in pretty bad shape.
 DIALOGUE_THRONE2,"I wonder, was it his throne?"
-INTRO_MESSAGE1,"After a long journey throughout many dimensions and with the assistance of some allies, Ena and Moony have finally arrived at the ruined castle, where the [color=purple]glitched rift [color=white]resides."
+INTRO_MESSAGE1,"After a long journey throughout many dimensions, Ena and Moony have finally arrived at the ruined castle, where the [color=purple]glitched rift [color=white]resides."
 INTRO_MESSAGE2,"It is a dimensional tear that is not only capable of destroying the dimension it is in, but also the surrounding ones. This one in particular is so dangerous that it threatens to destroy all of creation. 
 "
-INTRO_MESSAGE3,"Despite their inexperience and fear of the unknown, Ena and Moony with some help along the way, were able to defeat the challenges thrown at them and made their way here."
+INTRO_MESSAGE3,"Despite their inexperience and fear of the unknown, Ena and Moony with some help along the way, were able to defeat the challenges thrown at them and make their way here."
 INTRO_MESSAGE4,"However, unbeknownst to the duo, one of their former party members has already beaten them to this cursed place. What could this mysterious man want with the rift as well? 
 "
 NIGHT_GLIDER_MESSAGE,Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr4543
@@ -91,7 +91,7 @@ ATTACK_TORSO,torso
 STANCE_NORMAL,normal
 STANCE_INFERNAL,infernal
 STANCE_GLACIAL,glacial
-THRONE_DIAL1,"|meist|…Even after all of this time, the throne still remains."
+THRONE_DIAL1,"@2@|meist|…Even after all of this time, the throne still remains."
 THRONE_DIAL2,...
 THRONE_DIAL3,…Maybe I don’t have to d-
 THRONE_DIAL4,Oh. So you finally arrived.
@@ -113,8 +113,8 @@ THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time so
 THRONE_DIAL20,|meist|Fair enough.
 THRONE_DIAL21,...
 THRONE_DIAL22,Then let us complete this long journey.
-HALLWAY_DIAL1,"I haven’t told you much about my world, haven’t I Ena?"
-HALLWAY_DIAL2,"It was a complete paradise. There was next to no suffering, crime, or death."
+HALLWAY_DIAL1,"|meist|I haven’t told you much about my world, haven’t I Ena?"
+HALLWAY_DIAL2,It was a complete paradise. There was next to no suffering.
 HALLWAY_DIAL3,But it wasn’t perfect.
 HALLWAY_DIAL4,"As our people lived very long lives, we were beginning to run out of space."
 HALLWAY_DIAL5,And so I was tasked by the royal family to solve this issue.
@@ -126,23 +126,23 @@ HALLWAY_DIAL10,"|moony|[color=grey]But you can fix this, and stop the rift. Righ
 HALLWAY_DIAL11,"|meist|Of course, but it won’t be an easy task."
 HALLWAY_DIAL12,"|moony|[color=grey]Uh, what do you mean by that?"
 HALLWAY_DIAL13,|meist|...
-GARDEN_DIAL1,...What is this?
+GARDEN_DIAL1,|meist|...What is this?
 GARDEN_DIAL2,|ena|[color=yellow]What seems to be the issue?
 GARDEN_DIAL3,|meist|...
 GARDEN_DIAL4,...
-GARDEN_DIAL5,I think it's time to tell you my plan
+GARDEN_DIAL5,I think it's time to tell you my plan.
 GARDEN_DIAL6,"Throughout your journey, you have gained so much power."
-GARDEN_DIAL7,"The power you wield, is most certainly enough to destroy the glitched rift"
+GARDEN_DIAL7,"The power you wield, is most certainly enough to destroy the glitched rift."
 GARDEN_DIAL8,"However, I cannot allow this to happen."
-GARDEN_DIAL9,"If you destroy it now, I will never have another chance to save this world."
+GARDEN_DIAL9,"If you destroy it now, I will never have another chance to save my world."
 GARDEN_DIAL10,That is why…
 GARDEN_DIAL11,...
 GARDEN_DIAL12,...
 GARDEN_DIAL13,…I need to take your ESSENCE.
-BATTLE_TRANSITION1,Light protrudes throughout the garden
-BATTLE_TRANSITION2,You begin to feel the air around you getting warmer
-BATTLE_TRANSITION3,It seems like your journey has finally come to an end
-BATTLE_TRANSITION4,You are beginning to be filled with dread.
+BATTLE_TRANSITION1,Light protrudes throughout the garden.
+BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
+BATTLE_TRANSITION3,It seems like your journey has finally come to an end.
+BATTLE_TRANSITION4,Your emotions begin to stir greatly within you.
 BATTLE_TRANSITION5,"|meist|Ena, Moony, this was a very pleasant adventure."
 BATTLE_TRANSITION6,But I must do what I can to save my people.
 BATTLE_TRANSITION7,...
