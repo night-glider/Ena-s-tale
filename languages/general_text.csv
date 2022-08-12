@@ -6,7 +6,7 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
-PRE_THRONE_MOONY_DIALOUGE1,@2@|moony|[color=grey] We're finally here. Man this place is decrepit.
+PRE_THRONE_MOONY_DIALOUGE1,@0.05@|moony|[color=grey] We're finally here. Man this place is decrepit.
 PRE_THRONE_MOONY_DIALOUGE2,[color=grey] Lets just hope we finally found [color=red]him.
 POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey] So glad this will finally be over, but something doesnt feel right."
 POST_THRONE_MOONY_DIALOUGE2,"[color=grey] Even though he's our friend, we can't let our guard down. Be careful. "

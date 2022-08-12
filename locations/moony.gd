@@ -1,5 +1,6 @@
 extends Spatial
 
+var talking = false
 var follow_player = true
 onready var player = get_node("../player")
 
@@ -15,6 +16,14 @@ func _ready():
 	get_node("../player/gui").connect("dialogue_end", self, "reset_animation")
 
 func _process(delta):
+	
+	if talking:
+		if get_node("../player/gui/dialogue/DialogueLabel").finished:
+			$decoration.playing = false
+			$decoration.frame = 1
+		else:
+			$decoration.playing = true
+	
 	if follow_player:
 		if transform.origin.distance_to( player.transform.origin ) > 5:
 			var pos = Vector2(transform.origin.x, transform.origin.z)
@@ -24,7 +33,9 @@ func _process(delta):
 			transform.origin.z = pos.y
 
 func start_talking():
+	talking = true
 	$decoration.animation = "talk_default"
 
 func reset_animation():
+	talking = false
 	$decoration.animation = "default"

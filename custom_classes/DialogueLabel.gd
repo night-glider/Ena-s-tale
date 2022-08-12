@@ -8,6 +8,7 @@ signal dialogue_started
 signal dialogue_next
 signal dialogue_ended
 
+
 var timer:Timer = Timer.new()
 var message_id:int = 0
 var char_progress = 0

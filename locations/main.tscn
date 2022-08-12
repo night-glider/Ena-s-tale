@@ -36,16 +36,6 @@ flags = 19
 atlas = ExtResource( 18 )
 region = Rect2( 385, 0, 385, 298 )
 
-[sub_resource type="AtlasTexture" id=212]
-flags = 19
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 385, 298 )
-
-[sub_resource type="AtlasTexture" id=213]
-flags = 19
-atlas = ExtResource( 18 )
-region = Rect2( 385, 0, 385, 298 )
-
 [sub_resource type="AtlasTexture" id=214]
 flags = 19
 atlas = ExtResource( 30 )
@@ -56,6 +46,16 @@ flags = 19
 atlas = ExtResource( 30 )
 region = Rect2( 385, 0, 385, 284 )
 
+[sub_resource type="AtlasTexture" id=212]
+flags = 19
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 385, 298 )
+
+[sub_resource type="AtlasTexture" id=213]
+flags = 19
+atlas = ExtResource( 18 )
+region = Rect2( 385, 0, 385, 298 )
+
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
 "frames": [ SubResource( 211 ) ],
@@ -63,14 +63,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 212 ), SubResource( 213 ) ],
-"loop": true,
-"name": "talk_default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 214 ), SubResource( 215 ) ],
 "loop": true,
 "name": "talk_angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 212 ), SubResource( 213 ) ],
+"loop": true,
+"name": "talk_default",
 "speed": 5.0
 } ]
 
@@ -450,6 +450,11 @@ flags = 16
 atlas = ExtResource( 11 )
 region = Rect2( 1100, 1100, 550, 550 )
 
+[sub_resource type="AtlasTexture" id=204]
+flags = 16
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 550, 550 )
+
 [sub_resource type="AtlasTexture" id=18]
 flags = 16
 atlas = ExtResource( 13 )
@@ -495,11 +500,6 @@ flags = 16
 atlas = ExtResource( 13 )
 region = Rect2( 1100, 1100, 550, 550 )
 
-[sub_resource type="AtlasTexture" id=204]
-flags = 16
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 550, 550 )
-
 [sub_resource type="AtlasTexture" id=209]
 flags = 16
 atlas = ExtResource( 29 )
@@ -537,14 +537,14 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 204 ) ],
 "loop": true,
 "name": "idle_right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "walking",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 209 ), SubResource( 210 ) ],
@@ -792,7 +792,6 @@ visible = false
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -25.4486, 0.55152, -3 )
 mesh = ExtResource( 20 )
 skeleton = NodePath(".")
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="throne"]
 
@@ -849,8 +848,6 @@ set_owner_batch_size = 16
 [node name="entity_0_mesh_instance" type="MeshInstance" parent="QodotMap/entity_0_worldspawn"]
 use_in_baked_light = true
 mesh = SubResource( 123 )
-material/0 = null
-material/1 = null
 
 [node name="entity_0_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
 shape = SubResource( 124 )
@@ -863,7 +860,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.6287, 4.50039, -64.2378 )
 
 [node name="entity_1_mesh_instance" type="MeshInstance" parent="QodotMap/entity_1_func_group"]
 mesh = SubResource( 127 )
-material/0 = null
 
 [node name="entity_1_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group"]
 shape = SubResource( 128 )
@@ -1005,7 +1001,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0153, 7.99871, -65.4993 )
 
 [node name="entity_2_mesh_instance" type="MeshInstance" parent="QodotMap/entity_2_func_group"]
 mesh = SubResource( 174 )
-material/0 = null
 
 [node name="entity_2_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_2_func_group"]
 shape = SubResource( 175 )
@@ -1143,117 +1138,94 @@ min_energy = 6.9
 [node name="MeshInstance" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -59, 0, 17 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -65, 0, 17 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -71, 0, 17 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -77, 0, 17 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -59, 0, 41 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -65, 0, 41 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -71, 0, 41 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, -77, 0, 41 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="fence"]
 transform = Transform( -4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, -80, 0, 38 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="fence"]
 transform = Transform( -4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, -80, 0, 32 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="fence"]
 transform = Transform( -4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, -80, 0, 26 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="fence"]
 transform = Transform( -4.37114e-08, 1, -1.31134e-07, 0, 1.31134e-07, 1, 1, 4.37114e-08, -5.73206e-15, -80, 0, 20 )
 mesh = ExtResource( 21 )
-material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -80.0049, 0, 40.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -68.0049, 0, 40.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -74.0049, 0, 40.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -62.0049, 0, 40.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -80.0049, 0, 16.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -68.0049, 0, 16.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -74.0049, 0, 16.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -62.0049, 0, 16.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance21" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -80.0049, 0, 22.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance22" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -80.0049, 0, 28.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="MeshInstance23" type="MeshInstance" parent="fence"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -80.0049, 0, 34.9384 )
 mesh = ExtResource( 22 )
-material/0 = null
 
 [node name="cutscene" type="Spatial" parent="."]
 script = ExtResource( 12 )
@@ -1267,7 +1239,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 5
+frame = 7
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]

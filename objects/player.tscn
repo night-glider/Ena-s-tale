@@ -36,9 +36,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 intro_messages = [ "INTRO_MESSAGE1", "INTRO_MESSAGE2", "INTRO_MESSAGE3", "INTRO_MESSAGE4" ]
 intro_positions = [ Vector2( 0.5, 0.5 ), Vector2( 0.3, 0.6 ), Vector2( 0.7, 0.6 ), Vector2( 0.2, 0.2 ) ]
 
