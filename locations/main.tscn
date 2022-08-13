@@ -613,7 +613,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ Vector3( 0, -180, 0 ), Vector3( 0, -270, 0 ) ]
@@ -625,10 +625,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ "walking_right", "walking" ]
+"values": [ "walking_right", "walking_forward", "walking" ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -1240,7 +1240,6 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 5
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
