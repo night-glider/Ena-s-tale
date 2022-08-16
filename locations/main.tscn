@@ -772,6 +772,7 @@ script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28064, 1.94113, 7.62942 )
+mouse_sensitivity = 0.1
 
 [node name="moony" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53979, 2.89766, 69.9665 )
@@ -1252,7 +1253,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 5
+frame = 3
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
