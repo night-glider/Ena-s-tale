@@ -42,20 +42,20 @@ INTRO_LOG4,@0.01@Press M to boot from USB12@0.1@.............
 INTRO_LOG5,[color=red]@0.01@WARNING! MEMORY AND CPU EXCEED OPERATING SYSTEM REQU                 
 INTRO_LOG6,@0.2@[b]Operating system settings changed.[/b]
 INTRO_LOG7,@0.1@Starting Michaelsoft Binbows...@1@   
-DESKTOP_MY_COMP,My Computer
-DESKTOP_FOLDER,My work
+DESKTOP_MY_COMP,My Compuer
+DESKTOP_FOLDER,My wok
 DESKTOP_BIN,Recycle Bin
-DESKTOP_ALERT,Alert!
-DESKTOP_ERROR,You have no permission for this action
-DESKTOP_PROGRAMS,programs
-DESKTOP_DOCUMENTS,documents
-DESKTOP_SETTINGS,settings
-DESKTOP_FIND,find
-DESKTOP_HELP,help
+DESKTOP_ALERT,Alet!
+DESKTOP_ERROR,Yu have o pemission for this acion
+DESKTOP_PROGRAMS,progams
+DESKTOP_DOCUMENTS,documets
+DESKTOP_SETTINGS,settigs
+DESKTOP_FIND,fin
+DESKTOP_HELP,halp
 DESKTOP_RUN,run
-DESKTOP_SHUT,shut down...
-DESKTOP_QUIT,are you sure you want to finish your session?
-DESKTOP_ENA,ENA.exe
+DESKTOP_SHUT,sut down...
+DESKTOP_QUIT,ar yu sure yu want to fish yur sesion?
+DESKTOP_ENA,Pleem!
 MAIN_MENU_SELECT,Please select a file:
 MAIN_MENU_END,The end
 MAIN_MENU_EMPTY,[EMPTY]
@@ -65,7 +65,7 @@ ITEMS_QWERTY,QWERTY
 ITEMS_BANANA,Banana
 ITEMS_SOLQUICHE,Solar Quiche
 ITEMS_JOLTEST,joltest
-ITEMS_BANANA_DIALOGUE,TODO
+ITEMS_BANANA_DIALOGUE,Potassium. Your health has been minimally restored.
 ITEMS_SOLQUICHE_DIALOGUE,TODO
 ITEMS_TURRON_DIALOGUE,TURRON! Your wounds begin to close.
 ITEMS_QWERTY_DIALOGUE,You ate the QuicklyWarmingEarthlyRottingTastelessYogurt. It’s a miracle you even gained health from that.
@@ -104,12 +104,12 @@ THRONE_DIAL10,...
 THRONE_DIAL11,"Ever since I left you two, I’ve been busy."
 THRONE_DIAL12,I've been trying to figure out how to stop the [color=purple]rift [color=white]myself.
 THRONE_DIAL13,"And so now, my plan can move forward."
-THRONE_DIAL14,A plan that can truly guarantee the end of our quests.
+THRONE_DIAL14,A plan that can truly guarantee the end of our quest.
 THRONE_DIAL15,|moony|[color=grey]Great! Just one question.
-THRONE_DIAL16,[color=grey] WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
-THRONE_DIAL17,"|meist|I felt like I was the most capable to stop this threat, as I have the most knowledge of it."
-THRONE_DIAL18,"|ena|[color=yellow]Meist, chums are supposed to stick together, that's what makes us a good team."
-THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time so we don’t have to search for you all over ya dweeb.
+THRONE_DIAL16,[color=grey]WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
+THRONE_DIAL17,|meist|I felt like I was more capable to solve this. 
+THRONE_DIAL18,"|ena|[color=yellow]Meist, chums are supposed to stick together. We're a team, remember?"
+THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time ya nerd.
 THRONE_DIAL20,|meist|Fair enough.
 THRONE_DIAL21,...
 THRONE_DIAL22,Then let us complete this long journey.
@@ -119,7 +119,7 @@ HALLWAY_DIAL3,But it wasn’t perfect.
 HALLWAY_DIAL4,"As our people lived very long lives, we were beginning to run out of space."
 HALLWAY_DIAL5,And so I was tasked by the royal family to solve this issue.
 HALLWAY_DIAL6,"But unfortunately as you can see, it was all in vain."
-HALLWAY_DIAL7,"Now  however, I can finally fix all of this."
+HALLWAY_DIAL7,"Now however, I can finally fix all of this."
 HALLWAY_DIAL8,"|ena|[color=yellow]Wait, so how did it get like this?"
 HALLWAY_DIAL9,|meist|...
 HALLWAY_DIAL10,"|moony|[color=grey]But you can fix this, and stop the rift. Right?"
@@ -139,6 +139,7 @@ GARDEN_DIAL10,That is why…
 GARDEN_DIAL11,...
 GARDEN_DIAL12,...
 GARDEN_DIAL13,…I need to take your ESSENCE.
+GARDEN_DIAL14,|ena|[color=blue]W-WHAT?!
 BATTLE_TRANSITION1,Light protrudes throughout the garden.
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end.

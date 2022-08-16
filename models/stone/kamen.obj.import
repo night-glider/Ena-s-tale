@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kamen.obj-411224ba912af46d5a679aded89dbe46.mesh"
+
+[deps]
+
+files=[ "res://.import/kamen.obj-411224ba912af46d5a679aded89dbe46.mesh" ]
+
+source_file="res://models/stone/kamen.obj"
+dest_files=[ "res://.import/kamen.obj-411224ba912af46d5a679aded89dbe46.mesh", "res://.import/kamen.obj-411224ba912af46d5a679aded89dbe46.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.02, 0.02, 0.02 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
