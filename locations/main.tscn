@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=2]
+[gd_scene load_steps=183 format=2]
 
 [ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://sprites/meist_overworld_walking_forward.png" type="Texture" id=29]
 [ext_resource path="res://moony_angry.png" type="Texture" id=30]
 [ext_resource path="res://models/stone/kamen.obj" type="ArrayMesh" id=31]
+[ext_resource path="res://hourglass_dog.png" type="Texture" id=32]
 
 [sub_resource type="AtlasTexture" id=211]
 flags = 19
@@ -767,6 +768,104 @@ ambient_light_energy = 0.4
 fog_color = Color( 0, 0, 0, 1 )
 fog_depth_end = 50.0
 
+[sub_resource type="AtlasTexture" id=306]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=307]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 112, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=308]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 224, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=309]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 336, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=310]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 448, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=311]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 0, 112, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=312]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 112, 112, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=313]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 224, 112, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=314]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 336, 112, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=315]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 448, 112, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=316]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 0, 224, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=317]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 112, 224, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=318]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 224, 224, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=319]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 336, 224, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=320]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 448, 224, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=321]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 0, 336, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=322]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 112, 336, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=323]
+flags = 23
+atlas = ExtResource( 32 )
+region = Rect2( 224, 336, 112, 112 )
+
+[sub_resource type="SpriteFrames" id=324]
+animations = [ {
+"frames": [ SubResource( 306 ), SubResource( 307 ), SubResource( 308 ), SubResource( 309 ), SubResource( 310 ), SubResource( 311 ), SubResource( 312 ), SubResource( 313 ), SubResource( 314 ), SubResource( 315 ), SubResource( 316 ), SubResource( 317 ), SubResource( 318 ), SubResource( 319 ), SubResource( 320 ), SubResource( 321 ), SubResource( 322 ), SubResource( 323 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="world" type="Spatial"]
 script = ExtResource( 9 )
 
@@ -1253,7 +1352,6 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 3
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -1317,6 +1415,16 @@ mouse_filter = 1
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2536, 1.20054, -10.6529 )
 mesh = ExtResource( 31 )
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3, -35 )
+pixel_size = 0.02
+billboard = 1
+double_sided = false
+alpha_cut = 1
+frames = SubResource( 324 )
+frame = 7
+playing = true
 
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
 [connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]
