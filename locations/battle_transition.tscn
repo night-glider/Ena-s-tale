@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=1]
 [ext_resource path="res://locations/battle_transition.gd" type="Script" id=2]
+[ext_resource path="res://OST/battle_against_meist.ogg" type="AudioStream" id=3]
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=4]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=5]
 [ext_resource path="res://sprites/battle/gui/talk.png" type="Texture" id=6]
@@ -89,66 +90,66 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 44, 140, 44 )
-
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 140, 44 )
 
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 44, 140, 44 )
+
 [sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 23 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 22 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 44, 140, 44 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 140, 44 )
 
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 44, 140, 44 )
+
 [sub_resource type="SpriteFrames" id=29]
 animations = [ {
-"frames": [ SubResource( 24 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 25 ) ],
 "loop": true,
 "name": "active",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 44, 140, 44 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 140, 44 )
 
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 44, 140, 44 )
+
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
-"frames": [ SubResource( 26 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 27 ) ],
 "loop": true,
 "name": "active",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "idle",
 "speed": 5.0
 } ]
 
@@ -170,9 +171,6 @@ width = 128
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="background" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -296,5 +294,9 @@ color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

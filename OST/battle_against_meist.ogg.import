@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/battle_against_meist.ogg-687cff1d3e94596b07177eac3b5332d3.oggstr"
+
+[deps]
+
+source_file="res://OST/battle_against_meist.ogg"
+dest_files=[ "res://.import/battle_against_meist.ogg-687cff1d3e94596b07177eac3b5332d3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
