@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/meist walking.png-e297f7209ef3286e518acb32bf6af540.s3tc.stex"
-path.etc2="res://.import/meist walking.png-e297f7209ef3286e518acb32bf6af540.etc2.stex"
+path.s3tc="res://.import/hourglass_dog.png-edea242cb5e63c0b74a7328098264436.s3tc.stex"
+path.etc2="res://.import/hourglass_dog.png-edea242cb5e63c0b74a7328098264436.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://meist walking.png"
-dest_files=[ "res://.import/meist walking.png-e297f7209ef3286e518acb32bf6af540.s3tc.stex", "res://.import/meist walking.png-e297f7209ef3286e518acb32bf6af540.etc2.stex" ]
+source_file="res://sprites/hourglass_dog.png"
+dest_files=[ "res://.import/hourglass_dog.png-edea242cb5e63c0b74a7328098264436.s3tc.stex", "res://.import/hourglass_dog.png-edea242cb5e63c0b74a7328098264436.etc2.stex" ]
 
 [params]
 

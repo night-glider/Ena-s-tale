@@ -9,7 +9,7 @@
 [ext_resource path="res://sprites/meist_overworld_walking_left.png" type="Texture" id=7]
 [ext_resource path="res://objects/torch.tscn" type="PackedScene" id=8]
 [ext_resource path="res://locations/main.gd" type="Script" id=9]
-[ext_resource path="res://vitrage.png" type="Texture" id=10]
+[ext_resource path="res://sprites/vitrage.png" type="Texture" id=10]
 [ext_resource path="res://sprites/meist_overworld_standing.png" type="Texture" id=11]
 [ext_resource path="res://locations/cutscene.gd" type="Script" id=12]
 [ext_resource path="res://sprites/meist_overworld_standing_back.png" type="Texture" id=13]
@@ -17,7 +17,7 @@
 [ext_resource path="res://OST/Small_Shock.ogg" type="AudioStream" id=15]
 [ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=16]
 [ext_resource path="res://locations/moony.gd" type="Script" id=17]
-[ext_resource path="res://moony_default.png" type="Texture" id=18]
+[ext_resource path="res://sprites/moony_default.png" type="Texture" id=18]
 [ext_resource path="res://sprites/exclamation.png" type="Texture" id=19]
 [ext_resource path="res://models/throne/tron (1).obj" type="ArrayMesh" id=20]
 [ext_resource path="res://models/fence/wall/Zabor2.obj" type="ArrayMesh" id=21]
@@ -29,9 +29,9 @@
 [ext_resource path="res://trenchbroom_data/textures/floor.png" type="Texture" id=27]
 [ext_resource path="res://trenchbroom_data/textures/grass.png" type="Texture" id=28]
 [ext_resource path="res://sprites/meist_overworld_walking_forward.png" type="Texture" id=29]
-[ext_resource path="res://moony_angry.png" type="Texture" id=30]
+[ext_resource path="res://sprites/moony_angry.png" type="Texture" id=30]
 [ext_resource path="res://models/stone/kamen.obj" type="ArrayMesh" id=31]
-[ext_resource path="res://hourglass_dog.png" type="Texture" id=32]
+[ext_resource path="res://sprites/hourglass_dog.png" type="Texture" id=32]
 
 [sub_resource type="AtlasTexture" id=211]
 flags = 19
@@ -1352,7 +1352,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 8
+frame = 3
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -1424,7 +1424,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 15
+frame = 1
 playing = true
 
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]

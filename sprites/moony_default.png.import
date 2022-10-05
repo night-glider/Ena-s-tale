@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/meist standing.png-f5df3b3f27b23962bba1de0a757b3085.s3tc.stex"
-path.etc2="res://.import/meist standing.png-f5df3b3f27b23962bba1de0a757b3085.etc2.stex"
+path.s3tc="res://.import/moony_default.png-aec72a8f3fb08fd35a687e697e26a9ca.s3tc.stex"
+path.etc2="res://.import/moony_default.png-aec72a8f3fb08fd35a687e697e26a9ca.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://meist standing.png"
-dest_files=[ "res://.import/meist standing.png-f5df3b3f27b23962bba1de0a757b3085.s3tc.stex", "res://.import/meist standing.png-f5df3b3f27b23962bba1de0a757b3085.etc2.stex" ]
+source_file="res://sprites/moony_default.png"
+dest_files=[ "res://.import/moony_default.png-aec72a8f3fb08fd35a687e697e26a9ca.s3tc.stex", "res://.import/moony_default.png-aec72a8f3fb08fd35a687e697e26a9ca.etc2.stex" ]
 
 [params]
 
@@ -22,8 +22,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=1
 process/fix_alpha_border=true

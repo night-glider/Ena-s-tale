@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vitrage.png-b7e366fdeb81a6177de855abeb23f831.stex"
+path="res://.import/vitrage.png-d5f3a67a7e73bfb8112236532a569f76.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vitrage.png"
-dest_files=[ "res://.import/vitrage.png-b7e366fdeb81a6177de855abeb23f831.stex" ]
+source_file="res://sprites/vitrage.png"
+dest_files=[ "res://.import/vitrage.png-d5f3a67a7e73bfb8112236532a569f76.stex" ]
 
 [params]
 
