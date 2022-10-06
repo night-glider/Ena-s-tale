@@ -231,7 +231,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Enas tale"
-run/main_scene="res://locations/first.tscn"
+run/main_scene="res://test.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -1248,44 +1248,50 @@ shape = SubResource( 305 )
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -1.7, 3.58527, 57.941 )
 omni_range = 6.98083
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="OmniLight3" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -1.7, 3.58527, 42.941 )
 omni_range = 6.99991
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="OmniLight4" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -1.7, 3.58527, 29.941 )
-visible = false
 omni_range = 6.91865
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="OmniLight5" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -1.7, 3.58527, 15.941 )
 omni_range = 6.90227
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="OmniLight6" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -1.7, 3.58527, 3.941 )
 omni_range = 6.93269
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="OmniLight10" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.7234, 3.58527, 15.941 )
 omni_range = 6.90016
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="OmniLight11" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -49.7234, 3.58527, 3.941 )
 omni_range = 6.99985
 n_spd = 0.1
-min_energy = 6.9
+min_energy = 0.0
+max_energy = 0.0
 
 [node name="fence" type="Spatial" parent="."]
 
@@ -1394,7 +1400,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 1
+frame = 5
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -1471,7 +1477,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 10
+frame = 14
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
