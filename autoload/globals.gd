@@ -6,6 +6,7 @@ var error_message:String
 var game_over_soul_position:Vector2 = Vector2.ZERO
 
 
+
 func crash(msg:String):
 	error_message = msg
 	get_tree().change_scene("res://locations/crash_screen.tscn")

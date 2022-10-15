@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/palette_eeve.png-14af0022c3231e542844951b15c27ac0.stex"
+path="res://.import/hand_fist.png-1ec341f8c382993cf99cb05cfef06a6c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://palette_eeve.png"
-dest_files=[ "res://.import/palette_eeve.png-14af0022c3231e542844951b15c27ac0.stex" ]
+source_file="res://sprites/game_over/hand_fist.png"
+dest_files=[ "res://.import/hand_fist.png-1ec341f8c382993cf99cb05cfef06a6c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

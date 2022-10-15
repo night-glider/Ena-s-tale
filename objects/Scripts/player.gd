@@ -58,11 +58,6 @@ func _process(delta):
 	
 	mouse_delta = Vector2.ZERO
 	
-	if Input.is_action_just_pressed("mouse_mode"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen

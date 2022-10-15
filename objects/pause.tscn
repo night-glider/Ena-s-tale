@@ -7,9 +7,6 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -21,27 +18,54 @@ __meta__ = {
 
 [node name="continue" type="Label" parent="."]
 anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE_CONTINUE"
+
+[node name="master" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.35
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE_MASTER"
+
+[node name="music" type="Label" parent="."]
+anchor_left = 0.5
 anchor_top = 0.4
 anchor_right = 0.5
 anchor_bottom = 0.4
 grow_horizontal = 2
 grow_vertical = 2
-text = "PAUSE_CONTINUE"
+text = "PAUSE_MUSIC"
 
-[node name="options" type="Label" parent="."]
+[node name="sounds" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.45
 anchor_right = 0.5
 anchor_bottom = 0.45
 grow_horizontal = 2
 grow_vertical = 2
-text = "PAUSE_OPTIONS"
+text = "PAUSE_SOUNDS"
 
-[node name="quit" type="Label" parent="."]
+[node name="window" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE_WINDOW"
+
+[node name="quit" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.55
+anchor_right = 0.5
+anchor_bottom = 0.55
 grow_horizontal = 2
 grow_vertical = 2
 text = "PAUSE_QUIT"

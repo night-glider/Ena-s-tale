@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bayer16tile2.png-bb1e5436fdad897097a3bab0e9c6676c.stex"
+path="res://.import/hand_relaxed.png-70e4c21fc5877e7579304c14b4759125.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bayer16tile2.png"
-dest_files=[ "res://.import/bayer16tile2.png-bb1e5436fdad897097a3bab0e9c6676c.stex" ]
+source_file="res://sprites/game_over/hand_relaxed.png"
+dest_files=[ "res://.import/hand_relaxed.png-70e4c21fc5877e7579304c14b4759125.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

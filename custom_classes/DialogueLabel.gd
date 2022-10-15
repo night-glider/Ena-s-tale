@@ -28,6 +28,7 @@ func _init():
 func _ready():
 	add_child(timer)
 	add_child(audio_player)
+	audio_player.bus = "sound"
 	timer.wait_time = 0.1
 	timer.connect("timeout", self, "next_symbol")
 	
@@ -35,8 +36,10 @@ func _ready():
 		assert(false, "DialogueLabel's messages are empty!")
 	
 	for i in messages.size():
+		#OS.alert(messages[i] + tr(messages[i]))
 		if messages[i] == tr(messages[i]):
-			assert(false, "missing " + messages[i] + " translation!")
+			pass
+			#assert(false, "missing " + messages[i] + " translation!")
 		else:
 			messages[i] = tr(messages[i])
 

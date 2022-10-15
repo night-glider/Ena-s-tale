@@ -231,14 +231,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Enas tale"
-run/main_scene="res://test.tscn"
+run/main_scene="res://locations/first.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://autoload/globals.gd"
 Debug="*res://autoload/debug.tscn"
 SaveData="*res://autoload/save_data.tscn"
+Globals="*res://autoload/globals.gd"
 
 [debug]
 

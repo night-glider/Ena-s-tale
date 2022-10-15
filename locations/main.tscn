@@ -1260,6 +1260,7 @@ max_energy = 0.0
 
 [node name="OmniLight4" parent="torches" instance=ExtResource( 8 )]
 transform = Transform( 0.91453, 0.404519, 0, -0.404519, 0.91453, 0, 0, 0, 1, -1.7, 3.58527, 29.941 )
+visible = false
 omni_range = 6.91865
 n_spd = 0.1
 min_energy = 0.0
@@ -1400,7 +1401,6 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 5
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -1448,10 +1448,12 @@ attenuation_model = 3
 autoplay = true
 max_distance = 15.0
 out_of_range_mode = 1
+bus = "sound"
 attenuation_filter_db = 0.0
 
 [node name="general_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+bus = "music"
 script = ExtResource( 16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1477,7 +1479,6 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 14
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
