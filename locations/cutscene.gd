@@ -36,6 +36,8 @@ func _on_start_trigger_body_entered(body):
 
 func _on_walk_trigger_body_entered(body):
 	if body.name == "player" and stage == 1:
+		get_node("../moony").disable_dialogue()
+		
 		$Timer.start()
 		
 		$Tween.interpolate_property(get_node("../player"), "translation", get_node("../player").translation, Vector3(-43,1.752,-1.5), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
@@ -61,6 +63,7 @@ func stage11_end():
 	get_node("../moony").reset_animation()
 
 func stage3_start():
+	get_node("../moony").enable_dialogue()
 	stage = 3
 	$AnimationPlayer.play("meist_goes_to_garden")
 	get_node("../player").can_control = true

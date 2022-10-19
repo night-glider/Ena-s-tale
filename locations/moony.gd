@@ -5,6 +5,7 @@ var follow_player = true
 onready var player = get_node("../player")
 
 
+
 func _ready():
 	$AnimationPlayer.play("bob")
 	$decoration/StaticBody.set_collision_layer_bit(0,false)
@@ -39,3 +40,11 @@ func start_talking():
 func reset_animation():
 	talking = false
 	$decoration.animation = "default"
+
+func disable_dialogue():
+	$decoration/StaticBody.set_collision_layer_bit(1,false)
+	$decoration/StaticBody.set_collision_mask_bit(1,false)
+
+func enable_dialogue():
+	$decoration/StaticBody.set_collision_layer_bit(1,true)
+	$decoration/StaticBody.set_collision_mask_bit(1,true)

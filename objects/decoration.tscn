@@ -12,8 +12,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CylinderShape" id=2]
-radius = 0.5
 height = 1.0
+radius = 0.5
 
 [node name="decoration" type="AnimatedSprite3D"]
 billboard = 2
