@@ -3,6 +3,9 @@ extends Control
 var options = []
 var current_option = 0
 
+onready var general_options = [$general/continue, $general/options, $general/quit]
+onready var options_options = [$options/master, $options/music, $options/sounds, $options/window, $options/back]
+
 func increment_looping(val, start, finish):
 	val+=1
 	if val > finish:
@@ -11,22 +14,17 @@ func increment_looping(val, start, finish):
 
 
 func _ready():
-	options.append($continue)
-	options.append($master)
-	options.append($music)
-	options.append($sounds)
-	options.append($window)
-	options.append($quit)
+	options = general_options
 	options[current_option].modulate = Color.yellow
 	
-	$master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
-	$music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
-	$sounds.text = tr("PAUSE_SOUNDS") + str(SaveData.load_data("sound", 10))
+	$options/master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
+	$options/music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
+	$options/sounds.text = tr("PAUSE_SOUNDS") + str(SaveData.load_data("sound", 10))
 	
 	if OS.window_fullscreen:
-		$window.text = tr("PAUSE_FULLSCREEN")
+		$options/window.text = tr("PAUSE_FULLSCREEN")
 	else:
-		$window.text = tr("PAUSE_WINDOW")
+		$options/window.text = tr("PAUSE_WINDOW")
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
@@ -50,44 +48,68 @@ func _process(delta):
 		options[current_option].modulate = Color.yellow
 	
 	if Input.is_action_just_pressed("interact"):
-		if options[current_option] == $continue:
+		if options[current_option] == $general/continue:
 			get_tree().paused = false
 			visible = false
 		
-		if options[current_option] == $master:
+		
+		if options[current_option] == $general/options:
+			options[current_option].modulate = Color.white
+			options = options_options
+			$options.visible = true
+			$general.visible = false
+			
+			current_option = 0
+			options[current_option].modulate = Color.yellow
+			return
+		
+		if options[current_option] == $options/back:
+			options[current_option].modulate = Color.white
+			options = general_options
+			$options.visible = false
+			$general.visible = true
+			
+			current_option = 0
+			options[current_option].modulate = Color.yellow
+			return
+		
+		if options[current_option] == $options/master:
 			var volume = increment_looping(SaveData.load_data("master", 10), 0, 10)
 			SaveData.save_data("master", volume)
 			if volume == 0:
 				AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 			else:
+				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -40 + volume*4)
 			
-			$master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
+			$options/master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
 		
-		if options[current_option] == $music:
+		if options[current_option] == $options/music:
 			var volume = increment_looping(SaveData.load_data("music", 10), 0, 10)
 			SaveData.save_data("music",  volume)
 			if volume == 0:
 				AudioServer.set_bus_mute(AudioServer.get_bus_index("music"), true)
 			else:
+				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), -40 + volume*4)
-			$music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
+			$options/music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
 		
-		if options[current_option] == $sounds:
+		if options[current_option] == $options/sounds:
 			var volume = increment_looping(SaveData.load_data("sound", 10), 0, 10)
 			SaveData.save_data("sound", volume )
 			if volume == 0:
 				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), true)
 			else:
+				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sound"), -40 + volume*4)
-			$sounds.text = tr("PAUSE_SOUND") + str(SaveData.load_data("sound", 10))
+			$options/sounds.text = tr("PAUSE_SOUND") + str(SaveData.load_data("sound", 10))
 		
-		if options[current_option] == $window:
+		if options[current_option] == $options/window:
 			OS.window_fullscreen = not OS.window_fullscreen
 			if OS.window_fullscreen:
-				$window.text = tr("PAUSE_FULLSCREEN")
+				$options/window.text = tr("PAUSE_FULLSCREEN")
 			else:
-				$window.text = tr("PAUSE_WINDOW")
+				$options/window.text = tr("PAUSE_WINDOW")
 		
-		if options[current_option] == $quit:
+		if options[current_option] == $general/quit:
 			get_tree().quit()

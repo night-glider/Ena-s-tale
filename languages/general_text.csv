@@ -84,6 +84,11 @@ TALK_INSULT_DIALOGUE,insult dial
 PAUSE_CONTINUE,Continue
 PAUSE_OPTIONS,Options
 PAUSE_QUIT,Quit
+PAUSE_MASTER,master: 
+PAUSE_MUSIC,music: 
+PAUSE_SOUNDS,sound: 
+PAUSE_WINDOW,screen mode: windowed
+PAUSE_FULLSCREEN,screen mode: fullscreen
 ENEMY_TURRON_REACT,...
 ENEMY_QWERTY_REACT,...
 ENEMY_JOLTEST_REACT,...
@@ -119,7 +124,7 @@ THRONE_DIAL18,"|ena|[color=yellow]Meist, chums are supposed to stick together. W
 THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time ya nerd.
 THRONE_DIAL20,|meist|[color=#ffa500]Fair enough.
 THRONE_DIAL21,...
-THRONE_DIAL22,Then let us complete this long journey.
+THRONE_DIAL22,Then let us complete this long journey. ||
 HALLWAY_DIAL1,"|meist|[color=#ffa500]I haven’t told you much about my world, haven’t I Ena?"
 HALLWAY_DIAL2,It was a complete paradise. There was next to no suffering.
 HALLWAY_DIAL3,But it wasn’t perfect.

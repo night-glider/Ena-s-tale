@@ -16,7 +16,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="continue" type="Label" parent="."]
+[node name="general" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="continue" type="Label" parent="general"]
 anchor_left = 0.5
 anchor_top = 0.3
 anchor_right = 0.5
@@ -25,7 +29,32 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PAUSE_CONTINUE"
 
-[node name="master" type="Label" parent="."]
+[node name="options" type="Label" parent="general"]
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+margin_top = -8.5
+margin_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE_OPTIONS"
+
+[node name="quit" type="Label" parent="general"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE_QUIT"
+
+[node name="options" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="master" type="Label" parent="options"]
 anchor_left = 0.5
 anchor_top = 0.35
 anchor_right = 0.5
@@ -34,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PAUSE_MASTER"
 
-[node name="music" type="Label" parent="."]
+[node name="music" type="Label" parent="options"]
 anchor_left = 0.5
 anchor_top = 0.4
 anchor_right = 0.5
@@ -43,7 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PAUSE_MUSIC"
 
-[node name="sounds" type="Label" parent="."]
+[node name="sounds" type="Label" parent="options"]
 anchor_left = 0.5
 anchor_top = 0.45
 anchor_right = 0.5
@@ -52,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PAUSE_SOUNDS"
 
-[node name="window" type="Label" parent="."]
+[node name="window" type="Label" parent="options"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -61,11 +90,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PAUSE_WINDOW"
 
-[node name="quit" type="Label" parent="."]
+[node name="back" type="Label" parent="options"]
 anchor_left = 0.5
 anchor_top = 0.55
 anchor_right = 0.5
 anchor_bottom = 0.55
 grow_horizontal = 2
 grow_vertical = 2
-text = "PAUSE_QUIT"
+text = "PAUSE_BACK"
