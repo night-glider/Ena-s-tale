@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/overworld.9.map-d5a3f9713b337b1cb9c9c25cb909e404.tres"
+
+[deps]
+
+source_file="res://maps/autosave/overworld.9.map"
+dest_files=[ "res://.import/overworld.9.map-d5a3f9713b337b1cb9c9c25cb909e404.tres" ]
+
+[params]
+
