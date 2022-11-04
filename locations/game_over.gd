@@ -18,4 +18,4 @@ func _on_Timer_timeout():
 		get_tree().change_scene("res://locations/game_over_dialogue.tscn")
 		return
 	
-	get_tree().change_scene("res://locations/main_menu.tscn")
+	get_tree().quit()
