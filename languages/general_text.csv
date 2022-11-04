@@ -6,8 +6,8 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
-OVERWORLD_DOG_DIALOGUE1,"""There is a small golden dog spinning in the void."""
-OVERWORLD_DOG_DIALOGUE2,"""It looks at you with hope in its eyes."""
+OVERWORLD_DOG_DIALOGUE1,||There is a small golden dog spinning in the void.
+OVERWORLD_DOG_DIALOGUE2,||It looks at you with hope in its eyes.
 HALLWAY_RUMBLE_DIALOGUE,"@0.06@Looks like the portal was destroyed, no turning back now."
 PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]We're finally here. Man this place is decrepit.
 PRE_THRONE_MOONY_DIALOUGE2,[color=grey]Lets just hope we finally found [color=red]him.
@@ -84,6 +84,7 @@ TALK_INSULT_DIALOGUE,insult dial
 PAUSE_CONTINUE,Continue
 PAUSE_OPTIONS,Options
 PAUSE_QUIT,Quit
+PAUSE_BACK,Back
 PAUSE_MASTER,master: 
 PAUSE_MUSIC,music: 
 PAUSE_SOUNDS,sound: 

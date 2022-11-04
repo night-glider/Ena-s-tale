@@ -102,7 +102,7 @@ func _process(delta):
 			else:
 				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sound"), -40 + volume*4)
-			$options/sounds.text = tr("PAUSE_SOUND") + str(SaveData.load_data("sound", 10))
+			$options/sounds.text = tr("PAUSE_SOUNDS") + str(SaveData.load_data("sound", 10))
 		
 		if options[current_option] == $options/window:
 			OS.window_fullscreen = not OS.window_fullscreen
