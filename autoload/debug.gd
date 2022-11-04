@@ -1,7 +1,7 @@
 extends Node2D
 
 var last_buttons = []
-var cheat_activation = ["6","9","0","0","0","2","1"]
+var cheat_activation = ["2","1"]
 const dialog = preload("res://autoload/debug_popup.tscn")
 
 func _ready():

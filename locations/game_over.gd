@@ -14,6 +14,10 @@ func _ready():
 	
 
 func _on_Timer_timeout():
+	if SaveData.load_data("death_count", 0) == 1:
+		get_tree().change_scene("res://locations/game_over_ending.tscn")
+		return
+	
 	if SaveData.load_data("death_count", 0) == 4:
 		get_tree().change_scene("res://locations/game_over_dialogue.tscn")
 		return
