@@ -79,7 +79,7 @@ func _process(delta):
 			if volume == 0:
 				AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 			else:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
+				AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -40 + volume*4)
 			
 			$options/master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
@@ -90,7 +90,7 @@ func _process(delta):
 			if volume == 0:
 				AudioServer.set_bus_mute(AudioServer.get_bus_index("music"), true)
 			else:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
+				AudioServer.set_bus_mute(AudioServer.get_bus_index("music"), false)
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), -40 + volume*4)
 			$options/music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
 		
