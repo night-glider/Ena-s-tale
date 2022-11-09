@@ -158,7 +158,7 @@ script = ExtResource( 8 )
 [node name="strike" type="AnimatedSprite" parent="gui"]
 position = Vector2( 170, 440 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "active"
 
 [node name="general_choice" type="Node2D" parent="gui/strike"]
 visible = false
