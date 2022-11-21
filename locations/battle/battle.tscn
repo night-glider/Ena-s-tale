@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://locations/battle/gui.gd" type="Script" id=8]
 [ext_resource path="res://locations/battle/dialogue_box.gd" type="Script" id=9]
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=10]
-[ext_resource path="res://sprites/battle/meist.png" type="Texture" id=11]
+[ext_resource path="res://sprites/battle/meist_head.png" type="Texture" id=11]
 [ext_resource path="res://fonts/binbows_font.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://locations/battle/enemy.gd" type="Script" id=13]
 [ext_resource path="res://locations/battle/attack.tscn" type="PackedScene" id=14]
@@ -19,6 +19,94 @@
 [ext_resource path="res://objects/pause.tscn" type="PackedScene" id=17]
 [ext_resource path="res://sprites/battle/battle_bg.png" type="Texture" id=18]
 [ext_resource path="res://sprites/battle/bg_gradient.png" type="Texture" id=19]
+[ext_resource path="res://sprites/battle/meist_body.png" type="Texture" id=20]
+[ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=21]
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 57, 53 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 11 )
+region = Rect2( 57, 0, 57, 53 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 11 )
+region = Rect2( 114, 0, 57, 53 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 11 )
+region = Rect2( 171, 0, 57, 53 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 11 )
+region = Rect2( 228, 0, 57, 53 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 11 )
+region = Rect2( 285, 0, 57, 53 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=20]
+size = 12
+font_data = ExtResource( 12 )
+
+[sub_resource type="Gradient" id=28]
+colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 28 )
+width = 1
+
+[sub_resource type="Gradient" id=29]
+colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 29 )
+width = 128
+
+[sub_resource type="Animation" id=21]
+resource_name = "simple_anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 30 ), Vector2( -100, -20 ), Vector2( -100, -20 ), Vector2( -100, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
@@ -83,52 +171,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=28]
-colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
-
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 28 )
-width = 1
-
-[sub_resource type="Gradient" id=29]
-colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
-
-[sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 29 )
-width = 128
-
-[sub_resource type="DynamicFont" id=20]
-size = 12
-font_data = ExtResource( 12 )
-
-[sub_resource type="Animation" id=21]
-resource_name = "simple_anim"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 1.7, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -100, 30 ), Vector2( -100, -20 ), Vector2( -100, -20 ), Vector2( -100, 30 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 1.7, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
 "frames": [ ExtResource( 15 ) ],
@@ -154,6 +196,122 @@ texture = ExtResource( 19 )
 
 [node name="gui" type="Node2D" parent="."]
 script = ExtResource( 8 )
+
+[node name="enemy" type="AnimatedSprite" parent="gui"]
+position = Vector2( 339, 140 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 13 )
+
+[node name="body" type="AnimatedSprite" parent="gui/enemy"]
+frames = SubResource( 31 )
+
+[node name="head" type="AnimatedSprite" parent="gui/enemy"]
+position = Vector2( -16.6667, -66 )
+frames = SubResource( 38 )
+frame = 1
+playing = true
+
+[node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
+visible = false
+margin_left = 57.0
+margin_top = -49.0
+margin_right = 257.0
+margin_bottom = -35.0
+custom_fonts/normal_font = SubResource( 20 )
+bbcode_enabled = true
+bbcode_text = "teawewawdaw"
+text = "teawewawdaw"
+fit_content_height = true
+scroll_active = false
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="gui/enemy/dialogue"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp_bar" type="TextureProgress" parent="gui/enemy"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -100.0
+margin_top = 30.0
+margin_right = 100.0
+margin_bottom = 50.0
+max_value = 10000.0
+value = 10000.0
+texture_under = SubResource( 13 )
+texture_progress = SubResource( 15 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="gui/enemy/hp_bar"]
+anims/simple_anim = SubResource( 21 )
+
+[node name="Label" type="Label" parent="gui/enemy/hp_bar"]
+margin_left = 76.0
+margin_top = -34.0
+margin_right = 116.0
+margin_bottom = -12.0
+text = "2000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
+
+[node name="dialogue_box" type="Control" parent="gui"]
+margin_left = 35.0
+margin_top = 221.0
+margin_right = 606.0
+margin_bottom = 357.0
+script = ExtResource( 9 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="gui/dialogue_box"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+border_color = Color( 1, 1, 1, 0 )
+border_width = 0.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="gui/dialogue_box/ReferenceRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 21 )
+patch_margin_left = 10
+patch_margin_top = 12
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="gui/dialogue_box/ReferenceRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="dialogue" type="RichTextLabel" parent="gui/dialogue_box/ReferenceRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+scroll_following = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+messages = [ "INTRO_LOG1", "INTRO_LOG2", "INTRO_LOG3", "INTRO_LOG4", "INTRO_LOG5", "INTRO_LOG6" ]
+
+[node name="attack" parent="gui/dialogue_box/ReferenceRect" instance=ExtResource( 14 )]
+visible = false
+
+[node name="Tween" type="Tween" parent="gui/dialogue_box"]
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
 position = Vector2( 170, 440 )
@@ -341,105 +499,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dialogue_box" type="Control" parent="gui"]
-margin_left = 35.0
-margin_top = 221.0
-margin_right = 606.0
-margin_bottom = 357.0
-script = ExtResource( 9 )
-
-[node name="ReferenceRect" type="ReferenceRect" parent="gui/dialogue_box"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-border_color = Color( 1, 1, 1, 1 )
-border_width = 5.0
-editor_only = false
-
-[node name="ColorRect" type="ColorRect" parent="gui/dialogue_box/ReferenceRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="dialogue" type="RichTextLabel" parent="gui/dialogue_box/ReferenceRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-scroll_following = true
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-messages = [ "INTRO_LOG1", "INTRO_LOG2", "INTRO_LOG3", "INTRO_LOG4", "INTRO_LOG5", "INTRO_LOG6" ]
-
-[node name="attack" parent="gui/dialogue_box/ReferenceRect" instance=ExtResource( 14 )]
-visible = false
-
-[node name="Tween" type="Tween" parent="gui/dialogue_box"]
-
-[node name="enemy" type="Sprite" parent="gui"]
-position = Vector2( 316, 105 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 11 )
-script = ExtResource( 13 )
-
-[node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
-visible = false
-margin_left = 57.0
-margin_top = -49.0
-margin_right = 257.0
-margin_bottom = -35.0
-custom_fonts/normal_font = SubResource( 20 )
-bbcode_enabled = true
-bbcode_text = "teawewawdaw"
-text = "teawewawdaw"
-fit_content_height = true
-scroll_active = false
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="gui/enemy/dialogue"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hp_bar" type="TextureProgress" parent="gui/enemy"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = -100.0
-margin_top = 30.0
-margin_right = 100.0
-margin_bottom = 50.0
-max_value = 10000.0
-value = 10000.0
-texture_under = SubResource( 13 )
-texture_progress = SubResource( 15 )
-nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="anim" type="AnimationPlayer" parent="gui/enemy/hp_bar"]
-anims/simple_anim = SubResource( 21 )
-
-[node name="Label" type="Label" parent="gui/enemy/hp_bar"]
-margin_left = 76.0
-margin_top = -34.0
-margin_right = 116.0
-margin_bottom = -12.0
-text = "2000"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
-
 [node name="player" parent="gui" instance=ExtResource( 6 )]
 visible = false
 
@@ -448,19 +507,23 @@ margin_left = 17.0
 margin_top = 317.0
 margin_right = 97.0
 margin_bottom = 397.0
-border_color = Color( 1, 1, 1, 1 )
-border_width = 5.0
-editor_only = false
+border_color = Color( 1, 1, 1, 0 )
+border_width = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="gui/ena_status"]
+[node name="NinePatchRect" type="NinePatchRect" parent="gui/ena_status"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+texture = ExtResource( 21 )
+patch_margin_left = 10
+patch_margin_top = 12
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="gui/ena_status"]
 frames = SubResource( 30 )
 animation = "sad"
 centered = false
+offset = Vector2( 1, -4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
@@ -470,6 +533,11 @@ bus = "music"
 [node name="pause" parent="." instance=ExtResource( 17 )]
 visible = false
 
+[connection signal="dialogue_ended" from="gui/enemy/dialogue" to="gui" method="_on_enemy_dialogue_ended"]
+[connection signal="dialogue_ended" from="gui/enemy/dialogue" to="gui/enemy" method="_on_dialogue_dialogue_ended"]
+[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui" method="_on_dialogue_dialogue_ended"]
+[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
+[connection signal="attack_ended" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_player_attack_ended"]
 [connection signal="pressed" from="gui/strike/general_choice/attack" to="gui" method="_on_attack_pressed"]
 [connection signal="pressed" from="gui/strike/general_choice/stances" to="gui" method="_on_stances_pressed"]
 [connection signal="pressed" from="gui/strike/attack_choice/head" to="gui" method="_on_head_pressed"]
@@ -486,8 +554,3 @@ visible = false
 [connection signal="pressed" from="gui/pack/inventory/banana2" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana3" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana4" to="gui" method="_item_pressed"]
-[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui" method="_on_dialogue_dialogue_ended"]
-[connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
-[connection signal="attack_ended" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_player_attack_ended"]
-[connection signal="dialogue_ended" from="gui/enemy/dialogue" to="gui" method="_on_enemy_dialogue_ended"]
-[connection signal="dialogue_ended" from="gui/enemy/dialogue" to="gui/enemy" method="_on_dialogue_dialogue_ended"]

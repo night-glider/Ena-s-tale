@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 var dialogue_active = false
 var hp = 10000

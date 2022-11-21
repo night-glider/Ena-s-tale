@@ -76,32 +76,20 @@ func _process(delta):
 		if options[current_option] == $options/master:
 			var volume = increment_looping(SaveData.load_data("master", 10), 0, 10)
 			SaveData.save_data("master", volume)
-			if volume == 0:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
-			else:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
-				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -40 + volume*4)
+			Globals.change_bus_volume("Master", volume)
 			
 			$options/master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
 		
 		if options[current_option] == $options/music:
 			var volume = increment_looping(SaveData.load_data("music", 10), 0, 10)
 			SaveData.save_data("music",  volume)
-			if volume == 0:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("music"), true)
-			else:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("music"), false)
-				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), -40 + volume*4)
+			Globals.change_bus_volume("music", volume)
 			$options/music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
 		
 		if options[current_option] == $options/sounds:
 			var volume = increment_looping(SaveData.load_data("sound", 10), 0, 10)
 			SaveData.save_data("sound", volume )
-			if volume == 0:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), true)
-			else:
-				AudioServer.set_bus_mute(AudioServer.get_bus_index("sound"), false)
-				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sound"), -40 + volume*4)
+			Globals.change_bus_volume("sound", volume)
 			$options/sounds.text = tr("PAUSE_SOUNDS") + str(SaveData.load_data("sound", 10))
 		
 		if options[current_option] == $options/window:
