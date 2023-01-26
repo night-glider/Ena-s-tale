@@ -14,7 +14,7 @@
 [ext_resource path="res://locations/cutscene.gd" type="Script" id=12]
 [ext_resource path="res://sprites/meist_overworld_standing_back.png" type="Texture" id=13]
 [ext_resource path="res://OST/Bird_noise.ogg" type="AudioStream" id=14]
-[ext_resource path="res://OST/Small_Shock.ogg" type="AudioStream" id=15]
+[ext_resource path="res://OST/fated_encounter.ogg" type="AudioStream" id=15]
 [ext_resource path="res://custom_classes/AudioStreamPlayerInterpolated.gd" type="Script" id=16]
 [ext_resource path="res://locations/moony.gd" type="Script" id=17]
 [ext_resource path="res://sprites/moony_default.png" type="Texture" id=18]
@@ -1965,7 +1965,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 1
+frame = 4
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -2045,7 +2045,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 7
+frame = 10
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]

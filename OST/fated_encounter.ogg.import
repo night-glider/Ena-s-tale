@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fated_encounter.ogg-26e23ad6486cba2189a2c26f9f6d42cd.oggstr"
+
+[deps]
+
+source_file="res://OST/fated_encounter.ogg"
+dest_files=[ "res://.import/fated_encounter.ogg-26e23ad6486cba2189a2c26f9f6d42cd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
