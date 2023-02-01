@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -17,64 +17,35 @@
 [ext_resource path="res://sprites/battle/gui/ena_sad.png" type="Texture" id=15]
 [ext_resource path="res://OST/meist_attacks.ogg" type="AudioStream" id=16]
 [ext_resource path="res://objects/pause.tscn" type="PackedScene" id=17]
-[ext_resource path="res://sprites/battle/battle_bg.png" type="Texture" id=18]
+[ext_resource path="res://sprites/battle/battle_bg_new.png" type="Texture" id=18]
 [ext_resource path="res://sprites/battle/bg_gradient.png" type="Texture" id=19]
 [ext_resource path="res://sprites/battle/meist_body.png" type="Texture" id=20]
 [ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=21]
-[ext_resource path="res://sprites/battle/battle_fire.png" type="Texture" id=22]
-[ext_resource path="res://sprites/battle/battle_fire2.png" type="Texture" id=23]
+[ext_resource path="res://sprites/battle/bg_fires.png" type="Texture" id=22]
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
-region = Rect2( 0, 0, 240, 270 )
+region = Rect2( 0, 0, 640, 238 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 22 )
-region = Rect2( 240, 0, 240, 270 )
+region = Rect2( 640, 0, 640, 238 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 22 )
-region = Rect2( 480, 0, 240, 270 )
+region = Rect2( 1280, 0, 640, 238 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 22 )
-region = Rect2( 720, 0, 240, 270 )
+region = Rect2( 1920, 0, 640, 238 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 22 )
-region = Rect2( 960, 0, 240, 270 )
+region = Rect2( 2560, 0, 640, 238 )
 
-[sub_resource type="SpriteFrames" id=48]
+[sub_resource type="SpriteFrames" id=66]
 animations = [ {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 23 )
-region = Rect2( 0, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=50]
-atlas = ExtResource( 23 )
-region = Rect2( 240, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 23 )
-region = Rect2( 480, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 23 )
-region = Rect2( 720, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 23 )
-region = Rect2( 960, 0, 240, 270 )
-
-[sub_resource type="SpriteFrames" id=54]
-animations = [ {
-"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -229,9 +200,29 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 15 )
+region = Rect2( 75, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 15 )
+region = Rect2( 150, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 15 )
+region = Rect2( 225, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 15 )
+region = Rect2( 300, 0, 75, 75 )
+
+[sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "sad",
 "speed": 5.0
@@ -242,24 +233,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
 
+[node name="bg_color" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="bg" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
-frames = SubResource( 48 )
-frame = 3
-playing = true
-centered = false
-
-[node name="fires2" type="AnimatedSprite" parent="bg"]
-position = Vector2( 640, 0 )
-frames = SubResource( 54 )
+frames = SubResource( 66 )
 frame = 1
 playing = true
 centered = false
-offset = Vector2( -240, 0 )
 
 [node name="gradient" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -279,7 +267,7 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -591,10 +579,12 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="gui/ena_status"]
-frames = SubResource( 30 )
+position = Vector2( 2, 2 )
+frames = SubResource( 60 )
 animation = "sad"
+frame = 2
+playing = true
 centered = false
-offset = Vector2( 1, -4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
