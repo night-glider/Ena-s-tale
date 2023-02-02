@@ -804,15 +804,15 @@ flags = 16
 atlas = ExtResource( 29 )
 region = Rect2( 0, 0, 550, 550 )
 
-[sub_resource type="AtlasTexture" id=328]
-flags = 16
-atlas = ExtResource( 29 )
-region = Rect2( 550, 0, 550, 550 )
-
 [sub_resource type="AtlasTexture" id=329]
 flags = 16
 atlas = ExtResource( 29 )
 region = Rect2( 1100, 0, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=328]
+flags = 16
+atlas = ExtResource( 29 )
+region = Rect2( 550, 0, 550, 550 )
 
 [sub_resource type="AtlasTexture" id=330]
 flags = 16
@@ -824,15 +824,15 @@ flags = 16
 atlas = ExtResource( 29 )
 region = Rect2( 550, 550, 550, 550 )
 
-[sub_resource type="AtlasTexture" id=332]
-flags = 16
-atlas = ExtResource( 29 )
-region = Rect2( 1100, 550, 550, 550 )
-
 [sub_resource type="AtlasTexture" id=333]
 flags = 16
 atlas = ExtResource( 29 )
 region = Rect2( 0, 1100, 550, 550 )
+
+[sub_resource type="AtlasTexture" id=332]
+flags = 16
+atlas = ExtResource( 29 )
+region = Rect2( 1100, 550, 550, 550 )
 
 [sub_resource type="AtlasTexture" id=334]
 flags = 16
@@ -879,12 +879,12 @@ animations = [ {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "walking",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ SubResource( 327 ), SubResource( 328 ), SubResource( 329 ), SubResource( 330 ), SubResource( 331 ), SubResource( 332 ), SubResource( 333 ), SubResource( 334 ), SubResource( 335 ) ],
+"frames": [ SubResource( 327 ), SubResource( 329 ), SubResource( 328 ), SubResource( 330 ), SubResource( 331 ), SubResource( 333 ), SubResource( 332 ), SubResource( 334 ), SubResource( 335 ) ],
 "loop": true,
 "name": "walking_forward",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [ SubResource( 218 ), SubResource( 219 ) ],
 "loop": true,
@@ -1965,7 +1965,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 4
+frame = 2
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -2045,7 +2045,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 10
+frame = 17
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]

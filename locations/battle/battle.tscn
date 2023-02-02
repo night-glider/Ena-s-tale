@@ -48,7 +48,7 @@ animations = [ {
 "frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="SpriteFrames" id=31]
@@ -88,7 +88,7 @@ animations = [ {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="DynamicFont" id=20]
@@ -225,7 +225,7 @@ animations = [ {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "sad",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="battle" type="Control"]
@@ -245,7 +245,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 1
+frame = 2
 playing = true
 centered = false
 
@@ -267,7 +267,6 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
-frame = 2
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -276,6 +275,7 @@ margin_left = 57.0
 margin_top = -49.0
 margin_right = 257.0
 margin_bottom = -35.0
+rect_clip_content = false
 custom_fonts/normal_font = SubResource( 20 )
 bbcode_enabled = true
 bbcode_text = "teawewawdaw"
@@ -283,17 +283,18 @@ text = "teawewawdaw"
 fit_content_height = true
 scroll_active = false
 script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Panel" type="Panel" parent="gui/enemy/dialogue"]
+[node name="NinePatchRect" type="NinePatchRect" parent="gui/enemy/dialogue"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -3.0
+margin_top = -3.0
+texture = ExtResource( 21 )
+patch_margin_left = 10
+patch_margin_top = 12
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="hp_bar" type="TextureProgress" parent="gui/enemy"]
 modulate = Color( 1, 1, 1, 0 )
@@ -582,7 +583,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
+frame = 1
 playing = true
 centered = false
 

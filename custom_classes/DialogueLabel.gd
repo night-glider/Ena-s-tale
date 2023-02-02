@@ -62,9 +62,44 @@ func start_dialogue():
 	finished = false
 	
 	bbcode_text = ""
+	messages[message_id] = message_trim(messages[message_id])
 	next_symbol()
 	timer.start()
 	emit_signal("dialogue_started")
+
+func message_trim(string:String)->String:
+	var font = get_font("normal_font")
+	var width = rect_size.x
+	var new_string = ""
+	var line = ""
+	var word = ""
+	var is_tag = false
+	for ch in string:
+		if ch in ["[", "]", "%", "@", "|"]:
+			is_tag = not is_tag
+			new_string += ch
+			continue
+		if is_tag:
+			new_string += ch
+			continue
+		if ch == " ":
+			if font.get_string_size(line + " " + word).x >= width:
+				new_string += line + "\n"
+				line = word + " "
+			else:
+				line += word + " "
+			word = ""
+			continue
+		
+		word += ch
+	
+	new_string += line
+	if font.get_string_size(line + " " + word).x >= width:
+		new_string += "\n"
+	new_string += word
+	
+	
+	return new_string
 
 func next_message():
 	bbcode_text = ""
@@ -73,6 +108,7 @@ func next_message():
 	finished = false
 	
 	if message_id < messages.size():
+		messages[message_id] = message_trim(messages[message_id])
 		next_symbol()
 		timer.start()
 		emit_signal("dialogue_next")
@@ -144,7 +180,8 @@ func next_symbol():
 	
 	var new_char = messages[message_id][char_progress]
 	bbcode_text+=new_char
-	audio_player.play()
+	if new_char != " ":
+		audio_player.play()
 	
 	if new_char == ",":
 		var timer_old_time = timer.wait_time
