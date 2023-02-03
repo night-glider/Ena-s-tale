@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -22,6 +22,10 @@
 [ext_resource path="res://sprites/battle/meist_body.png" type="Texture" id=20]
 [ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=21]
 [ext_resource path="res://sprites/battle/bg_fires.png" type="Texture" id=22]
+[ext_resource path="res://sprites/battle/gui/ena_hurt.png" type="Texture" id=23]
+[ext_resource path="res://locations/battle/ena_status.gd" type="Script" id=24]
+[ext_resource path="res://sprites/battle/gui/hp_bar_bg.png" type="Texture" id=25]
+[ext_resource path="res://sprites/battle/gui/hp_bar.png" type="Texture" id=26]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -200,6 +204,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 75, 75 )
+
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 75, 75 )
@@ -222,6 +230,11 @@ region = Rect2( 300, 0, 75, 75 )
 
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
+"frames": [ SubResource( 67 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
 "loop": true,
 "name": "sad",
@@ -267,6 +280,7 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
+frame = 5
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -539,16 +553,13 @@ margin_bottom = 22.0
 text = "LF:"
 
 [node name="hp_bar" type="TextureProgress" parent="gui/bottom_panel"]
-margin_left = 320.0
-margin_right = 520.0
-margin_bottom = 20.0
+margin_left = 312.0
+margin_top = -5.0
+margin_right = 518.0
+margin_bottom = 25.0
 value = 75.0
-texture_under = SubResource( 13 )
-texture_progress = SubResource( 15 )
-nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_under = ExtResource( 25 )
+texture_progress = ExtResource( 26 )
 
 [node name="hp" type="Label" parent="gui/bottom_panel"]
 margin_left = 525.0
@@ -569,6 +580,7 @@ margin_right = 97.0
 margin_bottom = 397.0
 border_color = Color( 1, 1, 1, 0 )
 border_width = 0.0
+script = ExtResource( 24 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="gui/ena_status"]
 anchor_right = 1.0
@@ -583,9 +595,11 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 1
 playing = true
 centered = false
+
+[node name="hurt_timer" type="Timer" parent="gui/ena_status"]
+one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
@@ -616,3 +630,5 @@ visible = false
 [connection signal="pressed" from="gui/pack/inventory/banana2" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana3" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana4" to="gui" method="_item_pressed"]
+[connection signal="got_hit" from="gui/player" to="gui/ena_status" method="_on_player_got_hit"]
+[connection signal="timeout" from="gui/ena_status/hurt_timer" to="gui/ena_status" method="_on_hurt_timer_timeout"]

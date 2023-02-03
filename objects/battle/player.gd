@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal got_hit(dmg)
+
 var hp := 100
 var heal_stack = []
 var can_regen = false
@@ -107,6 +109,7 @@ func _on_Area2D_area_entered(area):
 				return
 
 func take_hit(dmg:int):
+	emit_signal("got_hit", dmg)
 	match stance:
 		stances.GLACIAL:
 			hp-=dmg*0.5
