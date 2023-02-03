@@ -18,6 +18,7 @@ enum stages {
 	}
 var active_stage = stages.BOTTOM_BUTTONS
 var last_action = ""
+var next_attack = null
 var default_dialogue = "HELLO_WORLD"
 
 func strike_stance_stage():
@@ -130,7 +131,7 @@ func items_dialogue_stage(text:String):
 
 func attack_stage():
 	active_stage = stages.ATTACK
-	var attack = preload("res://objects/battle/attacks/attack1/attack1.tscn").instance()
+	var attack = next_attack.instance()
 	attack.connect("attack_ended", self, "attack_ended")
 	$dialogue_box.change_size(attack.box_position, attack.box_size)
 	$player.position = Vector2(320,320)
@@ -225,6 +226,7 @@ func ask_enemy_for_next_stage():
 	# does not attack
 	match result[0]:
 		"attack": 
+			next_attack = result[1]
 			attack_stage()
 			return
 		"dialogue":

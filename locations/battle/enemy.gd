@@ -1,7 +1,16 @@
 extends AnimatedSprite
 
+var all_attacks = [1,2,3,4,5,6,7,8]
+var current_attack_pool = []
+
 var dialogue_active = false
 var hp = 10000
+
+func _ready():
+	for i in all_attacks.size():
+		all_attacks[i] = load("res://objects/battle/attacks/attack{0}/attack{0}.tscn".format([all_attacks[i]]))
+	
+	current_attack_pool = all_attacks.duplicate()
 
 func _process(delta):
 	
@@ -16,8 +25,15 @@ func _process(delta):
 		if Input.is_action_pressed("cancel"):
 			$dialogue.skip_message()
 
+func choose_attack()->PackedScene:
+	if current_attack_pool.empty():
+		current_attack_pool = all_attacks.duplicate()
+		current_attack_pool.shuffle()
+	
+	return current_attack_pool.pop_front()
+
 func last_action_decision(action:String)->Array:
-	var answer = ["attack"]
+	var answer = ["none"]
 	match action:
 		"turron": 
 			answer[0] = "dialogue" 
@@ -47,7 +63,7 @@ func last_action_decision(action:String)->Array:
 			answer[0] = "dialogue" 
 			answer.append(["ENEMY_INSULT_REACT"])
 			return answer
-	
+	answer = ["attack", choose_attack()]
 	return answer
 
 func take_hit(damage:int):
