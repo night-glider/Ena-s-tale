@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal got_hit(dmg)
+signal stance_changed(new_stance)
 
 var hp := 100
 var heal_stack = []
@@ -16,8 +17,8 @@ var jump_frames = max_jump_frames
 var previous_position = Vector2.ZERO
 
 
-enum stances {NORMAL = 0, GLACIAL = 1, INFERNAL = 2}
-var stance = stances.NORMAL
+enum stances {SAD = 1, RAGE = 2}
+var stance = stances.SAD
 
 enum modes {NORMAL = 0, BLUE = 1}
 var mode = modes.NORMAL
@@ -111,12 +112,10 @@ func _on_Area2D_area_entered(area):
 func take_hit(dmg:int):
 	emit_signal("got_hit", dmg)
 	match stance:
-		stances.GLACIAL:
+		stances.SAD:
 			hp-=dmg*0.5
-		stances.INFERNAL:
+		stances.RAGE:
 			hp-=dmg*1.5
-		stances.NORMAL:
-			hp-=dmg
 	
 	if hp <= 0:
 		Globals.game_over(position)
@@ -148,12 +147,12 @@ func change_stance(new_stance:int):
 	stance = new_stance
 	
 	match stance:
-		stances.NORMAL:
-			damage = 2000
-		stances.GLACIAL:
+		stances.SAD:
 			damage = 1500
-		stances.INFERNAL:
+		stances.RAGE:
 			damage = 2500
+	
+	emit_signal("stance_changed", stance)
 
 func change_mode(new_mode:int):
 	mode = new_mode

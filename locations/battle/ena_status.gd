@@ -1,6 +1,7 @@
 extends ReferenceRect
 
 var is_hurt = false
+var current_state = "sad"
 
 func _process(delta):
 	if is_hurt:
@@ -14,6 +15,15 @@ func _on_player_got_hit(dmg):
 
 
 func _on_hurt_timer_timeout():
-	$AnimatedSprite.play("sad")
+	$AnimatedSprite.play(current_state)
 	is_hurt = false
 	$AnimatedSprite.position = Vector2(2,2)
+
+
+func _on_player_stance_changed(new_stance):
+	if new_stance == 1:
+		current_state = "sad"
+		$AnimatedSprite.play(current_state)
+	if new_stance == 2:
+		current_state = "rage"
+		$AnimatedSprite.play(current_state)

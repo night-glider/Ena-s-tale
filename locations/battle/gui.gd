@@ -270,13 +270,13 @@ func _on_normal_pressed(id):
 
 func _on_infernal_pressed(id):
 	last_action = "stance"
-	$player.change_stance($player.stances.INFERNAL)
+	$player.change_stance($player.stances.RAGE)
 	$strike/stance_choice.visible = false
 	ask_enemy_for_next_stage()
 
 func _on_glacial_pressed(id):
 	last_action = "stance"
-	$player.change_stance($player.stances.GLACIAL)
+	$player.change_stance($player.stances.SAD)
 	$strike/stance_choice.visible = false
 	ask_enemy_for_next_stage()
 
