@@ -2,6 +2,7 @@ extends Control
 
 var options = []
 var current_option = 0
+var progress = 0
 
 onready var general_options = [$general/continue, $general/options, $general/quit]
 onready var options_options = [$options/master, $options/music, $options/sounds, $options/window, $options/back]
@@ -27,7 +28,11 @@ func _ready():
 		$options/window.text = tr("PAUSE_WINDOW")
 
 func _process(delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_pressed("pause"):
+		progress+=1.0/180.0
+	
+	if progress > 1:
+		progress = 0
 		if visible:
 			get_tree().paused = false
 			visible = false
