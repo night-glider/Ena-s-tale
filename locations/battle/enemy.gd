@@ -33,6 +33,9 @@ func choose_attack()->PackedScene:
 	return current_attack_pool.pop_front()
 
 func last_action_decision(action:String)->Array:
+	if hp >= 10000:
+		return ["dialogue_pass", ["ENEMY_INSULT_REACT"]]
+	
 	var answer = ["none"]
 	match action:
 		"turron": 
@@ -63,7 +66,7 @@ func last_action_decision(action:String)->Array:
 			answer[0] = "dialogue" 
 			answer.append(["ENEMY_INSULT_REACT"])
 			return answer
-	answer = ["attack", choose_attack()]
+	answer = ["attack"]
 	return answer
 
 func take_hit(damage:int):
