@@ -23,9 +23,9 @@ func start_attack(orbs_count = 5, dmg = 500):
 	for i in orbs_count:
 		var new_orb = orb_scene.instance()
 		var new_orb_pos = Vector2(1,0).rotated(choice([0, PI])).rotated(rand_range(-0.5,0.5))
-		new_orb_pos = $center.rect_position + (new_orb_pos * ($center.rect_position.x + i*50+100))
+		new_orb_pos = $center.rect_position + (new_orb_pos * ($center.rect_position.x + i*55+200))
 		
-		new_orb.init(new_orb_pos, $center.rect_position, 2, dmg/orbs_count)
+		new_orb.init(new_orb_pos, $center.rect_position, 4, dmg/orbs_count)
 		add_child(new_orb)
 		orbs.append( new_orb )
 

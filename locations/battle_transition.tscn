@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=1]
 [ext_resource path="res://locations/battle_transition.gd" type="Script" id=2]
@@ -8,11 +8,14 @@
 [ext_resource path="res://sprites/battle/gui/talk.png" type="Texture" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://sprites/battle/battle_bg.png" type="Texture" id=8]
+[ext_resource path="res://fonts/runescape_uf.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://sprites/battle/bg_gradient.png" type="Texture" id=10]
 [ext_resource path="res://sprites/battle/gui/ena_sad.png" type="Texture" id=11]
 [ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=12]
+[ext_resource path="res://sprites/battle/gui/hp_bar.png" type="Texture" id=13]
 [ext_resource path="res://sprites/battle/meist_head.png" type="Texture" id=14]
 [ext_resource path="res://sprites/battle/meist_body.png" type="Texture" id=15]
+[ext_resource path="res://sprites/battle/gui/hp_bar_bg.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -198,20 +201,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=18]
-colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
-
-[sub_resource type="GradientTexture" id=31]
-gradient = SubResource( 18 )
-width = 1
-
-[sub_resource type="Gradient" id=19]
-colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
-
-[sub_resource type="GradientTexture" id=32]
-gradient = SubResource( 19 )
-width = 128
-
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 75, 75 )
@@ -239,6 +228,14 @@ animations = [ {
 "name": "sad",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=61]
+size = 32
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=62]
+size = 32
+font_data = ExtResource( 9 )
 
 [node name="battle_transition" type="Control"]
 anchor_right = 1.0
@@ -302,7 +299,7 @@ frames = SubResource( 38 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy2"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 41 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
@@ -323,38 +320,6 @@ animation = "idle"
 [node name="bottom_ena" type="Sprite" parent="gui"]
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 7 )
-
-[node name="bottom_panel" type="Control" parent="gui"]
-margin_top = 380.0
-margin_right = 640.0
-margin_bottom = 410.0
-
-[node name="lf" type="Label" parent="gui/bottom_panel"]
-margin_left = 281.0
-margin_right = 321.0
-margin_bottom = 22.0
-text = "LF:"
-
-[node name="hp_bar" type="TextureProgress" parent="gui/bottom_panel"]
-margin_left = 320.0
-margin_right = 520.0
-margin_bottom = 20.0
-value = 100.0
-texture_under = SubResource( 31 )
-texture_progress = SubResource( 32 )
-nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hp" type="Label" parent="gui/bottom_panel"]
-margin_left = 525.0
-margin_right = 595.0
-margin_bottom = 22.0
-text = "100/100"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ena_status" type="ReferenceRect" parent="gui"]
 visible = false
@@ -377,9 +342,40 @@ patch_margin_bottom = 10
 [node name="AnimatedSprite" type="AnimatedSprite" parent="gui/ena_status"]
 frames = SubResource( 60 )
 animation = "sad"
+frame = 4
 playing = true
 centered = false
 offset = Vector2( 2, 2 )
+
+[node name="bottom_panel" type="Control" parent="gui"]
+margin_top = 380.0
+margin_right = 640.0
+margin_bottom = 410.0
+
+[node name="lf" type="Label" parent="gui/bottom_panel"]
+margin_left = 277.0
+margin_top = -4.0
+margin_right = 321.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 61 )
+text = "LF:"
+
+[node name="hp_bar" type="TextureProgress" parent="gui/bottom_panel"]
+margin_left = 312.0
+margin_top = -5.0
+margin_right = 518.0
+margin_bottom = 25.0
+value = 75.0
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 13 )
+
+[node name="hp" type="Label" parent="gui/bottom_panel"]
+margin_left = 525.0
+margin_top = -4.0
+margin_right = 595.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 62 )
+text = "75/100"
 
 [node name="fade" type="ColorRect" parent="."]
 anchor_right = 1.0

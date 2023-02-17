@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/Scripts/label_option.gd" type="Script" id=1]
+[ext_resource path="res://fonts/runescape_uf.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 12.5, 7 )
+extents = Vector2( 26, 16 )
 
 [node name="Label" type="Label"]
-margin_right = 25.0
-margin_bottom = 14.0
+margin_right = 26.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
 text = "test"
 script = ExtResource( 1 )
 __meta__ = {
@@ -16,7 +22,7 @@ __meta__ = {
 }
 
 [node name="Area2D" type="Area2D" parent="." groups=["option_hitbox"]]
-position = Vector2( 12.5, 7 )
+position = Vector2( 26, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )

@@ -31,7 +31,7 @@ func strike_stance_stage():
 func strike_general_stage():
 	active_stage = stages.STRIKE_GENERAL
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
-	$player.position = Vector2(320,320)
+	$player.position = Vector2(320,260)
 	$strike/attack_choice.visible = false
 	$strike/stance_choice.visible = false
 	$strike/general_choice.visible = true
@@ -72,7 +72,7 @@ func enemy_dialogue_pass_stage(dialogue = []):
 func talk_stage():
 	active_stage = stages.TALK
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
-	$player.position = Vector2(320,320)
+	$player.position = Vector2(260,290)
 	
 	$player.visible = true
 	$bottom_ena.visible = false

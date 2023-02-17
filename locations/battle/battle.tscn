@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -209,6 +209,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=75]
+size = 32
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=74]
+size = 32
+font_data = ExtResource( 12 )
+
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 23 )
 region = Rect2( 0, 0, 75, 75 )
@@ -288,7 +296,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
+frame = 4
 playing = true
 centered = false
 
@@ -310,6 +318,7 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
+frame = 4
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -426,42 +435,57 @@ animation = "active"
 visible = false
 
 [node name="attack" parent="gui/strike/general_choice" instance=ExtResource( 7 )]
-margin_left = 72.0
-margin_top = -160.0
-margin_right = 171.0
-margin_bottom = -144.0
+margin_left = 98.0
+margin_top = -196.0
+margin_right = 296.0
+margin_bottom = -164.0
 text = "ATTACK_ATTACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="stances" parent="gui/strike/general_choice" instance=ExtResource( 7 )]
-margin_left = 71.0
-margin_top = -123.0
-margin_right = 176.0
-margin_bottom = -107.0
+margin_left = 98.0
+margin_top = -142.0
+margin_right = 308.0
+margin_bottom = -110.0
 text = "ATTACK_STANCES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="attack_choice" type="Node2D" parent="gui/strike"]
 visible = false
 
 [node name="head" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
 margin_left = 40.0
-margin_top = -195.0
-margin_right = 123.0
-margin_bottom = -179.0
+margin_top = -200.0
+margin_right = 206.0
+margin_bottom = -168.0
 text = "ATTACK_HEAD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="torso" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
 margin_left = 39.0
-margin_top = -158.0
-margin_right = 130.0
-margin_bottom = -142.0
+margin_top = -164.0
+margin_right = 221.0
+margin_bottom = -132.0
 text = "ATTACK_TORSO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="legs" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
 margin_left = 39.0
-margin_top = -125.0
-margin_right = 121.0
-margin_bottom = -109.0
+margin_top = -127.0
+margin_right = 203.0
+margin_bottom = -95.0
 text = "ATTACK_LEGS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="stance_choice" type="Node2D" parent="gui/strike"]
 visible = false
@@ -469,16 +493,19 @@ visible = false
 [node name="infernal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 40.0
 margin_top = -158.0
-margin_right = 131.0
-margin_bottom = -142.0
+margin_right = 222.0
+margin_bottom = -126.0
 text = "EMOTION_RAGE"
 
 [node name="glacial" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 165.0
 margin_top = -157.0
-margin_right = 278.0
-margin_bottom = -141.0
+margin_right = 391.0
+margin_bottom = -125.0
 text = "EMOTION_SADNESS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="talk" type="AnimatedSprite" parent="gui"]
 position = Vector2( 320, 440 )
@@ -491,17 +518,23 @@ visible = false
 [node name="reason" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = -121.0
 margin_top = -179.0
-margin_right = -37.0
-margin_bottom = -163.0
+margin_right = 47.0
+margin_bottom = -147.0
 text = "TALK_REASON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "TALK_REASON_DIALOGUE"
 
 [node name="insult" parent="gui/talk/options" instance=ExtResource( 7 )]
 margin_left = 34.0
 margin_top = -179.0
-margin_right = 114.0
-margin_bottom = -163.0
+margin_right = 194.0
+margin_bottom = -147.0
 text = "TALK_INSULT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "TALK_INSULT_DIALOGUE"
 
 [node name="pack" type="AnimatedSprite" parent="gui"]
@@ -515,49 +548,67 @@ visible = false
 [node name="turron" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -200.0
-margin_right = -266.0
-margin_bottom = -184.0
+margin_right = -177.0
+margin_bottom = -168.0
 text = "ITEMS_TURRON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "ITEMS_TURRON_DIALOGUE"
 
 [node name="solquiche" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -166.0
-margin_right = -246.0
-margin_bottom = -150.0
+margin_right = -137.0
+margin_bottom = -134.0
 text = "ITEMS_SOLQUICHE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "ITEMS_SOLQUICHE_DIALOGUE"
 
 [node name="banana" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
 margin_top = -129.0
-margin_right = -263.0
-margin_bottom = -113.0
+margin_right = -171.0
+margin_bottom = -97.0
 text = "ITEMS_BANANA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana2" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
 margin_top = -200.0
-margin_right = -5.0
-margin_bottom = -184.0
+margin_right = 87.0
+margin_bottom = -168.0
 text = "ITEMS_BANANA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana3" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
 margin_top = -166.0
-margin_right = -5.0
-margin_bottom = -150.0
+margin_right = 87.0
+margin_bottom = -134.0
 text = "ITEMS_BANANA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana4" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
 margin_top = -129.0
-margin_right = -5.0
-margin_bottom = -113.0
+margin_right = 87.0
+margin_bottom = -97.0
 text = "ITEMS_BANANA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="bottom_ena" type="Sprite" parent="gui"]
@@ -570,9 +621,11 @@ margin_right = 640.0
 margin_bottom = 410.0
 
 [node name="lf" type="Label" parent="gui/bottom_panel"]
-margin_left = 281.0
+margin_left = 277.0
+margin_top = -4.0
 margin_right = 321.0
-margin_bottom = 22.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 75 )
 text = "LF:"
 
 [node name="hp_bar" type="TextureProgress" parent="gui/bottom_panel"]
@@ -586,12 +639,11 @@ texture_progress = ExtResource( 26 )
 
 [node name="hp" type="Label" parent="gui/bottom_panel"]
 margin_left = 525.0
+margin_top = -4.0
 margin_right = 595.0
 margin_bottom = 22.0
+custom_fonts/font = SubResource( 74 )
 text = "75/100"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="player" parent="gui" instance=ExtResource( 6 )]
 visible = false
@@ -618,7 +670,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 3
 playing = true
 centered = false
 
