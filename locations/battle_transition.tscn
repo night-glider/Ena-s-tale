@@ -266,6 +266,7 @@ stretch_mode = 1
 anchor_top = 0.6
 anchor_right = 1.0
 anchor_bottom = 0.7
+rect_clip_content = false
 bbcode_enabled = true
 scroll_active = false
 script = ExtResource( 1 )
@@ -276,8 +277,8 @@ visible = false
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -5.0
-margin_top = -5.0
+margin_left = -7.0
+margin_top = -10.0
 texture = ExtResource( 12 )
 patch_margin_left = 10
 patch_margin_top = 12
@@ -299,7 +300,7 @@ frames = SubResource( 38 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy2"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 41 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
@@ -342,7 +343,7 @@ patch_margin_bottom = 10
 [node name="AnimatedSprite" type="AnimatedSprite" parent="gui/ena_status"]
 frames = SubResource( 60 )
 animation = "sad"
-frame = 4
+frame = 1
 playing = true
 centered = false
 offset = Vector2( 2, 2 )
