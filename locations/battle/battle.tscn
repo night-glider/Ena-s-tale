@@ -288,7 +288,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 3
+frame = 2
 playing = true
 centered = false
 
@@ -310,7 +310,6 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
-frame = 3
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -470,14 +469,14 @@ visible = false
 [node name="infernal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 40.0
 margin_top = -158.0
-margin_right = 150.0
+margin_right = 131.0
 margin_bottom = -142.0
 text = "EMOTION_RAGE"
 
 [node name="glacial" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
 margin_left = 165.0
 margin_top = -157.0
-margin_right = 267.0
+margin_right = 278.0
 margin_bottom = -141.0
 text = "EMOTION_SADNESS"
 
@@ -619,7 +618,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 4
+frame = 3
 playing = true
 centered = false
 

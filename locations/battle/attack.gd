@@ -1,6 +1,7 @@
 extends Control
 
 var active = false
+var current_damage = 0
 var orbs = []
 var orb_scene = preload('res://locations/battle/attack_orb.tscn')
 
@@ -12,15 +13,13 @@ func choice(list):
 
 func _ready():
 	$center.visible = false
-	
-	
-	#start_attack()
 
-func start_attack(orbs_count = 5, dmg = 2000):
+func start_attack(orbs_count = 5, dmg = 500):
 	$label.rect_pivot_offset = $label.rect_size/2
 	$AnimationPlayer.play("ready_go")
 	$end_timer.start()
 	visible = true
+	current_damage = 0
 	for i in orbs_count:
 		var new_orb = orb_scene.instance()
 		var new_orb_pos = Vector2(1,0).rotated(choice([0, PI])).rotated(rand_range(-0.5,0.5))
@@ -32,6 +31,7 @@ func start_attack(orbs_count = 5, dmg = 2000):
 
 func end_attack():
 	$end_timer.stop()
+	emit_signal("damage_dealt", current_damage)
 	emit_signal("attack_ended")
 	active = false
 	visible = false
@@ -45,7 +45,7 @@ func _process(delta):
 		var orb = orbs.pop_front()
 		
 		if $center.rect_position.distance_to(orb.position) < 20:
-			emit_signal("damage_dealt", orb.damage)
+			current_damage+= orb.damage
 		orb.queue_free()
 
 		$center/press_effect/anim.stop()
