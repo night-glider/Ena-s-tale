@@ -81,6 +81,8 @@ TALK_REASON,reason
 TALK_INSULT,insult
 TALK_REASON_DIALOGUE,reason dial
 TALK_INSULT_DIALOGUE,insult dial
+PLAYER_ATTACK_READY,READY
+PLAYER_ATTACK_GO,GO
 PAUSE_CONTINUE,Continue
 PAUSE_OPTIONS,Options
 PAUSE_QUIT,Quit
@@ -101,9 +103,8 @@ ATTACK_STANCES,emotions
 ATTACK_HEAD,head
 ATTACK_LEGS,legs
 ATTACK_TORSO,torso
-STANCE_NORMAL,normal
-STANCE_INFERNAL,rage
-STANCE_GLACIAL,fear
+EMOTION_RAGE,rage
+EMOTION_SADNESS,sadness
 THRONE_DIAL1,"@0.04@|meist|[color=#ffa500]…Even after all of this time, the throne still remains."
 THRONE_DIAL2,[color=#ffa500]...
 THRONE_DIAL3,[color=#ffa500]…Maybe I don’t have to d-
