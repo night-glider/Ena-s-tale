@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://locations/battle/attack.gd" type="Script" id=1]
 [ext_resource path="res://sprites/battle/gui/attack_punctire.png" type="Texture" id=2]
 [ext_resource path="res://sprites/battle/gui/attack_circle.png" type="Texture" id=3]
-[ext_resource path="res://locations/battle/attack_orb.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "press"
@@ -34,21 +33,120 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1.5, 1.5 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("label:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "TEST" ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ready_go"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("label:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 5, 5 ), Vector2( 1, 1 ), Vector2( 5, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("label:visible")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("label:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 0.7, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "YES", "NO" ]
+}
+
 [node name="attack" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_clip_content = true
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="center" type="Control" parent="."]
-margin_left = 285.0
-margin_top = 68.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="punctire" type="Sprite" parent="center"]
 texture = ExtResource( 2 )
@@ -61,21 +159,23 @@ texture = ExtResource( 3 )
 [node name="anim" type="AnimationPlayer" parent="center/press_effect"]
 anims/press = SubResource( 1 )
 
-[node name="orbs" type="Node2D" parent="."]
+[node name="end_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
-[node name="orb" parent="orbs" instance=ExtResource( 4 )]
-visible = false
+[node name="label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 320, 240 )
+text = "TEST"
+align = 1
+valign = 1
 
-[node name="orb2" parent="orbs" instance=ExtResource( 4 )]
-visible = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/ready_go = SubResource( 3 )
 
-[node name="orb3" parent="orbs" instance=ExtResource( 4 )]
-visible = false
-
-[node name="orb4" parent="orbs" instance=ExtResource( 4 )]
-visible = false
-
-[node name="orb5" parent="orbs" instance=ExtResource( 4 )]
-visible = false
-
-[connection signal="attack_ended" from="." to="." method="_on_attack_attack_ended"]
+[connection signal="timeout" from="end_timer" to="." method="_on_end_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

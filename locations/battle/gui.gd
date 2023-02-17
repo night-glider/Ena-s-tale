@@ -244,10 +244,12 @@ func _on_enemy_dialogue_ended():
 	if active_stage == stages.ENEMY_DIALOGUE_PASS:
 		bottom_buttons_stage()
 
-func _on_player_attack_ended(damage):
+func _on_player_attack_ended():
 	#OS.alert("attack_ended with damage " + str(damage))
-	$enemy.take_hit(damage)
 	ask_enemy_for_next_stage()
+
+func _on_attack_damage_dealt(damage):
+	$enemy.take_hit(damage)
 
 func _on_attack_pressed(id):
 	strike_limb_stage()
@@ -281,3 +283,6 @@ func _on_glacial_pressed(id):
 
 func _on_stances_pressed(id):
 	strike_stance_stage()
+
+
+

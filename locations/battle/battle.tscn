@@ -311,7 +311,7 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -640,6 +640,7 @@ visible = false
 [connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui" method="_on_dialogue_dialogue_ended"]
 [connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
 [connection signal="attack_ended" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_player_attack_ended"]
+[connection signal="damage_dealt" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_attack_damage_dealt"]
 [connection signal="pressed" from="gui/strike/general_choice/attack" to="gui" method="_on_attack_pressed"]
 [connection signal="pressed" from="gui/strike/general_choice/stances" to="gui" method="_on_stances_pressed"]
 [connection signal="pressed" from="gui/strike/attack_choice/head" to="gui" method="_on_head_pressed"]
