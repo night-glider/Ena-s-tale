@@ -4,7 +4,7 @@
 [ext_resource path="res://objects/Scripts/player_GUI.gd" type="Script" id=2]
 [ext_resource path="res://sounds/jump.ogg" type="AudioStream" id=3]
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=4]
-[ext_resource path="res://fonts/determination.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://fonts/runescape_uf.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
