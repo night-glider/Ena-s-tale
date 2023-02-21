@@ -318,7 +318,7 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]
@@ -436,13 +436,10 @@ visible = false
 
 [node name="attack" parent="gui/strike/general_choice" instance=ExtResource( 7 )]
 margin_left = 98.0
-margin_top = -196.0
+margin_top = -182.0
 margin_right = 296.0
-margin_bottom = -164.0
+margin_bottom = -150.0
 text = "ATTACK_ATTACK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="stances" parent="gui/strike/general_choice" instance=ExtResource( 7 )]
 margin_left = 98.0
@@ -450,62 +447,47 @@ margin_top = -142.0
 margin_right = 308.0
 margin_bottom = -110.0
 text = "ATTACK_STANCES"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="attack_choice" type="Node2D" parent="gui/strike"]
 visible = false
 
 [node name="head" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
-margin_left = 40.0
-margin_top = -200.0
-margin_right = 206.0
-margin_bottom = -168.0
+margin_left = 108.0
+margin_top = -203.0
+margin_right = 274.0
+margin_bottom = -171.0
 text = "ATTACK_HEAD"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="torso" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
-margin_left = 39.0
+margin_left = 108.0
 margin_top = -164.0
-margin_right = 221.0
+margin_right = 290.0
 margin_bottom = -132.0
 text = "ATTACK_TORSO"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="legs" parent="gui/strike/attack_choice" instance=ExtResource( 7 )]
-margin_left = 39.0
+margin_left = 110.0
 margin_top = -127.0
-margin_right = 203.0
+margin_right = 274.0
 margin_bottom = -95.0
 text = "ATTACK_LEGS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="stance_choice" type="Node2D" parent="gui/strike"]
 visible = false
 
 [node name="infernal" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
-margin_left = 40.0
-margin_top = -158.0
-margin_right = 222.0
-margin_bottom = -126.0
+margin_left = 99.0
+margin_top = -190.0
+margin_right = 281.0
+margin_bottom = -158.0
 text = "EMOTION_RAGE"
 
 [node name="glacial" parent="gui/strike/stance_choice" instance=ExtResource( 7 )]
-margin_left = 165.0
-margin_top = -157.0
-margin_right = 391.0
-margin_bottom = -125.0
+margin_left = 99.0
+margin_top = -150.0
+margin_right = 325.0
+margin_bottom = -118.0
 text = "EMOTION_SADNESS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="talk" type="AnimatedSprite" parent="gui"]
 position = Vector2( 320, 440 )
@@ -521,9 +503,6 @@ margin_top = -179.0
 margin_right = 47.0
 margin_bottom = -147.0
 text = "TALK_REASON"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "TALK_REASON_DIALOGUE"
 
 [node name="insult" parent="gui/talk/options" instance=ExtResource( 7 )]
@@ -532,9 +511,6 @@ margin_top = -179.0
 margin_right = 194.0
 margin_bottom = -147.0
 text = "TALK_INSULT"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "TALK_INSULT_DIALOGUE"
 
 [node name="pack" type="AnimatedSprite" parent="gui"]
@@ -547,13 +523,10 @@ visible = false
 
 [node name="turron" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
-margin_top = -200.0
+margin_top = -213.0
 margin_right = -177.0
-margin_bottom = -168.0
+margin_bottom = -181.0
 text = "ITEMS_TURRON"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "ITEMS_TURRON_DIALOGUE"
 
 [node name="solquiche" parent="gui/pack/inventory" instance=ExtResource( 7 )]
@@ -562,31 +535,22 @@ margin_top = -166.0
 margin_right = -137.0
 margin_bottom = -134.0
 text = "ITEMS_SOLQUICHE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "ITEMS_SOLQUICHE_DIALOGUE"
 
 [node name="banana" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -355.0
-margin_top = -129.0
+margin_top = -119.0
 margin_right = -171.0
-margin_bottom = -97.0
+margin_bottom = -87.0
 text = "ITEMS_BANANA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana2" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
-margin_top = -200.0
+margin_top = -213.0
 margin_right = 87.0
-margin_bottom = -168.0
+margin_bottom = -181.0
 text = "ITEMS_BANANA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana3" parent="gui/pack/inventory" instance=ExtResource( 7 )]
@@ -595,20 +559,14 @@ margin_top = -166.0
 margin_right = 87.0
 margin_bottom = -134.0
 text = "ITEMS_BANANA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana4" parent="gui/pack/inventory" instance=ExtResource( 7 )]
 margin_left = -97.0
-margin_top = -129.0
+margin_top = -119.0
 margin_right = 87.0
-margin_bottom = -97.0
+margin_bottom = -87.0
 text = "ITEMS_BANANA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="bottom_ena" type="Sprite" parent="gui"]
@@ -698,8 +656,8 @@ visible = false
 [connection signal="pressed" from="gui/strike/attack_choice/legs" to="gui" method="_on_legs_pressed"]
 [connection signal="pressed" from="gui/strike/stance_choice/infernal" to="gui" method="_on_infernal_pressed"]
 [connection signal="pressed" from="gui/strike/stance_choice/glacial" to="gui" method="_on_glacial_pressed"]
-[connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_check_pressed"]
-[connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_check_pressed"]
+[connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_reason_pressed"]
+[connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_insult_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/solquiche" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana" to="gui" method="_item_pressed"]

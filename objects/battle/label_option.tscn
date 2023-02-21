@@ -12,8 +12,8 @@ resource_local_to_scene = true
 extents = Vector2( 26, 16 )
 
 [node name="Label" type="Label"]
-margin_right = 26.0
-margin_bottom = 16.0
+margin_right = 52.0
+margin_bottom = 32.0
 custom_fonts/font = SubResource( 2 )
 text = "test"
 script = ExtResource( 1 )

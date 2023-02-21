@@ -19,7 +19,27 @@ enum stages {
 var active_stage = stages.BOTTOM_BUTTONS
 var last_action = ""
 var next_attack = null
-var default_dialogue = "HELLO_WORLD"
+enum routes {
+	NONE,
+	LIGHT,
+	NEUTRAL,
+}
+var active_route = routes.NONE
+
+var narrator_light_dials = [
+	"NARRATOR_BATTLE_LIGHT_DIAL1",
+	"NARRATOR_BATTLE_LIGHT_DIAL2",
+	"NARRATOR_BATTLE_LIGHT_DIAL3",
+	"NARRATOR_BATTLE_LIGHT_DIAL4",
+	"NARRATOR_BATTLE_LIGHT_DIAL5",
+	"NARRATOR_BATTLE_LIGHT_DIAL6",
+	"NARRATOR_BATTLE_LIGHT_DIAL7",
+	"NARRATOR_BATTLE_LIGHT_DIAL8",
+]
+var narrator_light_index = -1
+
+func narattor_light_progress():
+	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials))
 
 func strike_stance_stage():
 	active_stage = stages.STRIKE_STANCE
@@ -118,7 +138,16 @@ func bottom_buttons_stage():
 	$pack/inventory.visible = false
 	$talk/options.visible = false
 	
-	$dialogue_box.start_inactive_dialogue(default_dialogue)
+	var narrator_line
+	match active_route:
+		routes.NONE:
+			narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL1"
+		routes.NEUTRAL:
+			narrator_line = "NARRATOR_BATTLE_NEUTRAL_DIAL1"
+		routes.LIGHT:
+			narrator_line = narrator_light_dials[narrator_light_index]
+		
+	$dialogue_box.start_inactive_dialogue(narrator_line)
 
 func items_dialogue_stage(text:String):
 	active_stage = stages.ITEMS_DIALOGUE
@@ -139,6 +168,7 @@ func attack_stage():
 	
 	$player.can_regen = true
 	$player.visible = true
+	active_route = routes.NEUTRAL
 
 func _process(delta):
 	match active_stage:
@@ -210,10 +240,6 @@ func _on_dialogue_dialogue_ended():
 	if active_stage == stages.TALK_DIALOGUE:
 		ask_enemy_for_next_stage()
 
-func _on_check_pressed(id):
-	talk_dialogue_stage(id.dialogue)
-	last_action = id.name
-
 func attack_ended():
 	bottom_buttons_stage()
 
@@ -263,7 +289,6 @@ func _on_torso_pressed(id):
 func _on_legs_pressed(id):
 	player_attack_stage($player.damage/2)
 
-func _on_normal_pressed(id):
 	last_action = "stance"
 	$player.change_stance($player.stances.NORMAL)
 	$strike/stance_choice.visible = false
@@ -285,4 +310,24 @@ func _on_stances_pressed(id):
 	strike_stance_stage()
 
 
+func _on_reason_pressed(id):
+	var dialogue
+	if $ena_status.current_state == "sad":
+		dialogue = "TALK_REASON_DIALOGUE"
+		if active_route == routes.NONE:
+			active_route = routes.LIGHT
+		narattor_light_progress()
+	else:
+		dialogue = "TALK_REASON_DIALOGUE_INACTIVE"
+	talk_dialogue_stage(dialogue)
+	last_action = id.name
+	
 
+func _on_insult_pressed(id):
+	var dialogue
+	if $ena_status.current_state == "sad":
+		dialogue = "TALK_INSULT_DIALOGUE_INACTIVE"
+	else:
+		dialogue = "TALK_INSULT_DIALOGUE"
+	talk_dialogue_stage(dialogue)
+	last_action = id.name

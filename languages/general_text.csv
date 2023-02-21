@@ -80,7 +80,9 @@ ITEMS_JOLTEST_DIALOGUE,A placeholder item until I can think of more healing item
 TALK_REASON,reason
 TALK_INSULT,insult
 TALK_REASON_DIALOGUE,reason dial
+TALK_REASON_DIALOGUE_INACTIVE,you are too angry to do that
 TALK_INSULT_DIALOGUE,insult dial
+TALK_INSULT_DIALOGUE_INACTIVE,you are too sad to do that
 PLAYER_ATTACK_READY,READY
 PLAYER_ATTACK_GO,GO
 PAUSE_CONTINUE,Continue
@@ -162,16 +164,18 @@ BATTLE_TRANSITION5,"[color=#ffa500]|meist|Ena, Moony, this was a very pleasant a
 BATTLE_TRANSITION6,[color=#ffa500]But I must do what I can to save my people.
 BATTLE_TRANSITION7,[color=#ffa500]...
 BATTLE_TRANSITION8,[color=#ffa500]...I'm sorry.
-NARRATOR_BATTLE_DIAL1,Meist begins to prepare himself.
-NARRATOR_BATTLE_ATTACK_DIAL2,Meist attacks!
-NARRATOR_BATTLE_LIGHT_DIAL3,Meist begins to prepare himself.
-NARRATOR_BATTLE_LIGHT_DIAL4,Meist begins to prepare himself.
-NARRATOR_BATTLE_LIGHT_DIAL5,Meist is preparing himself for your ATTACK.
+NARRATOR_BATTLE_DEFAULT_DIAL1,Meist begins to prepare himself.
+NARRATOR_BATTLE_NEUTRAL_DIAL1,Meist attacks!
+NARRATOR_BATTLE_LIGHT_DIAL1,Meist begins to prepare himself.
+NARRATOR_BATTLE_LIGHT_DIAL2,Meist begins to prepare himself.
+NARRATOR_BATTLE_LIGHT_DIAL3,Meist is preparing himself for your ATTACK.
+NARRATOR_BATTLE_LIGHT_DIAL4,...
+NARRATOR_BATTLE_LIGHT_DIAL5,...
 NARRATOR_BATTLE_LIGHT_DIAL6,...
-NARRATOR_BATTLE_LIGHT_DIAL7,...
-NARRATOR_BATTLE_LIGHT_DIAL8,...
-NARRATOR_BATTLE_LIGHT_DIAL9,It seems like all you can do is [color=red]ATTACK. 
-NARRATOR_BATTLE_LIGHT_DIAL10,[color=purple]...
-ENA_BATTLE_LIGHT_DIAL_1,"|ena|[color=yellow]Meist, I request your attention! "
-ENA_BATTLE_LIGHT_DIAL_2,"Let us help you old chum, we can resolve this peacefully!"
-MOONY_BATTLE_LIGHT_DIAL_1,|moony|[color=grey]Yeah! (TODO)
+NARRATOR_BATTLE_LIGHT_DIAL7,It seems like all you can do is [color=red]ATTACK. 
+NARRATOR_BATTLE_LIGHT_DIAL8,[color=purple]...
+ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]Please, listen to us!"
+ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
+ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
+ENA_TALK_REASON1_DIAL_4,[color=grey]I agree! Stop this lunacy now Meist! 
+ENA_TALK_REASON1_DIAL_5,|ena|[color=blue]We don't want to have to hurt you!

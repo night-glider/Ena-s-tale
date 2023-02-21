@@ -19,9 +19,7 @@ func set_disabled(value):
 func _ready():
 	self_modulate = idle_color
 	rect_size = Vector2.ZERO
-	$Area2D/CollisionShape2D.shape.extents = rect_size/2
-	$Area2D.position = rect_size/2
-	#OS.alert(str($Area2D/CollisionShape2D.shape.extents))
+	_on_Label_resized()
 
 func press():
 	if not disabled and is_visible_in_tree():
@@ -38,5 +36,5 @@ func _on_Area2D_area_exited(area):
 			self_modulate = idle_color
 
 func _on_Label_resized():
-	$Area2D/CollisionShape2D.shape.extents = rect_size/2
+	$Area2D/CollisionShape2D.shape.extents = rect_size/2 - Vector2(0,10)
 	$Area2D.position = rect_size/2

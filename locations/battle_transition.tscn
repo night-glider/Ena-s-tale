@@ -301,7 +301,7 @@ frames = SubResource( 38 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy2"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 41 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
@@ -366,7 +366,7 @@ margin_left = 312.0
 margin_top = -5.0
 margin_right = 518.0
 margin_bottom = 25.0
-value = 75.0
+value = 100.0
 texture_under = ExtResource( 16 )
 texture_progress = ExtResource( 13 )
 
@@ -376,7 +376,7 @@ margin_top = -4.0
 margin_right = 595.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 62 )
-text = "75/100"
+text = "100/100"
 
 [node name="fade" type="ColorRect" parent="."]
 anchor_right = 1.0

@@ -46,6 +46,7 @@ intro_messages = [ "INTRO_MESSAGE1", "INTRO_MESSAGE2", "INTRO_MESSAGE3", "INTRO_
 intro_positions = [ Vector2( 0.5, 0.5 ), Vector2( 0.3, 0.6 ), Vector2( 0.7, 0.6 ), Vector2( 0.2, 0.2 ) ]
 
 [node name="dialogue" type="NinePatchRect" parent="gui"]
+visible = false
 anchor_left = 0.1
 anchor_top = 0.75
 anchor_right = 0.9
