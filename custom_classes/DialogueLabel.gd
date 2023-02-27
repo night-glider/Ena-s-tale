@@ -3,6 +3,7 @@ class_name DialogueLabel
 
 export(Array, String, MULTILINE) var messages:Array = ["HELLO_WORLD"]
 export var finished = false
+export var word_wrapping = true
 
 signal dialogue_started
 signal dialogue_next
@@ -26,8 +27,6 @@ func _init():
 	
 
 func _ready():
-	OS.alert(remove_tags( "[color=grey]Lets just hope we finally found [color=red]him." ))
-	
 	add_child(timer)
 	add_child(audio_player)
 	audio_player.bus = "sound"
@@ -115,7 +114,8 @@ func next_message():
 	finished = false
 	
 	if message_id < messages.size():
-		messages[message_id] = message_trim(messages[message_id])
+		if word_wrapping:
+			messages[message_id] = message_trim(messages[message_id])
 		next_symbol()
 		timer.start()
 		emit_signal("dialogue_next")
