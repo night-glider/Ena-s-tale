@@ -38,6 +38,9 @@ var narrator_light_dials = [
 ]
 var narrator_light_index = -1
 
+var talk_enabled = false
+var turns_passed = 0
+
 func narattor_light_progress():
 	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials))
 
@@ -90,6 +93,9 @@ func enemy_dialogue_pass_stage(dialogue = []):
 	$player.position = Vector2(0,0)
 
 func talk_stage():
+	if not talk_enabled:
+		return
+	
 	active_stage = stages.TALK
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(260,290)
@@ -178,12 +184,24 @@ func _process(delta):
 					buttons[active_button].animation = "idle"
 					active_button-=1
 					buttons[active_button].animation = "active"
+				
+					if not talk_enabled:
+						if $talk.animation == "idle":
+							$talk.animation = "idle_disabled"
+						else:
+							$talk.animation = "active_disabled"
 			
 			if Input.is_action_just_pressed("walk_right"):
 				if active_button < 2:
 					buttons[active_button].animation = "idle"
 					active_button+=1
 					buttons[active_button].animation = "active"
+					
+					if not talk_enabled:
+						if $talk.animation == "idle":
+							$talk.animation = "idle_disabled"
+						else:
+							$talk.animation = "active_disabled"
 			
 			if Input.is_action_just_pressed("interact"):
 				if buttons[active_button] == $pack:
@@ -244,6 +262,10 @@ func attack_ended():
 	bottom_buttons_stage()
 
 func ask_enemy_for_next_stage():
+	turns_passed+=1
+	if turns_passed == 5:
+		talk_enabled = true
+		$talk.animation = "idle"
 	var result = $enemy.last_action_decision(last_action)
 	# "attack"
 	# "dialogue"
