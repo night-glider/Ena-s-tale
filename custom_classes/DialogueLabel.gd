@@ -26,6 +26,8 @@ func _init():
 	
 
 func _ready():
+	OS.alert(remove_tags( "[color=grey]Lets just hope we finally found [color=red]him." ))
+	
 	add_child(timer)
 	add_child(audio_player)
 	audio_player.bus = "sound"
@@ -67,23 +69,28 @@ func start_dialogue():
 	timer.start()
 	emit_signal("dialogue_started")
 
+func remove_tags(string:String)->String:
+	var new_string = ""
+	var is_tag = false
+	for ch in string:
+		if ch in ["[", "]", "%", "@", "|"]:
+			is_tag = not is_tag
+			continue
+		if is_tag:
+			continue
+		new_string+=ch
+	return new_string
+
 func message_trim(string:String)->String:
+	
 	var font = get_font("normal_font")
 	var width = rect_size.x
 	var new_string = ""
 	var line = ""
 	var word = ""
-	var is_tag = false
 	for ch in string:
-		if ch in ["[", "]", "%", "@", "|"]:
-			is_tag = not is_tag
-			new_string += ch
-			continue
-		if is_tag:
-			new_string += ch
-			continue
 		if ch == " ":
-			if font.get_string_size(line + " " + word).x >= width:
+			if font.get_string_size( remove_tags(line + " " + word) ).x >= width:
 				new_string += line + "\n"
 				line = word + " "
 			else:
@@ -94,7 +101,7 @@ func message_trim(string:String)->String:
 		word += ch
 	
 	new_string += line
-	if font.get_string_size(line + " " + word).x >= width:
+	if font.get_string_size( remove_tags(line + " " + word) ).x >= width:
 		new_string += "\n"
 	new_string += word
 	
