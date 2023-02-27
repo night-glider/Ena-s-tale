@@ -24,7 +24,7 @@ enum routes {
 	LIGHT,
 	NEUTRAL,
 }
-var active_route = routes.NONE
+var active_route = routes.LIGHT
 
 var narrator_light_dials = [
 	"NARRATOR_BATTLE_LIGHT_DIAL1",
@@ -36,13 +36,13 @@ var narrator_light_dials = [
 	"NARRATOR_BATTLE_LIGHT_DIAL7",
 	"NARRATOR_BATTLE_LIGHT_DIAL8",
 ]
-var narrator_light_index = -1
+var narrator_light_index = 0
 
 var talk_enabled = false
 var turns_passed = 0
 
 func narattor_light_progress():
-	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials))
+	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials)-1)
 
 func strike_stance_stage():
 	active_stage = stages.STRIKE_STANCE
@@ -298,6 +298,8 @@ func _on_player_attack_ended():
 
 func _on_attack_damage_dealt(damage):
 	$enemy.take_hit(damage)
+	if damage == 0 and active_route == routes.LIGHT:
+		narattor_light_progress()
 
 func _on_attack_pressed(id):
 	strike_limb_stage()
@@ -336,9 +338,6 @@ func _on_reason_pressed(id):
 	var dialogue
 	if $ena_status.current_state == "sad":
 		dialogue = "TALK_REASON_DIALOGUE"
-		if active_route == routes.NONE:
-			active_route = routes.LIGHT
-		narattor_light_progress()
 	else:
 		dialogue = "TALK_REASON_DIALOGUE_INACTIVE"
 	talk_dialogue_stage(dialogue)
