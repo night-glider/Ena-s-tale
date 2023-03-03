@@ -9,8 +9,9 @@ var can_regen = false
 var invincible = false
 var damage = 500
 var spd = 120
-var gravity = 120
+var gravity = 10
 var jump_force = 120
+var jump_velocity = 0
 var can_jump = false
 var max_jump_frames = 60
 var jump_frames = max_jump_frames
@@ -47,11 +48,11 @@ func blue_mode()->Vector2:
 	$Label.text = str(jump_frames)
 	
 	var input:Vector2 = Vector2.ZERO
-	var jump:Vector2 = Vector2.ZERO
 	
 	if is_on_floor():
 		can_jump = true
 		jump_frames = max_jump_frames
+		jump_velocity = 1
 	else:
 		if can_jump and Input.is_action_pressed("walk_forward") and jump_frames > 0:
 			can_jump = true
@@ -67,10 +68,12 @@ func blue_mode()->Vector2:
 	
 	
 	if can_jump and Input.is_action_pressed("walk_forward"):
-		jump.y = - (gravity + jump_force)
+		jump_velocity = -jump_force
 		jump_frames -= 1
+	else:
+		jump_velocity += gravity
 	
-	return input.normalized() * spd + Vector2.DOWN * gravity + jump 
+	return input.normalized() * spd + Vector2(0, jump_velocity)
 
 func _physics_process(delta):
 	var actual_velocity = Vector2.ZERO
