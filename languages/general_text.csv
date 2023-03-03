@@ -124,7 +124,7 @@ THRONE_DIAL14,[color=#ffa500]A plan that can truly guarantee the end of our ques
 THRONE_DIAL15,|moony|[color=grey]Great! One question.
 THRONE_DIAL16,[color=grey]WHY COULDN'T YOU EXPLAIN THIS TO US BEFORE YOU LEFT?
 THRONE_DIAL17,|meist|[color=#ffa500]I felt like I was more capable to solve this. 
-THRONE_DIAL18,"|ena|[color=yellow]Meist, chums are supposed to stick together. We're a team, remember?"
+THRONE_DIAL18,"|ena|[color=yellow]Chums are supposed to stick together. We're a team, remember?"
 THRONE_DIAL19,|moony|[color=grey]Yeah. Tell us where you’re going next time ya nerd.
 THRONE_DIAL20,|meist|[color=#ffa500]Fair enough.
 THRONE_DIAL21,[color=#ffa500]...
@@ -164,11 +164,11 @@ BATTLE_TRANSITION5,"[color=#ffa500]|meist|Ena, Moony, this was a very pleasant a
 BATTLE_TRANSITION6,[color=#ffa500]But I must do what I can to save my people.
 BATTLE_TRANSITION7,[color=#ffa500]...
 BATTLE_TRANSITION8,[color=#ffa500]...I'm sorry.
-NARRATOR_BATTLE_DEFAULT_DIAL1,Meist begins to prepare himself.
-NARRATOR_BATTLE_NEUTRAL_DIAL1,Meist attacks!
-NARRATOR_BATTLE_LIGHT_DIAL1,Meist begins to prepare himself.
-NARRATOR_BATTLE_LIGHT_DIAL2,Meist begins to prepare himself.
-NARRATOR_BATTLE_LIGHT_DIAL3,Meist is preparing himself for your ATTACK.
+NARRATOR_BATTLE_DEFAULT_DIAL1,He begins to prepare himself.
+NARRATOR_BATTLE_NEUTRAL_DIAL1,The flame king attacks!
+NARRATOR_BATTLE_LIGHT_DIAL1,He begins to prepare himself.
+NARRATOR_BATTLE_LIGHT_DIAL2,He begins to prepare himself.
+NARRATOR_BATTLE_LIGHT_DIAL3,He is preparing himself for your ATTACK.
 NARRATOR_BATTLE_LIGHT_DIAL4,...
 NARRATOR_BATTLE_LIGHT_DIAL5,...
 NARRATOR_BATTLE_LIGHT_DIAL6,...
@@ -177,5 +177,5 @@ NARRATOR_BATTLE_LIGHT_DIAL8,[color=purple]...
 ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]Please, listen to us!"
 ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
-ENA_TALK_REASON1_DIAL_4,[color=grey]I agree! Stop this lunacy now Meist! 
+ENA_TALK_REASON1_DIAL_4,[color=grey]I agree! Stop this lunacy at once!
 ENA_TALK_REASON1_DIAL_5,|ena|[color=blue]We don't want to have to hurt you!

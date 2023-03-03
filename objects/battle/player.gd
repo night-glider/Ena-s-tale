@@ -162,6 +162,6 @@ func change_mode(new_mode:int):
 	
 	match mode:
 		modes.NORMAL:
-			$Sprite.modulate = Color.white
+			$Sprite.animation = "neutral"
 		modes.BLUE:
-			$Sprite.modulate = Color.blue
+			$Sprite.animation = "blue"
