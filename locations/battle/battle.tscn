@@ -326,6 +326,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
+frame = 1
 playing = true
 centered = false
 
@@ -448,6 +449,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 messages = [ "INTRO_LOG1", "INTRO_LOG2", "INTRO_LOG3", "INTRO_LOG4", "INTRO_LOG5", "INTRO_LOG6" ]
+trim_width = 550
 
 [node name="attack" parent="gui/dialogue_box/ReferenceRect" instance=ExtResource( 14 )]
 visible = false
@@ -656,7 +658,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 4
 playing = true
 centered = false
 

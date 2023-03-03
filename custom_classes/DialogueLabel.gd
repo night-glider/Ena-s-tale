@@ -4,6 +4,7 @@ class_name DialogueLabel
 export(Array, String, MULTILINE) var messages:Array = ["HELLO_WORLD"]
 export var finished = false
 export var word_wrapping = true
+export var trim_width = 0
 
 signal dialogue_started
 signal dialogue_next
@@ -81,9 +82,10 @@ func remove_tags(string:String)->String:
 	return new_string
 
 func message_trim(string:String)->String:
-	
+	var width = trim_width
+	if width <= 0:
+		width = rect_size.x
 	var font = get_font("normal_font")
-	var width = rect_size.x
 	var new_string = ""
 	var line = ""
 	var word = ""
