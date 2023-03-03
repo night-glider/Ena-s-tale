@@ -41,6 +41,9 @@ var narrator_light_index = 0
 var talk_enabled = false
 var turns_passed = 0
 
+func _ready():
+	$dialogue_box.start_inactive_dialogue("NARRATOR_BATTLE_DEFAULT_DIAL1")
+
 func narattor_light_progress():
 	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials)-1)
 
