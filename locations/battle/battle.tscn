@@ -336,7 +336,7 @@ frames = SubResource( 31 )
 [node name="head" type="AnimatedSprite" parent="gui/enemy"]
 position = Vector2( -16.6667, -66 )
 frames = SubResource( 38 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="dialogue" type="RichTextLabel" parent="gui/enemy"]

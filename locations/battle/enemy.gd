@@ -1,6 +1,6 @@
 extends AnimatedSprite
 
-var all_attacks = [1,2,3,4,5,6,7,8]
+var all_attacks = [2,3,4,5,6,7,8]
 var current_attack_pool = []
 
 var dialogue_active = false
