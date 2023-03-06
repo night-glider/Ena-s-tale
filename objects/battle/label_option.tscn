@@ -9,7 +9,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 26, 16 )
+extents = Vector2( 26, 6 )
 
 [node name="Label" type="Label"]
 margin_right = 52.0

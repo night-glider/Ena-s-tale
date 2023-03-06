@@ -1,5 +1,7 @@
 extends Control
 
+const select_sound = preload("res://sounds/select.ogg")
+
 var heart_pos:int = 0
 var heart_poitions = []
 var n = -9999
@@ -28,6 +30,7 @@ func _process(delta):
 	$menu/heart.global_position = heart_poitions[heart_pos].rect_global_position
 	
 	if Input.is_action_just_pressed("interact"):
+		Globals.play_sound(select_sound)
 		if heart_pos == 0:
 			active = false
 			$AnimationPlayer.play("fade_out")

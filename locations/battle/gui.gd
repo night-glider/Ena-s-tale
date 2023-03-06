@@ -1,5 +1,7 @@
 extends Node2D
 
+const select_sound = preload("res://sounds/select.ogg")
+
 var active_button:int = 0
 onready var buttons = [$strike, $talk, $pack]
 enum stages {
@@ -55,6 +57,7 @@ func strike_stance_stage():
 	$strike/stance_choice.visible = true
 
 func strike_general_stage():
+	Globals.play_sound(select_sound)
 	active_stage = stages.STRIKE_GENERAL
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(320,260)
@@ -98,7 +101,7 @@ func enemy_dialogue_pass_stage(dialogue = []):
 func talk_stage():
 	if not talk_enabled:
 		return
-	
+	Globals.play_sound(select_sound)
 	active_stage = stages.TALK
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(260,290)
@@ -120,6 +123,7 @@ func talk_dialogue_stage(text:String):
 	$talk/options.visible = false
 
 func items_stage():
+	Globals.play_sound(select_sound)
 	active_stage = stages.ITEMS
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(320,320)

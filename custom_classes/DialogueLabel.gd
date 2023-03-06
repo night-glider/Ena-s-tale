@@ -21,6 +21,8 @@ var audio_player = AudioStreamPlayer.new()
 const meist_soundbyte = preload("res://sounds/meist_dialogue.ogg")
 const moony_soundbyte = preload("res://sounds/moony_dialogue.ogg")
 const ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
+const overworld_narrator_soundbyte = preload("res://sounds/TXT1.ogg")
+const narrator_soundbyte = preload("res://sounds/TXT2.ogg")
 
 func _init():
 	bbcode_enabled = true
@@ -181,6 +183,10 @@ func next_symbol():
 			audio_player.stream = moony_soundbyte
 		elif new_str =="ena":
 			audio_player.stream = ena_soundbyte
+		elif new_str =="nar":
+			audio_player.stream = narrator_soundbyte
+		elif new_str == "over_nar":
+			audio_player.stream = overworld_narrator_soundbyte
 		elif new_str == "":
 			audio_player.stream = null
 		

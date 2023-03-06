@@ -6,6 +6,9 @@ export(Array, String) var second_dialogue
 export(Array, String) var third_dialogue
 export(Array, String) var third_dialogue_2
 
+const exclamation_sound = preload("res://sounds/exclamation.ogg")
+const battlefall_sound = preload("res://sounds/battlefall.ogg")
+
 var stage = 0
 var stage2_dialogue_played = false
 
@@ -47,6 +50,7 @@ func stage1_end():
 	get_node("../player").can_control = false
 	get_node("../player/gui").disconnect("dialogue_end", self, "stage1_end")
 	$AnimationPlayer.play("exclamation")
+	Globals.play_sound(exclamation_sound)
 	$AnimationPlayer.connect("animation_finished", self, "exclamation_ended")
 	get_node("../player/gui").connect("dialogue_next", self, "mooney_talk")
 	
@@ -115,6 +119,7 @@ func stop_small_shock(dialogue):
 
 func battle_start():
 	SaveData.save_data("disable_intro", true)
+	Globals.play_sound(battlefall_sound)
 	get_tree().change_scene("res://locations/battle_transition.tscn")
 
 func exclamation_ended(anim_name:String):

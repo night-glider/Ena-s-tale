@@ -3,6 +3,7 @@ extends Node
 signal attack_ended
 const bullet = preload("res://objects/battle/attacks/attack8/bullet.tscn")
 const spark = preload("res://objects/battle/attacks/attack8/spark.tscn")
+const eye_flash_sound = preload("res://sounds/eyeflash.ogg")
 
 export var box_position := Vector2(252,221)
 export var box_size := Vector2(136, 136)
@@ -34,6 +35,7 @@ func make_decision():
 	var new_spark = spark.instance()
 	new_spark.position = Vector2(export_spark_spawn_x, export_spark_spawn_y)
 	add_child(new_spark)
+	Globals.play_sound(eye_flash_sound)
 	
 	var attack_type = randi()%2
 	decisions.append(attack_type)

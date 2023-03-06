@@ -1,5 +1,7 @@
 extends Control
 
+const select_sound = preload("res://sounds/select.ogg")
+
 var option = ""
 var stage = 0
 
@@ -20,6 +22,7 @@ func _process(delta):
 			$yes.modulate = Color.gray
 		
 		if Input.is_action_just_pressed("interact"):
+			Globals.play_sound(select_sound)
 			if option == "no":
 				get_tree().quit()
 			if option == "yes":

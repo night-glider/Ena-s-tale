@@ -3,6 +3,10 @@ extends KinematicBody2D
 signal got_hit(dmg)
 signal stance_changed(new_stance)
 
+var hurt_sound = preload("res://sounds/hurt.ogg")
+var break_sound = preload("res://sounds/break.ogg")
+var heal_sound = preload("res://sounds/heal.ogg")
+
 var hp := 100
 var heal_stack = []
 var can_regen = false
@@ -121,12 +125,14 @@ func take_hit(dmg:int):
 			hp-=dmg*1.5
 	
 	if hp <= 0:
+		Globals.play_sound(break_sound)
 		Globals.game_over(position)
 	
 	hp = clamp(hp, 0, 100)
 	invincible = true
 	$AnimationPlayer.play("invincible")
 	$invincibility.start()
+	Globals.play_sound(hurt_sound)
 
 func _on_invincibility_timeout():
 	$AnimationPlayer.stop()
@@ -139,6 +145,7 @@ func heal(instant_heal:int, stack:Array):
 	heal_stack.append_array(stack)
 	
 	can_regen = false
+	Globals.play_sound(heal_sound)
 
 func _on_heal_time_timeout():
 	if can_regen:

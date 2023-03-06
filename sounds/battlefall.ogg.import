@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/battlefall.ogg-da0d75875eed3db4a44c49e665cc40bc.oggstr"
+
+[deps]
+
+source_file="res://sounds/battlefall.ogg"
+dest_files=[ "res://.import/battlefall.ogg-da0d75875eed3db4a44c49e665cc40bc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

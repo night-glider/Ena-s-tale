@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/exclamation.ogg-a2bcb70f7070cb3e153b009357f1b366.oggstr"
+
+[deps]
+
+source_file="res://sounds/exclamation.ogg"
+dest_files=[ "res://.import/exclamation.ogg-a2bcb70f7070cb3e153b009357f1b366.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,5 +1,7 @@
 extends AnimatedSprite
 
+const damage_sound = preload("res://sounds/damage.ogg")
+
 var all_attacks = [2,3,4,5,6,7,8]
 var current_attack_pool = []
 
@@ -75,6 +77,8 @@ func take_hit(damage:int):
 	$hp_bar/Label.text = str(damage)
 	$hp_bar/smooth.interpolate_property($hp_bar, "value", $hp_bar.value, hp, 1)
 	$hp_bar/smooth.start()
+	if damage > 0:
+		Globals.play_sound(damage_sound)
 
 func start_dialogue(text = []):
 	$dialogue.visible = true

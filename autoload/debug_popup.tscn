@@ -4,7 +4,6 @@
 bg_color = Color( 1, 0, 0, 1 )
 
 [node name="WindowDialog" type="WindowDialog"]
-visible = true
 margin_right = 200.0
 margin_bottom = 100.0
 mouse_filter = 1

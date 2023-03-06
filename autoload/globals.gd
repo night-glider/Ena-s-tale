@@ -31,3 +31,10 @@ func crash(msg:String):
 func game_over(soul_position:Vector2 = Vector2(-100,-100)):
 	game_over_soul_position = soul_position
 	get_tree().change_scene("res://locations/game_over.tscn")
+
+func play_sound(sound:AudioStream):
+	var audio_player := AudioStreamPlayer.new()
+	add_child(audio_player)
+	audio_player.bus = "sound"
+	audio_player.stream = sound
+	audio_player.play()

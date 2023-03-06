@@ -322,7 +322,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
@@ -654,7 +654,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 1
 playing = true
 centered = false
 

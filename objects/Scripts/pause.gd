@@ -1,5 +1,7 @@
 extends Control
 
+const select_sound = preload("res://sounds/select.ogg")
+
 var options = []
 var current_option = 0
 var progress = 0
@@ -53,6 +55,7 @@ func _process(delta):
 		options[current_option].modulate = Color.yellow
 	
 	if Input.is_action_just_pressed("interact"):
+		Globals.play_sound(select_sound)
 		if options[current_option] == $general/continue:
 			get_tree().paused = false
 			visible = false

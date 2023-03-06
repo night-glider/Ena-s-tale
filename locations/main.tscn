@@ -1965,13 +1965,13 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 8
+frame = 2
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7534, 6.27012, -3 )
-offset = Vector2( 0, -96.2122 )
-modulate = Color( 1, 1, 1, 0.0378778 )
+offset = Vector2( 0, -96.1234 )
+modulate = Color( 1, 1, 1, 0.0387661 )
 billboard = 1
 texture = ExtResource( 19 )
 
@@ -2045,7 +2045,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 14
+frame = 10
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
