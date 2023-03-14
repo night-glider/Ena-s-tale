@@ -6,21 +6,20 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
-OVERWORLD_DOG_DIALOGUE1,||There is a small golden dog spinning in the void.
-OVERWORLD_DOG_DIALOGUE2,||It looks at you with hope in its eyes.
-HALLWAY_RUMBLE_DIALOGUE,"||@0.04@Looks like the portal was destroyed, no turning back now."
-PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]We're finally here. Man this place is decrepit.
+OVERWORLD_DOG_DIALOGUE1,|over_nar|There is a small golden dog spinning in the void.
+OVERWORLD_DOG_DIALOGUE2,|over_nar|It looks at you with hope in its eyes.
+HALLWAY_RUMBLE_DIALOGUE,"|over_nar|@0.04@Looks like the portal was destroyed, no turning back now."
+PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]Can't believe finally here. Man this place is decrepit.
 PRE_THRONE_MOONY_DIALOUGE2,[color=grey]Lets just hope we finally found [color=red]him.
 POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey]So glad this will finally be over, but something doesnt feel right."
-POST_THRONE_MOONY_DIALOUGE2,"[color=grey]Even though he's our friend, we can't let our guard down. Be careful. "
-DIALOGUE_THRONE1,||This throne seems like its in pretty bad shape.
-DIALOGUE_THRONE2,"||I wonder, was it his throne?"
-INTRO_MESSAGE1,"After a long journey throughout many dimensions, Ena and Moony have finally arrived at the ruined castle, where the [color=purple]glitched rift [color=white]resides."
-INTRO_MESSAGE2,"It is a dimensional tear that is not only capable of destroying the dimension it is in, but also the surrounding ones. This one in particular is so dangerous that it threatens to destroy all of creation. 
-"
-INTRO_MESSAGE3,"Despite their inexperience and fear of the unknown, Ena and Moony with some help along the way, were able to defeat the challenges thrown at them and make their way here."
-INTRO_MESSAGE4,"However, unbeknownst to the duo, one of their former party members has already beaten them to this cursed place. What could this mysterious man want with the rift as well? 
-"
+POST_THRONE_MOONY_DIALOUGE2,"[color=grey]Even though hes our bud, be careful. He seems conflicted about something."
+DIALOGUE_THRONE1,|over_nar|This throne seems like its in pretty bad shape.
+DIALOGUE_THRONE2,"|over_nar|I wonder, was it his throne?"
+INTRO_MESSAGE1,"After a long journey, Ena and Moony have finally arrived at the carbon castle outside of existence, where the final [color=red]glitched rift [color=white]resides."
+INTRO_MESSAGE2,"These unstable anomalies began to appear throughout the dimensions after their escape from the room of RUNAS, threatening to destabilize all of creation."
+INTRO_MESSAGE3,"In order to have made their journey possible, Moony had to give up her wish to a [color=purple]mysterious entity [color=white]in order for them both to escape the graveyard."
+INTRO_MESSAGE4,"And so after they escaped, they begun closing the rifts with help from the [color=purple]entity [color=white]and people they met along the way. One of them being the very king of this castle."
+INTRO_MESSAGE5,"In spite of inner conflict and ENA's relapse, they have managed to track down their former ally to this place. What could the mysterious man want with the rift as well?"
 NIGHT_GLIDER_MESSAGE,Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr4543
 INTRO_LOG1,"@1@%Starting hardware check%@0.01@
 Detecting HDD1@1@...@0.01@[color=green]SUCCESS[/color]
@@ -64,7 +63,7 @@ MAIN_MENU_END,The end
 MAIN_MENU_EMPTY,[EMPTY]
 GAME_OVER_GAME_OVER,THE END
 GAME_OVER_DIALOGUE,[center][color=grey]Do you wish to continue?
-GAME_OVER_DIALOGUE1,I DONT KNOW WHAT TO PUT HERE
+GAME_OVER_DIALOGUE1,"I DONT KNOW WHAT TO PUT HERE (nothing goes here, presumably you are thinking about the aftermath)"
 GAME_OVER_DIALOGUE2,TODO
 HELLO_WORLD,!hello world!
 ITEMS_TURRON,Turron
@@ -72,41 +71,41 @@ ITEMS_QWERTY,QWERTY
 ITEMS_BANANA,Banana
 ITEMS_SOLQUICHE,Solar Quiche
 ITEMS_JOLTEST,joltest
-ITEMS_BANANA_DIALOGUE,Potassium. Your health has been minimally restored.
-ITEMS_SOLQUICHE_DIALOGUE,TODO
-ITEMS_TURRON_DIALOGUE,TURRON! Your wounds begin to close.
-ITEMS_QWERTY_DIALOGUE,You ate the QuicklyWarmingEarthlyRottingTastelessYogurt. It’s a miracle you even gained health from that.
-ITEMS_JOLTEST_DIALOGUE,A placeholder item until I can think of more healing items
-TALK_REASON,reason
-TALK_INSULT,insult
-TALK_REASON_DIALOGUE,reason dial
-TALK_REASON_DIALOGUE_INACTIVE,you are too angry to do that
-TALK_INSULT_DIALOGUE,insult dial
-TALK_INSULT_DIALOGUE_INACTIVE,you are too sad to do that
+ITEMS_BANANA_DIALOGUE,|nar|Potassium. Your wounds close a bit.
+ITEMS_SOLQUICHE_DIALOGUE,|nar|You ate the Solar Quiche. Your wounds begin to close.
+ITEMS_TURRON_DIALOGUE,|nar|TURRON! Your wounds begin to close.
+ITEMS_QWERTY_DIALOGUE,|nar|You ate the QuicklyWarmingEarthlyRottingTastelessYogurt. It’s a miracle you even gained health from that.
+ITEMS_JOLTEST_DIALOGUE,|A placeholder item until I can think of more healing items
+TALK_REASON,Reason
+TALK_INSULT,Insult
+TALK_REASON_DIALOGUE,(Refer to ENA_TALK_REASON1_DIAL_1)
+TALK_REASON_DIALOGUE_INACTIVE,|nar|ENA was too angry to think of anything to say.
+TALK_INSULT_DIALOGUE,(Refer to ENA_TALK_INSULT1_DIAL_1)
+TALK_INSULT_DIALOGUE_INACTIVE,|nar|ENA was too sad to think of anything to say.
 PLAYER_ATTACK_READY,READY
 PLAYER_ATTACK_GO,GO
 PAUSE_CONTINUE,Continue
 PAUSE_OPTIONS,Options
 PAUSE_QUIT,Quit
 PAUSE_BACK,Back
-PAUSE_MASTER,master: 
-PAUSE_MUSIC,music: 
-PAUSE_SOUNDS,sound: 
-PAUSE_WINDOW,screen mode: windowed
-PAUSE_FULLSCREEN,screen mode: fullscreen
+PAUSE_MASTER,Master: 
+PAUSE_MUSIC,Music: 
+PAUSE_SOUNDS,Sound: 
+PAUSE_WINDOW,Screen mode: windowed
+PAUSE_FULLSCREEN,Screen mode: fullscreen
 ENEMY_TURRON_REACT,...
 ENEMY_QWERTY_REACT,...
 ENEMY_JOLTEST_REACT,...
 ENEMY_CHECK_REACT,...
 ENEMY_REASON_REACT,..!
 ENEMY_INSULT_REACT,..!
-ATTACK_ATTACK,fight
-ATTACK_STANCES,emotions
-ATTACK_HEAD,head
-ATTACK_LEGS,legs
-ATTACK_TORSO,torso
-EMOTION_RAGE,rage
-EMOTION_SADNESS,sadness
+ATTACK_ATTACK,Fight
+ATTACK_STANCES,Emotions
+ATTACK_HEAD,Head
+ATTACK_LEGS,Legs
+ATTACK_TORSO,Torso
+EMOTION_RAGE,Rage
+EMOTION_SADNESS,Sadness
 THRONE_DIAL1,"@0.04@|meist|[color=#ffa500]…Even after all of this time, the throne still remains."
 THRONE_DIAL2,[color=#ffa500]...
 THRONE_DIAL3,[color=#ffa500]…Maybe I don’t have to d-
@@ -156,25 +155,25 @@ GARDEN_DIAL11,[color=#ffa500]...
 GARDEN_DIAL12,[color=#ffa500]...
 GARDEN_DIAL13,[color=#ffa500]…I need to take your ESSENCE.
 GARDEN_DIAL14,|ena|[color=blue]W-WHAT?!
-BATTLE_TRANSITION1,Light protrudes throughout the garden.
+BATTLE_TRANSITION1,@0.04Light protrudes throughout the garden.
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end.
 BATTLE_TRANSITION4,Your emotions begin to stir greatly within you.
-BATTLE_TRANSITION5,"[color=#ffa500]|meist|Ena, Moony, this was a very pleasant adventure."
+BATTLE_TRANSITION5,"[color=#ffa500]|meist|@0.04Ena, Moony, this was a very pleasant adventure."
 BATTLE_TRANSITION6,[color=#ffa500]But I must do what I can to save my people.
 BATTLE_TRANSITION7,[color=#ffa500]...
 BATTLE_TRANSITION8,[color=#ffa500]...I'm sorry.
-NARRATOR_BATTLE_DEFAULT_DIAL1,He begins to prepare himself.
-NARRATOR_BATTLE_NEUTRAL_DIAL1,The flame king attacks!
-NARRATOR_BATTLE_LIGHT_DIAL1,He begins to prepare himself.
-NARRATOR_BATTLE_LIGHT_DIAL2,He begins to prepare himself.
-NARRATOR_BATTLE_LIGHT_DIAL3,He is preparing himself for your ATTACK.
-NARRATOR_BATTLE_LIGHT_DIAL4,...
-NARRATOR_BATTLE_LIGHT_DIAL5,...
-NARRATOR_BATTLE_LIGHT_DIAL6,...
-NARRATOR_BATTLE_LIGHT_DIAL7,It seems like all you can do is [color=red]ATTACK. 
+NARRATOR_BATTLE_DEFAULT_DIAL1,@0.04|nar|He begins to prepare himself.
+NARRATOR_BATTLE_NEUTRAL_DIAL1,|nar|The flame king attacks!
+NARRATOR_BATTLE_LIGHT_DIAL1,|nar|He begins to prepare himself.
+NARRATOR_BATTLE_LIGHT_DIAL2,|nar|He begins to prepare himself.
+NARRATOR_BATTLE_LIGHT_DIAL3,|nar|He is preparing himself for your first STRIKE.
+NARRATOR_BATTLE_LIGHT_DIAL4,|nar|...
+NARRATOR_BATTLE_LIGHT_DIAL5,|nar|...
+NARRATOR_BATTLE_LIGHT_DIAL6,|nar|...
+NARRATOR_BATTLE_LIGHT_DIAL7,@0.04|nar|All you can do is [color=red]ATTACK. 
 NARRATOR_BATTLE_LIGHT_DIAL8,[color=purple]...
-ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]Please, listen to us!"
+ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]@0.04Please, listen to us!"
 ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
 ENA_TALK_REASON1_DIAL_4,[color=grey]I agree! Stop this lunacy at once!
