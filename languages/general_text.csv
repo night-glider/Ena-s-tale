@@ -155,15 +155,15 @@ GARDEN_DIAL11,[color=#ffa500]...
 GARDEN_DIAL12,[color=#ffa500]...
 GARDEN_DIAL13,[color=#ffa500]…I need to take your ESSENCE.
 GARDEN_DIAL14,|ena|[color=blue]W-WHAT?!
-BATTLE_TRANSITION1,@0.04Light protrudes throughout the garden.
+BATTLE_TRANSITION1,@0.04@Light protrudes throughout the garden.
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end.
 BATTLE_TRANSITION4,Your emotions begin to stir greatly within you.
-BATTLE_TRANSITION5,"[color=#ffa500]|meist|@0.04Ena, Moony, this was a very pleasant adventure."
+BATTLE_TRANSITION5,"[color=#ffa500]|meist|@0.04@Ena, Moony, this was a very pleasant adventure."
 BATTLE_TRANSITION6,[color=#ffa500]But I must do what I can to save my people.
 BATTLE_TRANSITION7,[color=#ffa500]...
 BATTLE_TRANSITION8,[color=#ffa500]...I'm sorry.
-NARRATOR_BATTLE_DEFAULT_DIAL1,@0.04|nar|He begins to prepare himself.
+NARRATOR_BATTLE_DEFAULT_DIAL1,@0.04@|nar|He begins to prepare himself.
 NARRATOR_BATTLE_NEUTRAL_DIAL1,|nar|The flame king attacks!
 NARRATOR_BATTLE_LIGHT_DIAL1,|nar|He begins to prepare himself.
 NARRATOR_BATTLE_LIGHT_DIAL2,|nar|He begins to prepare himself.
@@ -171,9 +171,9 @@ NARRATOR_BATTLE_LIGHT_DIAL3,|nar|He is preparing himself for your first STRIKE.
 NARRATOR_BATTLE_LIGHT_DIAL4,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL5,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL6,|nar|...
-NARRATOR_BATTLE_LIGHT_DIAL7,@0.04|nar|All you can do is [color=red]ATTACK. 
+NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|All you can do is [color=red]ATTACK. 
 NARRATOR_BATTLE_LIGHT_DIAL8,[color=purple]...
-ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]@0.04Please, listen to us!"
+ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]@0.04@Please, listen to us!"
 ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
 ENA_TALK_REASON1_DIAL_4,[color=grey]I agree! Stop this lunacy at once!
