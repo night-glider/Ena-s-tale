@@ -21,7 +21,7 @@ func change_bus_volume(bus_name:String, volume:float):
 		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), true)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), false)
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), -40 + volume*4)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), linear2db(volume))
 
 func crash(msg:String):
 	error_message = msg
