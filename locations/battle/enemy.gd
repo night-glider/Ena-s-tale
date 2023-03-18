@@ -8,6 +8,13 @@ var current_attack_pool = []
 var dialogue_active = false
 var hp = 10000
 
+var head_n = 0
+var head_n_spd = PI/120.0
+
+func head_animation():
+	$head.position.y = 3 + sin(head_n) * 3
+	head_n += head_n_spd
+
 func _ready():
 	for i in all_attacks.size():
 		all_attacks[i] = load("res://objects/battle/attacks/attack{0}/attack{0}.tscn".format([all_attacks[i]]))
@@ -15,6 +22,7 @@ func _ready():
 	current_attack_pool = all_attacks.duplicate()
 
 func _process(delta):
+	head_animation()
 	
 	if dialogue_active:
 		if Input.is_action_just_pressed("interact"):

@@ -61,6 +61,7 @@ DESKTOP_ENA,Pleem!
 MAIN_MENU_SELECT,Please select a file:
 MAIN_MENU_END,The end
 MAIN_MENU_EMPTY,[EMPTY]
+FROG_ENDING_END,THE END
 GAME_OVER_GAME_OVER,THE END
 GAME_OVER_DIALOGUE,[center][color=grey]Do you wish to continue?
 GAME_OVER_DIALOGUE1,"I DONT KNOW WHAT TO PUT HERE (nothing goes here, presumably you are thinking about the aftermath)"
@@ -164,6 +165,7 @@ BATTLE_TRANSITION6,[color=#ffa500]But I must do what I can to save my people.
 BATTLE_TRANSITION7,[color=#ffa500]...
 BATTLE_TRANSITION8,[color=#ffa500]...I'm sorry.
 NARRATOR_BATTLE_DEFAULT_DIAL1,@0.04@|nar|He begins to prepare himself.
+NARRATOR_BATTLE_DEFAULT_DIAL2,...
 NARRATOR_BATTLE_NEUTRAL_DIAL1,|nar|The flame king attacks!
 NARRATOR_BATTLE_LIGHT_DIAL1,|nar|He begins to prepare himself.
 NARRATOR_BATTLE_LIGHT_DIAL2,|nar|He begins to prepare himself.

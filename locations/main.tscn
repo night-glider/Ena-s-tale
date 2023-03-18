@@ -1,4 +1,4 @@
-[gd_scene load_steps=280 format=2]
+[gd_scene load_steps=282 format=2]
 
 [ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://models/stone/kamen.obj" type="ArrayMesh" id=31]
 [ext_resource path="res://sprites/hourglass_dog.png" type="Texture" id=32]
 [ext_resource path="res://models/stones/kamni.obj" type="ArrayMesh" id=33]
+[ext_resource path="res://sprites/secret_frog.png" type="Texture" id=34]
 
 [sub_resource type="AtlasTexture" id=211]
 flags = 19
@@ -1214,6 +1215,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="BoxShape" id=507]
+extents = Vector3( 3, 2, 1 )
+
 [node name="world" type="Spatial"]
 script = ExtResource( 9 )
 
@@ -1965,7 +1969,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 2
+frame = 1
 playing = true
 
 [node name="exclamation" type="Sprite3D" parent="cutscene"]
@@ -2045,7 +2049,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 10
+frame = 14
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
@@ -2067,9 +2071,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 3, -17.5168 )
 frames = SubResource( 337 )
 messages = [ "OVERWORLD_DOG_DIALOGUE1", "OVERWORLD_DOG_DIALOGUE2" ]
 
+[node name="frog_ending" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 63 )
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="frog_ending"]
+shape = SubResource( 507 )
+
+[node name="Sprite3D" type="Sprite3D" parent="frog_ending"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.53674e-07, 0, 0 )
+pixel_size = 0.04
+texture = ExtResource( 34 )
+
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
 [connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]
 [connection signal="body_entered" from="cutscene/start_trigger" to="cutscene" method="_on_start_trigger_body_entered"]
 [connection signal="body_entered" from="cutscene/walk_trigger" to="cutscene" method="_on_walk_trigger_body_entered"]
 [connection signal="body_entered" from="cutscene/battle_trigger" to="cutscene" method="_on_battle_trigger_body_entered"]
 [connection signal="timeout" from="cutscene/Timer" to="cutscene" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="frog_ending" to="." method="_on_frog_ending_body_entered"]

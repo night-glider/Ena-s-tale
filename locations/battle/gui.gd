@@ -1,6 +1,7 @@
 extends Node2D
 
 const select_sound = preload("res://sounds/select.ogg")
+const active_sound = preload("res://sounds/squeak.ogg")
 
 var active_button:int = 0
 onready var buttons = [$strike, $talk, $pack]
@@ -60,6 +61,7 @@ func strike_general_stage():
 	Globals.play_sound(select_sound)
 	active_stage = stages.STRIKE_GENERAL
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
+	#$dialogue_box.change_size(Vector2(97,221), Vector2(454, 136))
 	$player.position = Vector2(320,260)
 	$strike/attack_choice.visible = false
 	$strike/stance_choice.visible = false
@@ -73,12 +75,14 @@ func strike_general_stage():
 func strike_limb_stage():
 	active_stage = stages.STRIKE_LIMB
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
+	#$dialogue_box.change_size(Vector2(97,221), Vector2(454, 136))
 	$strike/general_choice.visible = false
 	$strike/attack_choice.visible = true
 
-func player_attack_stage(damage:int):
+func player_attack_stage(damage:int, difficulty:int):
 	active_stage = stages.PLAYER_ATTACK
-	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
+	#$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
+	$dialogue_box.change_size(Vector2(97,221), Vector2(454, 124))
 	$player.position = Vector2(0,0)
 	last_action = "attack"
 	
@@ -86,7 +90,7 @@ func player_attack_stage(damage:int):
 	
 	$strike/attack_choice.visible = false
 	$dialogue_box/ReferenceRect/attack.visible = true
-	$dialogue_box/ReferenceRect/attack.start_attack(5, damage)
+	$dialogue_box/ReferenceRect/attack.start_attack(5, damage, difficulty)
 
 func enemy_dialogue_stage(dialogue = []):
 	active_stage = stages.ENEMY_DIALOGUE
@@ -154,9 +158,15 @@ func bottom_buttons_stage():
 	var narrator_line
 	match active_route:
 		routes.NONE:
-			narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL1"
+			if turns_passed < 2:
+				narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL1"
+			else:
+				narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL2"
 		routes.NEUTRAL:
-			narrator_line = "NARRATOR_BATTLE_NEUTRAL_DIAL1"
+			if turns_passed < 2:
+				narrator_line = "NARRATOR_BATTLE_NEUTRAL_DIAL1"
+			else:
+				narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL2"
 		routes.LIGHT:
 			narrator_line = narrator_light_dials[narrator_light_index]
 		
@@ -188,6 +198,7 @@ func _process(delta):
 		stages.BOTTOM_BUTTONS:
 			if Input.is_action_just_pressed("walk_left"):
 				if active_button > 0:
+					Globals.play_sound(active_sound)
 					buttons[active_button].animation = "idle"
 					active_button-=1
 					buttons[active_button].animation = "active"
@@ -200,6 +211,7 @@ func _process(delta):
 			
 			if Input.is_action_just_pressed("walk_right"):
 				if active_button < 2:
+					Globals.play_sound(active_sound)
 					buttons[active_button].animation = "idle"
 					active_button+=1
 					buttons[active_button].animation = "active"
@@ -312,18 +324,13 @@ func _on_attack_pressed(id):
 	strike_limb_stage()
 
 func _on_head_pressed(id):
-	player_attack_stage($player.damage*2)
+	player_attack_stage($player.damage*2, 2)
 
 func _on_torso_pressed(id):
-	player_attack_stage($player.damage)
+	player_attack_stage($player.damage, 1)
 
 func _on_legs_pressed(id):
-	player_attack_stage($player.damage/2)
-
-	last_action = "stance"
-	$player.change_stance($player.stances.NORMAL)
-	$strike/stance_choice.visible = false
-	ask_enemy_for_next_stage()
+	player_attack_stage($player.damage/2, 0)
 
 func _on_infernal_pressed(id):
 	last_action = "stance"

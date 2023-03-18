@@ -12,10 +12,7 @@ var active = false
 var current_damage = 0
 var max_damage = 0
 var orbs = []
-
-
-
-
+var accept_radius := 20
 
 
 func choice(list):
@@ -24,7 +21,17 @@ func choice(list):
 func _ready():
 	$center.visible = false
 
-func start_attack(orbs_count = 5, dmg = 500):
+func start_attack(orbs_count = 5, dmg = 500, difficulty=0):
+	match difficulty:
+		0:
+			$center/background.play("big")
+			accept_radius = 20
+		1:
+			$center/background.play("middle")
+			accept_radius = 17
+		2:
+			$center/background.play("small")
+			accept_radius = 15
 	max_damage = dmg
 	$label.rect_pivot_offset = $label.rect_size/2
 	$AnimationPlayer.play("ready_go")
@@ -36,7 +43,7 @@ func start_attack(orbs_count = 5, dmg = 500):
 		var new_orb_pos = Vector2(1,0).rotated(choice([0, PI])).rotated(rand_range(-0.5,0.5))
 		new_orb_pos = $center.rect_position + (new_orb_pos * ($center.rect_position.x + i*55+200))
 		
-		new_orb.init(new_orb_pos, $center.rect_position, 4, max_damage/orbs_count)
+		new_orb.init(new_orb_pos, Vector2(224,59), 4, max_damage/orbs_count)
 		add_child(new_orb)
 		orbs.append( new_orb )
 
@@ -60,7 +67,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		var orb = orbs.pop_front()
 		
-		if $center.rect_position.distance_to(orb.position) < 20:
+		if $center.rect_position.distance_to(orb.position) < accept_radius:
 			current_damage+= orb.damage
 			Globals.play_sound(punchweak)
 		orb.queue_free()

@@ -1,8 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://locations/battle/attack.gd" type="Script" id=1]
 [ext_resource path="res://sprites/battle/gui/attack_punctire.png" type="Texture" id=2]
 [ext_resource path="res://sprites/battle/gui/attack_circle.png" type="Texture" id=3]
+[ext_resource path="res://sprites/battle/gui/attack_small.png" type="Texture" id=4]
+[ext_resource path="res://sprites/battle/gui/attack_big.png" type="Texture" id=5]
+[ext_resource path="res://sprites/battle/gui/attack_middle.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "big",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "middle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "small",
+"speed": 5.0
+} ]
 
 [sub_resource type="Animation" id=1]
 resource_name = "press"
@@ -148,7 +169,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
+[node name="background" type="AnimatedSprite" parent="center"]
+frames = SubResource( 4 )
+animation = "big"
+
 [node name="punctire" type="Sprite" parent="center"]
+visible = false
 texture = ExtResource( 2 )
 
 [node name="press_effect" type="Sprite" parent="center"]
@@ -164,11 +190,12 @@ wait_time = 5.0
 one_shot = true
 
 [node name="label" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-rect_pivot_offset = Vector2( 320, 240 )
 text = "TEST"
 align = 1
 valign = 1

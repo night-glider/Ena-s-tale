@@ -1,8 +1,17 @@
 extends Control
 
+var head_n = 0
+var head_n_spd = PI/120.0
+
+func head_animation():
+	$gui/enemy/head.position.y = 3 + sin(head_n) * 3
+	head_n += head_n_spd
+
 func _ready():
 	$AnimationPlayer.play("start")
-	
+
+func _process(delta):
+	head_animation()
 
 func switch_dialogue_box():
 	$DialogueLabel/NinePatchRect.visible = true

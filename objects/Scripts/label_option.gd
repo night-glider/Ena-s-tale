@@ -8,7 +8,8 @@ export var disabled:bool = false setget set_disabled
 export(String, MULTILINE) var dialogue:String = "TEST_DIALOGUE"
 
 signal pressed(id)
-const pressed_sound = preload("res://sounds/squeak.ogg")
+const pressed_sound = preload("res://sounds/select.ogg")
+const active_sound = preload("res://sounds/squeak.ogg")
 
 func set_disabled(value):
 	disabled = value
@@ -30,6 +31,8 @@ func press():
 func _on_Area2D_area_entered(area):
 	if not disabled:
 		if area.is_in_group("player_hitbox"):
+			if is_visible_in_tree():
+				Globals.play_sound(active_sound)
 			self_modulate = active_color
 
 func _on_Area2D_area_exited(area):
