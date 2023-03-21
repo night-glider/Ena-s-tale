@@ -364,7 +364,7 @@ patch_margin_bottom = 10
 [node name="AnimatedSprite" type="AnimatedSprite" parent="gui/ena_status"]
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
+frame = 4
 playing = true
 centered = false
 offset = Vector2( 2, 2 )
