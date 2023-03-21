@@ -4,7 +4,7 @@ var head_n = 0
 var head_n_spd = PI/120.0
 
 func head_animation():
-	$gui/enemy/head.position.y = 3 + sin(head_n) * 3
+	$gui/enemy/head.position.y = 2 + sin(head_n) * 2
 	head_n += head_n_spd
 
 func _ready():
