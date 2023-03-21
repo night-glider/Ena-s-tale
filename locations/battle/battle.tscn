@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://sprites/battle/gui/green_ena_neutral.png" type="Texture" id=29]
 [ext_resource path="res://sprites/battle/meist_face.png" type="Texture" id=30]
 [ext_resource path="res://sprites/battle/gui/rage_ena_hurt.png" type="Texture" id=31]
+[ext_resource path="res://fonts/hachicro.TTF" type="DynamicFontData" id=32]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -149,6 +150,10 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+
+[sub_resource type="DynamicFont" id=80]
+outline_size = 2
+font_data = ExtResource( 32 )
 
 [sub_resource type="DynamicFont" id=78]
 size = 32
@@ -329,7 +334,6 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 1
 playing = true
 centered = false
 
@@ -356,7 +360,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 2
+frame = 5
 playing = true
 offset = Vector2( -18, -65 )
 
@@ -405,14 +409,13 @@ __meta__ = {
 anims/simple_anim = SubResource( 21 )
 
 [node name="Label" type="Label" parent="gui/enemy/hp_bar"]
-margin_left = 76.0
-margin_top = -34.0
-margin_right = 116.0
-margin_bottom = -12.0
+anchor_right = 1.0
+grow_vertical = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 80 )
 text = "2000"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+align = 1
 
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
 
