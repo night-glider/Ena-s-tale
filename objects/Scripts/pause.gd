@@ -20,9 +20,9 @@ func _ready():
 	options = general_options
 	options[current_option].modulate = Color.yellow
 	
-	$options/master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 10))
-	$options/music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 10))
-	$options/sounds.text = tr("PAUSE_SOUNDS") + str(SaveData.load_data("sound", 10))
+	$options/master.text = tr("PAUSE_MASTER") + str(SaveData.load_data("master", 0.5) * 10)
+	$options/music.text = tr("PAUSE_MUSIC") + str(SaveData.load_data("music", 0.5) * 10)
+	$options/sounds.text = tr("PAUSE_SOUNDS") + str(SaveData.load_data("sound", 0.5) * 10)
 	
 	if OS.window_fullscreen:
 		$options/window.text = tr("PAUSE_FULLSCREEN")

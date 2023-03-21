@@ -39,6 +39,7 @@ func _on_start_trigger_body_entered(body):
 
 func _on_walk_trigger_body_entered(body):
 	if body.name == "player" and stage == 1:
+		get_node("../frog_ending").translation = Vector3(1,3,63)
 		get_node("../moony").disable_dialogue()
 		
 		$Timer.start()

@@ -10,7 +10,11 @@ func _process(delta):
 
 func _on_player_got_hit(dmg):
 	is_hurt = true
-	$AnimatedSprite.play("hurt")
+	if current_state == "rage":
+		$AnimatedSprite.play("rage_hurt")
+	else:
+		$AnimatedSprite.play("hurt")
+	
 	$hurt_timer.start()
 
 

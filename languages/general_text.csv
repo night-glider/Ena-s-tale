@@ -156,7 +156,7 @@ GARDEN_DIAL11,[color=#ffa500]...
 GARDEN_DIAL12,[color=#ffa500]...
 GARDEN_DIAL13,[color=#ffa500]…I need to take your ESSENCE.
 GARDEN_DIAL14,|ena|[color=blue]W-WHAT?!
-BATTLE_TRANSITION1,@0.04@Light protrudes throughout the garden.
+BATTLE_TRANSITION1,Light protrudes throughout the garden.
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end.
 BATTLE_TRANSITION4,Your emotions begin to stir greatly within you.
