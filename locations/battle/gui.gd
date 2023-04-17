@@ -356,7 +356,7 @@ func _on_reason_pressed(id):
 		dialogue = "TALK_REASON_DIALOGUE_INACTIVE"
 	talk_dialogue_stage(dialogue)
 	last_action = id.name
-	
+
 
 func _on_insult_pressed(id):
 	var dialogue

@@ -20,6 +20,11 @@ INTRO_MESSAGE2,"These unstable anomalies began to appear throughout the dimensio
 INTRO_MESSAGE3,"In order to have made their journey possible, Moony had to give up her wish to a [color=purple]mysterious entity [color=white]in order for them both to escape the graveyard."
 INTRO_MESSAGE4,"And so after they escaped, they began closing the rifts with help from the [color=purple]entity [color=white]and people they met along the way. One of them being the very king of this castle."
 INTRO_MESSAGE5,"In spite of inner conflict and ENA's relapse, they have managed to track down their former ally to this place. What could the mysterious man want with the rift as well?"
+DISCLAIMER,"This is a fan-work of the ENA animation series by Joel G. All rights are reserved with the respective copyright owners. Most of what is presented here is NOT final and could change before the full release.
+
+Most of the assets in this build were made from scratch, excluding sounds used from both UNDERTALE and ENA. If you would like to request the omission of your sound byte we will comply before the full release. Please do not redistribute any of the games content.
+
+This game does not take any inspiration or elements from DREAM BBQ. Any resemblances are purely coincidental. We hope you enjoy the final round of playtesting!"
 NIGHT_GLIDER_MESSAGE,Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr4543
 INTRO_LOG1,"@1@%Starting hardware check%@0.01@
 Detecting HDD1@1@...@0.01@[color=green]SUCCESS[/color]
@@ -63,9 +68,9 @@ MAIN_MENU_END,The end
 MAIN_MENU_EMPTY,[EMPTY]
 FROG_ENDING_END,THE END
 GAME_OVER_GAME_OVER,THE END
-GAME_OVER_DIALOGUE,[center][color=grey]Do you wish to continue?
-GAME_OVER_DIALOGUE1,"I DONT KNOW WHAT TO PUT HERE (nothing goes here, presumably you are thinking about the aftermath)"
-GAME_OVER_DIALOGUE2,TODO
+GAME_OVER_DIALOGUE1,[center][color=grey]Do you wish to continue?
+GAME_OVER_DIALOGUE2,"I DONT KNOW WHAT TO PUT HERE (nothing goes here, presumably you are thinking about the aftermath)"
+GAME_OVER_DIALOGUE3,TODO
 HELLO_WORLD,!hello world!
 ITEMS_TURRON,Turron
 ITEMS_QWERTY,QWERTY
@@ -85,21 +90,21 @@ TALK_INSULT_DIALOGUE,(Refer to ENA_TALK_INSULT1_DIAL_1)
 TALK_INSULT_DIALOGUE_INACTIVE,|nar|ENA was too sad to think of anything to say.
 PLAYER_ATTACK_READY,READY
 PLAYER_ATTACK_GO,GO
-PAUSE_CONTINUE,Continue
-PAUSE_OPTIONS,Options
-PAUSE_QUIT,Quit
-PAUSE_BACK,Back
-PAUSE_MASTER,Master: 
-PAUSE_MUSIC,Music: 
-PAUSE_SOUNDS,Sound: 
-PAUSE_WINDOW,Screen mode: windowed
-PAUSE_FULLSCREEN,Screen mode: fullscreen
-ENEMY_TURRON_REACT,...
-ENEMY_QWERTY_REACT,...
+PAUSE_CONTINUE,CONTINUE
+PAUSE_OPTIONS,OPTIONS
+PAUSE_QUIT,QUIT
+PAUSE_BACK,BACK
+PAUSE_MASTER,MASTER:
+PAUSE_MUSIC,MUSIC:
+PAUSE_SOUNDS,SOUND:
+PAUSE_WINDOW,SCREEN MODE: WINDOWED
+PAUSE_FULLSCREEN,SCREEN MODE: FULLSCREEN
+ENEMY_TURRON_REACT,[color=#ffa500]...
+ENEMY_QWERTY_REACT,[color=#ffa500]...
 ENEMY_JOLTEST_REACT,...
 ENEMY_CHECK_REACT,...
-ENEMY_REASON_REACT,..!
-ENEMY_INSULT_REACT,..!
+ENEMY_REASON_REACT,[color=#ffa500]..!
+ENEMY_INSULT_REACT,[color=#ffa500]..!
 ATTACK_ATTACK,Fight
 ATTACK_STANCES,Emotions
 ATTACK_HEAD,Head
@@ -173,10 +178,123 @@ NARRATOR_BATTLE_LIGHT_DIAL3,|nar|He is preparing himself for your first STRIKE.
 NARRATOR_BATTLE_LIGHT_DIAL4,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL5,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL6,|nar|...
-NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|All you can do is [color=red]ATTACK. 
-NARRATOR_BATTLE_LIGHT_DIAL8,[color=purple]...
+NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|It seems like all you can do is [color=red]FIGHT. 
+MOONY_BATTLE_CAN'TTALKMUCH_DIAL_1,|moony|[color=grey]*cough* *cough* I can't see anything through this fire! 
+MOONY_BATTLE_CAN'TTALKMUCH_DIAL_2,"[color=grey]*cough*Let alone talk! *cough* sorry ENA, I can't *cough* help you here..."
+NARRATOR_BATTLE_LIGHT_DIAL8,|nar|[color=purple]...
+ENA_RAGE_TRANSITION_DIAL_1,|ena| [color=blue] (Our time together... the things weve been through...)
+ENA_RAGE_TRANSITION_DIAL_2,|ena| [color=yellow](Does he not care? DID ANY OF IT MATTER TO HIM?!)
+ENA_SADNESS_TRANSITION_DIAL_1,|ena| [color=yellow] (NO! It had to. He still does care.) 
+ENA_SADNESS_TRANSITION_DIAL_2,|ena| [color=blue] (There has to be another way. I know it...)
 ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]@0.04@Please, listen to us!"
 ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
-ENA_TALK_REASON1_DIAL_4,[color=grey]I agree! Stop this lunacy at once!
+ENA_TALK_REASON1_DIAL_4,[color=grey]It sucks! There has to be a better way!
 ENA_TALK_REASON1_DIAL_5,|ena|[color=blue]We don't want to have to hurt you!
+ENA_TALK_REASON2_DIAL_1,|ena| [color=blue] I know you feel like this is all of your fault.
+ENA_TALK_REASON2_DIAL_2,|ena| [color=blue] And I get that. At times I feel like everything is my fault as well.
+ENA_TALK_REASON2_DIAL_3,|ena| [color=blue] But you can't blame yourself for all of this! 
+ENA_TALK_REASON2_DIAL_4,|ena| [color=blue] You did the best you could. So please...
+NARRATOR_RESPONSE_DIAL_1,|nar|...
+NARRATOR_RESPONSE_DIAL_2,|nar|Recollection flashes in his eyes...
+NARRATOR_RESPONSE_DIAL_3,|nar|The flame king's ATTACK dropped! His DEFENSE dropped!
+ENA_TALK_NEUTRAL_REASON1_DIAL_1,|ena| [color=blue] (I can't think of anything else to say... oh gods what should I do?)
+NARRATOR_TALK_NEUTRAL_REASON_DIAL_1,|nar|But there was nothing else to say.
+MEIST_LOWHP_ENA_RESPONSE_DIAL_1,|ena| [color=blue] I... I...
+MEIST_LOWHP_ENA_RESPONSE_DIAL_2,|ena| [color=blue] I cant.. I dont... 
+MEIST_LOWHP_ENA_RESPONSE_DIAL_3,|ena| [color=blue] I... I dont know what to do anymore...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL1,[color=yellow]Wha... What happened?
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL2,[color=yellow]Did we... lose?
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL3,"[color=blue]Yes, we did. And its all of my fault. "
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL4,[color=yellow]How could you... WHY DID YOU DO THIS TO US?!
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL5,"[color=blue]No matter what we did, he wouldnt listen!"
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL6,[color=yellow]SO?! THAT DOESN'T MEAN WE SHOULDVE GIVEN UP!
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL7,[color=blue]That doesnt mean we shouldve killed him either..
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL8,[color=yellow] ARE YOU KIDDING ME? HE WAS TRYING TO KILL US!
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL9,[color=blue]Did you even notice that he only attacked us after we struck him?
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL9,[color=yellow]...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL10,[color=blue]He was holding back the entire time. He never wanted to truly hurt us.
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL11,"[color=yellow]Either way, theres nothing we can do about it now. Our world is lost."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL12,[color=green]It is not.
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL13,[color=yellow]?!
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL14,[color=blue]?!
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL15,[color=yellow]Who are you?
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL16,"[color=green]I have been supressed here, shattered ever since our creation."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL17,"[color=green]I could barely comphrehend, but observe what happened on the outside."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL18,[color=green]I am the very CONTROL you both seek for our body.
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL19,"[color=green]However, we lost our ESSENCE. So you both cannot return to it."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL20,[color=yellow]Well thats wonderful to hear! So you're saying we're done for?
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL21,[color=green]Patience...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL22,[color=yellow]...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL23,[color=green]No. We still have one more chance to make things right.
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL24,"[color=green]However, in order to return to the point before the fight, we must unite."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL25,[color=blue]So what you're saying is... 
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL26,[color=yellow]We can no longer be at odds with each other.
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL27,[color=blue]Then our heart...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL28,[color=yellow]Our mind...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL29,[color=green]Our very body...
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL30,[color=green]Must become one.
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL31,"[color=green]So that maybe, with what little power we have..."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL32,"[color=green]We can save[color=#ffa500]Meist,[color=green]too."
+GAMEOVER_AFTERMATH_NEUTRAL_DIAL32,"|nar|[color=##007eff]What happens here, is up to you now, [Playername]"
+GARDEN_NEUTRAL_PREPHASE2_MOONY_DIAL_1,|moony|[color=grey]Ena? What happened to you?
+GARDEN_NEUTRAL_PREPHASE2_MOONY_DIAL_2,"|ena|[color=green]Its a long story, I'll explain it soon. "
+GARDEN_NEUTRAL_PREPHASE2_MOONY_DIAL_3,|moony|[color=grey]...Alright. 
+GARDEN_NEUTRAL_PREPHASE2_IFNOTTALKTOMOONY_DIAL1,|moony|[color=grey]Ena? What happened t-
+GARDEN_NEUTRAL_PREPHASE2_DIAL1,...
+GARDEN_NEUTRAL_PREPHASE2_DIAL2,[color=#ffa500]...I think it's time to tell you my plan.
+GARDEN_NEUTRAL_PREPHASE2_DIAL3,"[color=#ffa500]Throughout your journey, you have gained so much power."
+GARDEN_NEUTRAL_PREPHASE2_DIAL4,[color=#ffa500]The power you wield is most certainly enough to destroy the glitched rift.
+GARDEN_NEUTRAL_PREPHASE2_DIAL5,"[color=#ffa500]However, I cannot allow this to happen."
+GARDEN_NEUTRAL_PREPHASE2_DIAL6,"[color=#ffa500]If you destroy it now, I will never have another chance to save my world."
+GARDEN_NEUTRAL_PREPHASE2_DIAL7,[color=#ffa500]That is why…
+GARDEN_NEUTRAL_PREPHASE2_DIAL8,[color=#ffa500]...
+GARDEN_NEUTRAL_PREPHASE2_DIAL9,[color=#ffa500]...
+GARDEN_NEUTRAL_PREPHASE2_DIAL10,[color=#ffa500]…I need to take your-
+GARDEN_NEUTRAL_PREPHASE2_DIAL11,[color=#ffa500]What the?!
+NEUTRAL_PREPHASE2_DIAL_1,|meist|[color=#ffa500]...
+NEUTRAL_PREPHASE2_DIAL_2,|meist|[color=#ffa500]...What is the meaning of this?
+NEUTRAL_PREPHASE2_DIAL_3,"|ena|[color=green]...I died, Meist. But not by your hand."
+NEUTRAL_PREPHASE2_DIAL_4,"|ena|[color=green]I couldn't bear fighting you anymore, let alone the thought of killing you."
+NEUTRAL_PREPHASE2_DIAL_5,|ena|[color=green]But now I have finally gained CONTROL over myself. So please...
+NEUTRAL_PREPHASE2_DIAL_6,"|ena|[color=green]Lets seal the rift, and go home. "
+ENA_TALK_LIGHT_REASON1_DIAL_1,|ena| [color=blue] I know you don't want this. Its not too late.
+PREPHASE2_BOTH_LIGHT_NEUTRAL_DIAL_1,"|moony| [color=grey] Come back to us, we'll find another way to save your kingdom dude."
+NEUTRALCONT_PREPHASE2_DIAL_1,"|ena| [color=green] Although things will never be the same, we will grow and move on from this, together."
+LIGHTCONT_PREPHASE2_DIAL_1,"|ena| [color=blue] Although things will never be the same, we will grow and move on from this, together."
+MEIST_TALK_PREPHASE2_DIAL_1,[color=#ffa500]|meist|...
+MEIST_TALK_PREPHASE2_DIAL_2,[color=#ffa500]|meist|...
+MEIST_TALK_PREPHASE2_DIAL_3,[color=#ffa500]|meist|...You're right.
+MEIST_TALK_PREPHASE2_DIAL_4,"[color=#ffa500]|meist|What was I thinking? ENA, can you forgi-"
+MEIST_TALK_PREPHASE2_DIAL_5,[color=#ffa500]|meist|GH! I- w-what? nononononono!
+MEIST_TALK_PREPHASE2_DIAL_6,[color=#ffa500]|meist|GHHAAAAAAAAAAAAAAAAAAH!
+NARRATOR_DIALOGUE_PREPHASE2_DIAL_1,"|nar|[color=purple]You have failed me, vessel. "
+NARRATOR_DIALOGUE_PREPHASE2_DIAL_2,|nar|[color=purple]It is clear now that you were never capable of fufilling your destiny. 
+NARRATOR_DIALOGUE_PREPHASE2_DIAL_3,"|nar|[color=purple]So now, in the name of my master, I will plague your mind..."
+NARRATOR_DIALOGUE_PREPHASE2_DIAL_4,|nar|[color=purple]....And finish the job myself!
+CORRUPTED_MEIST_TALK_DIAL_1,[color=purple]|meist|...RRAAAGH!
+CORRUPTED_MEIST_TALK_DIAL_2,[color=purple]|meist|This is your fault! I'll kill you! 
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,|ena| [color=green]...He's reverted back to the form I first met him as. 
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_1,|ena| [color=blue]Oh no.. He reverted back!
+ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_2,|ena| [color=blue]I... I...
+ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_3,|moony| [color=grey]ENA! NO!
