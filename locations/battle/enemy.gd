@@ -1,6 +1,9 @@
 extends AnimatedSprite
 
 const damage_sound = preload("res://sounds/damage.ogg")
+const avoid_attack = preload("res://objects/battle/attacks/attack0/attack0.tscn")
+
+var player_data:Node2D = null
 
 var all_attacks = [2,3,4,5,6,7,8]
 var current_attack_pool = []
@@ -36,6 +39,9 @@ func _process(delta):
 			$dialogue.skip_message()
 
 func choose_attack()->PackedScene:
+	if player_data.hp <= 15:
+		return avoid_attack
+	
 	if current_attack_pool.empty():
 		current_attack_pool = all_attacks.duplicate()
 		current_attack_pool.shuffle()

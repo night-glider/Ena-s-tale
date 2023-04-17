@@ -117,7 +117,6 @@ func _on_Area2D_area_entered(area):
 				return
 
 func take_hit(dmg:int):
-	emit_signal("got_hit", dmg)
 	match stance:
 		stances.SAD:
 			hp-=dmg*0.5
@@ -133,6 +132,7 @@ func take_hit(dmg:int):
 	$AnimationPlayer.play("invincible")
 	$invincibility.start()
 	Globals.play_sound(hurt_sound)
+	emit_signal("got_hit", dmg)
 
 func _on_invincibility_timeout():
 	$AnimationPlayer.stop()

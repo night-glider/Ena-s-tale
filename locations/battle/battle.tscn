@@ -346,7 +346,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 1
+frame = 4
 playing = true
 centered = false
 
@@ -373,7 +373,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( -18, -65 )
 
@@ -719,6 +719,7 @@ visible = false
 [connection signal="pressed" from="gui/pack/inventory/banana2" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana3" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana4" to="gui" method="_item_pressed"]
+[connection signal="got_hit" from="gui/player" to="gui" method="_on_player_got_hit"]
 [connection signal="got_hit" from="gui/player" to="gui/ena_status" method="_on_player_got_hit"]
 [connection signal="stance_changed" from="gui/player" to="gui/ena_status" method="_on_player_stance_changed"]
 [connection signal="timeout" from="gui/ena_status/hurt_timer" to="gui/ena_status" method="_on_hurt_timer_timeout"]

@@ -3,6 +3,7 @@ extends Node2D
 const select_sound = preload("res://sounds/select.ogg")
 const active_sound = preload("res://sounds/squeak.ogg")
 
+
 var active_button:int = 0
 onready var buttons = [$strike, $talk, $pack]
 enum stages {
@@ -45,6 +46,7 @@ var talk_enabled = false
 var turns_passed = 0
 
 func _ready():
+	$enemy.player_data = $player
 	$dialogue_box.start_inactive_dialogue("NARRATOR_BATTLE_DEFAULT_DIAL1")
 
 func narattor_light_progress():
@@ -184,14 +186,20 @@ func items_dialogue_stage(text:String):
 func attack_stage():
 	active_stage = stages.ATTACK
 	var attack = $enemy.choose_attack().instance()
+	attack.player = $player
 	attack.connect("attack_ended", self, "attack_ended")
 	$dialogue_box.change_size(attack.box_position, attack.box_size)
 	$player.position = Vector2(320,320)
+	attack.name = "active_attack"
 	add_child(attack)
 	
 	$player.can_regen = true
 	$player.visible = true
 	active_route = routes.NEUTRAL
+
+func stop_attack():
+	get_node("active_attack").queue_free()
+	attack_ended()
 
 func _process(delta):
 	match active_stage:
@@ -252,6 +260,10 @@ func _process(delta):
 		stages.STRIKE_STANCE:
 			if Input.is_action_just_pressed("cancel"):
 				strike_general_stage()
+		
+		
+	
+	
 	
 	$player.position.x = clamp($player.position.x, $dialogue_box.rect_position.x + 11, $dialogue_box.rect_position.x + $dialogue_box.rect_size.x - 11)
 	$player.position.y = clamp($player.position.y, $dialogue_box.rect_position.y + 11, $dialogue_box.rect_position.y + $dialogue_box.rect_size.y - 11)
@@ -278,6 +290,7 @@ func _on_dialogue_dialogue_ended():
 		ask_enemy_for_next_stage()
 
 func attack_ended():
+	$player.change_mode(0)
 	bottom_buttons_stage()
 
 func ask_enemy_for_next_stage():
@@ -366,3 +379,9 @@ func _on_insult_pressed(id):
 		dialogue = "TALK_INSULT_DIALOGUE"
 	talk_dialogue_stage(dialogue)
 	last_action = id.name
+
+
+func _on_player_got_hit(dmg):
+	if active_stage == stages.ATTACK:
+		if $player.hp <= 15:
+			stop_attack()
