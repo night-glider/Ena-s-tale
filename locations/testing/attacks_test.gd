@@ -5,6 +5,7 @@ var attack:Node
 func _ready():
 	$gui/dialogue_box.change_size(Vector2(320-13,240-13), Vector2(25,25))
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	_on_SpinBox_value_changed(0)
 
 func _process(delta):
 	$gui/player.position.x = clamp($gui/player.position.x, $gui/dialogue_box.rect_position.x + 11, $gui/dialogue_box.rect_position.x + $gui/dialogue_box.rect_size.x - 11)
@@ -52,6 +53,8 @@ func _on_Button_pressed():
 	attack = load("res://objects/battle/attacks/attack{0}/attack{0}.tscn".format([$general/id.value])).instance()
 	attack.box_position = Vector2(float($general/pos_x.text), float($general/pos_y.text))
 	attack.box_size = Vector2(float($general/size_x.text), float($general/size_y.text))
+	
+	attack.player = $gui/player
 	
 	var var_name = ""
 	for element in $attack_gui/grid.get_children():

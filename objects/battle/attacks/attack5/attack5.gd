@@ -13,7 +13,7 @@ export var export_bullet_width:float = 5
 export var export_bullet_initial_speed:float = 0
 export var export_bullet_acceleration:float = 0.5
 
-
+var player = null
 
 
 func _ready():

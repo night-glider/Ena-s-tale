@@ -19,7 +19,7 @@ export var export_particle_count:float = 10
 export var export_burst_time:float = 1
 export var export_alert_time:float = 1
 
-
+var player = null
 
 
 func _ready():

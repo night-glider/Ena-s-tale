@@ -17,6 +17,8 @@ export var export_dragon_number = 20
 export var export_dragon_n_step = 0.5
 export var export_dragon_x_step = 15
 
+var player = null
+
 var wall_offset = 0
 var n = 0
 var side = 1

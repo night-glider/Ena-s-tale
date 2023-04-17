@@ -80,7 +80,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="general"]
 margin_top = 5.0
 margin_right = 100.0
-margin_bottom = 19.0
+margin_bottom = 21.0
 rect_min_size = Vector2( 100, 0 )
 text = "attack_id"
 autowrap = true
@@ -90,17 +90,17 @@ __meta__ = {
 
 [node name="id" type="SpinBox" parent="general"]
 margin_left = 104.0
-margin_right = 178.0
-margin_bottom = 24.0
+margin_right = 166.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="general"]
-margin_left = 182.0
-margin_right = 234.0
-margin_bottom = 24.0
+margin_left = 170.0
+margin_right = 218.0
+margin_bottom = 26.0
 disabled = true
 text = "spawn"
 __meta__ = {
@@ -108,16 +108,16 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="general"]
-margin_top = 31.0
+margin_top = 32.0
 margin_right = 100.0
-margin_bottom = 45.0
+margin_bottom = 48.0
 text = "box_position"
 
 [node name="pos_x" type="TextEdit" parent="general"]
 margin_left = 104.0
-margin_top = 28.0
-margin_right = 178.0
-margin_bottom = 48.0
+margin_top = 30.0
+margin_right = 166.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 0, 20 )
 virtual_keyboard_enabled = false
 __meta__ = {
@@ -125,10 +125,10 @@ __meta__ = {
 }
 
 [node name="pos_y" type="TextEdit" parent="general"]
-margin_left = 182.0
-margin_top = 28.0
-margin_right = 234.0
-margin_bottom = 48.0
+margin_left = 170.0
+margin_top = 30.0
+margin_right = 218.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 0, 20 )
 virtual_keyboard_enabled = false
 __meta__ = {
@@ -136,16 +136,16 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="general"]
-margin_top = 55.0
+margin_top = 56.0
 margin_right = 100.0
-margin_bottom = 69.0
+margin_bottom = 72.0
 text = "box_size"
 
 [node name="size_x" type="TextEdit" parent="general"]
 margin_left = 104.0
-margin_top = 52.0
-margin_right = 178.0
-margin_bottom = 72.0
+margin_top = 54.0
+margin_right = 166.0
+margin_bottom = 74.0
 rect_min_size = Vector2( 0, 20 )
 virtual_keyboard_enabled = false
 __meta__ = {
@@ -153,10 +153,10 @@ __meta__ = {
 }
 
 [node name="size_y" type="TextEdit" parent="general"]
-margin_left = 182.0
-margin_top = 52.0
-margin_right = 234.0
-margin_bottom = 72.0
+margin_left = 170.0
+margin_top = 54.0
+margin_right = 218.0
+margin_bottom = 74.0
 rect_min_size = Vector2( 0, 20 )
 virtual_keyboard_enabled = false
 __meta__ = {

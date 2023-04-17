@@ -12,7 +12,7 @@ export var export_bullet_count:int = 100
 export var export_bullet_height:int = 480
 export var export_bullet_spd:float = 2
 
-
+var player = null
 
 func _ready():
 	$self_destruct.start(export_attack_duration)

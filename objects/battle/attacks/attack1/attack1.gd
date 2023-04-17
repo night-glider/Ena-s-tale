@@ -15,6 +15,7 @@ export var export_bullet_angle_spread = 0.1
 export var export_bullet_spd = 5
 export var export_bullet_spd_damp = 0.99
 
+var player = null
 
 func _ready():
 	$self_destruct.start(export_attack_duration)

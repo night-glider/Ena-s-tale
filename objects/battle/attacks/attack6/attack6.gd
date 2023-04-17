@@ -14,7 +14,7 @@ export var export_bullet_curve_r:float = 100
 export var export_bullet_anim_spd:float = 1.0/120.0
 export var export_bullet_fly_up_spd:float = 2
 
-
+var player = null
 
 
 func _ready():
