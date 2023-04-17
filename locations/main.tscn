@@ -1,4 +1,4 @@
-[gd_scene load_steps=282 format=2]
+[gd_scene load_steps=296 format=2]
 
 [ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -898,32 +898,151 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=33]
-resource_name = "exclamation"
-length = 2.0
+[sub_resource type="AtlasTexture" id=508]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=509]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 61, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=510]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 122, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=511]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 183, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=512]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 244, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=513]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 305, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=514]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 366, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=515]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 427, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=516]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 488, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=517]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 549, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=518]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 610, 0, 61, 164 )
+
+[sub_resource type="AtlasTexture" id=519]
+flags = 19
+atlas = ExtResource( 19 )
+region = Rect2( 671, 0, 61, 164 )
+
+[sub_resource type="SpriteFrames" id=520]
+animations = [ {
+"frames": [ SubResource( 508 ), SubResource( 509 ), SubResource( 510 ), SubResource( 511 ), SubResource( 512 ), SubResource( 513 ), SubResource( 514 ), SubResource( 515 ), SubResource( 516 ), SubResource( 517 ), SubResource( 518 ), SubResource( 519 ) ],
+"loop": false,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="Animation" id=521]
+length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("exclamation:modulate")
+tracks/0/path = NodePath("exclamation:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 0.8, 1.1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("exclamation:offset")
+tracks/1/path = NodePath("exclamation:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -100 ), Vector2( 0, 0 ) ]
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("exclamation:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "exclamation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("exclamation:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("exclamation:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("exclamation:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1969,17 +2088,17 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 8
+frame = 5
 playing = true
 
-[node name="exclamation" type="Sprite3D" parent="cutscene"]
+[node name="exclamation" type="AnimatedSprite3D" parent="cutscene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7534, 6.27012, -3 )
-offset = Vector2( 0, -96.1234 )
-modulate = Color( 1, 1, 1, 0.0387661 )
+visible = false
 billboard = 1
-texture = ExtResource( 19 )
+frames = SubResource( 520 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="cutscene"]
+anims/RESET = SubResource( 521 )
 anims/exclamation = SubResource( 33 )
 anims/meist_goes_to_garden = SubResource( 7 )
 anims/meist_walking_away = SubResource( 3 )
@@ -2049,7 +2168,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 8
+frame = 2
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
