@@ -109,18 +109,18 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=41]
+[sub_resource type="Gradient" id=83]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
 [sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 41 )
+gradient = SubResource( 83 )
 width = 1
 
-[sub_resource type="Gradient" id=42]
+[sub_resource type="Gradient" id=84]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
 [sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 42 )
+gradient = SubResource( 84 )
 width = 128
 
 [sub_resource type="Animation" id=21]
@@ -346,7 +346,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 4
+frame = 1
 playing = true
 centered = false
 
@@ -373,7 +373,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 1
+frame = 5
 playing = true
 offset = Vector2( -18, -65 )
 
