@@ -1,14 +1,19 @@
 extends Node2D
 
+const frame0 = preload("res://sprites/battle/alert_0.png")
+const frame1 = preload("res://sprites/battle/alert_1.png")
+
+onready var sprite = $ColorRect
+
 var do_sound = true
 
 func init(pos:Vector2, size:Vector2, time:float, sound=true):
 	do_sound = sound
 	position = pos
-	$ColorRect.margin_left = -size.x/2
-	$ColorRect.margin_right = -$ColorRect.margin_left
-	$ColorRect.margin_bottom = size.y/2
-	$ColorRect.margin_top = -$ColorRect.margin_bottom
+	sprite.margin_left = -size.x/2
+	sprite.margin_right = -sprite.margin_left
+	sprite.margin_bottom = size.y/2
+	sprite.margin_top = -sprite.margin_bottom
 	$destruction.start(time)
 
 
@@ -16,10 +21,10 @@ func init(pos:Vector2, size:Vector2, time:float, sound=true):
 func _on_Timer_timeout():
 	if do_sound:
 		$AudioStreamPlayer.play()
-	if modulate.a == 1:
-		modulate.a = 0.2
+	if sprite.texture == frame0:
+		sprite.texture = frame1
 	else:
-		modulate.a = 1
+		sprite.texture = frame0
 
 
 func _on_destruction_timeout():
