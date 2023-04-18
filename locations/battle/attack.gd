@@ -38,9 +38,11 @@ func start_attack(orbs_count = 5, dmg = 500, difficulty=0):
 	$end_timer.start()
 	visible = true
 	current_damage = 0
+	var prev_orb_direction = Vector2(1,0).rotated(choice([0, PI])).rotated(rand_range(-0.5,0.5))
 	for i in orbs_count:
 		var new_orb = orb_scene.instance()
-		var new_orb_pos = Vector2(1,0).rotated(choice([0, PI])).rotated(rand_range(-0.5,0.5))
+		prev_orb_direction = prev_orb_direction.rotated(rand_range(-0.5,0.5))
+		var new_orb_pos = prev_orb_direction
 		new_orb_pos = $center.rect_position + (new_orb_pos * ($center.rect_position.x + i*55+200))
 		
 		new_orb.init(new_orb_pos, Vector2(224,59), 4, max_damage/orbs_count)
