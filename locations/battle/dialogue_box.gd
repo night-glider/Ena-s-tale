@@ -15,6 +15,8 @@ func start_inactive_dialogue(text):
 
 func hide_dialogue():
 	$ReferenceRect/dialogue.visible = false
+	
+	$ReferenceRect/dialogue.stop_dialogue()
 
 func change_size(new_pos:Vector2, new_size:Vector2):
 	$Tween.interpolate_property(self, "rect_position", rect_position, new_pos, 1)

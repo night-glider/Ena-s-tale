@@ -3,18 +3,16 @@ extends Node2D
 const select_sound = preload("res://sounds/select.ogg")
 const active_sound = preload("res://sounds/squeak.ogg")
 
+export var big_font:Font = null
 
 var active_button:int = 0
 onready var buttons = [$strike, $talk, $pack]
 enum stages {
 	BOTTOM_BUTTONS, 
-	ITEMS_DIALOGUE, 
 	ITEMS, 
 	ATTACK, 
 	TALK, 
-	TALK_DIALOGUE, 
-	ENEMY_DIALOGUE, 
-	ENEMY_DIALOGUE_PASS,
+	GENERAL_DIALOGUE,
 	PLAYER_ATTACK,
 	STRIKE_GENERAL,
 	STRIKE_LIMB,
@@ -42,8 +40,12 @@ var narrator_light_dials = [
 ]
 var narrator_light_index = 0
 
-var talk_enabled = false
+var talk_enabled = true
 var turns_passed = 0
+
+var reason_press_count = 0
+
+var general_dialogue_next_stage = "ask_enemy"
 
 func _ready():
 	$enemy.player_data = $player
@@ -94,16 +96,6 @@ func player_attack_stage(damage:int, difficulty:int):
 	$dialogue_box/ReferenceRect/attack.visible = true
 	$dialogue_box/ReferenceRect/attack.start_attack(5, damage, difficulty)
 
-func enemy_dialogue_stage(dialogue = []):
-	active_stage = stages.ENEMY_DIALOGUE
-	$enemy.start_dialogue(dialogue)
-	$player.position = Vector2(0,0)
-
-func enemy_dialogue_pass_stage(dialogue = []):
-	active_stage = stages.ENEMY_DIALOGUE_PASS
-	$enemy.start_dialogue(dialogue)
-	$player.position = Vector2(0,0)
-
 func talk_stage():
 	if not talk_enabled:
 		return
@@ -119,14 +111,19 @@ func talk_stage():
 	
 	$dialogue_box.hide_dialogue()
 
-func talk_dialogue_stage(text:String):
-	active_stage = stages.TALK_DIALOGUE
-	$dialogue_box.start_dialogue(text)
+func general_dialogue_stage():
+	active_stage = stages.GENERAL_DIALOGUE
+	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(0,0)
-	
 	$player.visible = false
+	$bottom_ena.visible = false
 	
 	$talk/options.visible = false
+	$strike/attack_choice.visible = false
+	$strike/general_choice.visible = false
+	$pack/inventory.visible = false
+	
+	$dialogue_box.hide_dialogue()
 
 func items_stage():
 	Globals.play_sound(select_sound)
@@ -174,15 +171,6 @@ func bottom_buttons_stage():
 		
 	$dialogue_box.start_inactive_dialogue(narrator_line)
 
-func items_dialogue_stage(text:String):
-	active_stage = stages.ITEMS_DIALOGUE
-	$dialogue_box.start_dialogue(text)
-	$player.position = Vector2(0,0)
-	
-	$player.visible = false
-	
-	$pack/inventory.visible = false
-
 func attack_stage():
 	active_stage = stages.ATTACK
 	var attack = $enemy.choose_attack().instance()
@@ -200,6 +188,65 @@ func attack_stage():
 func stop_attack():
 	get_node("active_attack").queue_free()
 	attack_ended()
+
+func start_general_dialogue(dialogue:Array, next_stage:String="ask_enemy"):
+	$dialogue.change_messages(dialogue)
+	_on_dialogue_dialogue_next()
+	$dialogue.start_dialogue()
+	$dialogue.visible = true
+	general_dialogue_stage()
+	general_dialogue_next_stage = next_stage
+	
+
+
+func find_character_tag(message):
+	var result = null
+	for chr in message:
+		if chr == "|":
+			if result == null:
+				result = ""
+				continue
+			else:
+				return result
+		
+		if result != null:
+			result += chr
+	
+	return result
+
+func _on_dialogue_dialogue_ended():
+	$dialogue.visible = false
+	if general_dialogue_next_stage == "ask_enemy":
+		ask_enemy_for_next_stage()
+		return
+	if general_dialogue_next_stage == "menu":
+		bottom_buttons_stage()
+		return
+	if general_dialogue_next_stage == "attack":
+		attack_stage()
+		return
+
+
+
+func _on_dialogue_dialogue_next():
+	var tag = find_character_tag($dialogue.get_current_message())
+	if tag == null:
+		return
+	
+	if tag == "meist":
+		$dialogue.add_font_override("normal_font", null)
+		$dialogue/NinePatchRect.visible = true
+		$dialogue.margin_left = 396
+		$dialogue.margin_top = 91
+		$dialogue.margin_right = 596
+		$dialogue.margin_bottom = 108
+	else:
+		$dialogue.add_font_override("normal_font", big_font)
+		$dialogue/NinePatchRect.visible = false
+		$dialogue.margin_left = 45
+		$dialogue.margin_top = 235
+		$dialogue.margin_right = 597
+		$dialogue.margin_bottom = 348
 
 func _process(delta):
 	match active_stage:
@@ -261,6 +308,16 @@ func _process(delta):
 			if Input.is_action_just_pressed("cancel"):
 				strike_general_stage()
 		
+		stages.GENERAL_DIALOGUE:
+			if Input.is_action_just_pressed("interact"):
+				if $dialogue.finished:
+					$dialogue.next_message()
+				else:
+					pass
+					#$dialogue.skip_message()
+			
+			if Input.is_action_pressed("cancel"):
+				$dialogue.skip_message()
 		
 	
 	
@@ -279,15 +336,9 @@ func _item_pressed(button):
 	
 	button.text = "-----"
 	button.disabled = true
-	items_dialogue_stage(button.dialogue)
-	
+	#items_dialogue_stage(button.dialogue)
+	start_general_dialogue([button.dialogue])
 	last_action = button.name
-
-func _on_dialogue_dialogue_ended():
-	if active_stage == stages.ITEMS_DIALOGUE:
-		ask_enemy_for_next_stage()
-	if active_stage == stages.TALK_DIALOGUE:
-		ask_enemy_for_next_stage()
 
 func attack_ended():
 	$player.change_mode(0)
@@ -309,20 +360,17 @@ func ask_enemy_for_next_stage():
 			attack_stage()
 			return
 		"dialogue":
-			enemy_dialogue_stage(result[1])
+			#enemy_dialogue_stage(result[1])
+			start_general_dialogue(result[1], "attack")
 			return
 		"pass":
 			bottom_buttons_stage()
 			return
 		"dialogue_pass":
-			enemy_dialogue_pass_stage(result[1])
+			#enemy_dialogue_pass_stage(result[1])
+			start_general_dialogue(result[1], "menu")
 			return
 
-func _on_enemy_dialogue_ended():
-	if active_stage == stages.ENEMY_DIALOGUE:
-		attack_stage()
-	if active_stage == stages.ENEMY_DIALOGUE_PASS:
-		bottom_buttons_stage()
 
 func _on_player_attack_ended():
 	#OS.alert("attack_ended with damage " + str(damage))
@@ -362,22 +410,41 @@ func _on_stances_pressed(id):
 
 
 func _on_reason_pressed(id):
-	var dialogue
+	var dialogue = []
 	if $ena_status.current_state == "sad":
-		dialogue = "TALK_REASON_DIALOGUE"
+		if reason_press_count == 0:
+			dialogue = [
+				"ENA_TALK_REASON1_DIAL_1",
+				"ENA_TALK_REASON1_DIAL_2",
+				"ENA_TALK_REASON1_DIAL_3",
+				"ENA_TALK_REASON1_DIAL_4",
+				"ENA_TALK_REASON1_DIAL_5",
+			]
+		
+		if reason_press_count >= 1:
+			dialogue = [
+				"ENA_TALK_REASON2_DIAL_1",
+				"ENA_TALK_REASON2_DIAL_2",
+				"ENA_TALK_REASON2_DIAL_3",
+				"ENA_TALK_REASON2_DIAL_4",
+			]
+		
+		reason_press_count += 1
 	else:
-		dialogue = "TALK_REASON_DIALOGUE_INACTIVE"
-	talk_dialogue_stage(dialogue)
+		dialogue = ["TALK_REASON_DIALOGUE_INACTIVE"]
+	
+	start_general_dialogue(dialogue)
+	#talk_dialogue_stage(dialogue)
 	last_action = id.name
 
 
 func _on_insult_pressed(id):
 	var dialogue
 	if $ena_status.current_state == "sad":
-		dialogue = "TALK_INSULT_DIALOGUE_INACTIVE"
+		dialogue = ["TALK_INSULT_DIALOGUE_INACTIVE"]
 	else:
-		dialogue = "TALK_INSULT_DIALOGUE"
-	talk_dialogue_stage(dialogue)
+		dialogue = ["TALK_INSULT_DIALOGUE"]
+	start_general_dialogue(dialogue)
 	last_action = id.name
 
 
@@ -385,3 +452,4 @@ func _on_player_got_hit(dmg):
 	if active_stage == stages.ATTACK:
 		if $player.hp <= 15:
 			stop_attack()
+

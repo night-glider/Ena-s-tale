@@ -32,17 +32,6 @@ func _ready():
 
 func _process(delta):
 	head_animation()
-	
-	if dialogue_active:
-		if Input.is_action_just_pressed("interact"):
-			if $dialogue.finished:
-				$dialogue.next_message()
-			else:
-				pass
-				#$dialogue.skip_message()
-		
-		if Input.is_action_pressed("cancel"):
-			$dialogue.skip_message()
 
 func choose_attack()->PackedScene:
 	if player_data.hp <= 15:
@@ -99,12 +88,6 @@ func take_hit(damage:int):
 	$hp_bar/smooth.start()
 	if damage > 0:
 		Globals.play_sound(damage_sound)
-
-func start_dialogue(text = []):
-	$dialogue.visible = true
-	$dialogue.change_messages(text)
-	$dialogue.start_dialogue()
-	dialogue_active = true
 
 func _on_dialogue_dialogue_ended():
 	$dialogue.visible = false

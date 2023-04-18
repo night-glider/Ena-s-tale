@@ -47,12 +47,20 @@ func _ready():
 		else:
 			messages[i] = tr(messages[i])
 
+func get_current_message():
+	return messages[message_id]
+
+func stop_dialogue():
+	emit_signal("dialogue_ended")
+	
+	timer.stop()
 
 func change_messages(new_array:Array):
 	messages = new_array.duplicate()
 	if messages.empty():
 		assert(false, "DialogueLabel's messages are empty!")
 	
+	message_id = 0
 	
 	for i in messages.size():
 		if messages[i] == tr(messages[i]):
@@ -118,13 +126,16 @@ func next_message():
 	finished = false
 	
 	if message_id < messages.size():
+		emit_signal("dialogue_next")
 		if word_wrapping:
 			messages[message_id] = message_trim(messages[message_id])
 		next_symbol()
 		timer.start()
-		emit_signal("dialogue_next")
+		
 	else:
 		emit_signal("dialogue_ended")
+	
+	
 
 func skip_message():
 	if message_id >= len(messages):

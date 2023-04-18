@@ -320,6 +320,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 66 )
+frame = 2
 playing = true
 offset = Vector2( -18, -65 )
 
@@ -363,7 +364,7 @@ patch_margin_bottom = 10
 [node name="AnimatedSprite" type="AnimatedSprite" parent="gui/ena_status"]
 frames = SubResource( 60 )
 animation = "sad"
-frame = 4
+frame = 3
 playing = true
 centered = false
 offset = Vector2( 2, 2 )
