@@ -175,6 +175,7 @@ func attack_stage():
 	active_stage = stages.ATTACK
 	var attack = $enemy.choose_attack().instance()
 	attack.player = $player
+	attack.enemy = $enemy
 	attack.connect("attack_ended", self, "attack_ended")
 	$dialogue_box.change_size(attack.box_position, attack.box_size)
 	$player.position = Vector2(320,320)
