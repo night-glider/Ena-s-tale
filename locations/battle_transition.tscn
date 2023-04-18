@@ -14,7 +14,7 @@
 [ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=12]
 [ext_resource path="res://sprites/battle/gui/hp_bar.png" type="Texture" id=13]
 [ext_resource path="res://sprites/battle/meist_head.png" type="Texture" id=14]
-[ext_resource path="res://sprites/battle/meist_body.png" type="Texture" id=15]
+[ext_resource path="res://sprites/intro_meist.png" type="Texture" id=15]
 [ext_resource path="res://sprites/battle/gui/hp_bar_bg.png" type="Texture" id=16]
 [ext_resource path="res://sprites/battle/meist_face.png" type="Texture" id=17]
 
@@ -320,7 +320,6 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 66 )
-frame = 3
 playing = true
 offset = Vector2( -18, -65 )
 
