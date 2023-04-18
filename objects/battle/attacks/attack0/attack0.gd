@@ -14,6 +14,7 @@ export var export_bullet_gravity:float = 0.025
 export var export_safe_zone_radius:int = 25
 
 var player = null
+var enemy = null
 
 
 

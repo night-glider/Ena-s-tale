@@ -27,6 +27,6 @@ func _process(delta):
 	if stage == 2:
 		position.y += y_spd
 
-func _on_Timer_timeout():
+func stage1_toggle():
 	stage = 1
 

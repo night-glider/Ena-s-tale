@@ -23,6 +23,7 @@ export var export_alert_count:int = 2
 export var export_alert_height:int = 50
 
 var player = null
+var enemy = null
 
 var bullet_list = []
 var particle_attack_count = 1

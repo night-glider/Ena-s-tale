@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://sprites/battle/meist_face.png" type="Texture" id=30]
 [ext_resource path="res://sprites/battle/gui/rage_ena_hurt.png" type="Texture" id=31]
 [ext_resource path="res://fonts/hachicro.TTF" type="DynamicFontData" id=32]
+[ext_resource path="res://sprites/battle/fire_storm.png" type="Texture" id=33]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -61,11 +62,48 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 33 )
+region = Rect2( 0, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 33 )
+region = Rect2( 139, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 33 )
+region = Rect2( 278, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 33 )
+region = Rect2( 417, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 33 )
+region = Rect2( 0, 147, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 33 )
+region = Rect2( 139, 147, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 33 )
+region = Rect2( 278, 147, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 33 )
+region = Rect2( 417, 147, 139, 147 )
+
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "default",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ) ],
+"loop": false,
+"name": "fire_storm",
 "speed": 5.0
 } ]
 
@@ -109,18 +147,18 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=83]
+[sub_resource type="Gradient" id=96]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
 [sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 83 )
+gradient = SubResource( 96 )
 width = 1
 
-[sub_resource type="Gradient" id=84]
+[sub_resource type="Gradient" id=97]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
 [sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 84 )
+gradient = SubResource( 97 )
 width = 128
 
 [sub_resource type="Animation" id=21]
@@ -154,6 +192,162 @@ tracks/1/keys = {
 [sub_resource type="DynamicFont" id=80]
 outline_size = 2
 font_data = ExtResource( 32 )
+
+[sub_resource type="Animation" id=85]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "default" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 7 ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=87]
+resource_name = "fire_storm"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fire_storm" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -13, -15 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_default_animation"
+} ]
+}
 
 [sub_resource type="DynamicFont" id=78]
 size = 32
@@ -346,7 +540,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 1
+frame = 3
 playing = true
 centered = false
 
@@ -364,6 +558,7 @@ script = ExtResource( 13 )
 
 [node name="body" type="AnimatedSprite" parent="gui/enemy"]
 frames = SubResource( 31 )
+playing = true
 
 [node name="head" type="Node2D" parent="gui/enemy"]
 
@@ -433,6 +628,9 @@ align = 1
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gui/enemy"]
+anims/RESET = SubResource( 85 )
+anims/default = SubResource( 86 )
+anims/fire_storm = SubResource( 87 )
 
 [node name="dialogue_box" type="Control" parent="gui"]
 margin_left = 35.0
@@ -684,6 +882,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
+frame = 2
 playing = true
 centered = false
 

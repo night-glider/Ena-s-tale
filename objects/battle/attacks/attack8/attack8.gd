@@ -23,6 +23,7 @@ export var export_bullet_speed:float = 2
 export var export_bullet_width:float = 10
 
 var player = null
+var enemy = null
 
 var decisions = []
 

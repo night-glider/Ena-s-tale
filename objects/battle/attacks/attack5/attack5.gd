@@ -14,6 +14,7 @@ export var export_bullet_initial_speed:float = 0
 export var export_bullet_acceleration:float = 0.5
 
 var player = null
+var enemy = null
 
 
 func _ready():

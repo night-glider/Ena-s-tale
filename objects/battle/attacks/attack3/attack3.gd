@@ -20,6 +20,7 @@ export var export_burst_time:float = 1
 export var export_alert_time:float = 1
 
 var player = null
+var enemy = null
 
 
 func _ready():

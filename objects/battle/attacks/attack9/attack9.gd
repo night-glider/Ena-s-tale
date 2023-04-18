@@ -13,6 +13,7 @@ export var export_bullet_wobble:float = 5
 export var export_bullet_size:float = 10
 
 var player = null
+var enemy = null
 
 func _ready():
 	$self_destruct.start(export_attack_duration)

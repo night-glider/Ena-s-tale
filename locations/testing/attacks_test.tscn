@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://objects/battle/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=2]
@@ -10,16 +10,54 @@
 [ext_resource path="res://sprites/battle/gui/nine_patch_rect.png" type="Texture" id=8]
 [ext_resource path="res://locations/battle/enemy.gd" type="Script" id=9]
 [ext_resource path="res://fonts/hachicro.TTF" type="DynamicFontData" id=10]
+[ext_resource path="res://sprites/battle/fire_storm.png" type="Texture" id=11]
 
-[sub_resource type="SpriteFrames" id=43]
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 11 )
+region = Rect2( 139, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 11 )
+region = Rect2( 278, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 11 )
+region = Rect2( 417, 0, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 147, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 11 )
+region = Rect2( 139, 147, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 11 )
+region = Rect2( 278, 147, 139, 147 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 11 )
+region = Rect2( 417, 147, 139, 147 )
+
+[sub_resource type="SpriteFrames" id=98]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ) ],
+"loop": false,
+"name": "fire_storm",
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=44]
+[sub_resource type="SpriteFrames" id=99]
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
@@ -51,7 +89,7 @@ region = Rect2( 228, 0, 57, 53 )
 atlas = ExtResource( 6 )
 region = Rect2( 285, 0, 57, 53 )
 
-[sub_resource type="SpriteFrames" id=45]
+[sub_resource type="SpriteFrames" id=100]
 animations = [ {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
@@ -59,21 +97,21 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=41]
+[sub_resource type="Gradient" id=96]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
-[sub_resource type="GradientTexture" id=46]
-gradient = SubResource( 41 )
+[sub_resource type="GradientTexture" id=101]
+gradient = SubResource( 96 )
 width = 1
 
-[sub_resource type="Gradient" id=42]
+[sub_resource type="Gradient" id=97]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
-[sub_resource type="GradientTexture" id=47]
-gradient = SubResource( 42 )
+[sub_resource type="GradientTexture" id=102]
+gradient = SubResource( 97 )
 width = 128
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=103]
 resource_name = "simple_anim"
 length = 2.0
 tracks/0/type = "value"
@@ -101,9 +139,165 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=49]
+[sub_resource type="DynamicFont" id=104]
 outline_size = 2
 font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=105]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "default" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 7 ]
+}
+
+[sub_resource type="Animation" id=106]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "fire_storm"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("head:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fire_storm" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -13, -15 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("body:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_default_animation"
+} ]
+}
 
 [node name="attacks_test" type="Control"]
 anchor_right = 1.0
@@ -136,17 +330,17 @@ position = Vector2( 339, 140 )
 script = ExtResource( 9 )
 
 [node name="body" type="AnimatedSprite" parent="gui/enemy"]
-frames = SubResource( 43 )
+frames = SubResource( 98 )
+playing = true
 
 [node name="head" type="Node2D" parent="gui/enemy"]
 
 [node name="face" type="AnimatedSprite" parent="gui/enemy/head"]
-frames = SubResource( 44 )
+frames = SubResource( 99 )
 offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
-frames = SubResource( 45 )
-frame = 5
+frames = SubResource( 100 )
 playing = true
 offset = Vector2( -18, -65 )
 
@@ -184,28 +378,31 @@ margin_right = 100.0
 margin_bottom = 50.0
 max_value = 10000.0
 value = 10000.0
-texture_under = SubResource( 46 )
-texture_progress = SubResource( 47 )
+texture_under = SubResource( 101 )
+texture_progress = SubResource( 102 )
 nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="anim" type="AnimationPlayer" parent="gui/enemy/hp_bar"]
-anims/simple_anim = SubResource( 48 )
+anims/simple_anim = SubResource( 103 )
 
 [node name="Label" type="Label" parent="gui/enemy/hp_bar"]
 anchor_right = 1.0
 grow_vertical = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 49 )
+custom_fonts/font = SubResource( 104 )
 text = "2000"
 align = 1
 
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gui/enemy"]
+anims/RESET = SubResource( 105 )
+anims/default = SubResource( 106 )
+anims/fire_storm = SubResource( 107 )
 
 [node name="dialogue_box" type="Control" parent="gui"]
 margin_left = 230.0

@@ -14,6 +14,12 @@ var hp = 10000
 var head_n = 0
 var head_n_spd = PI/120.0
 
+func toggle_default_animation():
+	$AnimationPlayer.play("default")
+
+func toggle_fire_storm():
+	$AnimationPlayer.play("fire_storm")
+
 func head_animation():
 	$head.position.y = 2 + sin(head_n) * 2
 	head_n += head_n_spd

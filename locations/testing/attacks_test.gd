@@ -55,6 +55,7 @@ func _on_Button_pressed():
 	attack.box_size = Vector2(float($general/size_x.text), float($general/size_y.text))
 	
 	attack.player = $gui/player
+	attack.enemy = $gui/enemy
 	
 	var var_name = ""
 	for element in $attack_gui/grid.get_children():
