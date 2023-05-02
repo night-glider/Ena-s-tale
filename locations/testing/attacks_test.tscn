@@ -1157,7 +1157,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 264 )
-frame = 4
+frame = 2
 playing = true
 offset = Vector2( -19, -64 )
 

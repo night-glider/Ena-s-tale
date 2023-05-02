@@ -16,6 +16,7 @@ var player = null
 var enemy = null
 
 func _ready():
+	enemy.sword_down_static()
 	$self_destruct.start(export_attack_duration)
 	
 	var new_bullet = bullet.instance()
@@ -26,5 +27,6 @@ func _ready():
 	
 
 func _on_self_destruct_timeout():
+	enemy.sword_up()
 	emit_signal("attack_ended")
 	queue_free()

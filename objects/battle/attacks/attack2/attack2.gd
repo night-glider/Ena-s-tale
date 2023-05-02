@@ -29,6 +29,7 @@ func _process(delta):
 	n += export_platform_spd
 
 func _ready():
+	enemy.sword_down_static()
 	get_node("../player").change_mode(1)
 	$self_destruct.start(export_attack_duration)
 	
@@ -48,6 +49,7 @@ func _ready():
 	_on_dragon_spawn_timeout()
 
 func _on_self_destruct_timeout():
+	enemy.sword_up()
 	get_node("../player").change_mode(0)
 	emit_signal("attack_ended")
 	queue_free()

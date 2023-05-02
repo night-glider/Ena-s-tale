@@ -19,6 +19,7 @@ var enemy = null
 
 
 func _ready():
+	enemy.sword_down_static()
 	$self_destruct.start(export_attack_duration)
 	
 	$Periodic.add_method(self, "spaw_bullet", [], export_spawn_bullet_interval, export_attack_delay, export_spawn_bullet_time)
@@ -40,5 +41,6 @@ func spaw_bullet():
 	add_child(new_bullet)
 
 func _on_self_destruct_timeout():
+	enemy.sword_up()
 	emit_signal("attack_ended")
 	queue_free()

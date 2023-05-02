@@ -12,7 +12,7 @@ export var export_attack_interval:float = 2
 export var export_attack_width:int = 50
 export var export_attack_start_delay:float = 1
 export var export_bullet_spawn_x:float = 320
-export var export_bullet_spawn_y:float = 100
+export var export_bullet_spawn_y:float = 140
 export var export_bullet_speed:float = 1
 export var export_bursts_count:int = 2
 export var export_particle_count:float = 10
@@ -24,6 +24,7 @@ var enemy = null
 
 
 func _ready():
+	enemy.sword_down_charge()
 	$self_destruct.start(export_attack_duration)
 	$attack.start(export_attack_start_delay)
 	$attack.wait_time = export_attack_interval
@@ -48,6 +49,7 @@ func attack():
 
 
 func _on_self_destruct_timeout():
+	enemy.sword_up()
 	emit_signal("attack_ended")
 	queue_free()
 

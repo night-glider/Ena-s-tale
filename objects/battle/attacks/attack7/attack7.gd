@@ -8,7 +8,7 @@ export var box_size := Vector2(136, 136)
 
 export var export_attack_duration:float = 10
 export var export_particle_spawn_frame:int = 10
-export var export_particle_go_frame:int = 70
+export var export_particle_go_frame:int = 30
 export var export_start_square_radius:float = 5
 export var export_bullet_count:int = 100
 export var export_bullet_height:int = 480
