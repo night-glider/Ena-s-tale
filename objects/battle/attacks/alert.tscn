@@ -17,7 +17,7 @@ stretch_mode = 1
 [node name="destruction" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.15
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
