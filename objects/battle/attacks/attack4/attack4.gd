@@ -8,11 +8,12 @@ export var box_position := Vector2(252,221)
 export var box_size := Vector2(136, 136)
 
 export var export_attack_duration:float = 10
-export var export_first_spawnpoint_x:int = 300
-export var export_first_spawnpoint_y:int = 100
-export var export_second_spawnpoint_x:int = 340
-export var export_second_spawnpoint_y:int = 100
+export var export_first_spawnpoint_x:int = 310
+export var export_first_spawnpoint_y:int = 142
+export var export_second_spawnpoint_x:int = 330
+export var export_second_spawnpoint_y:int = 142
 export var export_particles_count:int = 50
+export var export_particles_spawn_delay:float = 1.0
 export var export_stage1_delay:float = 1
 export var export_attack_stage_delay:float = 2
 export var export_attack_count:int = 5
@@ -29,6 +30,10 @@ var bullet_list = []
 var particle_attack_count = 1
 
 func _ready():
+	enemy.sword_down_charge()
+	$spawn_particles.start(export_particles_spawn_delay)
+
+func _on_spawn_particles_timeout():
 	particle_attack_count = round( (export_particles_count / export_attack_count) / export_alert_count ) * 2
 	
 	$self_destruct.start(export_attack_duration)
@@ -66,5 +71,8 @@ func attack():
 			bullet.stage3_start(export_alert_time, pos, export_bullet_speed)
 
 func _on_self_destruct_timeout():
+	enemy.toggle_default_animation()
 	emit_signal("attack_ended")
 	queue_free()
+
+

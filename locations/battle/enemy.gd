@@ -23,6 +23,18 @@ func toggle_fire_storm():
 	animate_head = false
 	$AnimationPlayer.play("fire_storm")
 
+func start_shadow_anim():
+	$AnimationPlayer.play("shadow_attack_start")
+
+func start_swing_anim():
+	$AnimationPlayer.play("swing")
+
+func sword_down_static():
+	$AnimationPlayer.play("sword_down_and_static")
+
+func sword_down_charge():
+	$AnimationPlayer.play("sword_down_and_charge")
+
 func head_animation():
 	if not animate_head:
 		return

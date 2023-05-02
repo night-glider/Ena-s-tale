@@ -11,4 +11,8 @@ script = ExtResource( 1 )
 [node name="Periodic" type="Node" parent="."]
 script = ExtResource( 2 )
 
+[node name="spawn_particles" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="self_destruct" to="." method="_on_self_destruct_timeout"]
+[connection signal="timeout" from="spawn_particles" to="." method="_on_spawn_particles_timeout"]
