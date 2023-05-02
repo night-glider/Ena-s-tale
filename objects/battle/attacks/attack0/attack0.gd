@@ -7,11 +7,11 @@ const bullet = preload("res://objects/battle/attacks/attack0/bullet.tscn")
 export var box_position := Vector2(252,221)
 export var box_size := Vector2(136, 136)
 
-export var export_attack_duration:float = 10
+export var export_attack_duration:float = 6
 
-export var export_spawn_probability:float = 0.5
+export var export_spawn_probability:float = 0.2
 export var export_bullet_gravity:float = 0.025
-export var export_safe_zone_radius:int = 25
+export var export_safe_zone_radius:int = 35
 
 var player = null
 var enemy = null
