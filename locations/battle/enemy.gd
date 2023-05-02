@@ -8,19 +8,24 @@ var player_data:Node2D = null
 var all_attacks = [2,3,4,5,6,7,8]
 var current_attack_pool = []
 
-var dialogue_active = false
+var animate_head = true
 var hp = 10000
 
 var head_n = 0
 var head_n_spd = PI/120.0
 
 func toggle_default_animation():
-	$AnimationPlayer.play("default")
+	$AnimationPlayer.play("RESET")
+	animate_head = true
+	#$AnimationPlayer.play("default")
 
 func toggle_fire_storm():
+	animate_head = false
 	$AnimationPlayer.play("fire_storm")
 
 func head_animation():
+	if not animate_head:
+		return
 	$head.position.y = 3 + sin(head_n) * 2
 	head_n += head_n_spd
 
@@ -89,6 +94,3 @@ func take_hit(damage:int):
 	if damage > 0:
 		Globals.play_sound(damage_sound)
 
-func _on_dialogue_dialogue_ended():
-	$dialogue.visible = false
-	dialogue_active = false

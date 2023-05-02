@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://sprites/battle/gui/rage_ena_hurt.png" type="Texture" id=31]
 [ext_resource path="res://fonts/hachicro.TTF" type="DynamicFontData" id=32]
 [ext_resource path="res://sprites/battle/fire_storm.png" type="Texture" id=33]
+[ext_resource path="res://sprites/battle/sword_down.png" type="Texture" id=34]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -98,6 +99,82 @@ region = Rect2( 278, 147, 139, 147 )
 atlas = ExtResource( 33 )
 region = Rect2( 417, 147, 139, 147 )
 
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 34 )
+region = Rect2( 158, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 34 )
+region = Rect2( 316, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 34 )
+region = Rect2( 474, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 34 )
+region = Rect2( 632, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 34 )
+region = Rect2( 790, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 34 )
+region = Rect2( 948, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 34 )
+region = Rect2( 1106, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 34 )
+region = Rect2( 1264, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 34 )
+region = Rect2( 1422, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 34 )
+region = Rect2( 1580, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 34 )
+region = Rect2( 1738, 0, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 34 )
+region = Rect2( 0, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 34 )
+region = Rect2( 158, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 34 )
+region = Rect2( 316, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 34 )
+region = Rect2( 474, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 34 )
+region = Rect2( 632, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 34 )
+region = Rect2( 790, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 34 )
+region = Rect2( 948, 152, 158, 152 )
+
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
 "frames": [ ExtResource( 20 ) ],
@@ -108,6 +185,11 @@ animations = [ {
 "frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ) ],
 "loop": false,
 "name": "fire_storm",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ), SubResource( 116 ) ],
+"loop": false,
+"name": "sword_down_start",
 "speed": 5.0
 } ]
 
@@ -151,18 +233,18 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=96]
+[sub_resource type="Gradient" id=118]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
 [sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 96 )
+gradient = SubResource( 118 )
 width = 1
 
-[sub_resource type="Gradient" id=97]
+[sub_resource type="Gradient" id=119]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
 [sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 97 )
+gradient = SubResource( 119 )
 width = 128
 
 [sub_resource type="Animation" id=21]
@@ -247,6 +329,42 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 7 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("head/face:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("head/head:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("head/head:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -19, -64 ) ]
+}
 
 [sub_resource type="Animation" id=86]
 resource_name = "default"
@@ -291,6 +409,95 @@ tracks/2/keys = {
 resource_name = "fire_storm"
 length = 3.0
 tracks/0/type = "value"
+tracks/0/path = NodePath("body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fire_storm" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16, -14 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_default_animation"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("head/face:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("head/head:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("head/head:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -18, -65 ), Vector2( -18, -70 ) ]
+}
+
+[sub_resource type="Animation" id=117]
+resource_name = "sword_down"
+tracks/0/type = "value"
 tracks/0/path = NodePath("head:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -301,56 +508,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("body:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "fire_storm" ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("body:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -13, -15 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("body:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/4/type = "method"
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "toggle_default_animation"
-} ]
 }
 
 [sub_resource type="AtlasTexture" id=22]
@@ -570,8 +727,9 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
+frame = 5
 playing = true
-offset = Vector2( -18, -65 )
+offset = Vector2( -19, -64 )
 
 [node name="hp_bar" type="TextureProgress" parent="gui/enemy"]
 modulate = Color( 1, 1, 1, 0 )
@@ -606,6 +764,7 @@ align = 1
 anims/RESET = SubResource( 85 )
 anims/default = SubResource( 86 )
 anims/fire_storm = SubResource( 87 )
+anims/sword_down = SubResource( 117 )
 
 [node name="dialogue_box" type="Control" parent="gui"]
 margin_left = 35.0
@@ -880,7 +1039,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 1
 playing = true
 centered = false
 
