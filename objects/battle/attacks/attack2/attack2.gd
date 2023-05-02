@@ -3,19 +3,19 @@ extends Node
 signal attack_ended
 const bullet = preload("res://objects/battle/attacks/attack2/bullet.tscn")
 
-export var box_position := Vector2(35+100,221)
-export var box_size := Vector2(571-100, 136)
+export var box_position := Vector2(135,221)
+export var box_size := Vector2(471, 136)
 
-export var export_attack_duration:float = 10
-export var export_spawn_interval:float = 4
-export var export_platform_spd:float = 0.02
-export var export_platform_amplitude:float = 100
-export var export_bullet_amplitude = 20
-export var export_bullet_spd:float = 2
-export var export_bullet_n_spd = -0.05
-export var export_dragon_number = 20
-export var export_dragon_n_step = 0.5
-export var export_dragon_x_step = 15
+export var export_attack_duration := 10.0
+export var export_spawn_interval := 2.0
+export var export_platform_spd := 0.02
+export var export_platform_amplitude := 100
+export var export_bullet_amplitude := 20
+export var export_bullet_spd := 2.0
+export var export_bullet_n_spd := -0.05
+export var export_dragon_number := 20
+export var export_dragon_n_step := 0.5
+export var export_dragon_x_step := 15.0
 
 var player = null
 var enemy = null
