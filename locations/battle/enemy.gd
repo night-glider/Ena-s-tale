@@ -21,7 +21,7 @@ func toggle_fire_storm():
 	$AnimationPlayer.play("fire_storm")
 
 func head_animation():
-	$head.position.y = 2 + sin(head_n) * 2
+	$head.position.y = 3 + sin(head_n) * 2
 	head_n += head_n_spd
 
 func _ready():

@@ -540,7 +540,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
@@ -562,6 +562,7 @@ frames = SubResource( 31 )
 playing = true
 
 [node name="head" type="Node2D" parent="gui/enemy"]
+position = Vector2( -1, 0 )
 
 [node name="face" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 79 )
@@ -569,7 +570,6 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 3
 playing = true
 offset = Vector2( -18, -65 )
 
@@ -880,7 +880,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
+frame = 1
 playing = true
 centered = false
 
