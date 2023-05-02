@@ -71,7 +71,7 @@ func attack():
 			bullet.stage3_start(export_alert_time, pos, export_bullet_speed)
 
 func _on_self_destruct_timeout():
-	enemy.toggle_default_animation()
+	enemy.sword_up()
 	emit_signal("attack_ended")
 	queue_free()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=137 format=2]
 
 [ext_resource path="res://objects/battle/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://custom_classes/DialogueLabel.gd" type="Script" id=2]
@@ -390,7 +390,31 @@ region = Rect2( 632, 152, 158, 152 )
 atlas = ExtResource( 8 )
 region = Rect2( 790, 152, 158, 152 )
 
-[sub_resource type="SpriteFrames" id=253]
+[sub_resource type="AtlasTexture" id=253]
+atlas = ExtResource( 8 )
+region = Rect2( 948, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=254]
+atlas = ExtResource( 8 )
+region = Rect2( 1106, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=255]
+atlas = ExtResource( 8 )
+region = Rect2( 1264, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=256]
+atlas = ExtResource( 8 )
+region = Rect2( 1422, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=257]
+atlas = ExtResource( 8 )
+region = Rect2( 1580, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=258]
+atlas = ExtResource( 8 )
+region = Rect2( 1738, 152, 158, 152 )
+
+[sub_resource type="SpriteFrames" id=262]
 animations = [ {
 "frames": [ SubResource( 238 ), SubResource( 239 ), SubResource( 240 ), SubResource( 241 ) ],
 "loop": true,
@@ -426,9 +450,14 @@ animations = [ {
 "loop": true,
 "name": "sword_down_static",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 253 ), SubResource( 254 ), SubResource( 255 ), SubResource( 256 ), SubResource( 257 ), SubResource( 258 ) ],
+"loop": false,
+"name": "sword_up",
+"speed": 15.0
 } ]
 
-[sub_resource type="SpriteFrames" id=254]
+[sub_resource type="SpriteFrames" id=263]
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
@@ -460,7 +489,7 @@ region = Rect2( 228, 0, 57, 53 )
 atlas = ExtResource( 6 )
 region = Rect2( 285, 0, 57, 53 )
 
-[sub_resource type="SpriteFrames" id=255]
+[sub_resource type="SpriteFrames" id=264]
 animations = [ {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
@@ -468,21 +497,21 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=251]
+[sub_resource type="Gradient" id=260]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
-[sub_resource type="GradientTexture" id=256]
-gradient = SubResource( 251 )
+[sub_resource type="GradientTexture" id=265]
+gradient = SubResource( 260 )
 width = 1
 
-[sub_resource type="Gradient" id=252]
+[sub_resource type="Gradient" id=261]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
-[sub_resource type="GradientTexture" id=257]
-gradient = SubResource( 252 )
+[sub_resource type="GradientTexture" id=266]
+gradient = SubResource( 261 )
 width = 128
 
-[sub_resource type="Animation" id=258]
+[sub_resource type="Animation" id=267]
 resource_name = "simple_anim"
 length = 2.0
 tracks/0/type = "value"
@@ -510,11 +539,11 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=259]
+[sub_resource type="DynamicFont" id=268]
 outline_size = 2
 font_data = ExtResource( 10 )
 
-[sub_resource type="Animation" id=260]
+[sub_resource type="Animation" id=269]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("head:visible")
@@ -613,7 +642,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=261]
+[sub_resource type="Animation" id=270]
 resource_name = "default"
 tracks/0/type = "value"
 tracks/0/path = NodePath("head:visible")
@@ -652,7 +681,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=262]
+[sub_resource type="Animation" id=271]
 resource_name = "fire_storm"
 length = 3.0
 tracks/0/type = "value"
@@ -742,7 +771,7 @@ tracks/6/keys = {
 "values": [ Vector2( -18, -65 ), Vector2( -18, -70 ) ]
 }
 
-[sub_resource type="Animation" id=263]
+[sub_resource type="Animation" id=272]
 resource_name = "shadow_attack_start"
 length = 0.5
 tracks/0/type = "value"
@@ -794,7 +823,7 @@ tracks/3/keys = {
 "values": [ Vector2( -19, -10 ) ]
 }
 
-[sub_resource type="Animation" id=264]
+[sub_resource type="Animation" id=273]
 resource_name = "swing"
 tracks/0/type = "value"
 tracks/0/path = NodePath("body:animation")
@@ -857,7 +886,7 @@ tracks/4/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=265]
+[sub_resource type="Animation" id=274]
 resource_name = "sword_down_and_charge"
 tracks/0/type = "value"
 tracks/0/path = NodePath("body:animation")
@@ -893,7 +922,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( -1, 0 ), Vector2( -19, 0 ) ]
+"values": [ Vector2( -1, -10 ), Vector2( -19, -10 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("head/face:visible")
@@ -929,10 +958,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -20, -48 ) ]
+"values": [ Vector2( -20, -58 ) ]
 }
 
-[sub_resource type="Animation" id=266]
+[sub_resource type="Animation" id=275]
 resource_name = "sword_down_and_static"
 tracks/0/type = "value"
 tracks/0/path = NodePath("body:animation")
@@ -968,7 +997,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 18, 0 ) ]
+"values": [ Vector2( -1, -10 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("head:visible")
@@ -981,6 +1010,72 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+
+[sub_resource type="Animation" id=276]
+resource_name = "sword_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "sword_up" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, -10 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("head:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_default_animation"
+} ]
 }
 
 [node name="attacks_test" type="Control"]
@@ -1050,18 +1145,18 @@ position = Vector2( 339, 140 )
 script = ExtResource( 9 )
 
 [node name="body" type="AnimatedSprite" parent="gui/enemy"]
-frames = SubResource( 253 )
+frames = SubResource( 262 )
 playing = true
 
 [node name="head" type="Node2D" parent="gui/enemy"]
 position = Vector2( -1, 0 )
 
 [node name="face" type="AnimatedSprite" parent="gui/enemy/head"]
-frames = SubResource( 254 )
+frames = SubResource( 263 )
 offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
-frames = SubResource( 255 )
+frames = SubResource( 264 )
 frame = 4
 playing = true
 offset = Vector2( -19, -64 )
@@ -1074,42 +1169,40 @@ margin_right = 100.0
 margin_bottom = 50.0
 max_value = 10000.0
 value = 10000.0
-texture_under = SubResource( 256 )
-texture_progress = SubResource( 257 )
+texture_under = SubResource( 265 )
+texture_progress = SubResource( 266 )
 nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="anim" type="AnimationPlayer" parent="gui/enemy/hp_bar"]
-anims/simple_anim = SubResource( 258 )
+anims/simple_anim = SubResource( 267 )
 
 [node name="Label" type="Label" parent="gui/enemy/hp_bar"]
 anchor_right = 1.0
 grow_vertical = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 259 )
+custom_fonts/font = SubResource( 268 )
 text = "2000"
 align = 1
 
 [node name="smooth" type="Tween" parent="gui/enemy/hp_bar"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="gui/enemy"]
-anims/RESET = SubResource( 260 )
-anims/default = SubResource( 261 )
-anims/fire_storm = SubResource( 262 )
-anims/shadow_attack_start = SubResource( 263 )
-anims/swing = SubResource( 264 )
-anims/sword_down_and_charge = SubResource( 265 )
-anims/sword_down_and_static = SubResource( 266 )
+anims/RESET = SubResource( 269 )
+anims/default = SubResource( 270 )
+anims/fire_storm = SubResource( 271 )
+anims/shadow_attack_start = SubResource( 272 )
+anims/swing = SubResource( 273 )
+anims/sword_down_and_charge = SubResource( 274 )
+anims/sword_down_and_static = SubResource( 275 )
+anims/sword_up = SubResource( 276 )
 
 [node name="general" type="GridContainer" parent="."]
 margin_left = 3.0
 columns = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="general"]
 margin_top = 5.0

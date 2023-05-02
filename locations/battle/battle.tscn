@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=2]
+[gd_scene load_steps=192 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -445,6 +445,30 @@ region = Rect2( 632, 152, 158, 152 )
 atlas = ExtResource( 34 )
 region = Rect2( 790, 152, 158, 152 )
 
+[sub_resource type="AtlasTexture" id=253]
+atlas = ExtResource( 34 )
+region = Rect2( 948, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=254]
+atlas = ExtResource( 34 )
+region = Rect2( 1106, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=255]
+atlas = ExtResource( 34 )
+region = Rect2( 1264, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=256]
+atlas = ExtResource( 34 )
+region = Rect2( 1422, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=257]
+atlas = ExtResource( 34 )
+region = Rect2( 1580, 152, 158, 152 )
+
+[sub_resource type="AtlasTexture" id=258]
+atlas = ExtResource( 34 )
+region = Rect2( 1738, 152, 158, 152 )
+
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
 "frames": [ SubResource( 238 ), SubResource( 239 ), SubResource( 240 ), SubResource( 241 ) ],
@@ -481,6 +505,11 @@ animations = [ {
 "loop": true,
 "name": "sword_down_static",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 253 ), SubResource( 254 ), SubResource( 255 ), SubResource( 256 ), SubResource( 257 ), SubResource( 258 ) ],
+"loop": false,
+"name": "sword_up",
+"speed": 15.0
 } ]
 
 [sub_resource type="SpriteFrames" id=79]
@@ -523,18 +552,18 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=251]
+[sub_resource type="Gradient" id=260]
 colors = PoolColorArray( 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1 )
 
 [sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 251 )
+gradient = SubResource( 260 )
 width = 1
 
-[sub_resource type="Gradient" id=252]
+[sub_resource type="Gradient" id=261]
 colors = PoolColorArray( 1, 0, 0, 1, 0.125, 1, 0, 1 )
 
 [sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 252 )
+gradient = SubResource( 261 )
 width = 128
 
 [sub_resource type="Animation" id=21]
@@ -948,7 +977,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( -1, 0 ), Vector2( -19, 0 ) ]
+"values": [ Vector2( -1, -10 ), Vector2( -19, -10 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("head/face:visible")
@@ -984,7 +1013,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -20, -48 ) ]
+"values": [ Vector2( -20, -58 ) ]
 }
 
 [sub_resource type="Animation" id=250]
@@ -1023,7 +1052,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 18, 0 ) ]
+"values": [ Vector2( -1, -10 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("head:visible")
@@ -1036,6 +1065,72 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+
+[sub_resource type="Animation" id=259]
+resource_name = "sword_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "sword_up" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("body:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, -10 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("head:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "toggle_default_animation"
+} ]
 }
 
 [sub_resource type="AtlasTexture" id=22]
@@ -1225,7 +1320,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 
@@ -1301,7 +1396,6 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 4
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1342,6 +1436,7 @@ anims/shadow_attack_start = SubResource( 120 )
 anims/swing = SubResource( 177 )
 anims/sword_down_and_charge = SubResource( 117 )
 anims/sword_down_and_static = SubResource( 250 )
+anims/sword_up = SubResource( 259 )
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
 position = Vector2( 170, 440 )
@@ -1570,7 +1665,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 1
+frame = 3
 playing = true
 centered = false
 

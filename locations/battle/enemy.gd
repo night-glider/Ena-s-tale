@@ -35,6 +35,9 @@ func sword_down_static():
 func sword_down_charge():
 	$AnimationPlayer.play("sword_down_and_charge")
 
+func sword_up():
+	$AnimationPlayer.play("sword_up")
+
 func head_animation():
 	if not animate_head:
 		return

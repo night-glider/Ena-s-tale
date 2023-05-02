@@ -19,6 +19,7 @@ var enemy = null
 
 
 func _ready():
+	enemy.sword_down_static()
 	$self_destruct.start(export_attack_duration)
 
 func _process(delta):
@@ -32,5 +33,6 @@ func _process(delta):
 		add_child(new_bullet)
 
 func _on_self_destruct_timeout():
+	enemy.sword_up()
 	emit_signal("attack_ended")
 	queue_free()
