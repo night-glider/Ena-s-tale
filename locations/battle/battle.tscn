@@ -1290,7 +1290,7 @@ animations = [ {
 "frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": true,
 "name": "rage",
-"speed": 10.0
+"speed": 9.0
 }, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
@@ -1300,7 +1300,7 @@ animations = [ {
 "frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
 "loop": true,
 "name": "sad",
-"speed": 10.0
+"speed": 9.0
 } ]
 
 [node name="battle" type="Control"]
@@ -1320,6 +1320,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
+frame = 3
 playing = true
 centered = false
 
@@ -1395,7 +1396,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 4
+frame = 2
 playing = true
 offset = Vector2( -19, -64 )
 
