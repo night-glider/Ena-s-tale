@@ -4,6 +4,8 @@ extends Control
 
 func _ready():
 	$soul.position = Globals.game_over_soul_position
+	if $soul.position == Vector2.ZERO:
+		$soul.position = Vector2(320,240)
 	$AnimationPlayer.play("game_over")
 	
 	$hand.init($soul.position)
