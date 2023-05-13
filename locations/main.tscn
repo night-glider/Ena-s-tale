@@ -1,4 +1,4 @@
-[gd_scene load_steps=299 format=2]
+[gd_scene load_steps=296 format=2]
 
 [ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -34,7 +34,6 @@
 [ext_resource path="res://sprites/hourglass_dog.png" type="Texture" id=32]
 [ext_resource path="res://models/stones/kamni.obj" type="ArrayMesh" id=33]
 [ext_resource path="res://sprites/secret_frog.png" type="Texture" id=34]
-[ext_resource path="res://sprites/overworld_flowers.png" type="Texture" id=35]
 
 [sub_resource type="AtlasTexture" id=211]
 flags = 19
@@ -1338,19 +1337,6 @@ animations = [ {
 [sub_resource type="BoxShape" id=507]
 extents = Vector3( 3, 2, 1 )
 
-[sub_resource type="AtlasTexture" id=523]
-flags = 16
-atlas = ExtResource( 35 )
-region = Rect2( 0, 448, 133, 56 )
-
-[sub_resource type="SpriteFrames" id=522]
-animations = [ {
-"frames": [ SubResource( 523 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="world" type="Spatial"]
 script = ExtResource( 9 )
 
@@ -2102,7 +2088,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 4
+frame = 3
 playing = true
 
 [node name="exclamation" type="AnimatedSprite3D" parent="cutscene"]
@@ -2182,7 +2168,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 15
+frame = 14
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
@@ -2215,12 +2201,6 @@ shape = SubResource( 507 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.53674e-07, 0, 0 )
 pixel_size = 0.04
 texture = ExtResource( 34 )
-
-[node name="flower" type="AnimatedSprite3D" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60, 0.599998, 27 )
-pixel_size = 0.05
-axis = 1
-frames = SubResource( 522 )
 
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
 [connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]
