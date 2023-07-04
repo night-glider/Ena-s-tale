@@ -70,13 +70,10 @@ FROG_ENDING_END,THE END
 GAME_OVER_GAME_OVER,THE END
 GAME_OVER_DIALOGUE1,[center][color=grey]Do you wish to continue?
 GAME_OVER_DIALOGUE2,"I DONT KNOW WHAT TO PUT HERE (nothing goes here, presumably you are thinking about the aftermath)"
-GAME_OVER_DIALOGUE3,TODO
-HELLO_WORLD,!hello world!
 ITEMS_TURRON,Turron
 ITEMS_QWERTY,QWERTY
 ITEMS_BANANA,Banana
 ITEMS_SOLQUICHE,Solar Quiche
-ITEMS_JOLTEST,joltest
 ITEMS_BANANA_DIALOGUE,|nar|Potassium. Your wounds close a bit.
 ITEMS_SOLQUICHE_DIALOGUE,|nar|You ate the Solar Quiche. Your wounds begin to close.
 ITEMS_TURRON_DIALOGUE,|nar|TURRON! Your wounds begin to close.
@@ -179,13 +176,13 @@ NARRATOR_BATTLE_LIGHT_DIAL4,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL5,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL6,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|It seems like all you can do is [color=red]FIGHT. 
-MOONY_BATTLE_CAN'TTALKMUCH_DIAL_1,|moony|[color=grey]@0.02*cough* *cough* @0.04I can't see anything through this fire! 
-MOONY_BATTLE_CAN'TTALKMUCH_DIAL_2,"[color=grey]@0.02*cough*@0.04Let alone talk! @0.02*cough* @0.04sorry ENA, I can't help you here..."
+MOONY_BATTLE_CANTTALKMUCH_DIAL_1,|moony|[color=grey]@0.02*cough* *cough* @0.04I can't see anything through this fire! 
+MOONY_BATTLE_CANTTALKMUCH_DIAL_2,"[color=grey]@0.02*cough*@0.04Let alone talk! @0.02*cough* @0.04sorry ENA, I can't help you here..."
 NARRATOR_BATTLE_LIGHT_DIAL8,|nar|[color=purple]...
 ENA_RAGE_TRANSITION_DIAL_1,|ena| [color=blue] (Our time together... the things weve been through...)
-ENA_RAGE_TRANSITION_DIAL_2,|ena| [color=yellow](Does he not care? DID ANY OF IT MATTER TO HIM?!)
+ENA_RAGE_TRANSITION_DIAL_2,|ena| [color=yellow]$emote_rage$(Does he not care? DID ANY OF IT MATTER TO HIM?!)
 ENA_SADNESS_TRANSITION_DIAL_1,|ena| [color=yellow] (NO! It had to. He still does care.) 
-ENA_SADNESS_TRANSITION_DIAL_2,|ena| [color=blue] (There has to be another way. I know it...)
+ENA_SADNESS_TRANSITION_DIAL_2,|ena| [color=blue] $emote_sad$(There has to be another way. I know it...)
 ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]@0.04@Please, listen to us!"
 ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"

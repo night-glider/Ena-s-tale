@@ -9,6 +9,7 @@ export var trim_width = 0
 signal dialogue_started
 signal dialogue_next
 signal dialogue_ended
+signal dialogue_custom_event(data)
 
 
 var timer:Timer = Timer.new()
@@ -178,6 +179,16 @@ func next_symbol():
 			char_progress+=1
 		timer.wait_time = float(new_str)
 		timer.start(timer.wait_time)
+		char_progress+=1
+		return
+	
+	if(messages[message_id][char_progress] == "$"):
+		char_progress+=1
+		var new_str = ""
+		while(messages[message_id][char_progress] != "$"):
+			new_str+=messages[message_id][char_progress]
+			char_progress+=1
+		emit_signal("dialogue_custom_event", new_str)
 		char_progress+=1
 		return
 	

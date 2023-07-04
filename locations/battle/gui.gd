@@ -398,13 +398,23 @@ func _on_infernal_pressed(id):
 	last_action = "stance"
 	$player.change_stance($player.stances.RAGE)
 	$strike/stance_choice.visible = false
-	ask_enemy_for_next_stage()
+	
+	start_general_dialogue([
+		"ENA_RAGE_TRANSITION_DIAL_1",
+		"ENA_RAGE_TRANSITION_DIAL_2"
+		])
+	#ask_enemy_for_next_stage()
 
 func _on_glacial_pressed(id):
 	last_action = "stance"
 	$player.change_stance($player.stances.SAD)
 	$strike/stance_choice.visible = false
-	ask_enemy_for_next_stage()
+	
+	start_general_dialogue([
+		"ENA_SADNESS_TRANSITION_DIAL_1",
+		"ENA_SADNESS_TRANSITION_DIAL_2"
+		])
+	#ask_enemy_for_next_stage()
 
 func _on_stances_pressed(id):
 	strike_stance_stage()
@@ -454,3 +464,5 @@ func _on_player_got_hit(dmg):
 		if $player.hp <= 15:
 			stop_attack()
 
+func _on_dialogue_custom_event(data):
+	OS.alert(data)
