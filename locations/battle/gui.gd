@@ -396,7 +396,6 @@ func _on_legs_pressed(id):
 
 func _on_infernal_pressed(id):
 	last_action = "stance"
-	$player.change_stance($player.stances.RAGE)
 	$strike/stance_choice.visible = false
 	
 	start_general_dialogue([
@@ -407,7 +406,6 @@ func _on_infernal_pressed(id):
 
 func _on_glacial_pressed(id):
 	last_action = "stance"
-	$player.change_stance($player.stances.SAD)
 	$strike/stance_choice.visible = false
 	
 	start_general_dialogue([
@@ -465,4 +463,8 @@ func _on_player_got_hit(dmg):
 			stop_attack()
 
 func _on_dialogue_custom_event(data):
-	OS.alert(data)
+	match data:
+		"emote_sad":
+			$player.change_stance($player.stances.SAD)
+		"emote_rage":
+			$player.change_stance($player.stances.RAGE)
