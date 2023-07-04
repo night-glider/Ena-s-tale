@@ -186,7 +186,7 @@ texture = ExtResource( 3 )
 anims/press = SubResource( 1 )
 
 [node name="end_timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.5
 one_shot = true
 
 [node name="label" type="Label" parent="."]

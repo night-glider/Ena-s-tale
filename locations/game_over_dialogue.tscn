@@ -20,7 +20,7 @@ anchor_bottom = 0.5
 bbcode_enabled = true
 fit_content_height = true
 script = ExtResource( 1 )
-messages = [ "GAME_OVER_DIALOGUE" ]
+messages = [ "GAME_OVER_DIALOGUE1" ]
 
 [node name="yes" type="Label" parent="."]
 anchor_left = 0.3

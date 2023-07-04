@@ -6,10 +6,10 @@ SPANISH,SPANISH
 QUIT,quit
 CRASH_TITLE,[center]Whoops your pc crashed lol
 TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
-OVERWORLD_DOG_DIALOGUE1,|over_nar|There is a small golden dog spinning in the void.
+OVERWORLD_DOG_DIALOGUE1,|over_nar|@0.04@There is a small golden dog spinning in the void.
 OVERWORLD_DOG_DIALOGUE2,|over_nar|It looks at you with hope in its eyes.
 HALLWAY_RUMBLE_DIALOGUE,"|over_nar|@0.04@Looks like the portal was destroyed, no turning back now."
-PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]Can't believe finally here. Man this place is decrepit.
+PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]@0.04Can't believe we're finally here. Man this place is decrepit.
 PRE_THRONE_MOONY_DIALOUGE2,[color=grey]Lets just hope we finally found [color=red]him.
 POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey]So glad this will finally be over, but something doesnt feel right."
 POST_THRONE_MOONY_DIALOUGE2,"[color=grey]Even though hes our bud, be careful. He seems conflicted about something."
@@ -84,9 +84,9 @@ ITEMS_QWERTY_DIALOGUE,|nar|You ate the QuicklyWarmingEarthlyRottingTastelessYogu
 ITEMS_JOLTEST_DIALOGUE,|A placeholder item until I can think of more healing items
 TALK_REASON,Reason
 TALK_INSULT,Insult
-TALK_REASON_DIALOGUE,(Refer to ENA_TALK_REASON1_DIAL_1)
+TALK_REASON_DIALOGUE,"USE THE DIALOGUE FROM ""ENA_TALK_REASON1_DIAL_1"" ON TABLE"
 TALK_REASON_DIALOGUE_INACTIVE,|nar|ENA was too angry to think of anything to say.
-TALK_INSULT_DIALOGUE,(Refer to ENA_TALK_INSULT1_DIAL_1)
+TALK_INSULT_DIALOGUE,"REDACTED. ENA IS NOW TOO ANGRY TO SAY ANYTHING ELSE, REFER TO ""ENA_RAGE_TRANSITION_DIAL_1"""
 TALK_INSULT_DIALOGUE_INACTIVE,|nar|ENA was too sad to think of anything to say.
 PLAYER_ATTACK_READY,READY
 PLAYER_ATTACK_GO,GO
@@ -99,12 +99,12 @@ PAUSE_MUSIC,MUSIC:
 PAUSE_SOUNDS,SOUND:
 PAUSE_WINDOW,SCREEN MODE: WINDOWED
 PAUSE_FULLSCREEN,SCREEN MODE: FULLSCREEN
-ENEMY_TURRON_REACT,[color=#ffa500]...
-ENEMY_QWERTY_REACT,[color=#ffa500]...
+ENEMY_TURRON_REACT,[color=#ffa500]|meist|...
+ENEMY_QWERTY_REACT,[color=#ffa500]|meist|...
 ENEMY_JOLTEST_REACT,...
 ENEMY_CHECK_REACT,...
-ENEMY_REASON_REACT,[color=#ffa500]..!
-ENEMY_INSULT_REACT,[color=#ffa500]..!
+ENEMY_REASON_REACT,[color=#ffa500]|meist|..!
+ENEMY_INSULT_REACT,[color=#ffa500]|meist|..!
 ATTACK_ATTACK,Fight
 ATTACK_STANCES,Emotions
 ATTACK_HEAD,Head
@@ -165,12 +165,12 @@ BATTLE_TRANSITION1,Light protrudes throughout the garden.
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end.
 BATTLE_TRANSITION4,Your emotions begin to stir greatly within you.
-BATTLE_TRANSITION5,"[color=#ffa500]|meist|@0.04@Ena, Moony, this was a very pleasant adventure."
+BATTLE_TRANSITION5,"[color=#ffa500]|meist|@0.04@Ena, Moony, thank you for everything."
 BATTLE_TRANSITION6,[color=#ffa500]But I must do what I can to save my people.
 BATTLE_TRANSITION7,[color=#ffa500]...
 BATTLE_TRANSITION8,[color=#ffa500]...I'm sorry.
 NARRATOR_BATTLE_DEFAULT_DIAL1,@0.04@|nar|He begins to prepare himself.
-NARRATOR_BATTLE_DEFAULT_DIAL2,...
+NARRATOR_BATTLE_DEFAULT_DIAL2,|nar|...
 NARRATOR_BATTLE_NEUTRAL_DIAL1,|nar|The flame king attacks!
 NARRATOR_BATTLE_LIGHT_DIAL1,|nar|He begins to prepare himself.
 NARRATOR_BATTLE_LIGHT_DIAL2,|nar|He begins to prepare himself.
@@ -179,8 +179,8 @@ NARRATOR_BATTLE_LIGHT_DIAL4,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL5,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL6,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|It seems like all you can do is [color=red]FIGHT. 
-MOONY_BATTLE_CAN'TTALKMUCH_DIAL_1,|moony|[color=grey]*cough* *cough* I can't see anything through this fire! 
-MOONY_BATTLE_CAN'TTALKMUCH_DIAL_2,"[color=grey]*cough*Let alone talk! *cough* sorry ENA, I can't *cough* help you here..."
+MOONY_BATTLE_CAN'TTALKMUCH_DIAL_1,|moony|[color=grey]@0.02*cough* *cough* @0.04I can't see anything through this fire! 
+MOONY_BATTLE_CAN'TTALKMUCH_DIAL_2,"[color=grey]@0.02*cough*@0.04Let alone talk! @0.02*cough* @0.04sorry ENA, I can't help you here..."
 NARRATOR_BATTLE_LIGHT_DIAL8,|nar|[color=purple]...
 ENA_RAGE_TRANSITION_DIAL_1,|ena| [color=blue] (Our time together... the things weve been through...)
 ENA_RAGE_TRANSITION_DIAL_2,|ena| [color=yellow](Does he not care? DID ANY OF IT MATTER TO HIM?!)
@@ -285,16 +285,6 @@ ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
 ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_1,|ena| [color=blue]Oh no.. He reverted back!
 ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_2,|ena| [color=blue]I... I...
 ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_3,|moony| [color=grey]ENA! NO!

@@ -26,7 +26,7 @@ func _process(delta):
 			if option == "no":
 				get_tree().quit()
 			if option == "yes":
-				$DialogueLabel.change_messages(["GAME_OVER_DIALOGUE1", "GAME_OVER_DIALOGUE2"])
+				$DialogueLabel.change_messages(["GAME_OVER_DIALOGUE2"])
 				$DialogueLabel.start_dialogue()
 				$yes.queue_free()
 				$no.queue_free()
