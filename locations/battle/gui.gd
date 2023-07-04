@@ -50,6 +50,8 @@ var reason_press_count = 0
 
 var general_dialogue_next_stage = "ask_enemy"
 
+var moony_cant_talk_triggered = false
+
 func _ready():
 	$enemy.player_data = $player
 	$dialogue_box.start_inactive_dialogue("NARRATOR_BATTLE_DEFAULT_DIAL1")
@@ -164,13 +166,37 @@ func bottom_buttons_stage():
 				narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL1"
 			else:
 				narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL2"
+			
+			if turns_passed == 2 and not moony_cant_talk_triggered:
+				start_general_dialogue(
+					["MOONY_BATTLE_CANTTALKMUCH_DIAL_1", 
+					"MOONY_BATTLE_CANTTALKMUCH_DIAL_2"], 
+					"menu")
+				moony_cant_talk_triggered = true
+				return
 		routes.NEUTRAL:
 			if turns_passed < 2:
 				narrator_line = "NARRATOR_BATTLE_NEUTRAL_DIAL1"
 			else:
 				narrator_line = "NARRATOR_BATTLE_DEFAULT_DIAL2"
+			
+			if turns_passed == 2 and not moony_cant_talk_triggered:
+				start_general_dialogue(
+					["MOONY_BATTLE_CANTTALKMUCH_DIAL_1", 
+					"MOONY_BATTLE_CANTTALKMUCH_DIAL_2"], 
+					"menu")
+				moony_cant_talk_triggered = true
+				return
 		routes.LIGHT:
 			narrator_line = narrator_light_dials[narrator_light_index]
+			
+			if narrator_light_index == 4 and not moony_cant_talk_triggered:
+				start_general_dialogue(
+					["MOONY_BATTLE_CANTTALKMUCH_DIAL_1", 
+					"MOONY_BATTLE_CANTTALKMUCH_DIAL_2"], 
+					"menu")
+				moony_cant_talk_triggered = true
+				return
 		
 	$dialogue_box.start_inactive_dialogue(narrator_line)
 
