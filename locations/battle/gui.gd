@@ -430,12 +430,19 @@ func _on_reason_pressed(id):
 				"ENA_TALK_REASON1_DIAL_5",
 			]
 		
-		if reason_press_count >= 1:
+		if reason_press_count == 1:
 			dialogue = [
 				"ENA_TALK_REASON2_DIAL_1",
 				"ENA_TALK_REASON2_DIAL_2",
 				"ENA_TALK_REASON2_DIAL_3",
 				"ENA_TALK_REASON2_DIAL_4",
+			]
+		
+		if reason_press_count >= 2:
+			dialogue = [
+				"ENA_TALK_REASON3_DIAL_1",
+				"ENA_TALK_REASON3_DIAL_2",
+				"ENA_TALK_REASON3_DIAL_3",
 			]
 		
 		reason_press_count += 1
