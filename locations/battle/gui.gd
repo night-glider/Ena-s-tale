@@ -2,6 +2,9 @@ extends Node2D
 
 const select_sound = preload("res://sounds/select.ogg")
 const active_sound = preload("res://sounds/squeak.ogg")
+const ena_sad_soundbyte = preload("res://sounds/ena_dialogue_sad.ogg")
+const ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
+onready var dialogue_label = $dialogue
 
 export var big_font:Font = null
 
@@ -481,3 +484,10 @@ func _on_dialogue_custom_event(data):
 			$player.change_stance($player.stances.SAD)
 		"emote_rage":
 			$player.change_stance($player.stances.RAGE)
+
+
+func _on_player_stance_changed(new_stance):
+	if new_stance == 1:
+		dialogue_label.change_ena_soundbyte(ena_sad_soundbyte)
+	else:
+		dialogue_label.change_ena_soundbyte(ena_soundbyte)

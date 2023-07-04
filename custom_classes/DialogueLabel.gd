@@ -19,11 +19,11 @@ var char_progress = 0
 
 #audio thingies
 var audio_player = AudioStreamPlayer.new()
-const meist_soundbyte = preload("res://sounds/meist_dialogue.ogg")
-const moony_soundbyte = preload("res://sounds/moony_dialogue.ogg")
-const ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
-const overworld_narrator_soundbyte = preload("res://sounds/TXT1.ogg")
-const narrator_soundbyte = preload("res://sounds/TXT2.ogg")
+var meist_soundbyte = preload("res://sounds/meist_dialogue.ogg")
+var moony_soundbyte = preload("res://sounds/moony_dialogue.ogg")
+var ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
+var overworld_narrator_soundbyte = preload("res://sounds/TXT1.ogg")
+var narrator_soundbyte = preload("res://sounds/TXT2.ogg")
 
 func _init():
 	bbcode_enabled = true
@@ -227,3 +227,10 @@ func next_symbol():
 	
 	char_progress+=1
 	return
+
+
+func change_ena_soundbyte(new_soundbyte):
+	if audio_player.stream == ena_soundbyte:
+		audio_player.stream = new_soundbyte
+	
+	ena_soundbyte = new_soundbyte
