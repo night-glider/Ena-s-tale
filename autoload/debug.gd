@@ -21,6 +21,7 @@ func _input(event):
 			
 			new_debug_menu.get_node("VBoxContainer/invincible").connect("pressed", self, "_on_invincible_pressed")
 			new_debug_menu.get_node("VBoxContainer/attack_debugger").connect("pressed", self, "_on_attack_debugger_pressed")
+			new_debug_menu.get_node("VBoxContainer/dialogue debugger").connect("pressed", self, "_on_dialogue_debugger_pressed")
 			new_debug_menu.get_node("VBoxContainer/clear_save").connect("pressed", self, "_on_clear_save_pressed")
 			
 			print("new debug menu instance created")
@@ -31,6 +32,8 @@ func _input(event):
 func _on_attack_debugger_pressed():
 	get_tree().change_scene("res://locations/testing/attacks_test.tscn")
 
+func _on_dialogue_debugger_pressed():
+	get_tree().change_scene("res://locations/testing/dialogue_debugger.tscn")
 
 func _on_invincible_pressed():
 	if get_tree().current_scene.name == "battle":
