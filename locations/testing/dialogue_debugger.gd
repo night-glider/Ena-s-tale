@@ -10,6 +10,35 @@ func _ready():
 		uncompressed_dict[key] = tr(key)
 	show_full_list()
 
+func check_tags(line):
+	var current_tag = null
+	for chr in line:
+		
+		if chr == "[":
+			if current_tag != null:
+				return false
+			current_tag = "["
+			continue
+		
+		if chr == "]":
+			if current_tag != "[":
+				return false
+			current_tag = null
+			continue
+		
+		if chr in ["%", "@", "|", "$"]:
+			if current_tag == null:
+				current_tag = chr
+				continue
+			if current_tag != null:
+				if current_tag != chr:
+					return false
+				current_tag = null
+				continue
+	if current_tag != null:
+		return false
+	return true
+
 func show_full_list():
 	key_list.clear()
 	for key in uncompressed_dict:
@@ -24,7 +53,10 @@ func _on_ItemList_item_activated(index):
 
 func _on_TextEdit_text_changed():
 	var text = $edit_panel/TextEdit.text
-	$dialogue_panel/DialogueLabel.messages = [text]
+	if check_tags(text):
+		$dialogue_panel/DialogueLabel.messages = [text]
+	else:
+		$dialogue_panel/DialogueLabel.messages = ["@0.01@[color=red]ERROR incorrect tag"]
 	$dialogue_panel/DialogueLabel.start_dialogue()
 
 

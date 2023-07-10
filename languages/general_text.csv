@@ -9,7 +9,7 @@ TEST_DIALOGUE,"TESTING DIALOGUE, maybe it's error?"
 OVERWORLD_DOG_DIALOGUE1,|over_nar|@0.04@There is a small golden dog spinning in the void.
 OVERWORLD_DOG_DIALOGUE2,|over_nar|It looks at you with hope in its eyes.
 HALLWAY_RUMBLE_DIALOGUE,"|over_nar|@0.04@Looks like the portal was destroyed, no turning back now."
-PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]@0.04Can't believe we're finally here. Man this place is decrepit.
+PRE_THRONE_MOONY_DIALOUGE1,|moony|[color=grey]@0.04@Can't believe we're finally here. Man this place is decrepit.
 PRE_THRONE_MOONY_DIALOUGE2,[color=grey]Lets just hope we finally found [color=red]him.
 POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey]So glad this will finally be over, but something doesnt feel right."
 POST_THRONE_MOONY_DIALOUGE2,"[color=grey]Even though hes our bud, be careful. He seems conflicted about something."
@@ -78,7 +78,7 @@ ITEMS_BANANA_DIALOGUE,|nar|Potassium. Your wounds close a bit.
 ITEMS_SOLQUICHE_DIALOGUE,|nar|You ate the Solar Quiche. Your wounds begin to close.
 ITEMS_TURRON_DIALOGUE,|nar|TURRON! Your wounds begin to close.
 ITEMS_QWERTY_DIALOGUE,|nar|You ate the QuicklyWarmingEarthlyRottingTastelessYogurt. It’s a miracle you even gained health from that.
-ITEMS_JOLTEST_DIALOGUE,|A placeholder item until I can think of more healing items
+ITEMS_JOLTEST_DIALOGUE,A placeholder item until I can think of more healing items
 TALK_REASON,Reason
 TALK_INSULT,Insult
 TALK_REASON_DIALOGUE,"USE THE DIALOGUE FROM ""ENA_TALK_REASON1_DIAL_1"" ON TABLE"

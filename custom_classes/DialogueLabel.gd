@@ -21,7 +21,7 @@ var char_progress = 0
 var audio_player = AudioStreamPlayer.new()
 var meist_soundbyte = preload("res://sounds/meist_dialogue.ogg")
 var moony_soundbyte = preload("res://sounds/moony_dialogue.ogg")
-var ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
+var ena_soundbyte = preload("res://sounds/ena_dialogue_sad.ogg")
 var overworld_narrator_soundbyte = preload("res://sounds/TXT1.ogg")
 var narrator_soundbyte = preload("res://sounds/TXT2.ogg")
 

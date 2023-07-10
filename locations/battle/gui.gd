@@ -55,6 +55,8 @@ var moony_cant_talk_triggered = false
 func _ready():
 	$enemy.player_data = $player
 	$dialogue_box.start_inactive_dialogue("NARRATOR_BATTLE_DEFAULT_DIAL1")
+	
+	$player.change_stance($player.stances.SAD)
 
 func narattor_light_progress():
 	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials)-1)

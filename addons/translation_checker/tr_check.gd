@@ -7,6 +7,35 @@ func _enter_tree():
 func _exit_tree():
 	remove_tool_menu_item("Translation Check")
 
+func check_tags(line):
+	var current_tag = null
+	for chr in line:
+		
+		if chr == "[":
+			if current_tag != null:
+				return false
+			current_tag = "["
+			continue
+		
+		if chr == "]":
+			if current_tag != "[":
+				return false
+			current_tag = null
+			continue
+		
+		if chr in ["%", "@", "|", "$"]:
+			if current_tag == null:
+				current_tag = chr
+				continue
+			if current_tag != null:
+				if current_tag != chr:
+					return false
+				current_tag = null
+				continue
+	if current_tag != null:
+		return false
+	return true
+
 func check_translation(args):
 	var all_keys_in_scenes:Array = []
 	var all_keys_in_scenes_paths:Array = []
@@ -45,11 +74,14 @@ func check_translation(args):
 		if not element in all_keys_in_scenes:
 			error_message += ("KEY " + element + " EXISTS BUT IS NOT USED" ) + "\n"
 	
-	error_message += check_name_tag()
+	error_message += check_name_tags()
 	
 	print(error_message)
 	OS.alert(error_message)
-
+	
+	error_message = check_close_tags()
+	print(error_message)
+	OS.alert(error_message)
 
 func get_all_files(path: String):
 	var dir = Directory.new()
@@ -69,7 +101,7 @@ func get_all_files(path: String):
 		print("An error occurred when trying to access %s." % path)
 	return result
 
-func check_name_tag():
+func check_name_tags():
 	var errors = ""
 	var allowed_names = ["", "meist", "moony", "ena", "over_nar", "nar"]
 	
@@ -87,5 +119,19 @@ func check_name_tag():
 				var name = element.strings[1]
 				if not ( name in allowed_names ):
 					errors += "incorrect name '" + name + "' in line '" + line + "'"
+	
+	return errors
+
+func check_close_tags():
+	var errors = "--tags errors--\n"
+	var file:File = File.new()
+	
+	file.open("res://languages/general_text.csv", File.READ)
+	file.get_csv_line()
+	while file.get_position() < file.get_len():
+		var lines = file.get_csv_line()
+		for line in lines:
+			if not check_tags(line):
+				errors += line + "\n"
 	
 	return errors
