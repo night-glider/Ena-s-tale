@@ -6,13 +6,13 @@ var error_message:String
 var game_over_soul_position:Vector2 = Vector2.ZERO
 
 func _ready():
-	var volume = SaveData.load_data("master", 10)
+	var volume = SaveData.load_data("master", 0.5)
 	change_bus_volume("Master", volume)
 
-	volume = SaveData.load_data("music", 10)
+	volume = SaveData.load_data("music", 0.5)
 	change_bus_volume("music", volume)
 
-	volume = SaveData.load_data("sound", 10)
+	volume = SaveData.load_data("sound", 0.5)
 	change_bus_volume("sound", volume)
 
 
