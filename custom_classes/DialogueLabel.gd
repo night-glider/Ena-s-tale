@@ -84,7 +84,7 @@ func remove_tags(string:String)->String:
 	var new_string = ""
 	var is_tag = false
 	for ch in string:
-		if ch in ["[", "]", "%", "@", "|"]:
+		if ch in ["[", "]", "%", "@", "|", "$"]:
 			is_tag = not is_tag
 			continue
 		if is_tag:
