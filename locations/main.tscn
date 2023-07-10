@@ -1,4 +1,4 @@
-[gd_scene load_steps=297 format=2]
+[gd_scene load_steps=306 format=2]
 
 [ext_resource path="res://sprites/meist_overworld_standing_right.png" type="Texture" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -35,6 +35,15 @@
 [ext_resource path="res://models/stones/kamni.obj" type="ArrayMesh" id=33]
 [ext_resource path="res://sprites/secret_frog.png" type="Texture" id=34]
 [ext_resource path="res://sprites/overworld_mural.png" type="Texture" id=35]
+[ext_resource path="res://sprites/overworld_mural_2.png" type="Texture" id=36]
+[ext_resource path="res://sprites/overworld_mural_3.png" type="Texture" id=37]
+[ext_resource path="res://sprites/bush1.png" type="Texture" id=38]
+[ext_resource path="res://sprites/flower1.png" type="Texture" id=39]
+[ext_resource path="res://sprites/smallflowers.png" type="Texture" id=40]
+[ext_resource path="res://locations/small_flower.gd" type="Script" id=41]
+[ext_resource path="res://sprites/flower2.png" type="Texture" id=42]
+[ext_resource path="res://sprites/bush2.png" type="Texture" id=43]
+[ext_resource path="res://sprites/bush3.png" type="Texture" id=44]
 
 [sub_resource type="AtlasTexture" id=211]
 flags = 19
@@ -1342,7 +1351,7 @@ extents = Vector3( 3, 2, 1 )
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 1.752, 60.5 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -49, 1.752, 28.5 )
 mouse_sensitivity = 0.1
 
 [node name="moony" type="Spatial" parent="."]
@@ -2089,6 +2098,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
+frame = 8
 playing = true
 
 [node name="exclamation" type="AnimatedSprite3D" parent="cutscene"]
@@ -2168,7 +2178,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 3
+frame = 11
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
@@ -2202,9 +2212,556 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.5367
 pixel_size = 0.04
 texture = ExtResource( 34 )
 
-[node name="mural" type="Sprite3D" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.99, 3, 11 )
+[node name="murals" type="Node" parent="."]
+
+[node name="mural1" type="Sprite3D" parent="murals"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 50 )
+pixel_size = 0.03
 texture = ExtResource( 35 )
+
+[node name="mural2" type="Sprite3D" parent="murals"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 37 )
+pixel_size = 0.03
+texture = ExtResource( 36 )
+
+[node name="mural3" type="Sprite3D" parent="murals"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 22 )
+pixel_size = 0.03
+texture = ExtResource( 37 )
+
+[node name="mural4" type="Sprite3D" parent="murals"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 11 )
+pixel_size = 0.03
+texture = ExtResource( 35 )
+
+[node name="mural5" type="Sprite3D" parent="murals"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05218, 3, -5.95435 )
+pixel_size = 0.03
+texture = ExtResource( 35 )
+
+[node name="flowers" type="Node" parent="."]
+
+[node name="bush" type="Sprite3D" parent="flowers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65, 1, 23 )
+pixel_size = 0.02
+texture = ExtResource( 38 )
+
+[node name="bush2" type="Sprite3D" parent="flowers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68, 1, 29 )
+pixel_size = 0.02
+texture = ExtResource( 43 )
+
+[node name="bush3" type="Sprite3D" parent="flowers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -64, 1, 33 )
+pixel_size = 0.02
+texture = ExtResource( 44 )
+
+[node name="big_flower" type="Sprite3D" parent="flowers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -70, 2, 34 )
+pixel_size = 0.02
+texture = ExtResource( 42 )
+
+[node name="big_flower2" type="Sprite3D" parent="flowers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -70, 2, 22 )
+pixel_size = 0.02
+texture = ExtResource( 39 )
+
+[node name="big_flower3" type="Sprite3D" parent="flowers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -72, 2, 27 )
+pixel_size = 0.02
+texture = ExtResource( 39 )
+
+[node name="small_flower" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.2644, 0.806389, 18.5156 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 4
+script = ExtResource( 41 )
+
+[node name="small_flower2" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.9424, 0.806389, 21.4573 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 9
+script = ExtResource( 41 )
+
+[node name="small_flower3" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.7514, 0.806389, 17.695 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 9
+script = ExtResource( 41 )
+
+[node name="small_flower4" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.0653, 0.806389, 21.5792 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 7
+script = ExtResource( 41 )
+
+[node name="small_flower5" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.9376, 0.806389, 21.7037 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 10
+script = ExtResource( 41 )
+
+[node name="small_flower6" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.6691, 0.806389, 19.2426 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 41 )
+
+[node name="small_flower7" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.4522, 0.806389, 21.0078 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 4
+script = ExtResource( 41 )
+
+[node name="small_flower8" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2587, 0.806389, 19.3757 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 10
+script = ExtResource( 41 )
+
+[node name="small_flower9" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.7526, 0.806389, 21.1302 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 9
+script = ExtResource( 41 )
+
+[node name="small_flower10" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.5287, 0.806389, 36.2688 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 41 )
+
+[node name="small_flower11" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0548, 0.806389, 40.095 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 9
+script = ExtResource( 41 )
+
+[node name="small_flower12" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.0635, 0.806389, 33.7685 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 41 )
+
+[node name="small_flower13" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3619, 0.806389, 40.6648 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 2
+script = ExtResource( 41 )
+
+[node name="small_flower14" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.8231, 0.806389, 39.8706 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+script = ExtResource( 41 )
+
+[node name="small_flower15" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2077, 0.806389, 38.4234 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 5
+script = ExtResource( 41 )
+
+[node name="small_flower16" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.2208, 0.806389, 39.4975 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 4
+script = ExtResource( 41 )
+
+[node name="small_flower17" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.1651, 0.806389, 37.916 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 10
+script = ExtResource( 41 )
+
+[node name="small_flower18" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.2866, 0.806389, 39.1914 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 41 )
+
+[node name="small_flower19" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.4783, 0.806389, 37.5939 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+script = ExtResource( 41 )
+
+[node name="small_flower20" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8632, 0.806389, 40.1358 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 7
+script = ExtResource( 41 )
+
+[node name="small_flower21" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8634, 0.806389, 35.5374 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 7
+script = ExtResource( 41 )
+
+[node name="small_flower22" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5389, 0.806389, 39.7037 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 7
+script = ExtResource( 41 )
+
+[node name="small_flower23" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9825, 0.806389, 40.2298 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource( 41 )
+
+[node name="small_flower24" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.0699, 0.806389, 38.4603 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource( 41 )
+
+[node name="small_flower25" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.6733, 0.806389, 39.6625 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 2
+script = ExtResource( 41 )
+
+[node name="small_flower26" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64, 0.806389, 38.1737 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 41 )
+
+[node name="small_flower27" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.1735, 0.806389, 37.8119 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 5
+script = ExtResource( 41 )
+
+[node name="small_flower28" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2231, 0.806389, 27.8475 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 9
+script = ExtResource( 41 )
+
+[node name="small_flower29" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.0064, 0.806389, 33.3742 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 2
+script = ExtResource( 41 )
+
+[node name="small_flower30" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.9089, 0.806389, 27.316 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 8
+script = ExtResource( 41 )
+
+[node name="small_flower31" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.9293, 0.806389, 31.5806 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 7
+script = ExtResource( 41 )
+
+[node name="small_flower32" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.7073, 0.806389, 30.601 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 8
+script = ExtResource( 41 )
+
+[node name="small_flower33" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.7494, 0.806389, 30.4922 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource( 41 )
+
+[node name="small_flower34" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.0098, 0.806389, 32.6682 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 5
+script = ExtResource( 41 )
+
+[node name="small_flower35" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.0319, 0.806389, 30.1093 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 10
+script = ExtResource( 41 )
+
+[node name="small_flower36" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4859, 0.806389, 30.1092 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 10
+script = ExtResource( 41 )
+
+[node name="small_flower37" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2929, 0.806389, 20.2032 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 8
+script = ExtResource( 41 )
+
+[node name="small_flower38" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.6758, 0.806389, 24.1454 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 3
+script = ExtResource( 41 )
+
+[node name="small_flower39" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.0637, 0.806389, 18.5488 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource( 41 )
+
+[node name="small_flower40" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.6461, 0.806389, 25.931 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource( 41 )
+
+[node name="small_flower41" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.3527, 0.806389, 24.0978 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 41 )
+
+[node name="small_flower42" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.0155, 0.806389, 23.4333 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource( 41 )
+
+[node name="small_flower43" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.5802, 0.806389, 25.1879 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 2
+script = ExtResource( 41 )
+
+[node name="small_flower44" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.7302, 0.806389, 19.993 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+frame = 9
+script = ExtResource( 41 )
+
+[node name="small_flower45" type="Sprite3D" parent="flowers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -81.1361, 0.806389, 21.6629 )
+pixel_size = 0.02
+axis = 0
+double_sided = false
+texture = ExtResource( 40 )
+hframes = 3
+vframes = 4
+script = ExtResource( 41 )
 
 [connection signal="body_entered" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_entered"]
 [connection signal="body_exited" from="god_ray_trigger" to="." method="_on_god_ray_trigger_body_exited"]
