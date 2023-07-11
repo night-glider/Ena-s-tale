@@ -228,8 +228,6 @@ func start_general_dialogue(dialogue:Array, next_stage:String="ask_enemy"):
 	$dialogue.visible = true
 	general_dialogue_stage()
 	general_dialogue_next_stage = next_stage
-	
-
 
 func find_character_tag(message):
 	var result = null
@@ -257,8 +255,6 @@ func _on_dialogue_dialogue_ended():
 	if general_dialogue_next_stage == "attack":
 		attack_stage()
 		return
-
-
 
 func _on_dialogue_dialogue_next():
 	var tag = find_character_tag($dialogue.get_current_message())
@@ -403,7 +399,6 @@ func ask_enemy_for_next_stage():
 			start_general_dialogue(result[1], "menu")
 			return
 
-
 func _on_player_attack_ended():
 	#OS.alert("attack_ended with damage " + str(damage))
 	ask_enemy_for_next_stage()
@@ -414,6 +409,10 @@ func _on_attack_damage_dealt(damage):
 		narattor_light_progress()
 
 func _on_attack_pressed(id):
+	if $player.stance == $player.stances.RAGE:
+		start_general_dialogue(["ENA_ATTACKS_RAGE"])
+		return
+	
 	strike_limb_stage()
 
 func _on_head_pressed(id):
@@ -447,7 +446,6 @@ func _on_glacial_pressed(id):
 
 func _on_stances_pressed(id):
 	strike_stance_stage()
-
 
 func _on_reason_pressed(id):
 	var dialogue = []
@@ -490,7 +488,6 @@ func _on_reason_pressed(id):
 	#talk_dialogue_stage(dialogue)
 	last_action = id.name
 
-
 func _on_insult_pressed(id):
 	var dialogue
 	if $ena_status.current_state == "sad":
@@ -499,7 +496,6 @@ func _on_insult_pressed(id):
 		dialogue = ["TALK_INSULT_DIALOGUE"]
 	start_general_dialogue(dialogue)
 	last_action = id.name
-
 
 func _on_player_got_hit(dmg):
 	if active_stage == stages.ATTACK:
@@ -512,7 +508,12 @@ func _on_dialogue_custom_event(data):
 			$player.change_stance($player.stances.SAD)
 		"emote_rage":
 			$player.change_stance($player.stances.RAGE)
-
+		"rage_strike":
+			last_action = "attack"
+			if randf() < 0.2:
+				$enemy.take_hit(0)
+			else:
+				$enemy.take_hit(rand_range(300,1000))
 
 func _on_player_stance_changed(new_stance):
 	if new_stance == 1:

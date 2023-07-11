@@ -9,7 +9,7 @@ var all_attacks = [2,3,4,5,6,7,8]
 var current_attack_pool = []
 
 var animate_head = true
-var hp = 10000
+var hp = 20000
 
 var head_n = 0
 var head_n_spd = PI/120.0
@@ -64,7 +64,7 @@ func choose_attack()->PackedScene:
 	return current_attack_pool.pop_front()
 
 func last_action_decision(action:String)->Array:
-	if hp >= 10000:
+	if hp >= 20000:
 		return ["dialogue_pass", ["ENEMY_INSULT_REACT"]]
 	
 	var answer = ["none"]

@@ -1320,7 +1320,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
@@ -1396,7 +1396,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( -19, -64 )
 

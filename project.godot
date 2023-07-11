@@ -359,7 +359,7 @@ quit={
 
 [locale]
 
-locale_filter=[ 0, [ "en" ] ]
+locale_filter=[ 1, [ "en" ] ]
 translations=PoolStringArray( "res://languages/general_text.en.translation" )
 
 [physics]

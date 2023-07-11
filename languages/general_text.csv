@@ -179,10 +179,10 @@ NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|It seems like all you can do is [color=re
 MOONY_BATTLE_CANTTALKMUCH_DIAL_1,|moony|[color=grey]@1@@0.02@**cough* *cough* @0.04@I can't see anything through this fire! 
 MOONY_BATTLE_CANTTALKMUCH_DIAL_2,"[color=grey]@0.02@*cough*@0.04@Let alone talk! @0.02@*cough* @0.04@sorry ENA, I can't help you here..."
 NARRATOR_BATTLE_LIGHT_DIAL8,|nar|[color=purple]...
-ENA_RAGE_TRANSITION_DIAL_1,|ena| [color=blue] (Our time together... the things weve been through...)
-ENA_RAGE_TRANSITION_DIAL_2,|ena| [color=yellow]$emote_rage$(Does he not care? DID ANY OF IT MATTER TO HIM?!)
-ENA_SADNESS_TRANSITION_DIAL_1,|ena| [color=yellow] (NO! It had to. He still does care.) 
-ENA_SADNESS_TRANSITION_DIAL_2,|ena| [color=blue] $emote_sad$(There has to be another way. I know it...)
+ENA_RAGE_TRANSITION_DIAL_1,|ena|[color=blue]@0.04@(Our time together... the things we've been through...)
+ENA_RAGE_TRANSITION_DIAL_2,|ena|[color=yellow]$emote_rage$(Does he not care? DID ANY OF IT MATTER TO HIM?!)
+ENA_SADNESS_TRANSITION_DIAL_1,|ena|[color=yellow](NO! It had to. He still does care.) 
+ENA_SADNESS_TRANSITION_DIAL_2,|ena|[color=blue]$emote_sad$(There has to be another way. I know it...)
 ENA_TALK_REASON1_DIAL_1,"|ena|[color=blue]@0.04@Please, listen to us!"
 ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
@@ -257,8 +257,8 @@ NEUTRAL_PREPHASE2_DIAL_5,|ena|[color=green]But now I have finally gained CONTROL
 NEUTRAL_PREPHASE2_DIAL_6,"|ena|[color=green]Lets seal the rift, and go home. "
 ENA_TALK_LIGHT_REASON1_DIAL_1,|ena| [color=blue] I know you don't want this. Its not too late.
 PREPHASE2_BOTH_LIGHT_NEUTRAL_DIAL_1,"|moony| [color=grey] Come back to us, we'll find another way to save your kingdom dude."
-NEUTRALCONT_PREPHASE2_DIAL_1,"|ena| [color=green] Although things will never be the same, we will grow and move on from this, together."
-LIGHTCONT_PREPHASE2_DIAL_1,"|ena| [color=blue] Although things will never be the same, we will grow and move on from this, together."
+NEUTRALCONT_PREPHASE2_DIAL_1,"|ena| [color=green] Although things may never be the same, we will grow and move on from this, together."
+LIGHTCONT_PREPHASE2_DIAL_1,"|ena| [color=blue] Although things may never be the same, we will grow and move on from this, together."
 MEIST_TALK_PREPHASE2_DIAL_1,[color=#ffa500]|meist|...
 MEIST_TALK_PREPHASE2_DIAL_2,[color=#ffa500]|meist|...
 MEIST_TALK_PREPHASE2_DIAL_3,[color=#ffa500]|meist|...You're right.
@@ -270,7 +270,7 @@ NARRATOR_DIALOGUE_PREPHASE2_DIAL_2,|nar|[color=purple]It is clear now that you w
 NARRATOR_DIALOGUE_PREPHASE2_DIAL_3,"|nar|[color=purple]So now, in the name of my master, I will plague your mind..."
 NARRATOR_DIALOGUE_PREPHASE2_DIAL_4,|nar|[color=purple]....And finish the job myself!
 CORRUPTED_MEIST_TALK_DIAL_1,[color=purple]|meist|...RRAAAGH!
-CORRUPTED_MEIST_TALK_DIAL_2,[color=purple]|meist|This is your fault! I'll kill you! 
+CORRUPTED_MEIST_TALK_DIAL_2,[color=purple]|meist|Now you will suffer my wrath!
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,|ena| [color=green]...He's reverted back to the form I first met him as. 
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
@@ -283,5 +283,6 @@ ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_NEUTRAL_CORRUPTED_RESPONSE_DIAL_1,
 ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_1,|ena| [color=blue]Oh no.. He reverted back!
-ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_2,|ena| [color=blue]I... I...
+ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_2,|ena| [color=blue]I... I... ugh.
 ENA_LIGHT_CORRUPTED_RESPONSE_DIAL_3,|moony| [color=grey]ENA! NO!
+ENA_ATTACKS_RAGE,|nar|$rage_strike$Ena swung wildy!
