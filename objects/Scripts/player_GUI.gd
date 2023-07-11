@@ -13,7 +13,7 @@ export var intro_end_point = Vector3(0,0,0)
 var current_messages:Array = []
 var dialogue_active:bool = false
 var visible_chars:float = 0
-var intro_active = true
+var intro_active = false
 
 func _ready():
 	for i in intro_messages.size():

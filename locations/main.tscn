@@ -1351,7 +1351,7 @@ extents = Vector3( 3, 2, 1 )
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -49, 1.752, 28.5 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1.752, 62.5 )
 mouse_sensitivity = 0.1
 
 [node name="moony" type="Spatial" parent="."]
@@ -2098,7 +2098,6 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 1
 playing = true
 
 [node name="exclamation" type="AnimatedSprite3D" parent="cutscene"]
@@ -2178,7 +2177,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 12
+frame = 6
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
@@ -2219,25 +2218,45 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.9478
 pixel_size = 0.03
 texture = ExtResource( 35 )
 
+[node name="decoration" parent="murals/mural1" instance=ExtResource( 3 )]
+visible = false
+messages = [ "INTRO_MESSAGE1" ]
+
 [node name="mural2" type="Sprite3D" parent="murals"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 37 )
 pixel_size = 0.03
 texture = ExtResource( 36 )
+
+[node name="decoration" parent="murals/mural2" instance=ExtResource( 3 )]
+visible = false
+messages = [ "INTRO_MESSAGE2" ]
 
 [node name="mural3" type="Sprite3D" parent="murals"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 22 )
 pixel_size = 0.03
 texture = ExtResource( 37 )
 
+[node name="decoration" parent="murals/mural3" instance=ExtResource( 3 )]
+visible = false
+messages = [ "INTRO_MESSAGE3" ]
+
 [node name="mural4" type="Sprite3D" parent="murals"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 11 )
 pixel_size = 0.03
 texture = ExtResource( 35 )
 
+[node name="decoration" parent="murals/mural4" instance=ExtResource( 3 )]
+visible = false
+messages = [ "INTRO_MESSAGE4" ]
+
 [node name="mural5" type="Sprite3D" parent="murals"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05218, 3, -5.95435 )
 pixel_size = 0.03
 texture = ExtResource( 35 )
+
+[node name="decoration" parent="murals/mural5" instance=ExtResource( 3 )]
+visible = false
+messages = [ "INTRO_MESSAGE5" ]
 
 [node name="flowers" type="Node" parent="."]
 
