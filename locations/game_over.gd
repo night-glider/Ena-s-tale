@@ -1,8 +1,9 @@
 extends Control
 
-
+const game_over_ost = preload("res://OST/game_over.ogg")
 
 func _ready():
+	Globals.play_sound(game_over_ost)
 	$soul.position = Globals.game_over_soul_position
 	if $soul.position == Vector2.ZERO:
 		$soul.position = Vector2(320,240)

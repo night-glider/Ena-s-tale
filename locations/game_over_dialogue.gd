@@ -41,4 +41,5 @@ func _process(delta):
 
 
 func _on_DialogueLabel_dialogue_ended():
+	Globals.stop_all_sounds()
 	get_tree().change_scene("res://locations/battle/battle.tscn")

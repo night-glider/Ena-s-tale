@@ -38,3 +38,9 @@ func play_sound(sound:AudioStream):
 	audio_player.bus = "sound"
 	audio_player.stream = sound
 	audio_player.play()
+
+func stop_all_sounds():
+	for child in get_children():
+		if child is AudioStreamPlayer:
+			child.stop()
+			child.queue_free()
