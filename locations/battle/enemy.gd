@@ -68,6 +68,10 @@ func last_action_decision(action:String)->Array:
 		return ["pass"]
 	
 	var answer = ["none"]
+	answer = ["attack"]
+	return answer
+	
+	#unused stuff
 	match action:
 		"turron": 
 			answer[0] = "pass" 
@@ -101,13 +105,17 @@ func last_action_decision(action:String)->Array:
 			answer[0] = "pass" 
 			#answer.append(["ENEMY_INSULT_REACT"])
 			return answer
-	answer = ["attack"]
-	return answer
+	
 
 func take_hit(damage:int):
 	hp-=damage
+	if damage <= 0:
+		$hp_bar/Label.modulate = Color.white
+		$hp_bar/Label.text = "MISS"
+	else:
+		$hp_bar/Label.modulate = Color.red
+		$hp_bar/Label.text = str(damage)
 	$hp_bar/anim.play("simple_anim")
-	$hp_bar/Label.text = str(damage)
 	$hp_bar/smooth.interpolate_property($hp_bar, "value", $hp_bar.value, hp, 1)
 	$hp_bar/smooth.start()
 	if damage > 0:

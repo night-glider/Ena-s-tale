@@ -1320,7 +1320,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 3
+frame = 2
 playing = true
 centered = false
 
@@ -1396,7 +1396,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1406,14 +1406,11 @@ margin_left = -100.0
 margin_top = 30.0
 margin_right = 100.0
 margin_bottom = 50.0
-max_value = 10000.0
-value = 10000.0
+max_value = 20000.0
+value = 20000.0
 texture_under = SubResource( 13 )
 texture_progress = SubResource( 15 )
 nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="anim" type="AnimationPlayer" parent="gui/enemy/hp_bar"]
 anims/simple_anim = SubResource( 21 )
@@ -1658,7 +1655,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
 playing = true
 centered = false
 
