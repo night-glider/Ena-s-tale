@@ -482,6 +482,7 @@ func _on_reason_pressed(id):
 		
 		reason_press_count += 1
 	else:
+		last_action = "reason_failed"
 		dialogue = ["TALK_REASON_DIALOGUE_INACTIVE"]
 	
 	start_general_dialogue(dialogue)

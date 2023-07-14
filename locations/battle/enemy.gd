@@ -65,37 +65,41 @@ func choose_attack()->PackedScene:
 
 func last_action_decision(action:String)->Array:
 	if hp >= 20000:
-		return ["dialogue_pass", ["ENEMY_INSULT_REACT"]]
+		return ["pass"]
 	
 	var answer = ["none"]
 	match action:
 		"turron": 
-			answer[0] = "dialogue" 
-			answer.append(["ENEMY_TURRON_REACT"])
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_TURRON_REACT"])
 			return answer
 		"qwerty":
-			answer[0] = "dialogue" 
-			answer.append(["ENEMY_QWERTY_REACT"])
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_QWERTY_REACT"])
 			return answer
 		"joltest":
-			answer[0] = "dialogue" 
-			answer.append(["ENEMY_JOLTEST_REACT"])
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_JOLTEST_REACT"])
 			return answer
 		"check":
-			answer[0] = "dialogue_pass" 
-			answer.append(["ENEMY_CHECK_REACT"])
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_CHECK_REACT"])
 			return answer
 		"insult":
-			answer[0] = "dialogue" 
-			answer.append(["ENEMY_INSULT_REACT"])
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_INSULT_REACT"])
 			return answer
 		"reason":
-			answer[0] = "dialogue" 
+			answer[0] = "pass" 
 			answer.append(["ENEMY_REASON_REACT"])
 			return answer
+		"reason_failed":
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_REASON_REACT"])
+			return answer
 		"attack":
-			answer[0] = "dialogue" 
-			answer.append(["ENEMY_INSULT_REACT"])
+			answer[0] = "pass" 
+			#answer.append(["ENEMY_INSULT_REACT"])
 			return answer
 	answer = ["attack"]
 	return answer
