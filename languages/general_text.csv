@@ -15,6 +15,28 @@ POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey]So glad this will finally be ove
 POST_THRONE_MOONY_DIALOUGE2,"[color=grey]Even though hes our bud, be careful. He seems conflicted about something."
 DIALOGUE_THRONE1,|over_nar|This throne seems like its in pretty bad shape.
 DIALOGUE_THRONE2,"|over_nar|I wonder, was it his throne?"
+MURAL1_DIAL1,"|ena|[color=yellow]Gracious me, these appear to be murals of our adventure!"
+MURAL1_DIAL2,"|moony|[color=grey]What makes you say that, Ǝna?"
+MURAL1_DIAL3,"|ena|[color=yellow]Well, we saw the enterance of the castle already, and this appears to be the same thing."
+MURAL1_DIAL4,|moony|[color=grey]Fair enough I guess. Lets check out the rest up ahead.
+MURAL2_DIAL1,|ena|[color=yellow]These accursed [color=red]glitched rifts[color=white]...
+MURAL2_DIAL2,"|moony|[color=grey]After we escaped from Runas, they've been giving us a lot of trouble lately."
+MURAL2_DIAL3,"|moony|[color=grey]Thankfully, we have closed nearly all of them and have located the last one to here."
+MURAL2_DIAL4,|ena|[color=yellow]Lets just hope that [color=#ffa500]he [color=yellow]is here as well.
+MURAL3_DIAL1,"|ena|[color=yellow]Moony, I know I've already said this before but..."
+MURAL3_DIAL2,|moony|[color=grey]Don't worry about it. We needed [color=purple]their [color=grey]help in order to leave.
+MURAL3_DIAL3,|moony|[color=grey]Lets just keep moving.
+MURAL4_DIAL1,"|ena|[color=yellow]Thats odd, [color=#ffa500]he [color=yellow]should be in this one."
+MURAL4_DIAL2,"|moony|[color=grey]Yeah, they were with us for most of our adventure."
+MURAL4_DIAL3,|ena|[color=yellow]Do you think they used to rule this place?
+MURAL4_DIAL4,|moony|[color=grey]Maybe? I dunno. Ask him when find him here.
+MURAL5_DIAL1,|ena|[color=yellow]...
+MURAL5_DIAL2,"|moony|[color=grey]...Ena, I-"
+MURAL5_DIAL3,|ena|[color=yellow]Its alright. We simply had a disagreement.
+MURAL5_DIAL4,|moony|[color=grey]But you completely fell apart after all of that!
+MURAL5_DIAL5,"|ena|[color=yellow]Thinking back on it, I've come to understand that staying happy wasn't healthy for me."
+MURAL5_DIAL6,"|ena|[color=yellow]I just hope that one day, I'll be able to gain stability over my life."
+MURAL5_DIAL7,"|moony|[color=grey]Well, I'm glad that you're fine now. Now lets hurry up, I think I see [color=#ffa500]him [color=grey]in the next room."
 INTRO_MESSAGE1,"After a long journey, Ena and Moony have finally arrived at the carbon castle outside of existence, where the final [color=red]glitched rift [color=white]resides."
 INTRO_MESSAGE2,"These unstable anomalies began to appear throughout the dimensions after their escape from the room of RUNAS, threatening to destabilize all of creation."
 INTRO_MESSAGE3,"In order to have made their journey possible, Moony had to give up her wish to a [color=purple]mysterious entity [color=white]in order for them both to escape the graveyard."
@@ -22,9 +44,9 @@ INTRO_MESSAGE4,"And so after they escaped, they began closing the rifts with hel
 INTRO_MESSAGE5,"In spite of inner conflict and ENA's relapse, they have managed to track down their former ally to this place. What could the mysterious man want with the rift as well?"
 DISCLAIMER,"This is a fan-work of the ENA animation series by Joel G. All rights are reserved with the respective copyright owners. Most of what is presented here is NOT final and could change before the full release.
 
-Most of the assets in this build were made from scratch, excluding sounds used from both UNDERTALE and ENA. If you would like to request the omission of your sound byte we will comply before the full release. Please do not redistribute any of the games content.
+Most of the assets in this build were made from scratch, excluding sounds used from both UNDERTALE and ENA. Please do not redistribute any of the games content.
 
-This game does not take any inspiration or elements from DREAM BBQ. Any resemblances are purely coincidental. We hope you enjoy the final round of playtesting!"
+This game does not take any inspiration or elements from DREAM BBQ. Any resemblances are purely coincidental. We hope you enjoy the demo!"
 NIGHT_GLIDER_MESSAGE,Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr4543
 INTRO_LOG1,"@1@%Starting hardware check%@0.01@
 Detecting HDD1@1@...@0.01@[color=green]SUCCESS[/color]

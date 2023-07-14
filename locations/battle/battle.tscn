@@ -1320,7 +1320,6 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
 playing = true
 centered = false
 
@@ -1364,9 +1363,9 @@ color = Color( 0, 0, 0, 1 )
 [node name="dialogue" type="RichTextLabel" parent="gui/dialogue_box/ReferenceRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
+margin_left = 30.0
 margin_top = 10.0
-margin_right = -10.0
+margin_right = -30.0
 margin_bottom = -10.0
 custom_fonts/normal_font = SubResource( 78 )
 scroll_following = true
@@ -1396,7 +1395,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1666,7 +1665,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
+frame = 3
 playing = true
 centered = false
 

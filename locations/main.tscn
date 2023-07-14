@@ -2098,7 +2098,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 4
+frame = 6
 playing = true
 
 [node name="exclamation" type="AnimatedSprite3D" parent="cutscene"]
@@ -2178,7 +2178,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 8
+frame = 13
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
@@ -2221,7 +2221,7 @@ texture = ExtResource( 35 )
 
 [node name="decoration" parent="murals/mural1" instance=ExtResource( 3 )]
 visible = false
-messages = [ "INTRO_MESSAGE1" ]
+messages = [ "MURAL1_DIAL1", "MURAL1_DIAL2", "MURAL1_DIAL3", "MURAL1_DIAL4" ]
 
 [node name="mural2" type="Sprite3D" parent="murals"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 37 )
@@ -2230,7 +2230,7 @@ texture = ExtResource( 36 )
 
 [node name="decoration" parent="murals/mural2" instance=ExtResource( 3 )]
 visible = false
-messages = [ "INTRO_MESSAGE2" ]
+messages = [ "MURAL2_DIAL1", "MURAL2_DIAL2", "MURAL2_DIAL3", "MURAL2_DIAL4" ]
 
 [node name="mural3" type="Sprite3D" parent="murals"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 22 )
@@ -2239,7 +2239,7 @@ texture = ExtResource( 37 )
 
 [node name="decoration" parent="murals/mural3" instance=ExtResource( 3 )]
 visible = false
-messages = [ "INTRO_MESSAGE3" ]
+messages = [ "MURAL3_DIAL1", "MURAL3_DIAL2", "MURAL3_DIAL3" ]
 
 [node name="mural4" type="Sprite3D" parent="murals"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.94782, 3, 11 )
@@ -2248,7 +2248,7 @@ texture = ExtResource( 35 )
 
 [node name="decoration" parent="murals/mural4" instance=ExtResource( 3 )]
 visible = false
-messages = [ "INTRO_MESSAGE4" ]
+messages = [ "MURAL4_DIAL1", "MURAL4_DIAL2", "MURAL4_DIAL3", "MURAL4_DIAL4" ]
 
 [node name="mural5" type="Sprite3D" parent="murals"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05218, 3, -5.95435 )
@@ -2257,7 +2257,7 @@ texture = ExtResource( 35 )
 
 [node name="decoration" parent="murals/mural5" instance=ExtResource( 3 )]
 visible = false
-messages = [ "INTRO_MESSAGE5" ]
+messages = [ "MURAL5_DIAL1", "MURAL5_DIAL2", "MURAL5_DIAL3", "MURAL5_DIAL4", "MURAL5_DIAL5", "MURAL5_DIAL6", "MURAL5_DIAL7" ]
 
 [node name="flowers" type="Node" parent="."]
 

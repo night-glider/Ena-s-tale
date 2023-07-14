@@ -264,16 +264,16 @@ func _on_dialogue_dialogue_next():
 	if tag == "meist":
 		$dialogue.add_font_override("normal_font", null)
 		$dialogue/NinePatchRect.visible = true
-		$dialogue.margin_left = 396
+		$dialogue.margin_left = 396+20
 		$dialogue.margin_top = 91
-		$dialogue.margin_right = 596
+		$dialogue.margin_right = 596-20
 		$dialogue.margin_bottom = 108
 	else:
 		$dialogue.add_font_override("normal_font", big_font)
 		$dialogue/NinePatchRect.visible = false
-		$dialogue.margin_left = 45
+		$dialogue.margin_left = 45+20
 		$dialogue.margin_top = 235
-		$dialogue.margin_right = 597
+		$dialogue.margin_right = 597-20
 		$dialogue.margin_bottom = 348
 
 func _process(delta):
