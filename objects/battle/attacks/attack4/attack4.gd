@@ -19,7 +19,7 @@ export var export_attack_stage_delay:float = 2
 export var export_attack_count:int = 5
 export var export_bullet_speed:float = 5
 export var export_alert_time:float = 1
-export var export_attack_interval:float = 1.5
+export var export_attack_interval:float = 1.3
 export var export_alert_count:int = 2
 export var export_alert_height:int = 50
 

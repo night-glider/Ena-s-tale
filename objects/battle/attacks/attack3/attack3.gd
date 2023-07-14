@@ -4,19 +4,19 @@ signal attack_ended
 const bullet = preload("res://objects/battle/attacks/attack3/bullet.tscn")
 const alert = preload("res://objects/battle/attacks/alert.tscn")
 
-export var box_position := Vector2(35+100,221)
-export var box_size := Vector2(500-100, 136)
+export var box_position := Vector2(235, 221)
+export var box_size := Vector2(190, 136)
 
 export var export_attack_duration:float = 10
-export var export_attack_interval:float = 2
+export var export_attack_interval:float = 1.5
 export var export_attack_width:int = 50
 export var export_attack_start_delay:float = 1
 export var export_bullet_spawn_x:float = 320
 export var export_bullet_spawn_y:float = 140
 export var export_bullet_speed:float = 1
-export var export_bursts_count:int = 2
+export var export_bursts_count:int = 4
 export var export_particle_count:float = 10
-export var export_burst_time:float = 1
+export var export_burst_time:float = 0.5
 export var export_alert_time:float = 1
 
 var player = null

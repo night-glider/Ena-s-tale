@@ -3,8 +3,8 @@ extends Node
 signal attack_ended
 const bullet = preload("res://objects/battle/attacks/attack5/bullet.tscn")
 
-export var box_position := Vector2(252,221)
-export var box_size := Vector2(136, 136)
+export var box_position := Vector2(200,221)
+export var box_size := Vector2(250, 136)
 
 export var export_attack_duration:float = 10
 export var export_attack_delay:float = 1

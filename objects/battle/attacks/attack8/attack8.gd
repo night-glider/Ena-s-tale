@@ -10,7 +10,7 @@ export var box_size := Vector2(136, 136)
 
 export var export_attack_duration:float = 10
 export var export_spark_delay:float = 0.5
-export var export_spark_interval:float = 0.5
+export var export_spark_interval:float = 0.4
 export var export_spark_stage_duration:float = 3
 export var export_attack_interval:float = 25.0/15.0
 export var export_attack_delay:float = 4.3
@@ -20,7 +20,7 @@ export var export_spark_spawn_x2:int = 330
 export var export_spark_spawn_y:int = 90
 export var export_bullet_spawn_x:int = 320
 export var export_bullet_spawn_y:int = 175
-export var export_bullet_speed:float = 2
+export var export_bullet_speed:float = 5
 export var export_bullet_width:float = 10
 
 var player = null
