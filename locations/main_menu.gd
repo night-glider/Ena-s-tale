@@ -8,7 +8,8 @@ var n = -9999
 var active = true
 
 func _ready():
-	$menu/save1/Label.text = "[" + "TODO later" + "]"
+	var player_name = SaveData.load_data("player_name", "Eli")
+	$menu/save1/Label.text = "[" + player_name + "]"
 	heart_poitions.append($menu/save1/heart_pos)
 	heart_poitions.append($menu/save2/heart_pos)
 	heart_poitions.append($menu/save3/heart_pos)

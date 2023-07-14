@@ -2098,6 +2098,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 
 offset = Vector2( 0, 120 )
 frames = SubResource( 2 )
 animation = "walking"
+frame = 4
 playing = true
 
 [node name="exclamation" type="AnimatedSprite3D" parent="cutscene"]
@@ -2177,7 +2178,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
-frame = 6
+frame = 8
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
