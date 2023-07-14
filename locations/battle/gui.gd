@@ -109,7 +109,7 @@ func talk_stage():
 	Globals.play_sound(select_sound)
 	active_stage = stages.TALK
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
-	$player.position = Vector2(260,290)
+	$player.position = Vector2(320,290)
 	
 	$player.visible = true
 	$bottom_ena.visible = false

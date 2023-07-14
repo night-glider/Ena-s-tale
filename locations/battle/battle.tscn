@@ -1320,7 +1320,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
+frame = 3
 playing = true
 centered = false
 
@@ -1396,7 +1396,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1511,20 +1511,12 @@ animation = "idle_disabled"
 visible = false
 
 [node name="reason" parent="gui/talk/options" instance=ExtResource( 7 )]
-margin_left = -121.0
+margin_left = -60.0
 margin_top = -179.0
-margin_right = 47.0
+margin_right = 108.0
 margin_bottom = -147.0
 text = "TALK_REASON"
 dialogue = "TALK_REASON_DIALOGUE"
-
-[node name="insult" parent="gui/talk/options" instance=ExtResource( 7 )]
-margin_left = 34.0
-margin_top = -179.0
-margin_right = 194.0
-margin_bottom = -147.0
-text = "TALK_INSULT"
-dialogue = "TALK_INSULT_DIALOGUE"
 
 [node name="pack" type="AnimatedSprite" parent="gui"]
 position = Vector2( 470, 440 )
@@ -1666,6 +1658,7 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
+frame = 2
 playing = true
 centered = false
 
@@ -1696,7 +1689,6 @@ visible = false
 [connection signal="pressed" from="gui/strike/stance_choice/infernal" to="gui" method="_on_infernal_pressed"]
 [connection signal="pressed" from="gui/strike/stance_choice/glacial" to="gui" method="_on_glacial_pressed"]
 [connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_reason_pressed"]
-[connection signal="pressed" from="gui/talk/options/insult" to="gui" method="_on_insult_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/solquiche" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana" to="gui" method="_item_pressed"]
