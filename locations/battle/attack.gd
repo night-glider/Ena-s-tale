@@ -67,7 +67,10 @@ func _process(delta):
 	if not active:
 		return
 	
-	
+	if Debug.ideal_attacks:
+		for orb in orbs:
+			if $center.rect_position.distance_to(orb.position) < accept_radius:
+				Input.action_press("interact")
 	
 	if Input.is_action_just_pressed("interact"):
 		var orb = orbs.pop_front()

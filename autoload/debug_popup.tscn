@@ -4,9 +4,8 @@
 bg_color = Color( 1, 0, 0, 1 )
 
 [node name="WindowDialog" type="WindowDialog"]
-visible = true
 margin_right = 200.0
-margin_bottom = 100.0
+margin_bottom = 131.0
 mouse_filter = 1
 popup_exclusive = true
 window_title = "debug"
@@ -17,25 +16,31 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
 [node name="invincible" type="Button" parent="VBoxContainer"]
-margin_right = 118.0
+margin_right = 128.0
 margin_bottom = 22.0
 text = "toggle invincibility"
 
 [node name="attack_debugger" type="Button" parent="VBoxContainer"]
 margin_top = 26.0
-margin_right = 118.0
+margin_right = 128.0
 margin_bottom = 48.0
 text = "attack debuger"
 
 [node name="dialogue debugger" type="Button" parent="VBoxContainer"]
 margin_top = 52.0
-margin_right = 118.0
+margin_right = 128.0
 margin_bottom = 74.0
 text = "dialogue debugger"
 
-[node name="clear_save" type="Button" parent="VBoxContainer"]
+[node name="ideal_attacks" type="Button" parent="VBoxContainer"]
 margin_top = 78.0
-margin_right = 118.0
-margin_bottom = 94.0
+margin_right = 128.0
+margin_bottom = 100.0
+text = "toggle ideal attacks"
+
+[node name="clear_save" type="Button" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 128.0
+margin_bottom = 120.0
 custom_styles/normal = SubResource( 1 )
 text = "delete save"
