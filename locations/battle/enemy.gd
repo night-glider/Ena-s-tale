@@ -121,3 +121,13 @@ func take_hit(damage:int):
 	if damage > 0:
 		Globals.play_sound(damage_sound)
 
+
+func _on_attack_dot_pressed(big):
+	$small_explosion.frame = 0
+	if big:
+		$small_explosion.scale = Vector2(3,3)
+		$small_explosion.position = Vector2.ZERO
+		return
+	
+	$small_explosion.scale = Vector2(1,1)
+	$small_explosion.position = Vector2(rand_range(-50,40), rand_range(-50,50))

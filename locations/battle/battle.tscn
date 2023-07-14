@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=2]
+[gd_scene load_steps=197 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://sprites/battle/sword_down.png" type="Texture" id=34]
 [ext_resource path="res://sprites/battle/meist_shadow.png" type="Texture" id=35]
 [ext_resource path="res://sprites/battle/meist_swing.png" type="Texture" id=36]
+[ext_resource path="res://sprites/battle/small_explosion.png" type="Texture" id=37]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -1133,6 +1134,26 @@ tracks/4/keys = {
 } ]
 }
 
+[sub_resource type="AtlasTexture" id=262]
+atlas = ExtResource( 37 )
+region = Rect2( 0, 0, 54, 37 )
+
+[sub_resource type="AtlasTexture" id=263]
+atlas = ExtResource( 37 )
+region = Rect2( 54, 0, 54, 37 )
+
+[sub_resource type="AtlasTexture" id=264]
+atlas = ExtResource( 37 )
+region = Rect2( 108, 0, 54, 37 )
+
+[sub_resource type="SpriteFrames" id=265]
+animations = [ {
+"frames": [ SubResource( 262 ), SubResource( 263 ), SubResource( 264 ), null ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
+
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 140, 44 )
@@ -1320,7 +1341,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 2
+frame = 4
 playing = true
 centered = false
 
@@ -1435,6 +1456,11 @@ anims/swing = SubResource( 177 )
 anims/sword_down_and_charge = SubResource( 117 )
 anims/sword_down_and_static = SubResource( 250 )
 anims/sword_up = SubResource( 259 )
+
+[node name="small_explosion" type="AnimatedSprite" parent="gui/enemy"]
+frames = SubResource( 265 )
+frame = 3
+playing = true
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
 position = Vector2( 170, 440 )
@@ -1677,6 +1703,7 @@ visible = false
 [connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
 [connection signal="attack_ended" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_player_attack_ended"]
 [connection signal="damage_dealt" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_attack_damage_dealt"]
+[connection signal="dot_pressed" from="gui/dialogue_box/ReferenceRect/attack" to="gui/enemy" method="_on_attack_dot_pressed"]
 [connection signal="pressed" from="gui/strike/general_choice/attack" to="gui" method="_on_attack_pressed"]
 [connection signal="pressed" from="gui/strike/general_choice/stances" to="gui" method="_on_stances_pressed"]
 [connection signal="pressed" from="gui/strike/attack_choice/head" to="gui" method="_on_head_pressed"]

@@ -2,6 +2,7 @@ extends Control
 
 signal attack_ended()
 signal damage_dealt(damage)
+signal dot_pressed(big)
 
 const orb_scene = preload('res://locations/battle/attack_orb.tscn')
 const gigapunch = preload("res://sounds/gigapunch.ogg")
@@ -65,13 +66,17 @@ func end_attack():
 func _process(delta):
 	if not active:
 		return
-
+	
+	
+	
 	if Input.is_action_just_pressed("interact"):
 		var orb = orbs.pop_front()
 		
 		if $center.rect_position.distance_to(orb.position) < accept_radius:
 			current_damage+= orb.damage
 			Globals.play_sound(punchweak)
+			var big_explosion = current_damage == max_damage
+			emit_signal("dot_pressed", big_explosion)
 		orb.queue_free()
 
 		$center/press_effect/anim.stop()
