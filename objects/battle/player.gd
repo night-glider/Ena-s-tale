@@ -7,6 +7,7 @@ var hurt_sound = preload("res://sounds/hurt.ogg")
 var break_sound = preload("res://sounds/break.ogg")
 var heal_sound = preload("res://sounds/heal.ogg")
 
+var can_die = true
 var hp := 100
 var heal_stack = []
 var can_regen = false
@@ -124,8 +125,10 @@ func take_hit(dmg:int):
 			hp-=dmg*1.5
 	
 	if hp <= 0:
-		Globals.play_sound(break_sound)
-		Globals.game_over(position)
+		if can_die:
+			Globals.play_sound(break_sound)
+			Globals.game_over(position)
+			return
 	
 	hp = clamp(hp, 0, 100)
 	invincible = true

@@ -57,6 +57,7 @@ func _ready():
 	$dialogue_box.start_inactive_dialogue("NARRATOR_BATTLE_DEFAULT_DIAL1")
 	
 	$player.change_stance($player.stances.SAD)
+	$player.can_die = false
 
 func narattor_light_progress():
 	narrator_light_index = min(narrator_light_index+1, len(narrator_light_dials)-1)
