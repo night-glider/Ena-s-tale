@@ -465,20 +465,20 @@ func _on_reason_pressed(id):
 				"ENA_TALK_REASON2_DIAL_2",
 				"ENA_TALK_REASON2_DIAL_3",
 				"ENA_TALK_REASON2_DIAL_4",
+				"ENA_TALK_REASON2_DIAL_5",
+				"ENA_TALK_REASON2_DIAL_6",
+				"ENA_TALK_REASON2_DIAL_7"
 			]
 		
 		if reason_press_count >= 2:
 			dialogue = [
-				"ENA_TALK_REASON3_DIAL_1",
-				"ENA_TALK_REASON3_DIAL_2",
-				"ENA_TALK_REASON3_DIAL_3",
+				"ENA_TALK_NEUTRAL_REASON1_DIAL_1"
 			]
 		
-		if reason_press_count >= 3:
-			if active_route == routes.NEUTRAL:
-				dialogue = [
-					"ENA_TALK_NEUTRAL_REASON1_DIAL_1"
-				]
+		if active_route == routes.NEUTRAL:
+			dialogue = [
+				"ENA_TALK_NEUTRAL_REASON1_DIAL_1"
+			]
 		
 		reason_press_count += 1
 	else:

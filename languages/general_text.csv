@@ -15,28 +15,28 @@ POST_THRONE_MOONY_DIALOUGE1,"|moony|[color=grey]So glad this will finally be ove
 POST_THRONE_MOONY_DIALOUGE2,"[color=grey]Even though hes our bud, be careful. He seems conflicted about something."
 DIALOGUE_THRONE1,|over_nar|This throne seems like its in pretty bad shape.
 DIALOGUE_THRONE2,"|over_nar|I wonder, was it his throne?"
-MURAL1_DIAL1,"|ena|[color=yellow]Gracious me, these appear to be murals of our adventure!"
-MURAL1_DIAL2,"|moony|[color=grey]What makes you say that, Ǝna?"
-MURAL1_DIAL3,"|ena|[color=yellow]Well, we saw the enterance of the castle already, and this appears to be the same thing."
+MURAL1_DIAL1,"@0.04@|ena|[color=yellow]Gracious me, these appear to be murals of our adventure!"
+MURAL1_DIAL2,"|moony|[color=grey]What makes you say that, Ena?"
+MURAL1_DIAL3,"|ena|[color=yellow]Well, we saw the enterance of the castle already, and this appears to be the same."
 MURAL1_DIAL4,|moony|[color=grey]Fair enough I guess. Lets check out the rest up ahead.
-MURAL2_DIAL1,|ena|[color=yellow]These accursed [color=red]glitched rifts[color=white]...
+MURAL2_DIAL1,@0.04@|ena|[color=yellow]These accursed [color=red]glitched rifts[color=white]...
 MURAL2_DIAL2,"|moony|[color=grey]After we escaped from Runas, they've been giving us a lot of trouble lately."
-MURAL2_DIAL3,"|moony|[color=grey]Thankfully, we have closed nearly all of them and have located the last one to here."
+MURAL2_DIAL3,"|moony|[color=grey]Thankfully, we have closed nearly all of them and have located the last one."
 MURAL2_DIAL4,|ena|[color=yellow]Lets just hope that [color=#ffa500]he [color=yellow]is here as well.
-MURAL3_DIAL1,"|ena|[color=yellow]Moony, I know I've already said this before but..."
+MURAL3_DIAL1,"@0.04@|ena|[color=yellow]Moony, I know I've already said this before but..."
 MURAL3_DIAL2,|moony|[color=grey]Don't worry about it. We needed [color=purple]their [color=grey]help in order to leave.
 MURAL3_DIAL3,|moony|[color=grey]Lets just keep moving.
-MURAL4_DIAL1,"|ena|[color=yellow]Thats odd, [color=#ffa500]he [color=yellow]should be in this one."
+MURAL4_DIAL1,"@0.04@|ena|[color=yellow]Thats odd, [color=#ffa500]he [color=yellow]should be in this one."
 MURAL4_DIAL2,"|moony|[color=grey]Yeah, they were with us for most of our adventure."
 MURAL4_DIAL3,|ena|[color=yellow]Do you think they used to rule this place?
 MURAL4_DIAL4,|moony|[color=grey]Maybe? I dunno. Ask him when find him here.
-MURAL5_DIAL1,|ena|[color=yellow]...
+MURAL5_DIAL1,@0.04@|ena|[color=yellow]...
 MURAL5_DIAL2,"|moony|[color=grey]...Ena, I-"
 MURAL5_DIAL3,|ena|[color=yellow]Its alright. We simply had a disagreement.
 MURAL5_DIAL4,|moony|[color=grey]But you completely fell apart after all of that!
-MURAL5_DIAL5,"|ena|[color=yellow]Thinking back on it, I've come to understand that staying happy wasn't healthy for me."
+MURAL5_DIAL5,"|ena|[color=yellow]Thinking back, I've come to understand that staying happy wasn't ideal."
 MURAL5_DIAL6,"|ena|[color=yellow]I just hope that one day, I'll be able to gain stability over my life."
-MURAL5_DIAL7,"|moony|[color=grey]Well, I'm glad that you're fine now. Now lets hurry up, I think I see [color=#ffa500]him [color=grey]in the next room."
+MURAL5_DIAL7,"|moony|[color=grey]Well, I'm proud of your growth. Now lets go, I see [color=#ffa500]him [color=grey] up ahead."
 INTRO_MESSAGE1,"After a long journey, Ena and Moony have finally arrived at the carbon castle outside of existence, where the final [color=red]glitched rift [color=white]resides."
 INTRO_MESSAGE2,"These unstable anomalies began to appear throughout the dimensions after their escape from the room of RUNAS, threatening to destabilize all of creation."
 INTRO_MESSAGE3,"In order to have made their journey possible, Moony had to give up her wish to a [color=purple]mysterious entity [color=white]in order for them both to escape the graveyard."
@@ -198,8 +198,8 @@ NARRATOR_BATTLE_LIGHT_DIAL4,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL5,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL6,|nar|...
 NARRATOR_BATTLE_LIGHT_DIAL7,@0.04@|nar|It seems like all you can do is [color=red]FIGHT. 
-MOONY_BATTLE_CANTTALKMUCH_DIAL_1,|moony|[color=grey]@1@@0.02@**cough* *cough* @0.04@I can't see anything through this fire! 
-MOONY_BATTLE_CANTTALKMUCH_DIAL_2,"[color=grey]@0.02@*cough*@0.04@Let alone talk! @0.02@*cough* @0.04@sorry ENA, I can't help you here..."
+MOONY_BATTLE_CANTTALKMUCH_DIAL_1,@0.04@|moony|[color=grey]*cough* *cough*. I can't see anything through this fire! 
+MOONY_BATTLE_CANTTALKMUCH_DIAL_2,"[color=grey]*cough* Let alone talk! Sorry ENA, I can't help you here..."
 NARRATOR_BATTLE_LIGHT_DIAL8,|nar|[color=purple]...
 ENA_RAGE_TRANSITION_DIAL_1,|ena|[color=blue]@0.04@(Our time together... the things we've been through...)
 ENA_RAGE_TRANSITION_DIAL_2,|ena|[color=yellow]$emote_rage$(Does he not care? DID ANY OF IT MATTER TO HIM?!)
@@ -210,18 +210,18 @@ ENA_TALK_REASON1_DIAL_2,[color=blue]It doesnt have to end this way!
 ENA_TALK_REASON1_DIAL_3,"|moony|[color=grey]All of your genius, and this is your plan?!"
 ENA_TALK_REASON1_DIAL_4,[color=grey]It sucks! There has to be a better way!
 ENA_TALK_REASON1_DIAL_5,|ena|[color=blue]We don't want to have to hurt you!
-ENA_TALK_REASON2_DIAL_1,|ena| [color=blue] I know you feel like this is all of your fault.
-ENA_TALK_REASON2_DIAL_2,|ena| [color=blue] And I get that. At times I feel like everything is my fault as well.
-ENA_TALK_REASON2_DIAL_3,|ena| [color=blue] But you can't blame yourself for all of this! 
-ENA_TALK_REASON2_DIAL_4,|ena| [color=blue] You did the best you could. So please...
-ENA_TALK_REASON3_DIAL_1,|nar|...
-ENA_TALK_REASON3_DIAL_2,|nar|Recollection flashes in his eyes...
-ENA_TALK_REASON3_DIAL_3,|nar|The flame king's ATTACK dropped! His DEFENSE dropped!
-ENA_TALK_NEUTRAL_REASON1_DIAL_1,|ena| [color=blue] (I can't think of anything else to say... oh gods what should I do?)
+ENA_TALK_REASON2_DIAL_1,|ena| [color=blue]I know you feel like this is all of your fault.
+ENA_TALK_REASON2_DIAL_2,|ena| [color=blue]And I get that. At times I feel like everything is my fault as well.
+ENA_TALK_REASON2_DIAL_3,|ena| [color=blue]But you can't blame yourself for all of this! 
+ENA_TALK_REASON2_DIAL_4,|ena| [color=blue]You did the best you could. So please...
+ENA_TALK_REASON2_DIAL_5,|nar|...
+ENA_TALK_REASON2_DIAL_6,|nar|Recollection flashes in his eyes...
+ENA_TALK_REASON2_DIAL_7,|nar|The flame king's ATTACK dropped! His DEFENSE dropped!
+ENA_TALK_NEUTRAL_REASON1_DIAL_1,|ena|[color=blue](I can't think of anything else to say... oh gods what should I do?)
 NARRATOR_TALK_NEUTRAL_REASON_DIAL_1,|nar|But there was nothing else to say.
-MEIST_LOWHP_ENA_RESPONSE_DIAL_1,|ena| [color=blue] I... I...
-MEIST_LOWHP_ENA_RESPONSE_DIAL_2,|ena| [color=blue] I cant.. I dont... 
-MEIST_LOWHP_ENA_RESPONSE_DIAL_3,|ena| [color=blue] I... I dont know what to do anymore...
+MEIST_LOWHP_ENA_RESPONSE_DIAL_1,|ena|[color=blue]I... I...
+MEIST_LOWHP_ENA_RESPONSE_DIAL_2,|ena|[color=blue]I cant.. I dont... 
+MEIST_LOWHP_ENA_RESPONSE_DIAL_3,|ena|[color=blue]I... I dont know what to do anymore...
 GAMEOVER_AFTERMATH_NEUTRAL_DIAL1,[color=yellow]Wha... What happened?
 GAMEOVER_AFTERMATH_NEUTRAL_DIAL2,[color=yellow]Did we... lose?
 GAMEOVER_AFTERMATH_NEUTRAL_DIAL3,"[color=blue]Yes, we did. And its all of my fault. "
