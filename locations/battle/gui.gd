@@ -220,6 +220,7 @@ func attack_stage():
 
 func stop_attack():
 	get_node("active_attack").queue_free()
+	$enemy.toggle_default_animation()
 	attack_ended()
 
 func start_general_dialogue(dialogue:Array, next_stage:String="ask_enemy"):

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sword_down.ogg-05acd3092ccfce1d3a5b9ac7ca5dc863.oggstr"
+
+[deps]
+
+source_file="res://sounds/sword_down.ogg"
+dest_files=[ "res://.import/sword_down.ogg-05acd3092ccfce1d3a5b9ac7ca5dc863.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
