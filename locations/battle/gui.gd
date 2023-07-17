@@ -43,7 +43,7 @@ var narrator_light_dials = [
 ]
 var narrator_light_index = 0
 
-var talk_enabled = true
+var talk_enabled = false
 var turns_passed = 0
 
 var reason_press_count = 0
