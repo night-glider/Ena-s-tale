@@ -1,4 +1,4 @@
-[gd_scene load_steps=197 format=2]
+[gd_scene load_steps=199 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -37,6 +37,8 @@
 [ext_resource path="res://sprites/battle/meist_shadow.png" type="Texture" id=35]
 [ext_resource path="res://sprites/battle/meist_swing.png" type="Texture" id=36]
 [ext_resource path="res://sprites/battle/small_explosion.png" type="Texture" id=37]
+[ext_resource path="res://sounds/meist_grab.ogg" type="AudioStream" id=38]
+[ext_resource path="res://sounds/sword_down.ogg" type="AudioStream" id=39]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -1016,6 +1018,24 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( -20, -58 ) ]
 }
+tracks/6/type = "audio"
+tracks/6/path = NodePath("animation_sounds")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 38 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 39 )
+} ],
+"times": PoolRealArray( 0, 0.7 )
+}
 
 [sub_resource type="Animation" id=250]
 resource_name = "sword_down_and_static"
@@ -1066,6 +1086,24 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("animation_sounds")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 38 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 39 )
+} ],
+"times": PoolRealArray( 0, 0.7 )
 }
 
 [sub_resource type="Animation" id=259]
@@ -1132,6 +1170,20 @@ tracks/4/keys = {
 "args": [  ],
 "method": "toggle_default_animation"
 } ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("animation_sounds")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 38 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="AtlasTexture" id=262]
@@ -1341,7 +1393,7 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 3
+frame = 1
 playing = true
 centered = false
 
@@ -1417,7 +1469,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1461,6 +1513,9 @@ anims/sword_up = SubResource( 259 )
 frames = SubResource( 265 )
 frame = 3
 playing = true
+
+[node name="animation_sounds" type="AudioStreamPlayer" parent="gui/enemy"]
+stream = ExtResource( 39 )
 
 [node name="strike" type="AnimatedSprite" parent="gui"]
 position = Vector2( 170, 440 )
@@ -1681,7 +1736,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
 playing = true
 centered = false
 
