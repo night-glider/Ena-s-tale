@@ -35,9 +35,9 @@ func _on_self_destruct_timeout():
 
 func _on_timer_timeout():
 	var center = box_position.x + box_size.x/2
-	var delta = box_size.x/4
+	var delta = box_size.x/2
 	
-	center += delta * [-1,1][randi()%2]
+	center += delta * rand_range(-1,1)
 	
 	var new_bullet = bullet.instance()
 	new_bullet.init(
