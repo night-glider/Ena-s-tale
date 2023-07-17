@@ -8,13 +8,13 @@ const eye_flash_sound = preload("res://sounds/eyeflash.ogg")
 export var box_position := Vector2(252,221)
 export var box_size := Vector2(136, 136)
 
-export var export_attack_duration:float = 10
+export var export_attack_duration:float = 9.2
 export var export_spark_delay:float = 0.5
 export var export_spark_interval:float = 0.4
-export var export_spark_stage_duration:float = 3
+export var export_spark_stage_duration:float = 1.2
 export var export_attack_interval:float = 25.0/15.0
-export var export_attack_delay:float = 4.3
-export var export_attack_durtaion:float = 5
+export var export_attack_delay:float = 3
+export var export_attack_durtaion:float = 6
 export var export_spark_spawn_x1:int = 310
 export var export_spark_spawn_x2:int = 330
 export var export_spark_spawn_y:int = 90
