@@ -3,7 +3,9 @@ extends Node
 signal attack_ended
 const bullet = preload("res://objects/battle/attacks/attack8/bullet.tscn")
 const spark = preload("res://objects/battle/attacks/attack8/spark.tscn")
-const eye_flash_sound = preload("res://sounds/eyeflash.ogg")
+const eye_flash_sound = preload("res://sounds/eyeflash_first.ogg")
+const eye_flash_sound_last = preload("res://sounds/eyeflash_last.ogg")
+const swing_sound = preload("res://sounds/sword_slash.ogg")
 
 export var box_position := Vector2(252,221)
 export var box_size := Vector2(136, 136)
@@ -11,6 +13,7 @@ export var box_size := Vector2(136, 136)
 export var export_attack_duration:float = 9.2
 export var export_spark_delay:float = 0.5
 export var export_spark_interval:float = 0.4
+export var export_spark_last_sound:int = 4
 export var export_spark_stage_duration:float = 1.2
 export var export_attack_interval:float = 25.0/15.0
 export var export_attack_delay:float = 3
@@ -43,7 +46,6 @@ func make_decision():
 	else:
 		new_spark.position = Vector2(export_spark_spawn_x2, export_spark_spawn_y)
 	add_child(new_spark)
-	Globals.play_sound(eye_flash_sound)
 	
 	var attack_type = randi()%2
 	decisions.append(attack_type)
@@ -51,6 +53,11 @@ func make_decision():
 		new_spark.modulate = Color.yellow
 	else:
 		new_spark.modulate = Color.red
+	
+	if len(decisions) < export_spark_last_sound:
+		Globals.play_sound(eye_flash_sound)
+	else:
+		Globals.play_sound(eye_flash_sound_last)
 
 func spawn_attack():
 	var new_bullet = bullet.instance()
@@ -66,6 +73,8 @@ func spawn_attack():
 	else:
 		new_bullet.modulate = Color.red
 		new_bullet.add_to_group("enemy_bullet_red")
+	
+	Globals.play_sound(swing_sound)
 
 func start_swing():
 	enemy.start_swing_anim()

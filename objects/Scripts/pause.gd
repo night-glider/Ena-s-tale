@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 const select_sound = preload("res://sounds/select.ogg")
 
@@ -30,11 +30,7 @@ func _ready():
 		$options/window.text = tr("PAUSE_WINDOW")
 
 func _process(delta):
-	if Input.is_action_pressed("pause"):
-		progress+=1.0/180.0
-	
-	if progress > 1:
-		progress = 0
+	if Input.is_action_just_pressed("pause"):
 		if visible:
 			get_tree().paused = false
 			visible = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/eyeflash_last.ogg-052e2961191f1eeb6d688764f82aa73a.oggstr"
+
+[deps]
+
+source_file="res://sounds/eyeflash_last.ogg"
+dest_files=[ "res://.import/eyeflash_last.ogg-052e2961191f1eeb6d688764f82aa73a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
