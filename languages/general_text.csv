@@ -111,7 +111,7 @@ PLAYER_ATTACK_READY,READY
 PLAYER_ATTACK_GO,GO
 PAUSE_CONTINUE,CONTINUE
 PAUSE_OPTIONS,OPTIONS
-PAUSE_QUIT,QUIT
+PAUSE_QUIT,QUIT GAME
 PAUSE_BACK,BACK
 PAUSE_MASTER,MASTER:
 PAUSE_MUSIC,MUSIC:
@@ -179,7 +179,7 @@ GARDEN_DIAL10,[color=#ffa500]That is why…
 GARDEN_DIAL11,[color=#ffa500]...
 GARDEN_DIAL12,[color=#ffa500]...
 GARDEN_DIAL13,[color=#ffa500]…I need to take your ESSENCE.
-GARDEN_DIAL14,|ena|[color=blue]W-WHAT?!
+GARDEN_DIAL14,|ena|[color=blue]$emote_sad$W-WHAT?!$emote_reset$
 BATTLE_TRANSITION1,Light protrudes throughout the garden.
 BATTLE_TRANSITION2,You begin to feel the air around you getting warmer.
 BATTLE_TRANSITION3,It seems like your journey has finally come to an end.

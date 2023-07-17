@@ -77,3 +77,11 @@ func _input(event):
 
 func _on_GUI_dialogue_end():
 	can_control = true
+
+
+func _on_DialogueLabel_dialogue_custom_event(data):
+	match data:
+		"emote_sad":
+			$gui/dialogue/DialogueLabel.ena_soundbyte = preload("res://sounds/ena_dialogue_sad.ogg")
+		"emote_reset":
+			$gui/dialogue/DialogueLabel.ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
