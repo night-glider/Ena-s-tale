@@ -18,5 +18,9 @@ func _on_Button_pressed():
 		Globals.crash( messages[id])
 		return
 	
-	SaveData.save_data("player_name", $login/login.text)
+	if $login/login.text == "":
+		SaveData.save_data("player_name", "Eli")
+	else:
+		SaveData.save_data("player_name", $login/login.text)
+	
 	get_tree().change_scene("res://locations/desktop.tscn")
