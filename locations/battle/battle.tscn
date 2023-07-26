@@ -1393,7 +1393,6 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 1
 playing = true
 centered = false
 
@@ -1469,7 +1468,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 1
+frame = 5
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1605,50 +1604,50 @@ animation = "idle"
 visible = false
 
 [node name="turron" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-margin_left = -355.0
-margin_top = -213.0
-margin_right = -177.0
-margin_bottom = -181.0
+margin_left = -317.0
+margin_top = -203.0
+margin_right = -139.0
+margin_bottom = -171.0
 text = "ITEMS_TURRON"
 dialogue = "ITEMS_TURRON_DIALOGUE"
 
 [node name="solquiche" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-margin_left = -355.0
+margin_left = -317.0
 margin_top = -166.0
-margin_right = -137.0
+margin_right = -99.0
 margin_bottom = -134.0
 text = "ITEMS_SOLQUICHE"
 dialogue = "ITEMS_SOLQUICHE_DIALOGUE"
 
-[node name="banana" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-margin_left = -355.0
-margin_top = -119.0
-margin_right = -171.0
-margin_bottom = -87.0
-text = "ITEMS_BANANA"
-dialogue = "ITEMS_BANANA_DIALOGUE"
+[node name="rainc" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+margin_left = -317.0
+margin_top = -131.0
+margin_right = -1.0
+margin_bottom = -99.0
+text = "ITEMS_RAIN_ROCK_CANDY"
+dialogue = "ITEMS_RAINROCKCANDY_DIALOGUE"
 
-[node name="banana2" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-margin_left = -97.0
-margin_top = -213.0
-margin_right = 87.0
-margin_bottom = -181.0
-text = "ITEMS_BANANA"
-dialogue = "ITEMS_BANANA_DIALOGUE"
+[node name="lipo" parent="gui/pack/inventory" instance=ExtResource( 7 )]
+margin_left = -142.0
+margin_top = -204.0
+margin_right = 30.0
+margin_bottom = -172.0
+text = "ITEMS_LIPO-D"
+dialogue = "ITEMS_LIPO-D_DIALOGUE"
 
 [node name="banana3" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-margin_left = -97.0
+margin_left = -142.0
 margin_top = -166.0
-margin_right = 87.0
+margin_right = 42.0
 margin_bottom = -134.0
 text = "ITEMS_BANANA"
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
 [node name="banana4" parent="gui/pack/inventory" instance=ExtResource( 7 )]
-margin_left = -97.0
-margin_top = -119.0
-margin_right = 87.0
-margin_bottom = -87.0
+margin_left = -142.0
+margin_top = -129.0
+margin_right = 42.0
+margin_bottom = -97.0
 text = "ITEMS_BANANA"
 dialogue = "ITEMS_BANANA_DIALOGUE"
 
@@ -1770,8 +1769,8 @@ visible = false
 [connection signal="pressed" from="gui/talk/options/reason" to="gui" method="_on_reason_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/turron" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/solquiche" to="gui" method="_item_pressed"]
-[connection signal="pressed" from="gui/pack/inventory/banana" to="gui" method="_item_pressed"]
-[connection signal="pressed" from="gui/pack/inventory/banana2" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/rainc" to="gui" method="_item_pressed"]
+[connection signal="pressed" from="gui/pack/inventory/lipo" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana3" to="gui" method="_item_pressed"]
 [connection signal="pressed" from="gui/pack/inventory/banana4" to="gui" method="_item_pressed"]
 [connection signal="got_hit" from="gui/player" to="gui" method="_on_player_got_hit"]

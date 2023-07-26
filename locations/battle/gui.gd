@@ -137,7 +137,7 @@ func items_stage():
 	Globals.play_sound(select_sound)
 	active_stage = stages.ITEMS
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
-	$player.position = Vector2(320,320)
+	$player.position = Vector2(310,291)
 	
 	
 	$bottom_ena.visible = false
@@ -363,6 +363,11 @@ func _item_pressed(button):
 		"ITEMS_TURRON": $player.heal(30, [25,20,15,10])
 		"ITEMS_SOLQUICHE": $player.heal(10, [20, 15, 5])
 		"ITEMS_BANANA": $player.heal(5, [10,5,3,2])
+		"ITEMS_RAIN_ROCK_CANDY": $player.heal(10, [20, 15, 5])
+		"ITEMS_LIPO-D": 
+			$player.heal(5, [10,5,3,2])
+			$player.apply_speed_boost(1.5, 1)
+		
 	
 	button.text = "-----"
 	button.disabled = true
@@ -372,6 +377,7 @@ func _item_pressed(button):
 
 func attack_ended():
 	$player.change_mode(0)
+	$player.attack_turn_tick()
 	bottom_buttons_stage()
 
 func ask_enemy_for_next_stage():

@@ -21,7 +21,8 @@ var can_jump = false
 var max_jump_frames = 60
 var jump_frames = max_jump_frames
 var previous_position = Vector2.ZERO
-
+var speed_boost = 1.0
+var speed_boost_time = 0
 
 enum stances {SAD = 1, RAGE = 2}
 var stance = stances.SAD
@@ -47,7 +48,7 @@ func normal_mode()->Vector2:
 		if Input.is_action_pressed("walk_forward"):
 			input.y-=1
 	
-	return input.normalized() * spd
+	return input.normalized() * spd * speed_boost
 
 func blue_mode()->Vector2:
 	$Label.text = str(jump_frames)
@@ -78,7 +79,7 @@ func blue_mode()->Vector2:
 	else:
 		jump_velocity += gravity
 	
-	return input.normalized() * spd + Vector2(0, jump_velocity)
+	return input.normalized() * spd * speed_boost + Vector2(0, jump_velocity)
 
 func _physics_process(delta):
 	var actual_velocity = Vector2.ZERO
@@ -175,3 +176,12 @@ func change_mode(new_mode:int):
 			$Sprite.animation = "neutral"
 		modes.BLUE:
 			$Sprite.animation = "blue"
+
+func apply_speed_boost(mult, time):
+	speed_boost = mult
+	speed_boost_time = time
+
+func attack_turn_tick():
+	speed_boost_time -= 1
+	if speed_boost_time < 1:
+		speed_boost = 1.0
