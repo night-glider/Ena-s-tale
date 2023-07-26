@@ -478,15 +478,18 @@ func _on_reason_pressed(id):
 				"ENA_TALK_REASON2_DIAL_7"
 			]
 		
-		if reason_press_count >= 2:
-			dialogue = [
-				"ENA_TALK_NEUTRAL_REASON1_DIAL_1"
-			]
 		
-		if active_route == routes.NEUTRAL:
-			dialogue = [
-				"ENA_TALK_NEUTRAL_REASON1_DIAL_1"
-			]
+		if reason_press_count >= 2:
+			if active_route == routes.LIGHT:
+				dialogue = [
+					"ENA_TALK_LIGHT_REASON1_DIAL_1",
+					"ENA_TALK_LIGHT_REASON1_DIAL_2",
+					"ENA_TALK_LIGHT_REASON1_DIAL_3"
+				]
+			if active_route == routes.NEUTRAL:
+				dialogue = [
+					"ENA_TALK_NEUTRAL_REASON1_DIAL_1"
+				]
 		
 		reason_press_count += 1
 	else:

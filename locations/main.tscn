@@ -1353,7 +1353,7 @@ extents = Vector3( 3, 2, 1 )
 script = ExtResource( 9 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -48, 1.752, 28.5 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1.752, 66.5 )
 mouse_sensitivity = 0.1
 
 [node name="moony" type="Spatial" parent="."]
@@ -2179,6 +2179,7 @@ billboard = 1
 double_sided = false
 alpha_cut = 1
 frames = SubResource( 324 )
+frame = 14
 playing = true
 
 [node name="rocks" type="MeshInstance" parent="."]
