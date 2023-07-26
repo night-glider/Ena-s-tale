@@ -41,7 +41,7 @@ func sword_up():
 func head_animation():
 	if not animate_head:
 		return
-	$head.position.y = 3 + sin(head_n) * 2
+	$head.position.y = 4 + sin(head_n) * 2
 	head_n += head_n_spd
 
 func _ready():
