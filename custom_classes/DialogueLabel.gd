@@ -12,8 +12,8 @@ signal dialogue_ended
 signal dialogue_custom_event(data)
 
 
-var timer:Timer = Timer.new()
-var message_id:int = 0
+var timer : Timer = Timer.new()
+var message_id : int = 0
 var char_progress = 0
 
 
@@ -28,7 +28,6 @@ var narrator_soundbyte = preload("res://sounds/TXT2.ogg")
 func _init():
 	bbcode_enabled = true
 	scroll_active = false
-	
 
 func _ready():
 	add_child(timer)
@@ -56,7 +55,7 @@ func stop_dialogue():
 	
 	timer.stop()
 
-func change_messages(new_array:Array):
+func change_messages(new_array : Array):
 	messages = new_array.duplicate()
 	if messages.empty():
 		assert(false, "DialogueLabel's messages are empty!")
@@ -225,7 +224,7 @@ func next_symbol():
 		timer.start(0.5)
 		timer.wait_time = timer_old_time
 	
-	char_progress+=1
+	char_progress += 1
 	return
 
 

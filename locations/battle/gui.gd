@@ -6,9 +6,9 @@ const ena_sad_soundbyte = preload("res://sounds/ena_dialogue_sad.ogg")
 const ena_soundbyte = preload("res://sounds/ena_dialogue.ogg")
 onready var dialogue_label = $dialogue
 
-export var big_font:Font = null
+export var big_font : Font = null
 
-var active_button:int = 0
+var active_button : int = 0
 onready var buttons = [$strike, $talk, $pack]
 enum stages {
 	BOTTOM_BUTTONS, 
@@ -44,6 +44,8 @@ var narrator_light_dials = [
 var narrator_light_index = 0
 
 var talk_enabled = false
+var items_enabled = true
+
 var turns_passed = 0
 
 var reason_press_count = 0
@@ -51,6 +53,8 @@ var reason_press_count = 0
 var general_dialogue_next_stage = "ask_enemy"
 
 var moony_cant_talk_triggered = false
+
+var end_fight_sequence := false
 
 func _ready():
 	$enemy.player_data = $player
@@ -92,7 +96,7 @@ func strike_limb_stage():
 	$strike/attack_choice.visible = true
 
 func player_attack_stage(damage:int, difficulty:int):
-	active_stage = stages.PLAYER_ATTACK
+	stages.PLAYER_ATTACK
 	#$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$dialogue_box.change_size(Vector2(97,221), Vector2(454, 124))
 	$player.position = Vector2(0,0)
@@ -133,12 +137,27 @@ func general_dialogue_stage():
 	
 	$dialogue_box.hide_dialogue()
 
+func set_pack_disabled(val : bool):
+	items_enabled = !val
+	
+	var pack_node = $pack
+	if val:
+		pack_node.animation = "idle_disabled"
+
+func set_talk_disabled(val : bool):
+	talk_enabled = !val
+	
+	var talk_node = $talk
+	if val:
+		talk_node.animation = "idle_disabled"
+
 func items_stage():
+	if not items_enabled:
+		return
 	Globals.play_sound(select_sound)
 	active_stage = stages.ITEMS
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(310,291)
-	
 	
 	$bottom_ena.visible = false
 	
@@ -149,6 +168,8 @@ func items_stage():
 	$dialogue_box.hide_dialogue()
 
 func bottom_buttons_stage():
+	print("bottom_buttons_stage")
+	
 	active_stage = stages.BOTTOM_BUTTONS
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
 	$player.position = Vector2(0,0)
@@ -161,6 +182,14 @@ func bottom_buttons_stage():
 	$dialogue_box/ReferenceRect/dialogue.visible = false
 	$pack/inventory.visible = false
 	$talk/options.visible = false
+	
+	if end_fight_sequence and turns_passed > 1 and not moony_cant_talk_triggered:
+		print("END FIGHT DIALOGUE")
+		start_general_dialogue(
+			["MEIST_LOWHP_ENA_RESPONSE_DIAL_1" , "MEIST_LOWHP_ENA_RESPONSE_DIAL_2", "MEIST_LOWHP_ENA_RESPONSE_DIAL_3"], 
+			"menu")
+		moony_cant_talk_triggered = true
+		return
 	
 	var narrator_line
 	match active_route:
@@ -223,7 +252,7 @@ func stop_attack():
 	$enemy.toggle_default_animation()
 	attack_ended()
 
-func start_general_dialogue(dialogue:Array, next_stage:String="ask_enemy"):
+func start_general_dialogue(dialogue : Array, next_stage:String="ask_enemy"):
 	$dialogue.change_messages(dialogue)
 	_on_dialogue_dialogue_next()
 	$dialogue.start_dialogue()
@@ -243,7 +272,6 @@ func find_character_tag(message):
 		
 		if result != null:
 			result += chr
-	
 	return result
 
 func _on_dialogue_dialogue_ended():
@@ -285,14 +313,23 @@ func _process(delta):
 				if active_button > 0:
 					Globals.play_sound(active_sound)
 					buttons[active_button].animation = "idle"
-					active_button-=1
+					active_button -= 1
 					buttons[active_button].animation = "active"
 				
+					
 					if not talk_enabled:
-						if $talk.animation == "idle":
-							$talk.animation = "idle_disabled"
+						var talk_node = $talk
+						if talk_node.animation == "idle":
+							talk_node.animation = "idle_disabled"
 						else:
-							$talk.animation = "active_disabled"
+							talk_node.animation = "active_disabled"
+							
+					if not items_enabled:
+						var pack_node = $pack
+						if pack_node.animation == "idle":
+							pack_node.animation = "idle_disabled"
+						elif active_button == 2:
+							pack_node.animation = "active_disabled"
 			
 			if Input.is_action_just_pressed("walk_right"):
 				if active_button < 2:
@@ -302,10 +339,18 @@ func _process(delta):
 					buttons[active_button].animation = "active"
 					
 					if not talk_enabled:
-						if $talk.animation == "idle":
-							$talk.animation = "idle_disabled"
+						var talk_node = $talk
+						if talk_node.animation == "idle":
+							talk_node.animation = "idle_disabled"
 						else:
-							$talk.animation = "active_disabled"
+							talk_node.animation = "active_disabled"
+					
+					if not items_enabled:
+						var pack_node = $pack
+						if pack_node.animation == "idle":
+							pack_node.animation = "idle_disabled"
+						elif active_button == 2:
+							pack_node.animation = "active_disabled"
 			
 			if Input.is_action_just_pressed("interact"):
 				if buttons[active_button] == $pack:

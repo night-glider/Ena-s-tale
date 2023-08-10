@@ -1,4 +1,4 @@
-[gd_scene load_steps=199 format=2]
+[gd_scene load_steps=202 format=2]
 
 [ext_resource path="res://sprites/battle/gui/strike.png" type="Texture" id=1]
 [ext_resource path="res://sprites/battle/gui/pack.png" type="Texture" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://sprites/battle/small_explosion.png" type="Texture" id=37]
 [ext_resource path="res://sounds/meist_grab.ogg" type="AudioStream" id=38]
 [ext_resource path="res://sounds/sword_down.ogg" type="AudioStream" id=39]
+[ext_resource path="res://locations/battle/Battle_Conclusion.gd" type="Script" id=40]
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 22 )
@@ -1270,9 +1271,17 @@ animations = [ {
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 140, 44 )
 
+[sub_resource type="AtlasTexture" id=266]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 88, 140, 44 )
+
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 44, 140, 44 )
+
+[sub_resource type="AtlasTexture" id=267]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 132, 140, 44 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -1281,9 +1290,19 @@ animations = [ {
 "name": "active",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 266 ) ],
+"loop": true,
+"name": "active_disabled",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 26 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 267 ) ],
+"loop": true,
+"name": "idle_disabled",
 "speed": 5.0
 } ]
 
@@ -1393,16 +1412,18 @@ texture = ExtResource( 18 )
 
 [node name="fires" type="AnimatedSprite" parent="bg"]
 frames = SubResource( 66 )
-frame = 1
+frame = 2
 playing = true
 centered = false
 
 [node name="gradient" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 19 )
 
 [node name="gui" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource( 8 )
 big_font = SubResource( 78 )
 
@@ -1453,6 +1474,7 @@ visible = false
 [node name="Tween" type="Tween" parent="gui/dialogue_box"]
 
 [node name="enemy" type="AnimatedSprite" parent="gui"]
+unique_name_in_owner = true
 position = Vector2( 339, 140 )
 script = ExtResource( 13 )
 
@@ -1469,7 +1491,7 @@ offset = Vector2( -15, -47 )
 
 [node name="head" type="AnimatedSprite" parent="gui/enemy/head"]
 frames = SubResource( 38 )
-frame = 4
+frame = 5
 playing = true
 offset = Vector2( -19, -64 )
 
@@ -1599,7 +1621,7 @@ dialogue = "TALK_REASON_DIALOGUE"
 [node name="pack" type="AnimatedSprite" parent="gui"]
 position = Vector2( 470, 440 )
 frames = SubResource( 6 )
-animation = "idle"
+animation = "active"
 
 [node name="inventory" type="Node2D" parent="gui/pack"]
 visible = false
@@ -1736,7 +1758,6 @@ patch_margin_bottom = 10
 position = Vector2( 2, 2 )
 frames = SubResource( 60 )
 animation = "sad"
-frame = 2
 playing = true
 centered = false
 
@@ -1755,6 +1776,9 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="pause" parent="." instance=ExtResource( 17 )]
 visible = false
+
+[node name="Battle_Conclusion" type="Node" parent="."]
+script = ExtResource( 40 )
 
 [connection signal="dialogue_ended" from="gui/dialogue_box/ReferenceRect/dialogue" to="gui/dialogue_box" method="_on_dialogue_dialogue_ended"]
 [connection signal="attack_ended" from="gui/dialogue_box/ReferenceRect/attack" to="gui" method="_on_player_attack_ended"]

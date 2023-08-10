@@ -1,4 +1,4 @@
-extends AnimatedSprite
+class_name BigBoss extends AnimatedSprite
 
 const damage_sound = preload("res://sounds/damage.ogg")
 const avoid_attack = preload("res://objects/battle/attacks/attack0/attack0.tscn")
@@ -9,10 +9,13 @@ var all_attacks = [2,3,4,5,6,7,8]
 var current_attack_pool = []
 
 var animate_head = true
-var hp = 20000
+var _hp = 20000
+export(int) var health_floor = 5000
 
 var head_n = 0
 var head_n_spd = PI/120.0
+
+signal low_health_mode
 
 func toggle_default_animation():
 	$AnimationPlayer.play("RESET")
@@ -64,7 +67,7 @@ func choose_attack()->PackedScene:
 	return current_attack_pool.pop_front()
 
 func last_action_decision(action:String)->Array:
-	if hp >= 20000:
+	if _hp >= 20000:
 		return ["pass"]
 	
 	var answer = ["none"]
@@ -105,10 +108,21 @@ func last_action_decision(action:String)->Array:
 			answer[0] = "pass" 
 			#answer.append(["ENEMY_INSULT_REACT"])
 			return answer
-	
 
-func take_hit(damage:int):
-	hp-=damage
+func set_hp(value : int):
+	_hp = value
+	if _hp < health_floor:
+		_hp = health_floor
+		emit_signal("low_health_mode")
+
+## TESTING ONLY
+func _input(event):
+	if event.is_action_pressed("kill_boss_cheat"):
+		take_hit(14999)
+
+func take_hit(damage : int):
+	set_hp(_hp - damage)
+	
 	if damage <= 0:
 		$hp_bar/Label.modulate = Color.white
 		$hp_bar/Label.text = "MISS"
@@ -116,7 +130,7 @@ func take_hit(damage:int):
 		$hp_bar/Label.modulate = Color.red
 		$hp_bar/Label.text = str(damage)
 	$hp_bar/anim.play("simple_anim")
-	$hp_bar/smooth.interpolate_property($hp_bar, "value", $hp_bar.value, hp, 1)
+	$hp_bar/smooth.interpolate_property($hp_bar, "value", $hp_bar.value, _hp, 1)
 	$hp_bar/smooth.start()
 	if damage > 0:
 		Globals.play_sound(damage_sound)
