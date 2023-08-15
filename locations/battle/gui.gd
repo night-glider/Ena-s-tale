@@ -54,7 +54,8 @@ var general_dialogue_next_stage = "ask_enemy"
 
 var moony_cant_talk_triggered = false
 
-var end_fight_sequence := false
+var end_fight_sequence := -1
+const end_fight_dialogue := ["MEIST_LOWHP_ENA_RESPONSE_DIAL_1" , "MEIST_LOWHP_ENA_RESPONSE_DIAL_2", "MEIST_LOWHP_ENA_RESPONSE_DIAL_3"]
 
 func _ready():
 	$enemy.player_data = $player
@@ -183,13 +184,27 @@ func bottom_buttons_stage():
 	$pack/inventory.visible = false
 	$talk/options.visible = false
 	
-	if end_fight_sequence and turns_passed > 1 and not moony_cant_talk_triggered:
-		print("END FIGHT DIALOGUE")
+	if end_fight_sequence > -1 and end_fight_sequence < 2 and turns_passed > 2:
+		print("END FIGHT DIALOGUE ", end_fight_sequence)
 		start_general_dialogue(
-			["MEIST_LOWHP_ENA_RESPONSE_DIAL_1" , "MEIST_LOWHP_ENA_RESPONSE_DIAL_2", "MEIST_LOWHP_ENA_RESPONSE_DIAL_3"], 
-			"menu")
+			[end_fight_dialogue[end_fight_sequence]], 
+			"attack")
 		moony_cant_talk_triggered = true
+		end_fight_sequence += 1
 		return
+	elif end_fight_sequence == 2:
+		# fade music
+		var music_player : AudioStreamPlayer = $"%AudioStreamPlayer"
+		var tween : Tween = music_player.get_child(0)
+		var start_volume = music_player.volume_db
+		tween.interpolate_property(music_player, "volume_db", start_volume, -80, 5, Tween.TRANS_CUBIC)
+		tween.start()
+		var ena : ReferenceRect = $"%ena_status"
+		ena._on_player_got_hit(0)
+		start_general_dialogue(
+			[end_fight_dialogue[end_fight_sequence]], 
+			"attack")
+		end_fight_sequence += 1
 	
 	var narrator_line
 	match active_route:
@@ -269,7 +284,6 @@ func find_character_tag(message):
 				continue
 			else:
 				return result
-		
 		if result != null:
 			result += chr
 	return result

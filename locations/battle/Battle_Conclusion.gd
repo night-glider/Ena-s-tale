@@ -10,7 +10,7 @@ func boss_low_health_mode():
 	print("ENTERING BOSS LOW HEALTH MODE")
 	$"%enemy".disconnect("low_health_mode", self, "boss_low_health_mode")
 	disable_talk_item_buttons()
-	$"%gui".end_fight_sequence = true
+	$"%gui".end_fight_sequence = 0
 
 func disable_talk_item_buttons():
 	var gui = $"%gui"

@@ -14,7 +14,6 @@ func _on_player_got_hit(dmg):
 		$AnimatedSprite.play("rage_hurt")
 	else:
 		$AnimatedSprite.play("hurt")
-	
 	$hurt_timer.start()
 
 
@@ -28,6 +27,6 @@ func _on_player_stance_changed(new_stance):
 	if new_stance == 1:
 		current_state = "sad"
 		$AnimatedSprite.play(current_state)
-	if new_stance == 2:
+	elif new_stance == 2:
 		current_state = "rage"
 		$AnimatedSprite.play(current_state)
