@@ -30,3 +30,8 @@ func _on_player_stance_changed(new_stance):
 	elif new_stance == 2:
 		current_state = "rage"
 		$AnimatedSprite.play(current_state)
+	elif new_stance == 3:
+		var ani : AnimatedSprite = $AnimatedSprite
+		ani.stop()
+		current_state == "hurt"
+		ani.play("hurt")

@@ -169,7 +169,6 @@ func items_stage():
 	$dialogue_box.hide_dialogue()
 
 func bottom_buttons_stage():
-	print("bottom_buttons_stage")
 	
 	active_stage = stages.BOTTOM_BUTTONS
 	$dialogue_box.change_size(Vector2(35,221), Vector2(571, 136))
@@ -200,11 +199,12 @@ func bottom_buttons_stage():
 		tween.interpolate_property(music_player, "volume_db", start_volume, -80, 5, Tween.TRANS_CUBIC)
 		tween.start()
 		var ena : ReferenceRect = $"%ena_status"
-		ena._on_player_got_hit(0)
+		ena._on_player_stance_changed(3)
 		start_general_dialogue(
 			[end_fight_dialogue[end_fight_sequence]], 
-			"attack")
+			"ask_enemy")
 		end_fight_sequence += 1
+		return
 	
 	var narrator_line
 	match active_route:
@@ -248,8 +248,14 @@ func bottom_buttons_stage():
 	$dialogue_box.start_inactive_dialogue(narrator_line)
 
 func attack_stage():
+	var attack
+	
+	if end_fight_sequence == 2:
+		attack = $enemy.choose_attack().instance()
+	else:
+		attack = $enemy.choose_attack().instance()
 	active_stage = stages.ATTACK
-	var attack = $enemy.choose_attack().instance()
+	
 	attack.player = $player
 	attack.enemy = $enemy
 	attack.connect("attack_ended", self, "attack_ended")
